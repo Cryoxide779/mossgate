@@ -8,6 +8,8 @@ on:
   workflow_dispatch: {}
   push:
     tags: ['v*']
+    branches: [main]
+    paths: ['.github/workflows/build-android.yml', 'capacitor.config.json', 'package.json', 'assets/**']
 jobs:
   build:
     runs-on: ubuntu-24.04
