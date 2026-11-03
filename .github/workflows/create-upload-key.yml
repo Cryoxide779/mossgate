@@ -5,9 +5,9 @@ on:
   workflow_dispatch: {}
 jobs:
   key:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     steps:
-      - uses: actions/setup-java@v4
+      - uses: actions/setup-java@v5
         with:
           distribution: temurin
           java-version: '21'
@@ -19,7 +19,7 @@ jobs:
           base64 -w0 upload.keystore > ANDROID_KEYSTORE_BASE64.txt
           printf '%s' "$PASS" > ANDROID_KEYSTORE_PASSWORD.txt
           printf 'Add these as repository secrets (Settings > Secrets and variables > Actions):\n\nANDROID_KEYSTORE_BASE64   = contents of ANDROID_KEYSTORE_BASE64.txt\nANDROID_KEYSTORE_PASSWORD = contents of ANDROID_KEYSTORE_PASSWORD.txt\n\nKeep upload.keystore and the password somewhere safe and private (a password manager or private cloud folder).\nThen delete this run artifact from GitHub.\n' > README-KEY.txt
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v5
         with:
           name: upload-key-KEEP-PRIVATE
           path: |
