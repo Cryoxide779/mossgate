@@ -1,0 +1,103 @@
+# Builds the Android app.
+# - Always: a test APK you can install straight onto your phone.
+# - When the upload key secrets exist: a signed .aab to upload to the Play Store.
+# Only needed when the app shell changes (icon, name, permissions) or for a new Play release.
+# Game content updates go out through "Publish game update" instead.
+name: Build Android app
+on:
+  workflow_dispatch: {}
+  push:
+    tags: ['v*']
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    env:
+      APP_ID: com.cryoxide.mossgate
+      HAS_KEY: ${{ secrets.ANDROID_KEYSTORE_BASE64 != '' }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '21'
+      - uses: android-actions/setup-android@v3
+      - name: Install Capacitor
+        run: npm install
+      - name: Create Android project
+        run: |
+          npx cap add android
+          npx capacitor-assets generate --android --iconBackgroundColor '#081214' --splashBackgroundColor '#081214' || echo "asset generation skipped"
+      - name: Configure Android project
+        run: |
+          set -e
+          M=android/app/src/main/AndroidManifest.xml
+          # landscape only, keep the activity alive through rotation and keyboard changes
+          sed -i 's/<activity /<activity android:screenOrientation="sensorLandscape" /' $M
+          # target the API level Google Play requires (Android 16 / API 36)
+          V=android/variables.gradle
+          sed -i -E 's/compileSdkVersion = [0-9]+/compileSdkVersion = 36/; s/targetSdkVersion = [0-9]+/targetSdkVersion = 36/' $V
+          # version: code from the run number, name from package.json
+          VN=$(node -p "require('./package.json').version")
+          G=android/app/build.gradle
+          sed -i -E "s/versionCode [0-9]+/versionCode ${{ github.run_number }}/; s/versionName \"[^\"]+\"/versionName \"$VN\"/" $G
+          # full-screen game: hide the status and navigation bars
+          D=android/app/src/main/java/$(echo $APP_ID | tr . /)
+          mkdir -p $D
+          cat > $D/MainActivity.java <<JAVA
+          package $APP_ID;
+
+          import android.os.Bundle;
+          import androidx.core.view.WindowCompat;
+          import androidx.core.view.WindowInsetsCompat;
+          import androidx.core.view.WindowInsetsControllerCompat;
+          import com.getcapacitor.BridgeActivity;
+
+          public class MainActivity extends BridgeActivity {
+              @Override
+              public void onCreate(Bundle savedInstanceState) {
+                  super.onCreate(savedInstanceState);
+                  hideBars();
+              }
+              @Override
+              public void onWindowFocusChanged(boolean hasFocus) {
+                  super.onWindowFocusChanged(hasFocus);
+                  if (hasFocus) hideBars();
+              }
+              private void hideBars() {
+                  WindowCompat.setDecorFitsSystemWindows(getWindow(), false);
+                  WindowInsetsControllerCompat c = WindowCompat.getInsetsController(getWindow(), getWindow().getDecorView());
+                  c.hide(WindowInsetsCompat.Type.systemBars());
+                  c.setSystemBarsBehavior(WindowInsetsControllerCompat.BEHAVIOR_SHOW_TRANSIENT_BARS_BY_SWIPE);
+              }
+          }
+          JAVA
+          sed -i 's/^          //' $D/MainActivity.java
+          npx cap sync android
+      - name: Build test APK
+        working-directory: android
+        run: ./gradlew assembleDebug
+      - name: Build signed Play Store bundle
+        if: env.HAS_KEY == 'true'
+        env:
+          KS: ${{ secrets.ANDROID_KEYSTORE_BASE64 }}
+          KS_PASS: ${{ secrets.ANDROID_KEYSTORE_PASSWORD }}
+        working-directory: android
+        run: |
+          echo "$KS" | base64 -d > $RUNNER_TEMP/upload.keystore
+          ./gradlew bundleRelease \
+            -Pandroid.injected.signing.store.file=$RUNNER_TEMP/upload.keystore \
+            -Pandroid.injected.signing.store.password="$KS_PASS" \
+            -Pandroid.injected.signing.key.alias=upload \
+            -Pandroid.injected.signing.key.password="$KS_PASS"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: mossgate-test-apk
+          path: android/app/build/outputs/apk/debug/*.apk
+      - uses: actions/upload-artifact@v4
+        if: ${{ hashFiles('android/app/build/outputs/bundle/release/*.aab') != '' }}
+        with:
+          name: mossgate-play-store-aab
+          path: android/app/build/outputs/bundle/release/*.aab

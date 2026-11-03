@@ -1,0 +1,14 @@
+{
+  "appId": "com.cryoxide.mossgate",
+  "appName": "MossGate",
+  "webDir": "www",
+  "server": {
+    "url": "https://cryoxide779.github.io/mossgate/",
+    "errorPath": "index.html",
+    "androidScheme": "https"
+  },
+  "android": {
+    "backgroundColor": "#081214",
+    "allowMixedContent": false
+  }
+}
