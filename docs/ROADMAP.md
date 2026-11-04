@@ -36,6 +36,6 @@ Epilogue hook for future regions: Ossery Vale, the Concordance Chair.
 - Starting kits: Ronin, Shade, Hunter, Mossweaver, Gravecaller, Traveler, Scout, Guard, Aspirant, Gatherer.
 
 ## Next
-1. All seven built regions now match their sheets. Remaining sheet locations not yet built are listed in each region's commit message.
+1. All seven built regions match their sheets, including every named location (js_more.js builds the remaining sheet locations from compact descriptions with addPlace()).
 2. Future regions as their sheets are made.
 3. Guilds and factions once online play (Firebase) is switched on.
