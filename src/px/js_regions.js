@@ -8,17 +8,17 @@ const REGIONS=[
   {id:'marrowbog',n:'Marrowbog',lv:[20,25],built:1},
   {id:'watchtower',n:'Old Watchtower',lv:[25,30],built:1},
   {id:'scar',n:'The Sundering Scar',lv:[30,35],built:1},
-  {id:'silverwood',n:'Silverwood Wilds',lv:[35,40]},
-  {id:'saltsong',n:'Saltsong Desert',lv:[40,45]},
-  {id:'emberfall',n:'Emberfall Ridge',lv:[45,50]},
-  {id:'stormreach',n:'Stormreach Islands',lv:[50,55]},
-  {id:'frostveil',n:'Frostveil Expanse',lv:[55,60]},
-  {id:'crown',n:'The Shattered Crown',lv:[60,65]},
-  {id:'veilspire',n:'The Veilspire',lv:[65,70]}];
+  {id:'golden',n:'The Golden Plains',lv:[35,40]},
+  {id:'silverwood',n:'Silverwood Wilds',lv:[40,45]},
+  {id:'verdant',n:'The Verdant Coast',lv:[45,50]},
+  {id:'emerald',n:'Emerald Isles',lv:[50,55]},
+  {id:'saltsong',n:'Saltsong Desert',lv:[55,60]},
+  {id:'frostveil',n:'Frostveil Expanse',lv:[60,65]},
+  {id:'crown',n:'The Shattered Crown',lv:[65,70]}];
 const CAP=Math.max(...REGIONS.filter(r=>r.built).map(r=>r.lv[1])),CAP_MAX=70;
 /* zone → region and level band */
 const ZBAND={town:['cresthollow',1,1],hearth:['cresthollow',1,1],home:['cresthollow',1,1],hunt:['cresthollow',2,2],road:['cresthollow',1,2],ruins:['cresthollow',2,4],under:['cresthollow',3,4],cellar:['cresthollow',4,4],cistern:['cresthollow',5,5],riversmeet:['cresthollow',2,3],stonefield:['cresthollow',3,4],mirefen:['cresthollow',4,5],highsteps:['cresthollow',1,1],
-  outskirts:['whisper',5,6],briarwood:['whisper',6,7],oak:['whisper',6,8],briarlair:['whisper',7,7],hermit:['whisper',7,8],sawmill:['whisper',8,10],mossroot:['whisper',9,10],
+  outskirts:['whisper',5,6],briarwood:['whisper',6,7],oak:['whisper',6,8],briarlair:['whisper',7,7],whisperwood:['whisper',5,5],whispergrove:['whisper',6,7],moonpetal:['whisper',7,8],thornveil:['whisper',8,9],elderwood:['whisper',9,10],hermit:['whisper',7,8],sawmill:['whisper',8,10],mossroot:['whisper',9,10],
   stonebridge:['stonebridge',10,10],quarry:['stonebridge',11,13],qfort:['stonebridge',14,14],
   falls:['mistyfen',15,17],shrine:['mistyfen',17,19],
   bog:['marrowbog',20,22],lab:['marrowbog',21,23],reach:['marrowbog',23,25],vats:['marrowbog',24,24],
@@ -149,8 +149,8 @@ function renderMastery(){if(!MXP)return;const M=MX(),capped=pl.lv>=CAP;
 $('mastery').addEventListener('click',e=>{const b=e.target.closest('[data-mx],#mxclose');if(!b||!MXP)return;if(b.id==='mxclose'){MXP=null;return unpause('mastery')}
   const M=MX(),k=b.dataset.mx;if(!M.pts||mxRank(k)>=MX_MAX)return;M.pts--;M.r[k]=mxRank(k)+1;recalc();sfx.pick();save();renderMastery()});
 /* ---------- the edges of the map: roads to regions not yet charted ---------- */
-const SEALED={road:[{x:-90,r:'frostveil',t:'The Ash Road north'}],town:[{x:-150,r:'silverwood',t:'The south road'}],tower:[{x:-90,r:'crown',t:'Northwatch pass'}],
-  falls:[{x:-120,r:'stormreach',t:'Fenwater ferry'}],reach:[{x:160,r:'saltsong',t:'The dry road'}],hollow:[{x:-80,r:'emberfall',t:'The Cinder Gates'}],inner:[{x:180,r:'veilspire',t:'A rift that will not hold'}]};
+const SEALED={road:[{x:-90,r:'frostveil',t:'The Ash Road north'}],town:[{x:-150,r:'golden',t:'The south road'}],tower:[{x:-90,r:'crown',t:'Northwatch pass'}],
+  falls:[{x:-120,r:'emerald',t:'Fenwater ferry'}],reach:[{x:160,r:'saltsong',t:'The dry road'}],hollow:[{x:-80,r:'verdant',t:'The cliff road west'}],elderwood:[{x:-60,r:'silverwood',t:'A silver-barked trail'}]};
 const sX=s=>s.x<0?Z.x1+s.x:s.x+EDGE;
 function sealedNear(){const L=SEALED[Z.id];if(!L)return null;for(const s of L)if(Math.abs(pl.x-sX(s))<18)return{k:'sealed',s};return null}
 const _cnx=crNear;crNear=function(){return sealedNear()||_cnx()};
