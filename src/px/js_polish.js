@@ -41,3 +41,23 @@ document.addEventListener('visibilitychange',()=>{if(document.hidden){if(pl.ch&&
     if(!S.paused&&!pl.dead&&$('gmenu').hidden)try{openMenu()}catch(_){}}try{AC&&AC.state==='running'&&AC.suspend()}catch(_){}}
   else{try{AC&&AC.state==='suspended'&&AC.resume()}catch(_){}}});
 addEventListener('pagehide',()=>{if(pl.ch&&$('title').hidden&&$('creator').hidden)try{save()}catch(_){}});
+/* ---------- top bar: shards, tonics, bag and a "more" button; everything else lives in a labelled drop-down ---------- */
+const MORE_ROWS=[['cmdbtn',()=>{const b=actBond();return b?'Companion · '+CMD_N[compCmd()]:'Companion'},1],['qbtn','Quests'],['treebtn','Disciplines'],['mapbtn','Map'],['saybtn',()=>{const n=NET.cap?netPeers().length:0;return n?'Say · '+(n+1)+' here':'Say'},1],['sndbtn',()=>SND.on?'Sound · on':'Sound · off',1],['menubtn','Menu & saves'],['fs','Fullscreen']];
+(()=>{const tr=$('tr'),more=document.createElement('button');more.className='ib px';more.id='morebtn';more.setAttribute('aria-label','More');more.setAttribute('aria-expanded','false');
+  more.innerHTML='<svg viewBox="0 0 18 18" fill="#f2e6c8"><rect x="2" y="2" width="5" height="5"/><rect x="11" y="2" width="5" height="5"/><rect x="2" y="11" width="5" height="5"/><rect x="11" y="11" width="5" height="5"/></svg>';
+  tr.insertBefore(more,$('bagbtn').nextSibling);
+  const pn=document.createElement('div');pn.id='morepn';pn.className='px';pn.hidden=true;document.body.appendChild(pn);
+  const mk=(id,svg)=>{const b=document.createElement('button');b.className='ib px';b.id=id;b.innerHTML=svg;return b};
+  const extra={};extra.mapbtn=mk('mapbtn','<svg viewBox="0 0 18 18" fill="none" stroke="#f2e6c8" stroke-width="2"><path d="M1.5 4l5-2 5 2 5-2v12l-5 2-5-2-5 2z"/><path d="M6.5 2v12M11.5 4v12"/></svg>');
+  extra.saybtn=mk('saybtn','<svg viewBox="0 0 18 18" fill="none" stroke="#f2e6c8" stroke-width="2"><path d="M2 3h14v9H8l-4 3v-3H2z"/></svg>');
+  for(const[id]of MORE_ROWS){let b=$(id)||extra[id];if(!b)continue;const row=b;row.classList.add('mrow');const lb=document.createElement('span');lb.className='mlb';row.appendChild(lb);pn.appendChild(row)}
+  $('mapbtn').onclick=()=>{closeMore();openMap()};
+  $('saybtn').addEventListener('click',e=>{e.stopPropagation();closeMore();$('shoutbar').classList.toggle('open')});
+  more.addEventListener('click',e=>{e.stopPropagation();pn.hidden?openMore():closeMore()});
+  pn.addEventListener('click',e=>{const r=e.target.closest('.mrow');if(!r)return;const row=MORE_ROWS.find(x=>x[0]===r.id);setTimeout(()=>{if(row&&row[2])labelMore();else closeMore()},0)});
+  document.addEventListener('pointerdown',e=>{if(!pn.hidden&&!e.target.closest('#morepn,#morebtn'))closeMore()},true);
+  $('saylist').addEventListener('click',()=>setTimeout(()=>$('shoutbar').classList.remove('open'),0));
+  setInterval(()=>{more.classList.toggle('dot',$('treebtn').classList.contains('dot'));$('saybtn').hidden=!NET.cap;if(!pn.hidden)labelMore()},700)})();
+function labelMore(){for(const[id,l]of MORE_ROWS){const b=$(id);if(!b)continue;const s=b.querySelector('.mlb');const t=typeof l==='function'?l():l;if(s&&s.textContent!==t)s.textContent=t}}
+function openMore(){labelMore();$('morepn').hidden=false;$('morebtn').setAttribute('aria-expanded','true');$('morebtn').classList.add('on')}
+function closeMore(){$('morepn').hidden=true;$('morebtn').setAttribute('aria-expanded','false');$('morebtn').classList.remove('on')}

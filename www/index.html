@@ -35,6 +35,16 @@ button:focus-visible{outline:2px solid var(--moss);outline-offset:2px}
 .chip i{width:8px;height:10px;display:block}
 .ib{position:relative;width:34px;height:34px;display:grid;place-items:center;cursor:pointer;padding:0}
 .ib svg{width:18px;height:18px}
+#morepn{position:fixed;z-index:7;top:calc(52px + env(safe-area-inset-top,0px));right:calc(12px + env(safe-area-inset-right,0px));display:grid;gap:3px;padding:5px;min-width:178px;max-height:calc(100vh - 64px);overflow-y:auto;background:rgba(8,18,20,.92);border:2px solid #000;box-shadow:inset 0 0 0 2px #3a4a3e,0 6px 18px rgba(0,0,0,.5)}
+#morepn[hidden]{display:none}
+#morepn .mrow{width:100%;height:32px;display:flex;align-items:center;gap:9px;justify-content:flex-start;padding:0 9px;text-align:left;color:var(--cream);font:inherit;font-size:10px;letter-spacing:.06em}
+#morepn .mrow[hidden]{display:none}
+#morepn .mrow svg{flex:none}
+#morepn .mrow>:not(svg):not(.mlb){display:none}
+#morepn .mrow .mlb{position:static;display:inline;transform:none;font-size:10px;background:none;border:0;padding:0;color:var(--cream);white-space:nowrap}
+#morepn .mrow.dot::after{top:12px;right:9px}
+#morebtn.on{box-shadow:inset 0 0 0 2px var(--moss)}
+#saytg{display:none}#shoutbar:not(.open){display:none}
 .ib.dot::after{content:"";position:absolute;top:3px;right:3px;width:7px;height:7px;background:var(--red);border:1px solid #000}
 #zone{position:fixed;z-index:4;left:0;right:0;top:max(25%,94px);text-align:center;pointer-events:none;opacity:0}
 #zone b{display:block;font-weight:400;font-size:clamp(18px,4.6vw,36px);letter-spacing:.08em;text-shadow:3px 3px 0 #000,0 0 18px rgba(155,208,76,.35)}
@@ -4114,6 +4124,26 @@ document.addEventListener('visibilitychange',()=>{if(document.hidden){if(pl.ch&&
     if(!S.paused&&!pl.dead&&$('gmenu').hidden)try{openMenu()}catch(_){}}try{AC&&AC.state==='running'&&AC.suspend()}catch(_){}}
   else{try{AC&&AC.state==='suspended'&&AC.resume()}catch(_){}}});
 addEventListener('pagehide',()=>{if(pl.ch&&$('title').hidden&&$('creator').hidden)try{save()}catch(_){}});
+/* ---------- top bar: shards, tonics, bag and a "more" button; everything else lives in a labelled drop-down ---------- */
+const MORE_ROWS=[['cmdbtn',()=>{const b=actBond();return b?'Companion · '+CMD_N[compCmd()]:'Companion'},1],['qbtn','Quests'],['treebtn','Disciplines'],['mapbtn','Map'],['saybtn',()=>{const n=NET.cap?netPeers().length:0;return n?'Say · '+(n+1)+' here':'Say'},1],['sndbtn',()=>SND.on?'Sound · on':'Sound · off',1],['menubtn','Menu & saves'],['fs','Fullscreen']];
+(()=>{const tr=$('tr'),more=document.createElement('button');more.className='ib px';more.id='morebtn';more.setAttribute('aria-label','More');more.setAttribute('aria-expanded','false');
+  more.innerHTML='<svg viewBox="0 0 18 18" fill="#f2e6c8"><rect x="2" y="2" width="5" height="5"/><rect x="11" y="2" width="5" height="5"/><rect x="2" y="11" width="5" height="5"/><rect x="11" y="11" width="5" height="5"/></svg>';
+  tr.insertBefore(more,$('bagbtn').nextSibling);
+  const pn=document.createElement('div');pn.id='morepn';pn.className='px';pn.hidden=true;document.body.appendChild(pn);
+  const mk=(id,svg)=>{const b=document.createElement('button');b.className='ib px';b.id=id;b.innerHTML=svg;return b};
+  const extra={};extra.mapbtn=mk('mapbtn','<svg viewBox="0 0 18 18" fill="none" stroke="#f2e6c8" stroke-width="2"><path d="M1.5 4l5-2 5 2 5-2v12l-5 2-5-2-5 2z"/><path d="M6.5 2v12M11.5 4v12"/></svg>');
+  extra.saybtn=mk('saybtn','<svg viewBox="0 0 18 18" fill="none" stroke="#f2e6c8" stroke-width="2"><path d="M2 3h14v9H8l-4 3v-3H2z"/></svg>');
+  for(const[id]of MORE_ROWS){let b=$(id)||extra[id];if(!b)continue;const row=b;row.classList.add('mrow');const lb=document.createElement('span');lb.className='mlb';row.appendChild(lb);pn.appendChild(row)}
+  $('mapbtn').onclick=()=>{closeMore();openMap()};
+  $('saybtn').addEventListener('click',e=>{e.stopPropagation();closeMore();$('shoutbar').classList.toggle('open')});
+  more.addEventListener('click',e=>{e.stopPropagation();pn.hidden?openMore():closeMore()});
+  pn.addEventListener('click',e=>{const r=e.target.closest('.mrow');if(!r)return;const row=MORE_ROWS.find(x=>x[0]===r.id);setTimeout(()=>{if(row&&row[2])labelMore();else closeMore()},0)});
+  document.addEventListener('pointerdown',e=>{if(!pn.hidden&&!e.target.closest('#morepn,#morebtn'))closeMore()},true);
+  $('saylist').addEventListener('click',()=>setTimeout(()=>$('shoutbar').classList.remove('open'),0));
+  setInterval(()=>{more.classList.toggle('dot',$('treebtn').classList.contains('dot'));$('saybtn').hidden=!NET.cap;if(!pn.hidden)labelMore()},700)})();
+function labelMore(){for(const[id,l]of MORE_ROWS){const b=$(id);if(!b)continue;const s=b.querySelector('.mlb');const t=typeof l==='function'?l():l;if(s&&s.textContent!==t)s.textContent=t}}
+function openMore(){labelMore();$('morepn').hidden=false;$('morebtn').setAttribute('aria-expanded','true');$('morebtn').classList.add('on')}
+function closeMore(){$('morepn').hidden=true;$('morebtn').setAttribute('aria-expanded','false');$('morebtn').classList.remove('on')}
 
 /* ---------- save transfer: move a character between devices (claude.ai, browser, Android app) ---------- */
 const SAVE_K='mossgate-px2';
@@ -4511,12 +4541,12 @@ requestAnimationFrame(loop);
 /* scale menus and HUD up on tablets and large screens so text stays readable; keep the quest tracker clear of the HUD */
 function uiScale(){const z=clamp(Math.min(innerWidth/780,innerHeight/380),1,2);UIZ=z;
   for(const el of document.querySelectorAll('.ov')){el.style.zoom=z;el.style.boxSizing='border-box';el.style.right='auto';el.style.bottom='auto';el.style.width=(innerWidth/z)+'px';el.style.height=(innerHeight/z)+'px'}
-  for(const id of['hud','tr','qtrack','talk','dlg','crchip','cmdbtn','menubtn'])if($(id))$(id).style.zoom=z;
+  for(const id of['hud','tr','qtrack','talk','dlg','crchip','morepn','shoutbar'])if($(id))$(id).style.zoom=z;
   const h=$('hud').getBoundingClientRect();if(h.height)$('qtrack').style.top=((h.bottom+4)/z)+'px'}
 let UIZ=1;addEventListener('resize',()=>setTimeout(uiScale,30));uiScale();setInterval(()=>{const q=$('qtrack'),h=$('hud').getBoundingClientRect();if(h.height&&Math.abs(q.getBoundingClientRect().top-(h.bottom+4))>2)uiScale()},1000);
 
 })();
 </script>
-<script>window.MG_BUILD='2026.11.03-2215';if('serviceWorker' in navigator&&location.protocol==='https:'){addEventListener('load',()=>navigator.serviceWorker.register('sw.js').catch(()=>{}))}</script>
+<script>window.MG_BUILD='2026.11.03-2343';if('serviceWorker' in navigator&&location.protocol==='https:'){addEventListener('load',()=>navigator.serviceWorker.register('sw.js').catch(()=>{}))}</script>
 
 </html>

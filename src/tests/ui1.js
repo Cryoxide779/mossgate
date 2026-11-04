@@ -1,0 +1,13 @@
+const {chromium}=require('playwright');const fs=require('fs');
+(async()=>{const b=await chromium.launch();const ctx=await b.newContext({viewport:{width:740,height:360},deviceScaleFactor:2,isMobile:true,hasTouch:true});await ctx.addInitScript({content:fs.readFileSync('mockroom.js','utf8')});const p=await ctx.newPage();const errs=[];p.on('pageerror',e=>errs.push(e.stack.split('\n').slice(0,2).join(' ')));
+await p.goto('file://'+process.cwd()+'/dbgp.html');await p.waitForTimeout(800);const ev=(f,a)=>p.evaluate(f,a);
+await ev(()=>{const T=window.__T;T.beginWith({name:'Aya',cls:'ronin',look:{...T.DEF_LOOK,sex:1}},{lv:6,exp:0,sh:300,pt:3,inv:[],eq:null,sk:{},zone:5,q:{m1:{s:'d'},m2:{s:'d'},m3:{s:'a',n:1}},fl:{crIntro:1,hints:9},tmin:false});T.pl.cr={id:null,wait:9999};T.befriend&&0});
+await ev(()=>{const T=window.__T;T.pl.comp=T.pl.comp||{};const c=T.CB();if(c){c.b=c.b||{};c.b.wolfpup={tr:40,lv:1,n:'Ash, a wolf pup',sp:'wolf'};c.act='wolfpup'}T.enterZone(5)});await p.waitForTimeout(1600);
+await p.screenshot({path:'ui_closed.png'});await p.tap('#morebtn');await p.waitForTimeout(300);await p.screenshot({path:'ui_open.png'});
+console.log(await ev(()=>[...document.querySelectorAll('#morepn .mrow')].map(r=>(r.hidden?'(h)':'')+r.textContent).join(' | ')));
+await p.tap('#cmdbtn').catch(e=>console.log('cmd tap fail'));await p.waitForTimeout(200);console.log('after cmd',await ev(()=>!document.getElementById('morepn').hidden+' '+document.getElementById('cmdbtn').textContent));
+await p.tap('#saybtn').catch(()=>console.log('say fail'));await p.waitForTimeout(300);await p.screenshot({path:'ui_say.png'});
+await p.tap('#saylist button');await p.waitForTimeout(300);console.log('say closed',await ev(()=>!document.getElementById('shoutbar').classList.contains('open')));
+await p.tap('#morebtn');await p.waitForTimeout(200);await p.tap('#qbtn');await p.waitForTimeout(300);console.log('quests open',await ev(()=>!document.getElementById('quests').hidden+' pn hidden '+document.getElementById('morepn').hidden));
+await ev(()=>window.__T.unpause('quests'));await p.tap('#morebtn');await p.waitForTimeout(200);await p.tap('#mapbtn');await p.waitForTimeout(300);console.log('map',await ev(()=>!document.getElementById('mapov').hidden));
+console.log('ERR',errs.join('\n'));await b.close()})();

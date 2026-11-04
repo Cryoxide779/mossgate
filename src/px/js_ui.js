@@ -186,6 +186,6 @@ requestAnimationFrame(loop);
 /* scale menus and HUD up on tablets and large screens so text stays readable; keep the quest tracker clear of the HUD */
 function uiScale(){const z=clamp(Math.min(innerWidth/780,innerHeight/380),1,2);UIZ=z;
   for(const el of document.querySelectorAll('.ov')){el.style.zoom=z;el.style.boxSizing='border-box';el.style.right='auto';el.style.bottom='auto';el.style.width=(innerWidth/z)+'px';el.style.height=(innerHeight/z)+'px'}
-  for(const id of['hud','tr','qtrack','talk','dlg','crchip','cmdbtn','menubtn'])if($(id))$(id).style.zoom=z;
+  for(const id of['hud','tr','qtrack','talk','dlg','crchip','morepn','shoutbar'])if($(id))$(id).style.zoom=z;
   const h=$('hud').getBoundingClientRect();if(h.height)$('qtrack').style.top=((h.bottom+4)/z)+'px'}
 let UIZ=1;addEventListener('resize',()=>setTimeout(uiScale,30));uiScale();setInterval(()=>{const q=$('qtrack'),h=$('hud').getBoundingClientRect();if(h.height&&Math.abs(q.getBoundingClientRect().top-(h.bottom+4))>2)uiScale()},1000);
