@@ -157,7 +157,7 @@ function travel(po){if(deepTravel(po))return;S.paused=true;const f=$('fade');f.s
 /* ---------- update ---------- */
 function update(dt){
   if(S.hs>0){S.hs-=dt;dt*=.15}
-  tickNodes(dt);tickBuffs(dt);armsTick(dt);hintTick(dt);labTick(dt);quarryTick(dt);tickMarket(dt);crTick(dt);compTick(dt);deepTick(dt);netTick(dt);reachTick(dt);tickFolk(dt);ambUpdate(dt);S.t+=dt;const dir=(inp.right?1:0)-(inp.left?1:0),sm=pl.sm;S.nearPortal=null;S.portalCd=Math.max(0,S.portalCd-dt);
+  tickNodes(dt);tickBuffs(dt);armsTick(dt);hintTick(dt);labTick(dt);quarryTick(dt);underTick(dt);tickMarket(dt);crTick(dt);compTick(dt);deepTick(dt);netTick(dt);reachTick(dt);tickFolk(dt);ambUpdate(dt);S.t+=dt;const dir=(inp.right?1:0)-(inp.left?1:0),sm=pl.sm;S.nearPortal=null;S.portalCd=Math.max(0,S.portalCd-dt);
   if(!pl.dead){
     for(const k of['inv','cd','potCd','drop'])pl[k]=Math.max(0,pl[k]-dt);for(let si=0;si<3;si++)pl.slotCd[si]=Math.max(0,pl.slotCd[si]-dt);
     pl.regen+=dt;if(pl.regen>=1){pl.regen=0;pl.mp=Math.min(pl.mmp,pl.mp+Math.round((2+pl.lv*.3)*(pl.sm.mpR||1)));if(S.t-pl.lastHurt>5)pl.hp=Math.min(pl.mhp,pl.hp+1+pl.lv*.2|0);
