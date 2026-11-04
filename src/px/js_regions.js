@@ -23,7 +23,7 @@ const ZBAND={town:['cresthollow',1,1],hearth:['cresthollow',1,1],home:['cresthol
   falls:['mistyfen',15,17],shrine:['mistyfen',17,19],fenwater:['mistyfen',15,15],reedshore:['mistyfen',16,17],glasswater:['mistyfen',17,18],serpent:['mistyfen',18,19],archive:['mistyfen',19,20],
   bog:['marrowbog',20,22],lab:['marrowbog',21,23],reach:['marrowbog',23,25],vats:['marrowbog',24,24],mudcarver:['marrowbog',20,20],grasping:['marrowbog',21,22],fenwatch:['marrowbog',22,23],veilfen:['marrowbog',23,24],rotmire:['marrowbog',24,25],
   tower:['watchtower',25,27],siege:['watchtower',26,28],gate:['watchtower',27,29],outcrop:['watchtower',28,30],ravengate:['watchtower',25,25],bastion:['watchtower',26,27],graystone:['watchtower',27,28],sentinel:['watchtower',28,29],talonreach:['watchtower',29,30],
-  scar:['scar',30,32],inner:['scar',32,34],hollow:['scar',35,35]};
+  scar:['scar',30,32],inner:['scar',32,34],hollow:['scar',35,35],riftwatch:['scar',30,30],bleeding:['scar',30,31],mirror:['scar',31,32],echo:['scar',32,33],veinfall:['scar',33,34],shardspire:['scar',34,35]};
 const REG=id=>REGIONS.find(r=>r.id===id);
 const zoneRegion=z=>{const b=ZBAND[z.id];return b?REG(b[0]):null};
 /* Emberwatch is Emberbrook on the CrestHollow sheet */
