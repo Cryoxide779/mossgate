@@ -62,7 +62,7 @@ const ROADI=zIdx('road'),RUI=ZONES.length,CEI=RUI+1;
   seg:[[0,900,250],[300,80,212,'plank'],[540,80,212,'plank']],mobs:[['hollowhost',0,700],['cinderghoul',0,360]],portals:[{x:22,to:RUI,tx:800}],
   labels:[[450,'The Wine Cellar',100]],props:[['crates',140],['crates',420],['fire',600],['crates',820]],trees:[]};
  prepZone(Ru);prepZone(Ce);for(const z of[Ru,Ce]){z.nodes=[];z.stations=[]}Ru.salv=Ru.salv.map(x=>x+EDGE);Ru.trapped=Ru.trapped.map(x=>x+EDGE);Ru.hatch+=EDGE;ZONES.push(Ru,Ce);
- const Rd=ZONES[ROADI];Rd.portals.push({x:860+EDGE,to:RUI,tx:70+EDGE})}
+ const Rd=ZONES[ROADI];Rd.portals.push({x:860+EDGE,to:RUI,tx:70+EDGE});(Rd.labels=Rd.labels||[]).push([860+EDGE,'Emberwatch',78])}
 MAPXY.ruins=[4,68];MAPXY.cellar=[2,80];
 NPCS.hadda={name:'Caravaneer Hadda',title:'Survivor of Emberwatch',x:150+EDGE,cls:'ronin',look:{sex:1,build:1,face:1,hair:6,hairC:5,beard:0,skin:2,eye:3,outfit:3},eq:{head:'scavenger',chest:'r_start'},
   lines:['Emberwatch was the last good bed on the Ash Road. Then the Gatefall came down the road on fire.','Some of my people are still under that rubble. I can hear them when the wind drops.','Maeve kept the inn for thirty years. She would not leave her cellar. She still has not.']};

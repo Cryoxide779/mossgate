@@ -10,7 +10,7 @@ const LOTS=[300,520,740,960,1180];
 WX.hearth=WX.town;MAPXY.hearth=[15,68];
 const HR=zIdx('hearth'),HOMEI=ZONES.length;
 {const z={id:'home',name:'Home',ch:'Hearthrow',theme:'home',safe:1,interior:1,lv:[1,1],req:1,ww:520,start:60,seg:[[0,520,250]],mobs:[],portals:[],props:[],trees:[]};prepZone(z);z.nodes=[];z.stations=[];ZONES.push(z)}
-{const t=ZONES[zIdx('town')];t.portals.push({x:1270+EDGE,to:HR,tx:70+EDGE})}
+{const t=ZONES[zIdx('town')];t.portals.push({x:1270+EDGE,to:HR,tx:70+EDGE});(t.labels=t.labels||[]).push([1270+EDGE,'Hearthrow',78])}
 const HM=()=>pl.home||null;
 /* furniture catalogue */
 const FURN={

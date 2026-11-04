@@ -61,3 +61,5 @@ const MORE_ROWS=[['cmdbtn',()=>{const b=actBond();return b?'Companion · '+CMD_N
 function labelMore(){for(const[id,l]of MORE_ROWS){const b=$(id);if(!b)continue;const s=b.querySelector('.mlb');const t=typeof l==='function'?l():l;if(s&&s.textContent!==t)s.textContent=t}}
 function openMore(){labelMore();$('morepn').hidden=false;$('morebtn').setAttribute('aria-expanded','true');$('morebtn').classList.add('on')}
 function closeMore(){$('morepn').hidden=true;$('morebtn').setAttribute('aria-expanded','false');$('morebtn').classList.remove('on')}
+/* banner(small, big): when a long line lands in the big slot and a short one in the small, swap them so the headline stays short */
+const _bnr=banner;banner=function(s,t){if(t&&s&&String(t).length>28&&String(s).length<String(t).length)return _bnr(t,s);return _bnr(s,t)};

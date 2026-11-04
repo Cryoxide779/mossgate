@@ -60,7 +60,7 @@ function render(){
     for(let i=0;i<14;i++){const a=S.t*3+i*.45,r=3+(i%5)*1.4;g.fillStyle=lk?(i%2?'#d4483a':'#ff9a7a'):(i%2?'#6ec6e2':'#d8f6ff');g.fillRect(ri(x+Math.cos(a)*r*.8),ri(y-16+Math.sin(a)*r*1.6),1,1)}
     if(S.nearPortal===po)ptext(po.next?'▲ DESCEND TO FLOOR '+(S.deep.n+1):lk?'SEALED · LV '+ZONES[po.to].req:'▲ '+ZONES[po.to].name.toUpperCase(),x,y-48+Math.sin(S.t*4),lk?'#ff6b6b':'#f2e6c8')}
   for(const w of S.waves){if(w.t<0)continue;const x=ri(w.x-cx),y=ri(SEG[0].y-cy),hgt=6+ri(Math.sin(w.t*30)*2);g.fillStyle='#5a4a50';g.fillRect(x-3,y-hgt,6,hgt);g.fillStyle='#8a7a80';g.fillRect(x-2,y-hgt,2,hgt);g.fillStyle='#ffb24a';g.fillRect(x-1,y-3,2,2)}
-  drawFolk(cx,cy);drawNpcs(cx,cy);drawNodes(cx,cy);drawLore(cx,cy);drawCrisis(cx,cy);drawDeep(cx,cy);drawReach(cx,cy);drawHearth(cx,cy);drawHome(cx,cy);drawLab(cx,cy);drawQuarry(cx,cy);drawUnder(cx,cy);drawRuins(cx,cy);drawArms(cx,cy);drawPeers(cx,cy);
+  drawFolk(cx,cy);drawNpcs(cx,cy);drawNodes(cx,cy);drawLore(cx,cy);drawCrisis(cx,cy);drawDeep(cx,cy);drawReach(cx,cy);drawHearth(cx,cy);drawHome(cx,cy);drawLab(cx,cy);drawQuarry(cx,cy);drawUnder(cx,cy);drawRuins(cx,cy);drawDen(cx,cy);drawArms(cx,cy);drawPeers(cx,cy);
   for(const m of S.mobs)if(!m.dead)drawMob(m,cx,cy);
   for(const dr of S.drops){const x=ri(dr.x-cx),y=ri(dr.y-cy)-ri(Math.sin(S.t*4+dr.x)*1.5)-(dr.g?2:0);
     if(dr.k==='shard'){g.fillStyle='#000';g.fillRect(x-2,y-3,5,7);g.fillStyle='#d4483a';g.fillRect(x-1,y-2,3,5);g.fillRect(x-2,y,5,1);g.fillStyle='#ffd0c0';g.fillRect(x-1,y-2,1,1)}
