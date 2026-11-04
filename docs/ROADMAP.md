@@ -32,6 +32,7 @@ Epilogue hook for future regions: Ossery Vale, the Concordance Chair.
 - Level cap 35, then Mastery: experience becomes Mastery points (Might, Vigor, Focus, Fortune, Craft; 50 ranks each).
 - Veinway Deep: floor level = floor × 0.7, up to the cap. Floors past the cap get tougher and pay Mastery.
 - Roads to future regions are sealed waymarkers in the edge zones.
+- Regional materials follow docs/design/material-usage-framework.txt: each built region gathers its own materials, and each region's workshops have a crafted set with a property (js_materials.js).
 - Starting kits: Ronin, Shade, Hunter, Mossweaver, Gravecaller, Traveler, Scout, Guard, Aspirant, Gatherer.
 
 ## Next

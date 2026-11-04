@@ -63,7 +63,7 @@ const hasMats=R=>Object.entries(R.need).every(([k,n])=>mat(k)>=n);
 function craftRarity(R){const r=dRank(R.d),x=Math.random();let q=x<.02+.04*Math.max(0,r-5)?3:x<.1+.05*r?2:x<.4+.04*r?1:0;return Math.max(q,R.min||0)}
 function doCraft(R){if(!hasMats(R)||!rcpOk(R))return;for(const[k,n]of Object.entries(R.need))pl.mat[k]-=n;let msg;
   if(R.use==='crisis'){pl.relief=pl.relief||{};pl.relief[R.id]=(pl.relief[R.id]||0)+1;msg=R.n+(R.qe?'':' (relief supply)');if(R.qe)qEvent(R.qe)}else if(R.use==='pots3'){pl.pots=Math.min(9,pl.pots+3);msg='+3 tonics'}else if(R.use==='purge'){usePurge();msg='Resonance calmed'}else if(R.use){if(R.use==='pots'){pl.pots=Math.min(9,pl.pots+2);msg='+2 tonics'}else{useBuff(R.use);msg=BUFF_N[R.use]}}
-  else{const[slot,weap]=R.make,rar=craftRarity(R),it=makeItem(R.set||'ironwork',slot,weap||null,rar,Math.max(1,pl.lv));for(const k in it.st)it.st[k]=Math.round(it.st[k]*1.15);it.by=pl.ch.name;it.rcp=R.id;
+  else{const[slot,weap]=R.make,rar=craftRarity(R),it=makeItem(R.set||'ironwork',slot,weap||null,rar,Math.max(1,pl.lv));for(const k in it.st)it.st[k]=Math.round(it.st[k]*1.15);if(R.tune)for(const k in R.tune)if(it.st[k])it.st[k]=Math.max(1,Math.round(it.st[k]*R.tune[k]));if(R.add)for(const k in R.add)it.st[k]=(it.st[k]||0)+Math.max(1,Math.round(BASE_ST[k]*(k==='crit'?1+.08*(it.lv-1):1+.25*(it.lv-1))*RAR[rar].m*1.15*R.add[k]));it.by=pl.ch.name;it.rcp=R.id;
     if(pl.bag.length<BAG_MAX)pl.bag.push(it);else S.drops.push({k:'gear',it,x:pl.x,y:pl.y-8,vx:0,vy:-160,t:0});msg=RAR[rar].n+' '+itemName(it)}
   dGain(R.d,10+Object.values(R.need).reduce((a,b)=>a+b,0)*3);qCraft();[523,784,1046].forEach((f,i)=>setTimeout(()=>tone(f,.12,'square',.03),i*80));S.craftMsg=msg;save()}
 let CRAFT=null;
@@ -73,7 +73,7 @@ function renderCraft(){if(!CRAFT)return;const st=CRAFT.st,ds=ST_DISC[st.k],list=
   $('crtabs').innerHTML=ds.map(d=>`<button class="dtab${d===CRAFT.d?' sel':''}" data-cd="${d}">${DISC[d].n}<b>${dRank(d)}</b></button>`).join('');
   $('crlist').innerHTML=list.map(x=>`<button class="qi${x.id===CRAFT.sel?' sel':''}${rcpOk(x)?'':' dn'}" data-cr="${x.id}"><b>${x.n}</b><span>${rcpOk(x)?(hasMats(x)?'Ready to make':'Missing materials'):'Needs '+DISC[x.d].n+' rank '+x.r}</span></button>`).join('');
   const needH=Object.entries(R.need).map(([k,n])=>`<li style="color:${mat(k)>=n?'var(--cream)':'#ff6b6b'}">${RES[k].n} <b>${mat(k)}/${n}</b></li>`).join(''),r=dRank(R.d);
-  const what=R.use?(R.desc||USE_D[R.use])+(R.use==='crisis'?' You hold '+relief(R.id)+'.':''):`${R.make[1]?WEAP_N[R.make[1]]:SLOT_N[R.make[0]]} · item level ${pl.lv} · crafted gear is 15% stronger and carries your name`+(R.min?' · always Rare or better':'');
+  const what=R.use?(R.desc||USE_D[R.use])+(R.use==='crisis'?' You hold '+relief(R.id)+'.':''):`${R.make[1]?WEAP_N[R.make[1]]:SLOT_N[R.make[0]]} · item level ${pl.lv} · crafted gear is 15% stronger and carries your name`+(R.min?' · always Rare or better':'')+(R.prop?'<br><i>'+R.prop+'</i>':'')+(R.add?' · adds '+Object.keys(R.add).map(k=>STAT_N[k]||k).join(', '):'');
   $('crdet').innerHTML=`<div class="dn">${R.n}</div><div class="dm">${DISC[R.d].n} · rank ${R.r} recipe · your rank ${r}</div><p>${what}</p><ul>${needH}</ul>
     ${R.use?'':`<p class="dm">Higher ${DISC[R.d].n} rank raises the chance of Fine, Rare and Relic results.</p>`}${S.craftMsg?`<p style="color:var(--moss)">Made: ${S.craftMsg}</p>`:''}
     <div class="acts"><button class="btn sm" data-crdo="1" ${hasMats(R)&&rcpOk(R)?'':'disabled'}>Craft</button></div>`;
