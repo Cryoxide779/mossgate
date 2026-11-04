@@ -195,6 +195,11 @@ button:focus-visible{outline:2px solid var(--moss);outline-offset:2px}
 .crl{display:grid;gap:3px;padding:6px 8px;background:rgba(242,230,200,.05);border:2px solid #000;box-shadow:inset 0 0 0 2px rgba(242,230,200,.1);font-size:9px;line-height:1.45}.crlh{display:flex;justify-content:space-between}.crl b{font-weight:400;font-size:10px;color:var(--crc)}.crl em{font-style:normal;color:var(--moss)}.crl>span{opacity:.8}
 .crbtns{display:flex;flex-wrap:wrap;gap:4px;margin-top:2px}.crbtns .btn{font-size:9px;padding:5px 7px}.crbtns small{opacity:.7}
 #crright{display:grid;gap:6px}
+#ctlbar{position:fixed;z-index:60;top:calc(8px + env(safe-area-inset-top,0px));left:50%;transform:translateX(-50%);width:min(560px,calc(100% - 24px));display:grid;gap:6px;padding:8px 10px;background:rgba(8,18,20,.92);border:2px solid #000;box-shadow:inset 0 0 0 2px var(--ember);font-size:9px}
+.cth{display:flex;gap:8px;align-items:baseline;flex-wrap:wrap}.cth b{font-weight:400;color:var(--ember);font-size:11px}.cth span{opacity:.8}
+.ctrow{display:flex;flex-wrap:wrap;gap:6px 12px;align-items:center}.ctrow label{display:flex;gap:6px;align-items:center}.ctrow input[type=range]{width:110px;accent-color:#9bd04c}.ctrow em{font-style:normal;color:var(--moss);min-width:30px}.ctseg{display:flex;gap:4px;align-items:center}
+body.ctled #lz{pointer-events:none}body.ctled .pb{outline:2px dashed rgba(245,154,74,.85);outline-offset:2px}body.ctled .pb.sel{outline:2px solid #fff4c2}body.ctled #stick{outline:2px dashed rgba(245,154,74,.85);outline-offset:4px}body.ctled #stick.sel{outline:2px solid #fff4c2}
+body.ctled #hud,body.ctled #tr,body.ctled #qtrack,body.ctled #talkbtn,body.ctled #crchip,body.ctled #shoutbar,body.ctled #enterbtn{visibility:hidden}
 #gmenu{z-index:40}#gmenu .panel{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}@media (max-width:560px){#gmenu .panel{grid-template-columns:1fr}}
 .gmcode{width:100%;box-sizing:border-box;min-height:64px;max-height:120px;margin-top:6px;background:rgba(0,0,0,.4);color:var(--cream);border:2px solid #000;box-shadow:inset 0 0 0 1px rgba(242,230,200,.2);font:9px/1.4 monospace;padding:6px;word-break:break-all;resize:vertical}
 .gmfile{display:inline-flex;align-items:center;cursor:pointer}#impbtn{margin-top:2px}
@@ -253,6 +258,7 @@ button:focus-visible{outline:2px solid var(--moss);outline-offset:2px}
   </div>
 </div>
 <div id="keys" class="px" hidden></div>
+<div id="ctlbar" class="px" hidden></div>
 <div id="fade"></div>
 <div id="devwarn" hidden></div>
 
@@ -3131,7 +3137,7 @@ const appPlugin=()=>NATIVE()&&window.Capacitor.Plugins&&window.Capacitor.Plugins
 function toTitle(){if(pl.ch)save();try{if(typeof netLeave==='function')netLeave()}catch(_){}setTimeout(()=>location.reload(),150)}
 function exitGame(){if(pl.ch)save();const A=appPlugin();if(A&&A.exitApp)A.exitApp();else toTitle()}
 function renderMenu(){const sv=loadSave(),has=!!(sv&&sv.ch);
-  $('gmgame').hidden=GM.title;$('gmgame').innerHTML=GM.title?'':`<div class="hdr"><span>Menu</span><small>Paused</small></div><div class="crbtns"><button class="btn sm" data-gm="resume">Resume</button><button class="btn sm alt" data-gm="save">Save now</button><button class="btn sm alt" data-gm="title">${GM.askT?'Tap again: save and return to title':'Return to title'}</button>${NATIVE()?`<button class="btn sm alt" data-gm="exit">${GM.askX?'Tap again: save and exit':'Exit game'}</button>`:''}</div>${GM.saved?'<p class="crp" style="color:var(--moss)">Saved.</p>':''}`;
+  $('gmgame').hidden=GM.title;$('gmgame').innerHTML=GM.title?'':`<div class="hdr"><span>Menu</span><small>Paused</small></div><div class="crbtns"><button class="btn sm" data-gm="resume">Resume</button><button class="btn sm alt" data-gm="save">Save now</button>${isTouch?'<button class="btn sm alt" data-gm="ctl">Edit controls</button>':''}<button class="btn sm alt" data-gm="title">${GM.askT?'Tap again: save and return to title':'Return to title'}</button>${NATIVE()?`<button class="btn sm alt" data-gm="exit">${GM.askX?'Tap again: save and exit':'Exit game'}</button>`:''}</div>${GM.saved?'<p class="crp" style="color:var(--moss)">Saved.</p>':''}`;
   $('gmexp').innerHTML=has?`<p class="crp">Your save lives on this device only. To move <b>${esc(sv.ch.name)}</b> (Lv ${sv.lv|0}) to another phone, browser or the Android app, copy this code and paste it there under Import.</p>
     <div class="crbtns"><button class="btn sm" data-gm="copy">Copy save code</button><button class="btn sm alt" data-gm="dl">Download save file</button><button class="btn sm alt" data-gm="show">Show code</button></div>
     ${GM.code?`<textarea class="gmcode" readonly>${GM.code}</textarea>`:''}`:'<p class="crp dim">No character saved on this device yet.</p>';
@@ -3142,7 +3148,7 @@ function renderMenu(){const sv=loadSave(),has=!!(sv&&sv.ch);
   if(GM.pending)$('gmin').value=GM.pending}
 async function copyText(t){try{await navigator.clipboard.writeText(t);return true}catch(_){}try{const a=document.createElement('textarea');a.value=t;a.style.position='fixed';a.style.opacity='0';document.body.appendChild(a);a.select();const ok=document.execCommand('copy');a.remove();return ok}catch(_){return false}}
 $('gmenu').addEventListener('click',async e=>{const b=e.target.closest('[data-gm],#gmclose');if(!b)return;if(b.id==='gmclose')return closeMenu();const k=b.dataset.gm;GM.err=0;GM.saved=0;
-  if(k==='resume')return closeMenu();if(k==='save'){save();GM.saved=1;return renderMenu()}
+  if(k==='resume')return closeMenu();if(k==='ctl'){GM.title=true;return openCtlEd()}if(k==='save'){save();GM.saved=1;return renderMenu()}
   if(k==='title'){if(!GM.askT){GM.askT=1;return renderMenu()}return toTitle()}if(k==='exit'){if(!GM.askX){GM.askX=1;return renderMenu()}return exitGame()}GM.askT=GM.askX=0;
   if(k==='copy'){const c=saveCode();GM.code=c;GM.msg=(await copyText(c))?'Copied. Paste it into Import on your other device.':'Copy was blocked here. Use Show code and copy it by hand.';GM.err=0}
   else if(k==='show')GM.code=saveCode();
@@ -3160,6 +3166,52 @@ $('menubtn').addEventListener('click',()=>openMenu(false));$('impbtn').addEventL
   for(const id of['inv','tree','quests','craft','board','market','crisis','deepm']){const el=$(id);if(el&&!el.hidden){if(id==='crisis')closeCrisis();else if(id==='deepm'){DEEPM=null;unpause('deepm')}else unpause(id);return}}
   if(!$('creator').hidden){$('creator').hidden=true;$('title').hidden=false;return}if(!$('title').hidden){A.exitApp();return}openMenu(false)})})();
 addEventListener('keydown',e=>{if(e.code!=='Escape'||e.target.tagName==='INPUT'||e.target.tagName==='TEXTAREA')return;if(!$('gmenu').hidden){closeMenu();return}if(pl.ch&&S.started&&!S.paused&&!pl.dead)openMenu(false)});
+
+/* ---------- custom touch controls: move and resize every button, joystick size and mode ---------- */
+const CTL_K='mossgate-ctl';
+const CTL_DEF=()=>({b:{},op:1,stick:{mode:'float',s:1,x:.1,y:.8}});
+let CTL=(()=>{try{const c=JSON.parse(localStorage.getItem(CTL_K)||'null');return c&&c.b?{...CTL_DEF(),...c,stick:{...CTL_DEF().stick,...(c.stick||{})}}:CTL_DEF()}catch(_){return CTL_DEF()}})();
+const CTL_N={'b-atk':'Attack','b-jump':'Jump','b-s1':'Skill 1','b-s2':'Skill 2','b-s3':'Skill 3','b-roll':'Roll','b-guard':'Guard','b-pot':'Tonic'};
+let CBASE={};
+const pbs=()=>[...document.querySelectorAll('#pad .pb')];
+function ctlSave(){try{localStorage.setItem(CTL_K,JSON.stringify(CTL))}catch(_){}}
+function clearInline(b){for(const k of['position','left','top','right','bottom','width','height','fontSize'])b.style[k]=''}
+function measureBase(){const tv=$('touch').hidden;$('touch').hidden=false;for(const b of pbs()){if(CBASE[b.id])continue;const hid=b.hidden;b.hidden=false;clearInline(b);const r=b.getBoundingClientRect();if(r.width<4){b.hidden=hid;continue}
+    CBASE[b.id]={w:r.width,h:r.height,x:(r.left+r.width/2)/innerWidth,y:(r.top+r.height/2)/innerHeight,fs:parseFloat(getComputedStyle(b).fontSize)||9};b.hidden=hid}$('touch').hidden=tv}
+function applyBtn(b){const c=CTL.b[b.id],B=CBASE[b.id];if(!c||!B){clearInline(b);return}const s=clamp(c.s||1,.5,1.8),w=B.w*s,h=B.h*s,x=c.x??B.x,y=c.y??B.y;
+  Object.assign(b.style,{position:'fixed',right:'auto',bottom:'auto',width:w+'px',height:h+'px',left:clamp(x*innerWidth-w/2,0,innerWidth-w)+'px',top:clamp(y*innerHeight-h/2,0,innerHeight-h)+'px',fontSize:(B.fs*Math.min(1.3,Math.max(.8,s)))+'px'})}
+function applyCtl(){if(!isTouch)return;measureBase();for(const b of pbs())applyBtn(b);$('touch').style.opacity=CTL.op;stick.style.transform=CTL.stick.s!==1?`scale(${CTL.stick.s})`:'';stickRest()}
+function stickRest(){if(CTL.stick.mode==='fixed'||document.body.classList.contains('ctled')){stick.style.left=(CTL.stick.x*innerWidth)+'px';stick.style.top=(CTL.stick.y*innerHeight)+'px'}else{stick.style.left='80px';stick.style.top=(innerHeight-80)+'px'}knob.style.transform=''}
+addEventListener('resize',()=>{CBASE={};setTimeout(applyCtl,60)});
+/* editor */
+let CE=null;
+function openCtlEd(){if(!isTouch)return;if(!$('gmenu').hidden)$('gmenu').hidden=true;CE={sel:null,drag:null,hid:{}};S.paused=true;for(const k in inp)inp[k]=0;
+  $('touch').hidden=false;measureBase();for(const b of pbs()){CE.hid[b.id]=b.hidden;b.hidden=false}document.body.classList.add('ctled');$('ctlbar').hidden=false;applyCtl();renderCtlBar()}
+function closeCtlEd(){if(!CE)return;for(const b of pbs())b.hidden=CE.hid[b.id];document.body.classList.remove('ctled');$('ctlbar').hidden=true;pbs().forEach(b=>b.classList.remove('sel'));CE=null;ctlSave();applyCtl();
+  setupClassUI();S.paused=['inv','tree','quests','prolog','craft','board','market','crisis','deepm','gmenu'].some(k=>$(k)&&!$(k).hidden)||!!DLG}
+function renderCtlBar(){const sel=CE.sel,isStick=sel==='stick',c=sel&&!isStick?(CTL.b[sel]||{s:1}):null,pct=v=>Math.round(v*100);
+  $('ctlbar').innerHTML=`<div class="cth"><b>Edit controls</b><span>${sel?(isStick?'Joystick':CTL_N[sel])+' selected':'Drag any button or the joystick to move it. Tap one to resize it.'}</span></div>
+   <div class="ctrow">${sel&&!isStick?`<label>Size <input type="range" min="50" max="180" step="5" value="${pct(c.s||1)}" data-ct="size"><em>${pct(c.s||1)}%</em></label><button class="btn sm alt" data-ct="resetone">Reset button</button>`:''}
+   ${isStick?`<label>Size <input type="range" min="60" max="160" step="5" value="${pct(CTL.stick.s)}" data-ct="ssize"><em>${pct(CTL.stick.s)}%</em></label>`:''}
+   <label>Opacity <input type="range" min="25" max="100" step="5" value="${pct(CTL.op)}" data-ct="op"><em>${pct(CTL.op)}%</em></label>
+   <span class="ctseg">Joystick <button class="btn sm${CTL.stick.mode==='float'?'':' alt'}" data-ct="float">Follows thumb</button><button class="btn sm${CTL.stick.mode==='fixed'?'':' alt'}" data-ct="fixed">Fixed</button></span></div>
+   <div class="ctrow"><button class="btn sm alt" data-ct="resetall">${CE.askR?'Tap again to reset everything':'Reset all'}</button><button class="btn sm" data-ct="done">Done</button></div>`;
+  pbs().forEach(b=>b.classList.toggle('sel',b.id===sel));stick.classList.toggle('sel',isStick)}
+$('ctlbar').addEventListener('input',e=>{const t=e.target.dataset.ct;if(!t||!CE)return;const v=(+e.target.value)/100;
+  if(t==='size'){const id=CE.sel,B=CBASE[id];CTL.b[id]={x:B.x,y:B.y,...(CTL.b[id]||{}),s:v};applyBtn($(id))}else if(t==='ssize'){CTL.stick.s=v;stick.style.transform=`scale(${v})`}else if(t==='op'){CTL.op=v;$('touch').style.opacity=v}
+  const em=e.target.parentNode.querySelector('em');if(em)em.textContent=Math.round(v*100)+'%'});
+$('ctlbar').addEventListener('click',e=>{const b=e.target.closest('[data-ct]');if(!b||!CE||b.tagName==='INPUT')return;const t=b.dataset.ct;
+  if(t==='done')return closeCtlEd();if(t==='resetone'){delete CTL.b[CE.sel];applyBtn($(CE.sel))}if(t==='float'||t==='fixed'){CTL.stick.mode=t}
+  if(t==='resetall'){if(!CE.askR){CE.askR=1;return renderCtlBar()}CTL=CTL_DEF();CE.sel=null;applyCtl()}CE.askR=0;renderCtlBar()});
+document.addEventListener('pointerdown',e=>{if(!CE)return;const b=e.target.closest('#pad .pb');const onStick=!b&&Math.hypot(e.clientX-parseFloat(stick.style.left),e.clientY-parseFloat(stick.style.top))<58*CTL.stick.s;
+  if(!b&&!onStick)return;e.preventDefault();e.stopPropagation();const r=b?b.getBoundingClientRect():null;
+  CE.drag={id:b?b.id:'stick',pid:e.pointerId,ox:b?e.clientX-(r.left+r.width/2):e.clientX-parseFloat(stick.style.left),oy:b?e.clientY-(r.top+r.height/2):e.clientY-parseFloat(stick.style.top),sx:e.clientX,sy:e.clientY,moved:false};
+  CE.sel=CE.drag.id;renderCtlBar()},true);
+document.addEventListener('pointermove',e=>{if(!CE||!CE.drag||e.pointerId!==CE.drag.pid)return;e.preventDefault();const D=CE.drag;if(Math.hypot(e.clientX-D.sx,e.clientY-D.sy)>4)D.moved=true;if(!D.moved)return;
+  const x=clamp((e.clientX-D.ox)/innerWidth,0,1),y=clamp((e.clientY-D.oy)/innerHeight,0,1);
+  if(D.id==='stick'){CTL.stick.x=x;CTL.stick.y=y;if(CTL.stick.mode==='float')CTL.stick.mode='fixed';stickRest()}else{CTL.b[D.id]={s:1,...(CTL.b[D.id]||{}),x,y};applyBtn($(D.id))}},true);
+['pointerup','pointercancel'].forEach(ev=>document.addEventListener(ev,e=>{if(!CE||!CE.drag||e.pointerId!==CE.drag.pid)return;const mv=CE.drag.moved;CE.drag=null;if(mv)renderCtlBar()},true));
+{let ok=false;setInterval(()=>{const on=document.body.classList.contains('playing');if(on&&!ok){ok=true;CBASE={};applyCtl()}else if(!on)ok=false},300)}
 
 /* ---------- rendering ---------- */
 const wfC=document.createElement('canvas');let wfX=null,wfI=null,wcols=[];
@@ -3304,8 +3356,7 @@ document.querySelectorAll('.pb').forEach(b=>{const k=b.dataset.k;
   b.addEventListener('pointerdown',e=>{e.preventDefault();initAudio();inp[k]=1;b.classList.add('on');try{b.setPointerCapture(e.pointerId)}catch(_){}});
   ['pointerup','pointercancel','lostpointercapture'].forEach(ev=>b.addEventListener(ev,()=>{inp[k]=0;b.classList.remove('on')}))});
 const lz=$('lz'),stick=$('stick'),knob=$('knob');let sid=null,sx0=0,sy0=0;
-function stickRest(){stick.style.left='80px';stick.style.top=(innerHeight-80)+'px';knob.style.transform=''}
-lz.addEventListener('pointerdown',e=>{e.preventDefault();initAudio();sid=e.pointerId;sx0=e.clientX;sy0=e.clientY;stick.style.left=sx0+'px';stick.style.top=sy0+'px';try{lz.setPointerCapture(sid)}catch(_){}});
+lz.addEventListener('pointerdown',e=>{e.preventDefault();initAudio();sid=e.pointerId;if(CTL.stick.mode==='fixed'){sx0=parseFloat(stick.style.left);sy0=parseFloat(stick.style.top)}else{sx0=e.clientX;sy0=e.clientY;stick.style.left=sx0+'px';stick.style.top=sy0+'px'}try{lz.setPointerCapture(sid)}catch(_){}});
 lz.addEventListener('pointermove',e=>{if(e.pointerId!==sid)return;let dx=e.clientX-sx0,dy=e.clientY-sy0;const L=Math.hypot(dx,dy);if(L>42){dx*=42/L;dy*=42/L}
   knob.style.transform=`translate(${dx}px,${dy}px)`;inp.left=dx<-14?1:0;inp.right=dx>14?1:0;inp.up=dy<-24?1:0;inp.down=dy>24?1:0});
 ['pointerup','pointercancel','lostpointercapture'].forEach(ev=>lz.addEventListener(ev,e=>{if(e.pointerId!==sid)return;sid=null;inp.left=inp.right=inp.up=inp.down=0;stickRest()}));
@@ -3467,6 +3518,6 @@ requestAnimationFrame(loop);
 
 })();
 </script>
-<script>window.MG_BUILD='2026.11.03-1916';if('serviceWorker' in navigator&&location.protocol==='https:'){addEventListener('load',()=>navigator.serviceWorker.register('sw.js').catch(()=>{}))}</script>
+<script>window.MG_BUILD='2026.11.03-1930';if('serviceWorker' in navigator&&location.protocol==='https:'){addEventListener('load',()=>navigator.serviceWorker.register('sw.js').catch(()=>{}))}</script>
 
 </html>
