@@ -1,0 +1,21 @@
+const {chromium}=require('playwright');
+(async()=>{const b=await chromium.launch();const ctx=await b.newContext({viewport:{width:844,height:390},deviceScaleFactor:2});const p=await ctx.newPage();const errs=[];p.on('pageerror',e=>errs.push(e.stack.split('\n').slice(0,3).join(' | ')));
+await p.goto('file://'+process.cwd()+'/dbgp.html');await p.waitForTimeout(700);const ev=(f,a)=>p.evaluate(f,a);
+await ev(()=>{const r=Date.now.bind(Date);window.__off=0;Date.now=()=>r()+window.__off;const D=16*60*1000;const cur=((Date.now()/1000)/(16*60)+.42)%1;window.__off+=((.45-cur+1)%1)*D});
+await ev(()=>{const T=window.__T;T.beginWith({name:'Aya',cls:'ronin',look:{...T.DEF_LOOK,sex:1}},{lv:12,exp:0,sh:300,pt:3,inv:[],eq:null,sk:{},zone:5,q:{m1:{s:'d'},m2:{s:'d'}},mat:{ore:12,herb:4},fl:{crIntro:1,hints:9},tmin:false});T.pl.cr={id:null,wait:9999}});
+const zi=id=>ev(id=>window.__T.ZONES.findIndex(z=>z.id===id),id);
+const go=async(id,x)=>{const i=await zi(id);await ev(([i,x])=>{const T=window.__T;T.enterZone(i);T.pl.x=x+190;T.pl.y=T.topAt(T.pl.x)-1;T.pl.hp=T.pl.mhp},[i,x])};
+const talk=(n)=>ev(n=>{const T=window.__T;if(T.DLG)T.closeDlg();T.openTalk(n);const btn=[...document.querySelectorAll('#dlga button')].map(b=>b.dataset.a);const a=document.querySelector('[data-a^="done:"]')||document.querySelector('[data-a^="acc:"]');if(a)a.click();if(T.DLG)T.closeDlg();return n+':'+btn.join(',')},n);
+await go('stonebridge',960);await p.waitForTimeout(1500);await p.screenshot({path:'qr_sb.png'});
+for(const x of [140,700,1250,1650]){await go('quarry',x);await p.waitForTimeout(x===140?1800:900);await p.screenshot({path:'qr_'+x+'.png'})}
+console.log(await talk('dagna'));
+await ev(()=>{const T=window.__T;T.pl.hp=T.pl.mhp=99999;let n=0;for(const m of T.S.mobs){if((m.t==='blaster'||m.t==='raider')&&n<6){T.killMob(m);n++}}});console.log('qf1',await ev(()=>JSON.stringify(window.__T.pl.q.qf1)));await ev(()=>{window.__T.pl.q.qf1.n=6});
+console.log(await talk('dagna'));await p.waitForTimeout(500);console.log(await talk('dagna'));await ev(()=>{window.__T.pl.q.qf2.n=10});console.log('qf2',await ev(()=>JSON.stringify(window.__T.pl.q.qf2)));console.log(await talk('dagna'));await p.waitForTimeout(500);console.log(await talk('dagna'));
+await go('quarry',960);await ev(()=>{const T=window.__T;T.pl.hp=T.pl.mhp=5000});await p.waitForTimeout(7000);await p.screenshot({path:'qr_rock.png'});console.log('hp after rockfall',await ev(()=>window.__T.pl.hp+' rocks '+(window.__T.S.rocks||[]).length));
+await go('qfort',650);await p.waitForTimeout(1700);await p.screenshot({path:'qr_fort.png'});
+await ev(()=>{const T=window.__T;T.pl.hp=T.pl.mhp=99999;const m=T.S.mobs.find(m=>m.t==='crusher');m.aggro=9;T.hitMob(m,0,1);m.hp=Math.round(m.mhp*.4);T.pl.x=m.x-90});await p.waitForTimeout(3500);await p.screenshot({path:'qr_phase2.png'});
+await ev(()=>{const T=window.__T;T.killMob(T.S.mobs.find(m=>m.t==='crusher'))});await p.waitForTimeout(400);console.log('qf3',await ev(()=>JSON.stringify(window.__T.pl.q.qf3)));
+console.log(await talk('dagna'));await p.waitForTimeout(500);console.log(await talk('dagna'));
+await ev(()=>{window.__T.openTalk('dagna')});await p.waitForTimeout(200);await ev(()=>{const b=[...document.querySelectorAll('#dlga button')].find(b=>/cutters/.test(b.textContent));b&&b.click()});await p.waitForTimeout(600);
+console.log('qf4',await ev(()=>JSON.stringify(window.__T.pl.q.qf4)+' '+window.__T.pl.flags.qf4+' bag '+window.__T.pl.bag.map(i=>i.src+':'+i.slot).join(',')));
+console.log('ERR',errs.join('\n'));await b.close()})();
