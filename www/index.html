@@ -688,7 +688,7 @@ function buildTerrain(){
   if(Z.theme==='town')SEG.forEach((sg,i)=>{if(sg.t!=='solid')return;for(let x=sg.x;x<sg.x+sg.w;x++){for(let y=sg.y-7;y<sg.y-1;y++)if(hash(x,y,9)>.12||y<sg.y-3)sp(L,x,y,[0,0,0],0);
     const bx=Math.floor((x+(hash(Math.floor(x/7),1,4)*3|0))/7);for(let y=sg.y-1;y<sg.y+4;y++){const row=Math.floor((y-sg.y+1)/3),edge=(x+row*3)%7===0||(y-sg.y+1)%3===2;sp(L,x,y,edge?TH.rock[1]:pick(TH.rock,.45+hash(bx,row,5)*.35,x,y))}}});
   commit(L);Z.glows=[];for(const[k,x,v]of Z.props)PROPS[k](L.x,x,topAt(x),v);
-  for(const po of Z.portals){po.y=topAt(po.x);portalArch(L.x,po.x,po.y)}
+  for(const po of Z.portals){po.y=po.yy??topAt(po.x);if(po.cave)caveMouth(L.x,po.x,po.y);else portalArch(L.x,po.x,po.y)}
   for(const id of Z.npcs){const n=NPCS[id];n.y=topAt(n.x);if(n.sprite==='elder')elder(L.x,n.x,n.y)}
   return L.c}
 
@@ -799,6 +799,11 @@ const PROPS={
 };
 function portalArch(x,X,Y){const s=TH.rock.map(rgb),Rr=rr(x);Rr(X-13,Y-34,4,34,s[3]);Rr(X+9,Y-34,4,34,s[3]);Rr(X-13,Y-34,1,34,s[5]);Rr(X+9,Y-34,1,34,s[5]);
   Rr(X-15,Y-38,30,4,s[4]);Rr(X-15,Y-38,30,1,s[6]);Rr(X-9,Y-32,18,32,'#0b0910');Rr(X-11,Y-40,4,2,s[3]);Rr(X+7,Y-40,4,2,s[3])}
+function caveMouth(x,X,Y){const s=TH.rock.map(rgb),Rr=rr(x);
+  for(let k=-26;k<=26;k++){const h=Math.round(Math.sqrt(Math.max(0,1-(k*k)/676))*46);Rr(X+k,Y-h,1,h,s[(k+40)%3+2]);if(h>2)Rr(X+k,Y-h,1,2,s[5])}
+  for(let k=-14;k<=14;k++){const h=Math.round(Math.sqrt(Math.max(0,1-(k*k)/196))*34);Rr(X+k,Y-h,1,h,k*k<60?'#030204':'#0b0910')}
+  Rr(X-15,Y-32,3,32,'#5e3a1c');Rr(X+12,Y-32,3,32,'#5e3a1c');Rr(X-16,Y-34,32,3,'#7a4e26');Rr(X-16,Y-34,32,1,'#9a6a36');
+  for(let i=0;i<4;i++)Rr(X-9+i*2,Y-3-i*3,18-i*4,2,'#3a2e28');Rr(X-1,Y-31,3,4,'#ffb24a');Z.glows.push([X,Y-30,16,'255,190,110'])}
 function elder(x,X,Y){const Rr=rr(x);Rr(X-5,Y-16,10,16,'#3b3466');Rr(X-5,Y-16,3,16,'#2a2547');Rr(X-4,Y-20,8,4,'#3f6580');Rr(X-3,Y-25,6,5,'#8d8aa3');Rr(X+1,Y-23,1,1,'#1a1220');
   Rr(X-4,Y-29,8,4,'#2a2547');Rr(X-2,Y-31,4,2,'#2a2547');Rr(X-3,Y-21,6,3,'#e6dcc6');Rr(X+6,Y-30,1,30,'#5e3a1c');Rr(X+5,Y-33,3,3,'#ffb24a');Z.glows.push([X+6,Y-32,14,'255,190,110'])}
 
@@ -1940,8 +1945,8 @@ function update(dt){
       if(Math.random()<.7)S.parts.push({x:pr.x,y:pr.y,vx:rnd(-6,6),vy:rnd(-6,6),t:0,life:.35,c:Math.random()<.5?'#c9a8ff':'#9bd04c',g:0,s:1})}
     if(pr.k==='bolt'&&Math.random()<.6)S.parts.push({x:pr.x,y:pr.y,vx:rnd(-8,8),vy:rnd(-8,8),t:0,life:.35,c:Math.random()<.5?WT_PROJ.orb:'#d8ff9a',g:0,s:1});
     if(pr.vy>200&&pr.y>topAt(pr.x)+2){pr.t=9;continue}
-    const R=pr.k==='wave'?10:pr.k==='pierce'?8:5,V=pr.k==='wave'?14:7;
-    for(const m of S.mobs){if(m.dead||pr.hit.has(m))continue;const b=mbox(m);if(pr.x+R>b.l&&pr.x-R<b.r&&pr.y+V>b.t&&pr.y-V<b.b){pr.hit.add(m);hitMob(m,pr.mult*(pr.holy&&SPIRITS[m.t]?2*(1+pl.sm.holyP):1),pr.f);if(!pr.pierce){pr.t=9;break}}}}
+    const R=pr.k==='wave'?10:pr.k==='axe'?12:pr.k==='pierce'?8:5,V=pr.k==='wave'?14:pr.k==='axe'?13:7;
+    for(const m of S.mobs){if(m.dead||pr.hit.has(m))continue;const b={...mbox(m)};if(b.b-b.t<22)b.t-=22-(b.b-b.t);if(pr.x+R>b.l&&pr.x-R<b.r&&pr.y+V>b.t&&pr.y-V<b.b){pr.hit.add(m);hitMob(m,pr.mult*(pr.holy&&SPIRITS[m.t]?2*(1+pl.sm.holyP):1),pr.f);if(!pr.pierce){pr.t=9;break}}}}
   S.proj=S.proj.filter(p=>p.t<p.life);
   for(const dr of S.drops){dr.t+=dt;if(!dr.g){dr.vy=Math.min(dr.vy+GRAV*dt,400);dr.x=clamp(dr.x+dr.vx*dt,8,WW-8);const py=dr.y;dr.y+=dr.vy*dt;const ly=landY(dr.x,py,dr.y);if(ly!==null){dr.y=ly;dr.g=1}}
     if(!pl.dead&&dr.t>.35&&Math.abs(dr.x-pl.x)<14&&Math.abs(dr.y-(pl.y-6))<24){
@@ -6328,6 +6333,75 @@ const _cuS=crUse;crUse=function(n){if(!n||!['trail','knot','leviathan','plate'].
   if(n.k==='plate'){n.m.cared=S.t;addMat('spineplate',1,n.m.x,n.m.y);banner('Shed plate','You pick up a plate the spineback let fall on the path');dGain('handling',10);sfx.pick();save()}};
 const _clS=crLabel;crLabel=function(n){if(!n)return _clS(n);if(n.k==='trail')return'Read · Trail marker';if(n.k==='knot')return'Mend · Root-knot';if(n.k==='leviathan')return'Approach · The Silverwood Leviathan';if(n.k==='plate')return'Gather · shed plate (Spineback)';return _clS(n)};
 
+/* ---------- verticality: places below the ground and above it ----------
+   - Places that are underground open from a cave mouth in the ground (▼ to go down) instead of a side path.
+   - Places that are high up open from a ledge at the top of a climb of root-bridges and planks (▲ to go up).
+   - The dungeon sites the map packages list now exist: the Buried Road, the Stonecircle Chambers, the Silent Nest,
+     the Deepwood Root Chambers and the Spire's Observation Platform.
+   - Every outdoor place has a high route: a climb to a perch with a one-time hidden cache at the top. */
+THEMES.silversky={...THEMES.silverwood,ramps:{...THEMES.silverwood.ramps,far:R(['#6a8ca0','#7a9cb0','#8aacbe','#9cbccc','#b0cad8','#c4d8e2','#dce8ee'])},fog:'rgba(230,240,250,.16)',fog2:'rgba(255,255,255,.08)',ray:'255,250,230',rayA:2,vig:'10,14,18'};
+const segObj=([x,w,y,t])=>({x,w,y,t:t==='f'||t==='stone'||t==='plank'||t==='bridge'?'float':'solid',stone:t==='stone',bed:t==='bed',plank:t==='plank',bridge:t==='bridge'});
+const groundAt=(z,x)=>{let b=null;for(const s of z.seg)if((!s[3]||s[3]==='bed')&&x>=s[0]&&x<=s[0]+s[1]&&(b===null||s[2]<b))b=s[2];return b??250};
+const wetAt=(z,x)=>(z.pools||[]).some(p=>x>=p.x0&&x<=p.x1);
+/* sky: floating islands joined by root bridges; a fall drops you back to the start */
+SEG_PRE.sky=w=>{const o=[],n=Math.max(4,Math.round(w/330)),s=w/n;for(let i=0;i<n;i++){const x0=Math.round(i*s)+(i?40:0),x1=i<n-1?Math.round((i+1)*s)-40:w,y=[236,214,226,200,220,206][i%6];o.push([x0,x1-x0,y]);
+    if(i<n-1){const ny=[236,214,226,200,220,206][(i+1)%6];o.push([x1-6,92,Math.max(y,ny)+4,'plank'])}}return o};
+/* a zig-zag climb of planks from the ground at x up to a platform at height top; returns the platform's y */
+function climb(z,x,rise,tw=110){const g0=Math.max(groundAt(z,x-70),groundAt(z,x),groundAt(z,x+70)),wet=wetAt(z,x)||g0>256,g=wet?g0-28:g0,top=Math.max(70,Math.min(g,250)-rise),n=Math.max(2,Math.ceil((g-top)/32))+(wet?1:0),add=[];
+  if(wet)add.push([x-6-36,72,g,'plank']);const n2=n-(wet?1:0);
+  for(let i=0;i<n2-1;i++){const y=Math.round(g-(g-top)*(i+1)/n2),cx=x+(i%2?-30:30);add.push([cx-36,72,y,'plank'])}
+  add.push([x-Math.round(tw/2),tw,top,'plank']);for(const s of add){z.seg.push(s);(z.SEG=z.SEG||[]).push(segObj(s))}return top}
+const zid=id=>ZONES[zIdx(id)];
+const portalTo=(par,child)=>{const ci=zIdx(child);return par.portals.find(p=>p.to===ci)};
+const VMARK={};
+function goDown(parent,child){VMARK[child]='▼ ';const p=zid(parent),po=p&&portalTo(p,child);if(po){po.cave=1;const c=zid(child),back=c&&portalTo(c,parent);if(back)back.rise=1}}
+function goUp(parent,child,rise=130){VMARK[child]='▲ ';const p=zid(parent),po=p&&portalTo(p,child);if(!po||po.yy)return;po.yy=climb(p,po.x,rise);po.sky=1}
+/* existing places that belong below or above their neighbours */
+for(const[a,b]of[['town','under'],['town','deep'],['under','cistern'],['ruins','cellar'],['archive','deepcurrent'],['fenwatch','rotmire'],['mirror','echo'],['echo','veinfall'],['wildherd','stormwell'],['oak','mossroot'],['mossfen','brambledeep'],['bog','hollowfen']])if(zid(a)&&zid(b))goDown(a,b);
+for(const[a,b,r]of[['veinfall','shardspire',150],['starfalls','emeraldspire',120],['shardspire','fracplateau',130],['ironvale','granite',120]])if(zid(a)&&zid(b))goUp(a,b,r);
+/* the dungeon sites the map packages list */
+function vPlace(P,dir,rise){const zi=addPlace({...P,map:P.map||[0,dir==='down'?7:-7]});const z=ZONES[zi];z.vert=dir;if(dir==='down')goDown(P.from,P.id);else goUp(P.from,P.id,rise);z.cache=[z.ww-EDGE-160,0];return zi}
+vPlace({id:'buriedroad',name:'The Buried Road',reg:'golden',lv:[37,38],from:'longroad',at:.4,theme:'cellar',terrain:'ledges',ww:1800,
+  mobs:['bandit','burrower','roadhound','bandit','burrower'],props:['pillar','sealstone','pillar','cairn','pillar'],nodes:['ore','shard','ambergrain'],
+  labels:[[420,'A Collapsed Waystation',100],[1350,'Imperial Milestones',100]],
+  lore:{br_mile:{x:900,t:'An Imperial Milestone',b:'Cut into the pavement: the distance to MossGate, in a unit nobody uses any more. The road ran straight under the Plains long before the Plains were grass.'}}},'down');
+vPlace({id:'stonechambers',name:'The Stonecircle Chambers',reg:'golden',lv:[39,40],from:'stonecircle',at:.55,theme:'stormwell',terrain:'ledges',ww:1600,
+  mobs:['poacher','bandit','poacher','burrower'],props:['sealstone','pillar','sealstone','lshrine','sealstone'],nodes:['shard','ore'],
+  labels:[[1200,'The Alignment Chamber',100]],
+  lore:{sc_align:{x:800,t:'The Alignment Chamber',b:'A shaft of light falls through a cut in the stone above and lands on a mark in the floor. Twice a year it lands dead centre. The poachers down here were digging for treasure; there is none. Just the sky, measured.'}}},'down');
+vPlace({id:'silentnest',name:'The Silent Nest',reg:'silverwood',lv:[42,43],from:'silentcanopy',at:.5,theme:'silversky',terrain:'sky',ww:1600,
+  mobs:['glider','glider','trapper','glider','silverhare','trapper'],props:['silvertree','cocoon','silvertree','rootbridge','silvertree'],nodes:['vinecord','feysilk','moonresin'],
+  labels:[[1200,'High Canopy Rookery',100]],
+  lore:{sn_rookery:{x:800,t:'The Rookery',b:'Woven nests the size of carts, strung between silverwood crowns. Nothing up here has ever seen an axe. Speak quietly.'}}},'up',150);
+vPlace({id:'rootchambers',name:'The Root Chambers',reg:'silverwood',lv:[44,45],from:'deepwood',at:.6,theme:'deepwood',terrain:'water',ww:1800,
+  mobs:['starblight','rootsong','starblight','wyrmling','starblight'],props:['rootmass','pillar','rootmass','sealstone','rootmass'],nodes:['ironroot','pearlstone','moonresin'],
+  labels:[[1350,'The Flooded Archive',100]],
+  lore:{rc_archive:{x:900,t:'The Flooded Archive',b:'Shelves of clay tablets, half underwater, wrapped in living root. The roots have been reading them for centuries. They seem to have liked the gardening ones best.'}}},'down');
+vPlace({id:'observation',name:'The Observation Platform',reg:'silverwood',lv:[45,45],from:'emeraldspire',at:.75,theme:'silversky',terrain:'sky',ww:1600,
+  mobs:['glider','spineback','glider','moonlynx'],props:['silvertree','cairn','rootbridge','silvertree'],nodes:['starorchid','silverwood'],
+  labels:[[1250,'Above the Canopy',100]],
+  lore:{op_view:{x:1200,t:'Above the Canopy',b:'From here the whole Wilds roll away to the east, silver and green, and you can see the trails move. Not much. But they move.'}}},'up',150);
+/* high routes: one climb and hidden cache in every outdoor place */
+for(const z of ZONES){if(z.safe||z.interior||z.vert==='down'||['deep','town','hearth','home'].includes(z.id)||z.cache)continue;if(!z.seg||z.ww<1100)continue;
+  let x=null;for(const f of[.62,.55,.7,.45,.78,.38,.3,.85]){const c=freeX(z,f),g=groundAt(z,c);if((z.pools||[]).some(p=>c>p.x0-100&&c<p.x1+100))continue;
+    if([-100,-50,50,100].every(d=>groundAt(z,c+d)===g)&&!z.seg.some(sg=>sg[3]&&sg[0]<c+90&&sg[0]+sg[1]>c-90&&sg[2]>g-60)){x=c;break}}
+  if(x!==null)z.cache=[x,climb(z,x,118,70)]}
+const CACHE_Y=z=>z.cache[1]||topAt(z.cache[0]);
+const cacheX=z=>z.cache[0];
+function cacheOpen(){pl.flags.cache=pl.flags.cache||{};const z=Z,lv=z.lv[1],sh=Math.round(lv*7+20);pl.flags.cache[z.id]=1;pl.shards+=sh;
+  const rs=(z.nodes||[]).map(n=>n.r).filter(r=>RES[r]);const r=rs.length?rs[Math.floor(Math.random()*rs.length)]:'herb';addMat(r,2,pl.x,pl.y);if(Math.random()<.5)pl.pots=(pl.pots||0)+1;
+  S.nums.push({x:pl.x,y:pl.y-30,txt:'+'+sh+' shards',t:0,c:'#ffd27a'});banner(z.vert?'Hidden cache':'High cache','You found what someone left up here');sfx.pick();
+  for(let i=0;i<16;i++)S.parts.push({x:pl.x,y:pl.y-10,vx:(Math.random()-.5)*80,vy:-40-Math.random()*40,t:0,life:.8,c:i%2?'#ffd27a':'#fff4c2',g:120,s:2});save()}
+const _cnV=crNear;crNear=function(){const z=Z;if(z&&z.cache&&!(pl.flags.cache||{})[z.id]&&pl.onG){const x=cacheX(z),y=CACHE_Y(z);if(Math.abs(pl.x-x)<22&&Math.abs(pl.y-y)<4)return{k:'cache'}}return _cnV()};
+const _cuV=crUse;crUse=function(n){if(n&&n.k==='cache')return cacheOpen();return _cuV(n)};
+const _clV=crLabel;crLabel=function(n){if(n&&n.k==='cache')return'Open · '+(Z.vert?'Hidden cache':'High cache');return _clV(n)};
+function drawVert(cx,cy){const z=Z;if(!z||!pl.flags)return;if(z.cache&&!(pl.flags.cache||{})[z.id]){const X=cacheX(z),x=ri(X-cx),y=ri(CACHE_Y(z)-cy);if(x>-20&&x<W+20){
+    g.fillStyle='#000';g.fillRect(x-8,y-10,16,10);g.fillStyle='#7a4a24';g.fillRect(x-7,y-9,14,8);g.fillStyle='#a8682e';g.fillRect(x-7,y-9,14,2);g.fillStyle='#e3b04b';g.fillRect(x-1,y-6,3,3);
+    if(Math.sin(S.t*3)>.3){g.fillStyle='#fff4c2';g.fillRect(x+5,y-13,1,1)}}}}
+const _dsV=drawSealed;drawSealed=function(cx,cy){_dsV(cx,cy);drawVert(cx,cy)};
+/* arrive on the ledge, not under it */
+const _ezV=enterZone;enterZone=function(i,tx){const r=_ezV(i,tx);if(tx!=null){const po=Z.portals.find(p=>p.yy&&Math.abs(p.x-tx)<2);if(po){pl.y=po.yy;pl.onG=true;S.camY=clamp(pl.y-H*.64,0,WH-H)}}return r};
+
 /* ---------- Regions of Ashveil Reach, level bands 1–70, the level cap and Mastery ---------- */
 /* Seven regions ship now (cap 35). Seven more are reserved; each raises the cap by 5 when it is built. */
 const REGIONS=[
@@ -6545,7 +6619,7 @@ const _rmM=renderMap;renderMap=function(){_rmM();if(!MAP)return;const seen=pl.fl
   const ex=Object.entries(exits).map(([tr,from])=>{const o=wc[tr]||[50,50],dx=o[0]-me[0],dy=o[1]-me[1],m=Math.max(Math.abs(dx)/44,Math.abs(dy)/42)||1,x=50+dx/m,y=48+dy/m,f=pos[from[0]];
     lines.push(`<line x1="${f[0]}" y1="${f[1]}" x2="${x}" y2="${y}" class="unk"/>`);const R0=REGIONS.find(r=>r.id===tr);return`<button class="mpx" style="left:${Math.max(7,Math.min(93,x))}%;top:${Math.max(5,Math.min(93,y))}%" data-mv="${tr}">→ ${R0.n.replace(/^The /,'')}</button>`}).join('');
   const nodes=ids.map(id=>{const z=ZONES[zIdx(id)],[x,y]=pos[id],s=seen[id],w=WAYS[id]!=null?WAYS_ST(id):-1;
-    return`<button class="mpn${s?'':' unk'}${id===here?' here':''}${id===MAP.sel?' sel':''}${z.safe?' safe':''}${cz.includes(id)?' cris':''}" style="left:${x}%;top:${y}%" data-mz="${id}">${w>0?`<i class="ws${w===2||(pl.flags.waynet&&w)?' on':''}"></i>`:''}<span>${s?z.name.replace(/^The /,''):'?'}</span></button>`}).join('');
+    return`<button class="mpn${s?'':' unk'}${id===here?' here':''}${id===MAP.sel?' sel':''}${z.safe?' safe':''}${cz.includes(id)?' cris':''}" style="left:${x}%;top:${y}%" data-mz="${id}">${w>0?`<i class="ws${w===2||(pl.flags.waynet&&w)?' on':''}"></i>`:''}<span>${s?(VMARK[id]||'')+z.name.replace(/^The /,''):'?'}</span></button>`}).join('');
   $('mapgrid').innerHTML=`<svg class="full" viewBox="0 0 100 100" preserveAspectRatio="none">${lines.join('')}</svg>${nodes}${ex}`};
 const _omM=openMap;openMap=function(...a){MAPV.reset=1;return _omM(...a)};
 $('mapov').addEventListener('click',e=>{const b=e.target.closest('[data-mv]');if(!b||!MAP)return;MAPV.view=b.dataset.mv;if(MAPV.view!=='world'){const ids=MAP_IDS().filter(id=>regOfId(id)===MAPV.view);const sel=ids.find(id=>id===(Z&&Z.id))||ids.find(id=>(pl.flags.seen||{})[id])||ids[0];if(sel&&regOfId(MAP.sel)!==MAPV.view)MAP.sel=sel}renderMap()});
@@ -6774,7 +6848,7 @@ function render(){
   for(const po of Z.portals){const x=po.x-cx,y=po.y-cy;if(x<-30||x>W+30)continue;const lk=pl.lv<ZONES[po.to].req;glow(x,y-16,22,lk?'255,80,60':'120,220,255',.3)}g.restore();
   for(const po of Z.portals){const x=po.x-cx,y=po.y-cy;if(x<-30||x>W+30)continue;const lk=pl.lv<ZONES[po.to].req;
     for(let i=0;i<14;i++){const a=S.t*3+i*.45,r=3+(i%5)*1.4;g.fillStyle=lk?(i%2?'#d4483a':'#ff9a7a'):(i%2?'#6ec6e2':'#d8f6ff');g.fillRect(ri(x+Math.cos(a)*r*.8),ri(y-16+Math.sin(a)*r*1.6),1,1)}
-    if(S.nearPortal===po)ptext(po.next?'▲ DESCEND TO FLOOR '+(S.deep.n+1):lk?'SEALED · LV '+ZONES[po.to].req:'▲ '+ZONES[po.to].name.toUpperCase(),x,y-48+Math.sin(S.t*4),lk?'#ff6b6b':'#f2e6c8')}
+    if(S.nearPortal===po)ptext(po.next?'▲ DESCEND TO FLOOR '+(S.deep.n+1):lk?'SEALED · LV '+ZONES[po.to].req:(po.cave?'▼ ':'▲ ')+ZONES[po.to].name.toUpperCase(),x,y-48+Math.sin(S.t*4),lk?'#ff6b6b':'#f2e6c8')}
   for(const w of S.waves){if(w.t<0)continue;const x=ri(w.x-cx),y=ri(SEG[0].y-cy),hgt=6+ri(Math.sin(w.t*30)*2);g.fillStyle='#5a4a50';g.fillRect(x-3,y-hgt,6,hgt);g.fillStyle='#8a7a80';g.fillRect(x-2,y-hgt,2,hgt);g.fillStyle='#ffb24a';g.fillRect(x-1,y-3,2,2)}
   drawFolk(cx,cy);drawNpcs(cx,cy);drawNodes(cx,cy);drawLore(cx,cy);drawCrisis(cx,cy);drawDeep(cx,cy);drawReach(cx,cy);drawHearth(cx,cy);drawHome(cx,cy);drawLab(cx,cy);drawQuarry(cx,cy);drawUnder(cx,cy);drawRuins(cx,cy);drawDen(cx,cy);drawSiege(cx,cy);drawSealed(cx,cy);drawArms(cx,cy);drawPeers(cx,cy);
   for(const m of S.mobs)if(!m.dead)drawMob(m,cx,cy);
@@ -7025,6 +7099,6 @@ let UIZ=1;addEventListener('resize',()=>setTimeout(uiScale,30));uiScale();setInt
 
 })();
 </script>
-<script>window.MG_BUILD='2026.11.04-1513';if('serviceWorker' in navigator&&location.protocol==='https:'){addEventListener('load',()=>navigator.serviceWorker.register('sw.js').catch(()=>{}))}</script>
+<script>window.MG_BUILD='2026.11.04-1601';if('serviceWorker' in navigator&&location.protocol==='https:'){addEventListener('load',()=>navigator.serviceWorker.register('sw.js').catch(()=>{}))}</script>
 
 </html>

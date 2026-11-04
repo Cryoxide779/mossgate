@@ -261,8 +261,8 @@ function update(dt){
       if(Math.random()<.7)S.parts.push({x:pr.x,y:pr.y,vx:rnd(-6,6),vy:rnd(-6,6),t:0,life:.35,c:Math.random()<.5?'#c9a8ff':'#9bd04c',g:0,s:1})}
     if(pr.k==='bolt'&&Math.random()<.6)S.parts.push({x:pr.x,y:pr.y,vx:rnd(-8,8),vy:rnd(-8,8),t:0,life:.35,c:Math.random()<.5?WT_PROJ.orb:'#d8ff9a',g:0,s:1});
     if(pr.vy>200&&pr.y>topAt(pr.x)+2){pr.t=9;continue}
-    const R=pr.k==='wave'?10:pr.k==='pierce'?8:5,V=pr.k==='wave'?14:7;
-    for(const m of S.mobs){if(m.dead||pr.hit.has(m))continue;const b=mbox(m);if(pr.x+R>b.l&&pr.x-R<b.r&&pr.y+V>b.t&&pr.y-V<b.b){pr.hit.add(m);hitMob(m,pr.mult*(pr.holy&&SPIRITS[m.t]?2*(1+pl.sm.holyP):1),pr.f);if(!pr.pierce){pr.t=9;break}}}}
+    const R=pr.k==='wave'?10:pr.k==='axe'?12:pr.k==='pierce'?8:5,V=pr.k==='wave'?14:pr.k==='axe'?13:7;
+    for(const m of S.mobs){if(m.dead||pr.hit.has(m))continue;const b={...mbox(m)};if(b.b-b.t<22)b.t-=22-(b.b-b.t);if(pr.x+R>b.l&&pr.x-R<b.r&&pr.y+V>b.t&&pr.y-V<b.b){pr.hit.add(m);hitMob(m,pr.mult*(pr.holy&&SPIRITS[m.t]?2*(1+pl.sm.holyP):1),pr.f);if(!pr.pierce){pr.t=9;break}}}}
   S.proj=S.proj.filter(p=>p.t<p.life);
   for(const dr of S.drops){dr.t+=dt;if(!dr.g){dr.vy=Math.min(dr.vy+GRAV*dt,400);dr.x=clamp(dr.x+dr.vx*dt,8,WW-8);const py=dr.y;dr.y+=dr.vy*dt;const ly=landY(dr.x,py,dr.y);if(ly!==null){dr.y=ly;dr.g=1}}
     if(!pl.dead&&dr.t>.35&&Math.abs(dr.x-pl.x)<14&&Math.abs(dr.y-(pl.y-6))<24){

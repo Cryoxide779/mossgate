@@ -58,7 +58,7 @@ function render(){
   for(const po of Z.portals){const x=po.x-cx,y=po.y-cy;if(x<-30||x>W+30)continue;const lk=pl.lv<ZONES[po.to].req;glow(x,y-16,22,lk?'255,80,60':'120,220,255',.3)}g.restore();
   for(const po of Z.portals){const x=po.x-cx,y=po.y-cy;if(x<-30||x>W+30)continue;const lk=pl.lv<ZONES[po.to].req;
     for(let i=0;i<14;i++){const a=S.t*3+i*.45,r=3+(i%5)*1.4;g.fillStyle=lk?(i%2?'#d4483a':'#ff9a7a'):(i%2?'#6ec6e2':'#d8f6ff');g.fillRect(ri(x+Math.cos(a)*r*.8),ri(y-16+Math.sin(a)*r*1.6),1,1)}
-    if(S.nearPortal===po)ptext(po.next?'▲ DESCEND TO FLOOR '+(S.deep.n+1):lk?'SEALED · LV '+ZONES[po.to].req:'▲ '+ZONES[po.to].name.toUpperCase(),x,y-48+Math.sin(S.t*4),lk?'#ff6b6b':'#f2e6c8')}
+    if(S.nearPortal===po)ptext(po.next?'▲ DESCEND TO FLOOR '+(S.deep.n+1):lk?'SEALED · LV '+ZONES[po.to].req:(po.cave?'▼ ':'▲ ')+ZONES[po.to].name.toUpperCase(),x,y-48+Math.sin(S.t*4),lk?'#ff6b6b':'#f2e6c8')}
   for(const w of S.waves){if(w.t<0)continue;const x=ri(w.x-cx),y=ri(SEG[0].y-cy),hgt=6+ri(Math.sin(w.t*30)*2);g.fillStyle='#5a4a50';g.fillRect(x-3,y-hgt,6,hgt);g.fillStyle='#8a7a80';g.fillRect(x-2,y-hgt,2,hgt);g.fillStyle='#ffb24a';g.fillRect(x-1,y-3,2,2)}
   drawFolk(cx,cy);drawNpcs(cx,cy);drawNodes(cx,cy);drawLore(cx,cy);drawCrisis(cx,cy);drawDeep(cx,cy);drawReach(cx,cy);drawHearth(cx,cy);drawHome(cx,cy);drawLab(cx,cy);drawQuarry(cx,cy);drawUnder(cx,cy);drawRuins(cx,cy);drawDen(cx,cy);drawSiege(cx,cy);drawSealed(cx,cy);drawArms(cx,cy);drawPeers(cx,cy);
   for(const m of S.mobs)if(!m.dead)drawMob(m,cx,cy);

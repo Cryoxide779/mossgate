@@ -276,7 +276,7 @@ function buildTerrain(){
   if(Z.theme==='town')SEG.forEach((sg,i)=>{if(sg.t!=='solid')return;for(let x=sg.x;x<sg.x+sg.w;x++){for(let y=sg.y-7;y<sg.y-1;y++)if(hash(x,y,9)>.12||y<sg.y-3)sp(L,x,y,[0,0,0],0);
     const bx=Math.floor((x+(hash(Math.floor(x/7),1,4)*3|0))/7);for(let y=sg.y-1;y<sg.y+4;y++){const row=Math.floor((y-sg.y+1)/3),edge=(x+row*3)%7===0||(y-sg.y+1)%3===2;sp(L,x,y,edge?TH.rock[1]:pick(TH.rock,.45+hash(bx,row,5)*.35,x,y))}}});
   commit(L);Z.glows=[];for(const[k,x,v]of Z.props)PROPS[k](L.x,x,topAt(x),v);
-  for(const po of Z.portals){po.y=topAt(po.x);portalArch(L.x,po.x,po.y)}
+  for(const po of Z.portals){po.y=po.yy??topAt(po.x);if(po.cave)caveMouth(L.x,po.x,po.y);else portalArch(L.x,po.x,po.y)}
   for(const id of Z.npcs){const n=NPCS[id];n.y=topAt(n.x);if(n.sprite==='elder')elder(L.x,n.x,n.y)}
   return L.c}
 
@@ -387,6 +387,11 @@ const PROPS={
 };
 function portalArch(x,X,Y){const s=TH.rock.map(rgb),Rr=rr(x);Rr(X-13,Y-34,4,34,s[3]);Rr(X+9,Y-34,4,34,s[3]);Rr(X-13,Y-34,1,34,s[5]);Rr(X+9,Y-34,1,34,s[5]);
   Rr(X-15,Y-38,30,4,s[4]);Rr(X-15,Y-38,30,1,s[6]);Rr(X-9,Y-32,18,32,'#0b0910');Rr(X-11,Y-40,4,2,s[3]);Rr(X+7,Y-40,4,2,s[3])}
+function caveMouth(x,X,Y){const s=TH.rock.map(rgb),Rr=rr(x);
+  for(let k=-26;k<=26;k++){const h=Math.round(Math.sqrt(Math.max(0,1-(k*k)/676))*46);Rr(X+k,Y-h,1,h,s[(k+40)%3+2]);if(h>2)Rr(X+k,Y-h,1,2,s[5])}
+  for(let k=-14;k<=14;k++){const h=Math.round(Math.sqrt(Math.max(0,1-(k*k)/196))*34);Rr(X+k,Y-h,1,h,k*k<60?'#030204':'#0b0910')}
+  Rr(X-15,Y-32,3,32,'#5e3a1c');Rr(X+12,Y-32,3,32,'#5e3a1c');Rr(X-16,Y-34,32,3,'#7a4e26');Rr(X-16,Y-34,32,1,'#9a6a36');
+  for(let i=0;i<4;i++)Rr(X-9+i*2,Y-3-i*3,18-i*4,2,'#3a2e28');Rr(X-1,Y-31,3,4,'#ffb24a');Z.glows.push([X,Y-30,16,'255,190,110'])}
 function elder(x,X,Y){const Rr=rr(x);Rr(X-5,Y-16,10,16,'#3b3466');Rr(X-5,Y-16,3,16,'#2a2547');Rr(X-4,Y-20,8,4,'#3f6580');Rr(X-3,Y-25,6,5,'#8d8aa3');Rr(X+1,Y-23,1,1,'#1a1220');
   Rr(X-4,Y-29,8,4,'#2a2547');Rr(X-2,Y-31,4,2,'#2a2547');Rr(X-3,Y-21,6,3,'#e6dcc6');Rr(X+6,Y-30,1,30,'#5e3a1c');Rr(X+5,Y-33,3,3,'#ffb24a');Z.glows.push([X+6,Y-32,14,'255,190,110'])}
 
