@@ -1,7 +1,7 @@
 h=open('px/head.html').read().replace("@media (max-width:560px){#creator .panel","#creator,#inv,#tree,#quests,#craft,#board,#market,#crisis,#deepm,#gmenu,#mapov{place-items:stretch}\n@media (max-width:560px){#creator .panel")
 a="[hidden]{display:none!important}"
 h=h.replace(a,a+"\nbody:not(.playing) #hud,body:not(.playing) #tr,body:not(.playing) #expbar,body:not(.playing) #touch,body:not(.playing) #keys,body:not(.playing) #qtrack,body:not(.playing) #talkbtn,body:not(.playing) #crchip,body:not(.playing) #shoutbar{display:none!important}",1)
-js="\n".join(open('px/'+f).read() for f in ['js_core.js','js_data.js','js_char.js','js_mobs.js','js_game.js','js_story.js','js_craft.js','js_trade.js','js_world.js','js_ch3.js','js_crisis.js','js_bond.js','js_deep.js','js_reach.js','js_arms.js','js_home.js','js_lab.js','js_quarry.js','js_under.js','js_ruins.js','js_den.js','js_polish.js','js_save.js','js_ctl.js','js_render.js','js_ui.js'])
+js="\n".join(open('px/'+f).read() for f in ['js_core.js','js_data.js','js_char.js','js_mobs.js','js_game.js','js_story.js','js_craft.js','js_trade.js','js_world.js','js_ch3.js','js_crisis.js','js_bond.js','js_deep.js','js_reach.js','js_arms.js','js_home.js','js_lab.js','js_quarry.js','js_under.js','js_ruins.js','js_den.js','js_siege.js','js_polish.js','js_save.js','js_ctl.js','js_render.js','js_ui.js'])
 b="$('title').hidden=true;$('creator').hidden=true;S.started=true;catchUpMarket();enterZone("
 assert js.count(b)==1;js=js.replace(b,"document.body.classList.add('playing');"+b)
 full=h+"\n<script>\n(()=>{\n'use strict';\n"+js+"\n})();\n</script>\n"

@@ -1,0 +1,24 @@
+const {chromium}=require('playwright');
+(async()=>{const b=await chromium.launch();const ctx=await b.newContext({viewport:{width:844,height:390},deviceScaleFactor:2});const p=await ctx.newPage();const errs=[];p.on('pageerror',e=>errs.push(e.stack.split('\n').slice(0,3).join(' | ')));
+await p.goto('file://'+process.cwd()+'/dbgp.html');await p.waitForTimeout(700);const ev=(f,a)=>p.evaluate(f,a);
+await ev(()=>{const T=window.__T;T.beginWith({name:'Aya',cls:'ronin',look:{...T.DEF_LOOK,sex:1}},{lv:8,exp:0,sh:100,pt:3,inv:[],eq:null,sk:{},zone:5,q:{m1:{s:'d'},m2:{s:'d'}},fl:{crIntro:1,hints:9},tmin:false});T.pl.cr={id:null,wait:9999}});
+const zi=id=>ev(id=>window.__T.ZONES.findIndex(z=>z.id===id),id);
+const go=async(id,x)=>{const i=await zi(id);await ev(([i,x])=>{const T=window.__T;T.enterZone(i);T.pl.x=x+190;T.pl.y=T.topAt(T.pl.x)-1;T.pl.hp=T.pl.mhp},[i,x])};
+const talk=(n)=>ev(n=>{const T=window.__T;if(T.DLG)T.closeDlg();T.openTalk(n);const btn=[...document.querySelectorAll('#dlga button')].map(b=>b.dataset.a);const a=document.querySelector('[data-a^="done:"]')||document.querySelector('[data-a^="acc:"]');if(a)a.click();if(T.DLG)T.closeDlg();return n+':'+btn.join(',')},n);
+const use=async x=>{await ev(x=>{const T=window.__T;T.pl.x=x;T.pl.y=T.topAt(T.pl.x)-1},x);await p.waitForTimeout(200);const r=await ev(()=>JSON.stringify(window.__T.S.nearCr&&window.__T.S.nearCr.k)+' '+document.getElementById('talkbtn').textContent);await ev(()=>{const T=window.__T;if(T.S.nearCr)T.crUse(T.S.nearCr)});return r};
+await go('tower',1180);await p.waitForTimeout(1500);await p.screenshot({path:'sg_tower.png'});
+await go('siege',200);await p.waitForTimeout(1700);await p.screenshot({path:'sg_200.png'});console.log(await talk('vell'));
+console.log('start',await use(880+190));await ev(()=>{const T=window.__T;T.pl.hp=T.pl.mhp=99999});await p.waitForTimeout(4000);await p.screenshot({path:'sg_wave1.png'});
+console.log('w1',await ev(()=>{const T=window.__T;return JSON.stringify({w:T.S.siege&&T.S.siege.wave,gate:T.S.siege&&T.S.siege.gate,mobs:T.S.mobs.filter(m=>m.sg&&!m.dead).map(m=>m.t+':'+Math.round(m.x))})}));
+await p.waitForTimeout(5000);console.log('after sappers',await ev(()=>{const T=window.__T;return JSON.stringify({gate:T.S.siege&&T.S.siege.gate,mobs:T.S.mobs.filter(m=>m.sg&&!m.dead).map(m=>m.t+':'+Math.round(m.x))})}));
+console.log('crate',await use(160+190));console.log('fix',await use(880+190));console.log('gate',await ev(()=>window.__T.S.siege&&window.__T.S.siege.gate));
+for(let w=0;w<3;w++){await ev(()=>{const T=window.__T;for(const m of T.S.mobs)if(m.sg&&!m.dead)T.killMob(m)});await p.waitForTimeout(4600);const st=await ev(()=>{const T=window.__T;return JSON.stringify({w:T.S.siege&&T.S.siege.wave,res:T.S.siege&&T.S.siege.rescue.length})});console.log('wave',st);
+  if(w===1){await p.screenshot({path:'sg_wave2.png'});const rx=await ev(()=>window.__T.S.siege?window.__T.S.siege.rescue.map(r=>r.x):[]);for(const x of rx)console.log('rescue',await use(x))}}
+console.log('sg1',await ev(()=>JSON.stringify(window.__T.pl.q.sg1)+' held '+window.__T.pl.flags.siegeheld));
+console.log(await talk('vell'));await p.waitForTimeout(500);console.log(await talk('vell'));
+await go('siege',1300);await p.waitForTimeout(1600);await p.screenshot({path:'sg_gorrak.png'});console.log('gorrak',await ev(()=>window.__T.S.mobs.filter(m=>!m.dead).map(m=>m.t).join(',')));
+await ev(()=>{const T=window.__T;T.killMob(T.S.mobs.find(m=>m.t==='gorrak'))});await p.waitForTimeout(400);console.log('sg2',await ev(()=>JSON.stringify(window.__T.pl.q.sg2)));
+console.log(await talk('vell'));await p.waitForTimeout(500);console.log(await talk('vell'));await ev(()=>{window.__T.pl.q.sg3.n=12});await ev(()=>{window.__T.openTalk('vell')});await p.waitForTimeout(200);
+console.log(await ev(()=>[...document.querySelectorAll('#dlga button')].map(b=>b.dataset.a+'|'+b.textContent).join(' ; ')));await ev(()=>{const b=[...document.querySelectorAll('#dlga button')].find(b=>/beacon/.test(b.textContent));b&&b.click()});await p.waitForTimeout(700);
+console.log('sg3',await ev(()=>JSON.stringify(window.__T.pl.q.sg3)+' '+window.__T.pl.flags.sg3+' way '+window.__T.pl.flags.siegeway));
+console.log('ERR',errs.join('\n'));await b.close()})();
