@@ -17,7 +17,7 @@ const REGIONS=[
   {id:'veilspire',n:'The Veilspire',lv:[65,70]}];
 const CAP=Math.max(...REGIONS.filter(r=>r.built).map(r=>r.lv[1])),CAP_MAX=70;
 /* zone → region and level band */
-const ZBAND={town:['cresthollow',1,1],hearth:['cresthollow',1,1],home:['cresthollow',1,1],hunt:['cresthollow',2,2],road:['cresthollow',1,2],ruins:['cresthollow',2,4],under:['cresthollow',3,4],cellar:['cresthollow',4,4],cistern:['cresthollow',5,5],
+const ZBAND={town:['cresthollow',1,1],hearth:['cresthollow',1,1],home:['cresthollow',1,1],hunt:['cresthollow',2,2],road:['cresthollow',1,2],ruins:['cresthollow',2,4],under:['cresthollow',3,4],cellar:['cresthollow',4,4],cistern:['cresthollow',5,5],riversmeet:['cresthollow',2,3],stonefield:['cresthollow',3,4],mirefen:['cresthollow',4,5],highsteps:['cresthollow',1,1],
   outskirts:['whisper',5,6],briarwood:['whisper',6,7],oak:['whisper',6,8],briarlair:['whisper',7,7],hermit:['whisper',7,8],sawmill:['whisper',8,10],mossroot:['whisper',9,10],
   stonebridge:['stonebridge',10,10],quarry:['stonebridge',11,13],qfort:['stonebridge',14,14],
   falls:['mistyfen',15,17],shrine:['mistyfen',17,19],
@@ -34,7 +34,7 @@ const zoneRegion=z=>{const b=ZBAND[z.id];return b?REG(b[0]):null};
 {const u=ZONES[zIdx('under')];u.mobs.push(['wisp',-2,620],['wisp',-2,1240])}
 /* creature stats were tuned for their old zone; bring every creature to a level-1 baseline so level alone sets its strength */
 {const nat={};for(const z of ZONES){if(z.interior||z.id==='deep'||!ZBAND[z.id])continue;for(const d of z.mobs){const t=d[0];nat[t]=Math.min(nat[t]??99,z.lv[0])}}Object.assign(nat,{breaker:6,sapper:6,warhound:6,gorrak:7});
- for(const[t,n]of Object.entries(nat)){const d=MOBS[t];if(!d||n<=1)continue;const b=d.boss;d.hp=Math.max(1,Math.round(d.hp/(1+(b?.14:.25)*(n-1))));d.atk=Math.max(1,Math.round(d.atk/(1+(b?.12:.2)*(n-1))));
+ for(const[t,n]of Object.entries(nat)){const d=MOBS[t];if(!d||n<=1||d.base1)continue;const b=d.boss;d.hp=Math.max(1,Math.round(d.hp/(1+(b?.14:.25)*(n-1))));d.atk=Math.max(1,Math.round(d.atk/(1+(b?.12:.2)*(n-1))));
    d.exp=Math.max(1,Math.round(d.exp/(1+.3*(n-1))));if(d.shard)d.shard=d.shard.map(v=>Math.max(1,Math.round(v/(1+.12*(n-1)))))}}
 /* apply the bands */
 const OLD_LV={};
@@ -116,6 +116,10 @@ const NEW_Q=['c1','c3a','c3b','c4a','c4b'];
    if(q.reward){if(q.reward.exp)q.reward.exp=xp;if(q.reward.sh)q.reward.sh=sh}
    if(q.choices)for(const c of q.choices)if(c.reward){if(c.reward.exp)c.reward.exp=Math.round(xp*.8);if(c.reward.sh)c.reward.sh=Math.round(sh*2)}
    if(q.where)q.where=q.where.replace(/ \(sealed until Lv \d+\)/,'')}}
+/* a region's quests together pay at most what its levels need, so fighting still matters where side quests are plentiful */
+{const rq={},ql={},lvOf=k=>{if(ql[k])return ql[k];const q=MQ[k];return ql[k]=q.lv||(q.pre&&MQ[q.pre]&&q.pre!==k?lvOf(q.pre):1)};for(const[k,q]of Object.entries(MQ)){const l=lvOf(k),r=REGIONS.find(r=>r.built&&l>=r.lv[0]&&l<r.lv[1]);if(!r)continue;(rq[r.id]=rq[r.id]||[]).push(q)}
+ for(const r of REGIONS){const qs=rq[r.id];if(!qs)continue;let nd=0;for(let l=r.lv[0];l<r.lv[1];l++)nd+=need(l);const tot=qs.reduce((a,q)=>a+((q.reward&&q.reward.exp)||0),0),cap=nd*.75;if(tot<=cap)continue;const f=cap/tot;
+  for(const q of qs){if(q.reward&&q.reward.exp)q.reward.exp=Math.max(5,Math.round(q.reward.exp*f));if(q.choices)for(const c of q.choices)if(c.reward&&c.reward.exp)c.reward.exp=Math.max(5,Math.round(c.reward.exp*f))}}}
 /* hardcoded spawn levels follow the zone */
 /* ---------- level cap and Mastery ---------- */
 const MASTERY=[{id:'might',n:'Might',d:'+1% attack per rank'},{id:'vigor',n:'Vigor',d:'+1% health per rank'},{id:'focus',n:'Focus',d:'+0.5% critical chance per rank'},
