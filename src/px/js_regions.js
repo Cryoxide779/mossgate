@@ -21,7 +21,7 @@ const ZBAND={town:['cresthollow',1,1],hearth:['cresthollow',1,1],home:['cresthol
   outskirts:['whisper',5,6],briarwood:['whisper',6,7],oak:['whisper',6,8],briarlair:['whisper',7,7],whisperwood:['whisper',5,5],whispergrove:['whisper',6,7],moonpetal:['whisper',7,8],thornveil:['whisper',8,9],elderwood:['whisper',9,10],hermit:['whisper',7,8],sawmill:['whisper',8,10],mossroot:['whisper',9,10],
   stonebridge:['stonebridge',10,10],quarry:['stonebridge',11,13],qfort:['stonebridge',14,14],rivermere:['stonebridge',10,10],ironvale:['stonebridge',11,11],granite:['stonebridge',12,13],blackgate:['stonebridge',13,14],stonewatch:['stonebridge',14,15],
   falls:['mistyfen',15,17],shrine:['mistyfen',17,19],fenwater:['mistyfen',15,15],reedshore:['mistyfen',16,17],glasswater:['mistyfen',17,18],serpent:['mistyfen',18,19],archive:['mistyfen',19,20],
-  bog:['marrowbog',20,22],lab:['marrowbog',21,23],reach:['marrowbog',23,25],vats:['marrowbog',24,24],
+  bog:['marrowbog',20,22],lab:['marrowbog',21,23],reach:['marrowbog',23,25],vats:['marrowbog',24,24],mudcarver:['marrowbog',20,20],grasping:['marrowbog',21,22],fenwatch:['marrowbog',22,23],veilfen:['marrowbog',23,24],rotmire:['marrowbog',24,25],
   tower:['watchtower',25,27],siege:['watchtower',26,28],gate:['watchtower',27,29],outcrop:['watchtower',28,30],
   scar:['scar',30,32],inner:['scar',32,34],hollow:['scar',35,35]};
 const REG=id=>REGIONS.find(r=>r.id===id);
