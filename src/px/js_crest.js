@@ -133,3 +133,24 @@ Object.assign(QUESTS,{
 /* reading the teaching stones counts for the lesson */
 const HSR=['hsA','hsB','hsC'];
 const _olh=openLore;openLore=function(id){const r=_olh(id);if(HSR.includes(id)){const st=qSt('hs1');if(st&&st.s==='a'){st.n=HSR.filter(k=>pl.lore&&pl.lore[k]).length;qProgress('hs1','Stone')}}return r};
+/* ---------- starting kits from the CrestHollow sheet: Traveler, Scout, Guard, Aspirant, Gatherer ---------- */
+Object.assign(CLASSES,{
+  traveler:{name:"Traveler's Kit",weap:'spear',disc:'polearm',armor:'medium',desc:'Walking spear and a road-worn cloak. Starts trained in Spear & Polearm and Medium Armor.'},
+  scout:{name:"Scout's Kit",weap:'axe',disc:'axes',armor:'light',desc:'Hand axe and a hooded green jerkin. Starts trained in Axecraft and Light Armor.'},
+  guard:{name:"Guard's Kit",weap:'shield',disc:'shield',armor:'heavy',desc:'Arming sword, round shield and gate mail. Starts trained in Shieldcraft and Heavy Armor.'},
+  aspirant:{name:"Aspirant's Kit",weap:'staff',disc:'restore',armor:'robes',desc:'Lantern staff and a blue novice robe from the High Steps. Starts trained in Restoration and Robes.'},
+  gatherer:{name:"Gatherer's Kit",weap:'hammer',disc:'hammer',armor:'medium',extra:['herbalism','mining','logging'],mat:{herb:4,ore:4,timber:4},
+    desc:'Work hammer, sturdy leathers and a full pack. Starts trained in Hammer & Mace and Medium Armor, with a start in Herbalism, Mining and Logging, and a few materials.'}});
+const KS=(set,pal,head,chest,hands,feet,charm)=>({set,drop:0,start:1,pal,head,chest,hands,feet,charm:charm||{n:'Red Cord Knot',s:'knot'},weap:{}});
+Object.assign(GEAR,{
+  tv_start:KS('Traveler',['#5a4632','#3a2c20','#7a6248','#e6d6b0','#4a6a3a'],{n:'Traveler Hood',nf:'Traveler Hood',s:'hood'},{n:'Road Cloak',nf:'Road Cloak',s:'leather'},{n:'Road Gloves',nf:'Road Gloves'},{n:'Trail Boots',nf:'Trail Boots'},{n:'Waystone Token',s:'coin'}),
+  sc_start:KS('Scout',['#3e5a32','#26381e','#5e7a46','#e6d6b0','#8a6a3a'],{n:'Scout Hood',nf:'Scout Hood',s:'hood'},{n:'Scout Jerkin',nf:'Scout Jerkin',s:'leather'},{n:'Scout Bracers',nf:'Scout Bracers'},{n:'Soft Boots',nf:'Soft Boots'}),
+  gd_start:KS('Guard',['#6a707a','#3e434a','#9aa0a8','#e6d6b0','#2f4e86'],{n:'Gate Helm',nf:'Gate Helm',s:'visor'},{n:'Gate Mail',nf:'Gate Mail',s:'plate'},{n:'Mail Gauntlets',nf:'Mail Gauntlets'},{n:'Guard Greaves',nf:'Guard Greaves'},{n:'Gate Badge',s:'coin'}),
+  as_start:KS('Aspirant',['#3a5a8a','#24385a','#5a7aaa','#f2e6c8','#e3b04b'],{n:'Novice Hood',nf:'Novice Hood',s:'cowl'},{n:'Novice Robe',nf:'Novice Robe',s:'robe'},{n:'Lantern Cuffs',nf:'Lantern Cuffs'},{n:'Step Sandals',nf:'Step Sandals'},{n:'Lantern Charm',s:'lamp'}),
+  ga_start:KS('Gatherer',['#7a5a3a','#4a3624','#9a7a54','#e6d6b0','#6a8a3a'],{n:'Gatherer Hat',nf:'Gatherer Hat',s:'kasa'},{n:'Gatherer Leathers',nf:'Gatherer Leathers',s:'leather'},{n:'Work Gloves',nf:'Work Gloves'},{n:'Mud Boots',nf:'Mud Boots'},{n:'Seed Pouch',s:'knot'})});
+Object.assign(START,{traveler:'tv_start',scout:'sc_start',guard:'gd_start',aspirant:'as_start',gatherer:'ga_start'});
+{const WN={tv_start:{spear:'Walking Spear'},sc_start:{axe:'Scout Hatchet'},gd_start:{shield:'Arming Sword & Round Shield'},as_start:{staff:'Lantern Staff'},ga_start:{hammer:'Work Hammer'}};
+ for(const k of Object.keys(WN)){const W2=GEAR[k].weap;Object.assign(W2,WN[k]);for(const w of Object.keys(WPN))if(!W2[w])W2[w]=GEAR[k].set+' '+WEAP_N[w]}
+ for(const k of['r_start','s_start','a_start','w_start','n_start']){const W2=GEAR[k].weap;for(const w of Object.keys(WPN))if(!W2[w])W2[w]=GEAR[k].set+' '+WEAP_N[w]}}
+/* a new Gatherer starts with the gathering trades and a full pack */
+const _bwk=beginWith;beginWith=function(ch,sv){const r=_bwk(ch,sv);if(!sv){const K=CLASSES[pl.ch.cls];if(K&&K.extra)for(const d of K.extra)pl.dx[d]=Math.max(pl.dx[d]||0,dCum(1));if(K&&K.mat)for(const[m,n]of Object.entries(K.mat))pl.mat[m]=(pl.mat[m]||0)+n}return r};
