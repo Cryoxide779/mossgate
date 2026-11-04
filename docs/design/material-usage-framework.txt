@@ -1,0 +1,1553 @@
+THE FALL OF MOSSGATE: STUDIO EDITION
+ASHVEIL REACH MATERIAL USAGE FRAMEWORK
+
+Document Purpose
+This document consolidates the current material-usage framework for The Fall of MossGate. It connects raw resources, processing, crafting, construction, regional identity, trade, creature welfare, provenance, repair, recycling, and detailed map development.
+
+======================================================================
+1. MATERIAL DESIGN RULE
+======================================================================
+
+Every harvestable material needs seven connected definitions:
+
+1. Source
+   - Where the material comes from.
+
+2. Harvest Method
+   - Mining, logging, gathering, hunting, salvaging, farming, cultivating, cleansing, negotiating, or another approved method.
+
+3. Processing
+   - Smelting, tanning, drying, milling, weaving, refining, carving, stabilizing, enchanting, or another required transformation.
+
+4. Primary Properties
+   - Weight, hardness, flexibility, conductivity, insulation, resonance, durability, toxicity, rarity, and other defining characteristics.
+
+5. Gameplay Uses
+   - Weapons, armor, buildings, tools, medicine, rituals, creature equipment, vehicles, trade, or other practical applications.
+
+6. Regional Importance
+   - Which zones produce, consume, export, restrict, regulate, or fight over the material.
+
+7. Lifecycle
+   - Damage, repair, recycling, contamination, degradation, inheritance, provenance, and end-of-life handling.
+
+======================================================================
+2. METALS AND ORES
+======================================================================
+
+IRON
+
+Properties:
+- Common.
+- Strong.
+- Moderately heavy.
+- Easy to repair.
+- Accepts many finishes and enchantments.
+
+Uses:
+- Weapons.
+- Armor.
+- Nails and brackets.
+- Tools.
+- Wagon hardware.
+- Gates.
+- Chains.
+- Companion barding.
+- Construction reinforcement.
+
+Primary Producers:
+- Stonebridge.
+- Old Watchtower.
+- The Shattered Crown.
+
+Design Role:
+Iron establishes the baseline against which advanced metals are measured. Iron should never become useless merely because rarer materials exist.
+
+STEEL
+
+Steel is a processed material rather than a raw resource.
+
+Properties Depend On:
+- Ore quality.
+- Carbon source.
+- Furnace temperature.
+- Quenching liquid.
+- Heat treatment.
+- Smithing quality.
+- Component geometry.
+
+Uses:
+- Professional weapon components.
+- Medium and heavy armor.
+- Springs.
+- Mechanisms.
+- Tools.
+- Fortifications.
+- Vehicle parts.
+- Reinforced creature equipment.
+
+Regional Specializations:
+- Stonebridge: industrial and standardized steel.
+- Old Watchtower: defensive and battlefield steel.
+- The Shattered Crown: recovered royal steel.
+- Saltsong Desert: heat-treated desert steel.
+
+COPPER
+
+Properties:
+- Soft.
+- Corrosion resistant.
+- Highly conductive.
+- Easy to shape.
+- Strong magical and electrical routing potential.
+
+Uses:
+- Conduits.
+- Alchemical equipment.
+- Decorative construction.
+- Plumbing.
+- Cooking vessels.
+- Communication devices.
+- Lightning equipment.
+- Ritual circles.
+- Creature-sensing harnesses.
+
+Primary Producers:
+- Stonebridge.
+- The Golden Plains.
+- Saltsong Desert.
+
+BRONZE
+
+Properties:
+- Durable.
+- Corrosion resistant.
+- Easier to cast than steel.
+- Well suited to marine and ceremonial applications.
+
+Uses:
+- Coastal armor.
+- Ship fittings.
+- Bells.
+- Statues.
+- Ritual equipment.
+- Shields.
+- Polearm heads.
+- Public monuments.
+- Construct components.
+
+Important Regions:
+- The Verdant Coast.
+- Emerald Isles.
+- Misty Fen Lake.
+- Saltsong Desert.
+
+SILVER
+
+Properties:
+- Conducts certain Sacred, spiritual, and cleansing effects.
+- Soft without alloying.
+- Valuable.
+- Visually identifiable.
+- Useful against specific supernatural states.
+
+Uses:
+- Exorcist tools.
+- Spirit-contact equipment.
+- Ritual wire.
+- Weapon inlays.
+- Medical instruments.
+- Identification seals.
+- Anti-corruption containers.
+- Funerary objects.
+
+Important Regions:
+- The Shattered Crown.
+- Whisper Woods.
+- Old Watchtower.
+- Frostveil Expanse.
+
+Design Rule:
+Silver is not a universal monster-killing metal. Effectiveness depends on the target, preparation, alloy, ritual, and weapon construction.
+
+GOLD
+
+Properties:
+- Soft.
+- Corrosion resistant.
+- Highly workable.
+- Valuable.
+- Strong ceremonial and magical-routing use.
+
+Uses:
+- Sacred conduits.
+- Authority seals.
+- Currency reserves.
+- Jewelry.
+- High-status commissions.
+- Enchantment channels.
+- Diplomatic gifts.
+- Memorial objects.
+
+Important Regions:
+- The Golden Plains.
+- Saltsong Desert.
+- The Shattered Crown.
+
+Design Rule:
+Gold normally supports a stronger structural material rather than replacing it.
+
+FROSTIRON
+
+Status: Proposed regional material.
+
+Source:
+- Frostveil Expanse glacial deposits.
+- Cold-forged northern ruins.
+
+Properties:
+- Retains cold.
+- Resists brittle failure at low temperatures.
+- Difficult to heat and forge.
+- Dampens heat-based effects.
+
+Uses:
+- Cold-weather tools.
+- Ice-cutting weapons.
+- Heat-resistant containers.
+- Cold-storage equipment.
+- Frost wards.
+- Mountain equipment.
+
+Weakness:
+Poorly treated Frostiron can become unstable in extreme heat.
+
+CROWNSTEEL
+
+Status: Proposed historical alloy.
+
+Source:
+- Royal armories.
+- Broken fortress gates.
+- Burial vaults.
+- Shattered Crown ruins.
+
+Properties:
+- Exceptional structural memory.
+- Durable under repeated repair.
+- Often carries historical resonance.
+- Difficult to reforge without losing provenance.
+
+Uses:
+- Heirloom weapons.
+- Restoration projects.
+- Authority seals.
+- Defensive equipment.
+- Memorial items.
+- Successor equipment.
+
+SHARDMETAL
+
+Source:
+- Metal altered by prolonged Shard exposure.
+- Stabilized through controlled alloying with ordinary metals.
+
+Properties:
+- High magical conductivity.
+- Unpredictable resonance.
+- Can amplify multiple magical sources.
+- Can contaminate nearby components.
+
+Uses:
+- Advanced conduits.
+- Shard-resistant equipment.
+- Research tools.
+- Exorcist devices.
+- High-risk weapons.
+- Containment mechanisms.
+
+Requirements:
+- Stabilization.
+- Provenance.
+- Containment rating.
+- Exposure record.
+- Legal handling status.
+
+======================================================================
+3. STONE, CLAY, GLASS, AND MINERAL MATERIALS
+======================================================================
+
+GRANITE
+
+Uses:
+- Foundations.
+- Bridges.
+- Defensive walls.
+- Roads.
+- Monuments.
+- Heavy crafting stations.
+- Construct bodies.
+
+Primary Regions:
+- Stonebridge.
+- Old Watchtower.
+- Frostveil Expanse.
+
+LIMESTONE
+
+Uses:
+- Mortar.
+- Plaster.
+- Agricultural soil treatment.
+- Civic buildings.
+- Kiln production.
+- Purification compounds.
+
+Primary Regions:
+- The Golden Plains.
+- Stonebridge.
+- The Verdant Coast.
+
+MARBLE
+
+Uses:
+- Temples.
+- Civic buildings.
+- Memorials.
+- Baths.
+- High-status interiors.
+- Spirit and Sacred sites.
+
+Primary Regions:
+- The Shattered Crown.
+- The Verdant Coast.
+- Saltsong Desert.
+
+SLATE
+
+Uses:
+- Roofing.
+- Floor tiles.
+- Writing tablets.
+- Drainage.
+- Heat-resistant surfaces.
+- Armor inserts in specialized equipment.
+
+Primary Regions:
+- Old Watchtower.
+- Silverwood Wilds.
+- Frostveil Expanse.
+
+BOGSTONE
+
+Source:
+- Mineral deposits formed beneath Marrowbog wetlands.
+
+Properties:
+- Water resistant.
+- Porous before treatment.
+- Retains alchemical residues.
+- Can absorb contamination.
+
+Uses:
+- Foundations.
+- Water filters.
+- Alchemical vessels.
+- Containment structures.
+- Ritual markers.
+
+SALT
+
+Uses:
+- Food preservation.
+- Medicine.
+- Trade.
+- Leather curing.
+- Ritual boundaries.
+- Spirit and contamination control.
+- Livestock care.
+- Alchemy.
+
+Primary Regions:
+- Saltsong Desert.
+- The Verdant Coast.
+- Emerald Isles.
+
+Design Role:
+Salt is a strategically important resource rather than ordinary vendor clutter.
+
+CLAY
+
+Uses:
+- Pottery.
+- Bricks.
+- Roof tiles.
+- Molds.
+- Crucibles.
+- Insulation.
+- Water storage.
+- Alchemical containers.
+- Construction fill.
+
+Regional Variation:
+Regional clay types can influence heat resistance, porosity, color, and magical retention.
+
+GLASS
+
+Ordinary Glass Uses:
+- Windows.
+- Bottles.
+- Lenses.
+- Lanterns.
+- Greenhouses.
+- Medical containers.
+
+Frostglass Uses:
+- Cold-resistant observation windows.
+- Weather instruments.
+- Frost storage.
+
+Hollowglass Uses:
+- Shard research.
+- Spirit containment.
+- Magical optics.
+- Dangerous conduits.
+
+Seaglass Uses:
+- Decorative objects.
+- Coastal jewelry.
+- Ritual mosaics.
+- Low-level magical focuses.
+
+Mirror Glass Uses:
+- Investigation.
+- Reflection rituals.
+- Illusion work.
+- Signaling.
+- Survey equipment.
+
+======================================================================
+4. WOOD AND PLANT STRUCTURAL MATERIALS
+======================================================================
+
+ASHWOOD
+
+Properties:
+- Flexible.
+- Shock resistant.
+- Reliable.
+- Common near the starting region.
+
+Uses:
+- Weapon shafts.
+- Tool handles.
+- Bows.
+- Wagon frames.
+- Furniture.
+- Companion harness frames.
+
+Primary Region:
+- CrestHollow and the Ash Road.
+
+ELDERWOOD
+
+Properties:
+- Spirit sensitive.
+- Strong for its weight.
+- Can retain memory or bond resonance.
+- Requires careful harvesting.
+
+Uses:
+- Companion equipment.
+- Magical focuses.
+- Sanctuary construction.
+- Heirloom tools.
+- Musical instruments.
+- Spirit shrines.
+
+Primary Region:
+- Whisper Woods.
+
+Harvesting Rule:
+Living Elderwood is normally gathered through stewardship, fallen limbs, pruning, trade, or forest permission rather than careless logging.
+
+MIREWOOD
+
+Properties:
+- Naturally water resistant.
+- Dense.
+- Difficult to dry.
+- May carry toxins or contamination.
+
+Uses:
+- Boardwalks.
+- Boats.
+- Swamp housing.
+- Water gates.
+- Alchemical structures.
+- Polearms and tool handles.
+
+Primary Region:
+- Marrowbog.
+
+DRIFTWOOD
+
+Properties:
+- Salt treated.
+- Irregular.
+- Readily available.
+- Strong cultural identity.
+
+Uses:
+- Coastal housing.
+- Boat repair.
+- Sculpture.
+- Temporary tools.
+- Ritual markers.
+- Furniture.
+
+Primary Regions:
+- Misty Fen Lake.
+- The Verdant Coast.
+- Emerald Isles.
+
+SILVERWOOD
+
+Properties:
+- Pale grain.
+- Flexible.
+- Naturally reflective.
+- Responsive to moonlight and some spirit effects.
+
+Uses:
+- Bows.
+- Musical instruments.
+- Precision tools.
+- Spirit equipment.
+- Lightweight armor laminates.
+- Decorative architecture.
+
+Primary Region:
+- Silverwood Wilds.
+
+SUNWOOD
+
+Properties:
+- Heat tolerant.
+- Resistant to drying and splitting.
+- Warm golden grain.
+
+Uses:
+- Desert tools.
+- Shelters.
+- Wagon components.
+- Bows.
+- Solar or heat-associated magical equipment.
+
+Primary Regions:
+- Saltsong Desert.
+- The Golden Plains.
+
+IRONROOT
+
+Properties:
+- Extremely dense.
+- Slow growing.
+- Strong under compression.
+- Difficult to process.
+
+Uses:
+- Defensive structures.
+- Shields.
+- Heavy tool handles.
+- Bridge supports.
+- Construct frames.
+- Creature-armor backing.
+
+Primary Regions:
+- Silverwood Wilds.
+- Whisper Woods.
+- The Shattered Crown.
+
+======================================================================
+5. FIBERS, CLOTH, LEATHER, AND FLEXIBLE MATERIALS
+======================================================================
+
+WOOL
+
+Uses:
+- Clothing.
+- Blankets.
+- Padding.
+- Armor underlayers.
+- Insulation.
+- Saddle blankets.
+- Filtered storage.
+- Tenting.
+
+Primary Regions:
+- The Golden Plains.
+- Old Watchtower.
+- Frostveil Expanse.
+
+LINEN
+
+Uses:
+- Light clothing.
+- Bandages.
+- Sailcloth.
+- Armor padding.
+- Filtration.
+- Bookbinding.
+- Ritual wraps.
+
+Primary Regions:
+- The Golden Plains.
+- CrestHollow.
+- The Verdant Coast.
+
+HEMP
+
+Uses:
+- Rope.
+- Canvas.
+- Nets.
+- Bowstrings.
+- Harnesses.
+- Sails.
+- Sacks.
+- Scaffolding.
+- Bridge reinforcement.
+
+Primary Regions:
+- The Golden Plains.
+- The Verdant Coast.
+- Misty Fen Lake.
+
+KELP FIBER
+
+Properties:
+- Water tolerant.
+- Flexible.
+- Strong when properly processed.
+- Biodegradable.
+
+Uses:
+- Nets.
+- Ropes.
+- Coastal clothing.
+- Aquatic harnesses.
+- Sail reinforcement.
+- Medical wraps.
+- Light armor layers.
+
+Primary Regions:
+- Misty Fen Lake.
+- The Verdant Coast.
+- Emerald Isles.
+
+REED FIBER
+
+Uses:
+- Mats.
+- Baskets.
+- Light construction.
+- Floats.
+- Insulation.
+- Paper.
+- Simple armor panels.
+- Creature bedding.
+
+Primary Regions:
+- Marrowbog.
+- Misty Fen Lake.
+- The Golden Plains.
+
+ORDINARY LEATHER
+
+Properties vary according to:
+- Species.
+- Body location.
+- Age.
+- Treatment.
+- Thickness.
+- Condition.
+
+Uses:
+- Armor.
+- Belts.
+- Boots.
+- Scabbards.
+- Packs.
+- Grips.
+- Saddles.
+- Harnesses.
+- Machine belts.
+- Book covers.
+
+SPECIALIZED HIDES
+
+Boar Hide:
+- Abrasion resistant.
+- Used for straps, gloves, saddle components, and medium-armor reinforcement.
+
+Deer Hide:
+- Flexible.
+- Used for light clothing, gloves, quiet armor, and pouches.
+
+Ursine Hide:
+- Thick.
+- Insulating.
+- Used for heavy protection, cold-weather equipment, and bedding.
+
+Drake Hide:
+- Properties depend on source and species.
+- Can provide heat, cold, acid, water, or magical resistance.
+- Used for rare armor and protective linings.
+
+Aquatic Hide:
+- Water resistant.
+- Used for diving equipment, gloves, boots, boat components, and creature harnesses.
+
+Corrupted Hide:
+- Dangerous until cleansed or contained.
+- Used for research, specialized protection, or high-risk crafting.
+
+Creature-Material Rule:
+Creature materials require welfare, ownership, legality, provenance, and contamination rules. Recruitment remains an alternative to harvesting creatures.
+
+======================================================================
+6. CREATURE-DERIVED MATERIALS
+======================================================================
+
+Creature-derived materials do not all require killing.
+
+Renewable Sources:
+- Shed antlers.
+- Molted scales.
+- Feathers.
+- Wool.
+- Fur brushing.
+- Responsibly gathered eggs.
+- Shell fragments.
+- Secretions.
+- Silk.
+- Venom extraction.
+- Naturally lost teeth.
+- Claws shed during growth.
+- Spirit residue voluntarily given.
+- Companion-assisted gathering.
+
+Recovery Sources:
+- Carcasses found in the environment.
+- Predation remains.
+- Lawful hunting.
+- Ecological population control.
+- Medical removal.
+- Battlefield salvage.
+- Sanctuary donations.
+- Funerary permission.
+
+Uses:
+- Armor.
+- Weapons.
+- Medicine.
+- Antidotes.
+- Tools.
+- Musical instruments.
+- Ritual items.
+- Enchantment.
+- Creature equipment.
+- Scientific study.
+- Regional cuisine.
+
+Required Tracking:
+- Species.
+- Individual source when known.
+- Collection method.
+- Welfare status.
+- Legal status.
+- Contamination.
+- Freshness.
+- Processing.
+- Ownership.
+- Cultural restrictions.
+
+======================================================================
+7. CRYSTALS AND MAGICAL MINERALS
+======================================================================
+
+FOCUS CRYSTAL
+
+Uses:
+- Spell focus.
+- Precision tools.
+- Magical measurement.
+- Communication.
+- Crafting stations.
+- Medical equipment.
+
+TIDE CRYSTAL
+
+Properties:
+- Responds to water, pressure, current, and weather.
+
+Uses:
+- Navigation.
+- Boats.
+- Underwater equipment.
+- Storm warning.
+- Aquatic magic.
+- Pumps and water systems.
+
+Primary Regions:
+- Misty Fen Lake.
+- The Verdant Coast.
+- Emerald Isles.
+
+FEN CRYSTAL
+
+Properties:
+- Stores environmental, alchemical, or spiritual residue.
+
+Uses:
+- Diagnostics.
+- Medicine.
+- Contamination detection.
+- Exorcism.
+- Restoration.
+- Controlled Necromancy.
+
+Primary Region:
+- Marrowbog.
+
+SUN CRYSTAL
+
+Properties:
+- Stores heat or strong daylight resonance.
+
+Uses:
+- Heating.
+- Light.
+- Desert navigation.
+- Purification.
+- Cooking.
+- Solar mechanisms.
+- Sacred equipment.
+
+Primary Region:
+- Saltsong Desert.
+
+MEMORY CRYSTAL
+
+Properties:
+- Retains limited impressions.
+- Susceptible to distortion.
+- Cannot automatically prove identity or objective truth.
+
+Uses:
+- Archives.
+- Investigations.
+- Memorials.
+- Training.
+- Magical research.
+- Successor records.
+
+Primary Region:
+- The Shattered Crown.
+
+STABILIZED SHARD FRAGMENT
+
+Uses:
+- Shard-resistant armor.
+- Containment devices.
+- Research tools.
+- Advanced conduits.
+- Portal and spatial instruments.
+- Exorcist equipment.
+
+Risks:
+- Resonance.
+- Contamination.
+- False signals.
+- Identity effects.
+- Structural instability.
+
+Primary Region:
+- The Sundering Scar.
+
+======================================================================
+8. PLANTS, FUNGI, AND ALCHEMICAL MATERIALS
+======================================================================
+
+MEDICINAL PLANTS
+
+Examples:
+- Ashleaf.
+- Moonpetal.
+- Bog Lotus.
+- Frostleaf.
+- Sunbalm.
+- Saltwort.
+- Silverfern.
+
+Uses:
+- Healing.
+- Inflammation control.
+- Pain reduction.
+- Fever management.
+- Antidotes.
+- Veterinary medicine.
+- Creature care.
+
+STRUCTURAL PLANTS
+
+Examples:
+- Riverreed.
+- Mire reed.
+- Giant kelp.
+- Thornvine.
+- Ironroot fiber.
+- Dune grass.
+- Sailcloth hemp.
+
+Uses:
+- Rope.
+- Baskets.
+- Supports.
+- Mats.
+- Nets.
+- Armor layering.
+- Scaffolding.
+- Housing.
+
+MAGICAL PLANTS
+
+Whisperbloom:
+- Spirit communication.
+- Memory rituals.
+- Sanctuary work.
+
+Echo Bloom:
+- Shard diagnostics.
+- Altered-space research.
+
+Cinderbloom:
+- Heat resistance.
+- Purification.
+- Fire-aligned crafting.
+
+Starlight Orchid:
+- Navigation.
+- Focus recovery.
+- Rare ritual use.
+
+Veilcap Fungus:
+- Exorcism.
+- Necromancy.
+- Spirit detection.
+- Dangerous alchemy.
+
+FUNGI
+
+Fungi support:
+- Medicine.
+- Poison.
+- Food.
+- Dyes.
+- Fermentation.
+- Decomposition.
+- Leather treatment.
+- Wood processing.
+- Contamination cleanup.
+- Environmental restoration.
+
+======================================================================
+9. BONE, HORN, SHELL, AND ORGANIC HARD MATERIALS
+======================================================================
+
+BONE
+
+Uses:
+- Needles.
+- Handles.
+- Armor plates.
+- Tools.
+- Instruments.
+- Ritual objects.
+- Prosthetics.
+- Companion equipment.
+
+Properties vary by density, flexibility, source, age, and preparation.
+
+HORN AND ANTLER
+
+Uses:
+- Reinforced grips.
+- Bows.
+- Tools.
+- Armor edges.
+- Drinking vessels.
+- Signals.
+- Musical instruments.
+- Decorative crests.
+
+Renewable Route:
+Shed antlers provide a renewable gathering route.
+
+SHELL
+
+Uses:
+- Armor.
+- Shields.
+- Containers.
+- Jewelry.
+- Alchemical grinding surfaces.
+- Aquatic equipment.
+- Roof tiles.
+- Instruments.
+
+Primary Regions:
+- Misty Fen Lake.
+- The Verdant Coast.
+- Emerald Isles.
+
+CHITIN
+
+Uses:
+- Lightweight armor.
+- Joint guards.
+- Cutting tools.
+- Shields.
+- Creature equipment.
+- Alchemical reagents.
+
+Tradeoff:
+Chitin is strong for its weight but may crack under heavy impact unless layered or treated.
+
+======================================================================
+10. DYES, PIGMENTS, OILS, AND FINISHES
+======================================================================
+
+PIGMENTS
+
+Examples:
+- Iron red.
+- Charcoal black.
+- Limestone white.
+- Copper green.
+- Indigo.
+- Saffron gold.
+- Fen violet.
+- Shard iridescence.
+- Frost blue.
+- Silverwood gray.
+
+Uses:
+- Clothing.
+- Banners.
+- Faction identity.
+- Camouflage.
+- Maps.
+- Warning marks.
+- Decoration.
+- Ritual symbols.
+- Item provenance.
+- Quality grading.
+
+OILS AND FINISHES
+
+Examples:
+- Linseed-style plant oil.
+- Wax.
+- Tallow.
+- Resin.
+- Tar.
+- Fish oil.
+- Mineral oil.
+- Spirit varnish.
+- Corruption-resistant coating.
+- Saltwater sealant.
+
+Finishes Affect:
+- Weather resistance.
+- Corrosion.
+- Flexibility.
+- Grip.
+- Appearance.
+- Scent.
+- Fire risk.
+- Magical conductivity.
+- Maintenance frequency.
+
+======================================================================
+11. ALCHEMICAL AND CHEMICAL MATERIALS
+======================================================================
+
+ACIDS
+
+Uses:
+- Etching.
+- Ore processing.
+- Cleaning.
+- Testing.
+- Trap construction.
+- Hostile applications.
+
+ALKALIS
+
+Uses:
+- Soap.
+- Leather preparation.
+- Medicine.
+- Cleaning.
+- Neutralization.
+
+RESINS
+
+Uses:
+- Adhesives.
+- Waterproofing.
+- Weapon grips.
+- Bow construction.
+- Incense.
+- Fire starters.
+
+ALCOHOLS
+
+Uses:
+- Medicine.
+- Cleaning.
+- Extraction.
+- Preservation.
+- Fuel.
+- Trade goods.
+
+POWDERS
+
+Uses:
+- Flash compounds.
+- Smoke.
+- Signaling.
+- Mining.
+- Construction.
+- Medicine.
+- Ritual boundaries.
+
+Hazardous Material Requirements:
+- Containers.
+- Labels.
+- Ventilation.
+- Storage separation.
+- Protective equipment.
+- Trained handling.
+- Disposal rules.
+
+======================================================================
+12. SALVAGE AND RECLAIMED MATERIALS
+======================================================================
+
+Salvage is essential to the recovery and world-history systems.
+
+Salvage Categories:
+- Battlefield metal.
+- Ruined masonry.
+- Broken weapons.
+- Shipwreck timber.
+- Abandoned wagon parts.
+- Construct components.
+- Shard-contaminated debris.
+- Collapsed-settlement materials.
+- Retired equipment.
+- Historical artifacts.
+
+Salvage Uses:
+- Repair.
+- Emergency construction.
+- Reconstruction.
+- Low-cost crafting.
+- Research.
+- Museum or archive preservation.
+- Memorials.
+- Provenance-rich equipment.
+- Public works.
+
+Salvage States:
+- Safe.
+- Repairable.
+- Contaminated.
+- Evidence.
+- Culturally protected.
+- Claimed property.
+- Abandoned.
+- Lawful salvage.
+- Disputed.
+
+======================================================================
+13. CONSTRUCTION USAGE CLASSES
+======================================================================
+
+Every building material should be evaluated for:
+- Compression.
+- Tension.
+- Bending.
+- Shear.
+- Weather resistance.
+- Fire resistance.
+- Water resistance.
+- Frost resistance.
+- Heat resistance.
+- Corruption resistance.
+- Magical resonance.
+- Ease of repair.
+- Local availability.
+- Transportation burden.
+
+FOUNDATION MATERIALS
+
+- Granite.
+- Limestone.
+- Packed earth.
+- Treated timber piles.
+- Bogstone.
+- Reinforced Shardstone.
+
+STRUCTURAL FRAMES
+
+- Ashwood.
+- Oak-like hardwood.
+- Ironroot.
+- Steel.
+- Bronze.
+- Reinforced bone.
+- Construct frames.
+
+ROOFING
+
+- Slate.
+- Tile.
+- Thatch.
+- Wooden shingles.
+- Shell tile.
+- Treated hide.
+- Metal sheets.
+- Kelp composite.
+
+INSULATION
+
+- Wool.
+- Moss.
+- Straw.
+- Reed fiber.
+- Cork-like bark.
+- Packed snow.
+- Fungal composite.
+
+======================================================================
+14. REGIONAL MATERIAL IDENTITIES
+======================================================================
+
+CRESTHOLLOW AND THE ASH ROAD
+
+Primary Materials:
+- Ashwood.
+- Common iron.
+- River clay.
+- Fieldstone.
+- Wool.
+- Linen.
+- Ordinary leather.
+- Ashleaf.
+- Riverreed.
+- Emberstone.
+
+Production Identity:
+Accessible, repairable, practical starter materials.
+
+WHISPER WOODS
+
+Primary Materials:
+- Elderwood.
+- Ironroot.
+- Silverwood traces.
+- Spiritmoss.
+- Moonpetal.
+- Whisperbloom.
+- Resin.
+- Antler.
+- Living fiber.
+- Naturally shed creature materials.
+
+Production Identity:
+Stewardship, lightweight construction, spirit sensitivity, and creature partnership.
+
+STONEBRIDGE
+
+Primary Materials:
+- Iron.
+- Steel.
+- Copper.
+- Coal.
+- Granite.
+- Limestone.
+- Marble.
+- Clay.
+- Industrial glass.
+- Reclaimed machinery.
+
+Production Identity:
+Standardized components, infrastructure, tools, and mass production.
+
+MARROWBOG
+
+Primary Materials:
+- Mirewood.
+- Bogstone.
+- Medicinal reeds.
+- Bog Lotus.
+- Veilcap.
+- Fen Crystal.
+- Bone.
+- Fungal materials.
+- Alchemical toxins.
+- Contamination-resistant coatings.
+
+Production Identity:
+Medicine, containment, water resistance, alchemy, and hazardous processing.
+
+MISTY FEN LAKE
+
+Primary Materials:
+- Driftwood.
+- Kelp fiber.
+- Shell.
+- Coral.
+- Aquatic hide.
+- Tide Crystal.
+- Sailcloth.
+- Bronze.
+- Rope.
+- Salt-treated timber.
+
+Production Identity:
+Maritime construction, navigation, aquatic equipment, and trade.
+
+OLD WATCHTOWER
+
+Primary Materials:
+- Granite.
+- Iron.
+- Steel.
+- Slate.
+- Wool.
+- Heavy leather.
+- Reclaimed battlefield metal.
+- Defensive timber.
+- Signaling compounds.
+- Memorial stone.
+
+Production Identity:
+Fortification, recovery, military logistics, reconstruction, and memorial works.
+
+THE SUNDERING SCAR
+
+Primary Materials:
+- Raw Shard.
+- Stabilized fragments.
+- Hollowglass.
+- Shardmetal.
+- Rift Dust.
+- Echo Bloom.
+- Cinder Shard.
+- Altered stone.
+- Containment ceramics.
+- Protective silver.
+
+Production Identity:
+Research, containment, advanced conduits, high risk, and transformative crafting.
+
+THE GOLDEN PLAINS
+
+Primary Materials:
+- Grain.
+- Linen.
+- Hemp.
+- Wool.
+- Leather.
+- Clay.
+- Limestone.
+- Sunwood.
+- Dyes.
+- Animal products.
+
+Production Identity:
+Agriculture, textiles, caravans, livestock, and large-scale provisioning.
+
+SILVERWOOD WILDS
+
+Primary Materials:
+- Silverwood.
+- Ironroot.
+- Rare resins.
+- Medicinal plants.
+- Flexible fibers.
+- Natural dyes.
+- Shed creature materials.
+- Spirit-active flora.
+
+Production Identity:
+Exploration gear, bows, light armor, sanctuary equipment, and wilderness medicine.
+
+THE VERDANT COAST
+
+Primary Materials:
+- Salt.
+- Hemp.
+- Sailcloth.
+- Limestone.
+- Bronze.
+- Driftwood.
+- Shell.
+- Fish oils.
+- Coral.
+- Coastal herbs.
+
+Production Identity:
+Shipping, preservation, port construction, maritime trade, and cultural craft.
+
+EMERALD ISLES
+
+Primary Materials:
+- Exotic hardwood.
+- Shell.
+- Pearl.
+- Coral.
+- Volcanic glass.
+- Island fibers.
+- Rare dyes.
+- Tide Crystal.
+- Drake molt.
+- Deep-sea materials.
+
+Production Identity:
+Rare maritime materials, exploration equipment, navigation, and island craft traditions.
+
+SALTSONG DESERT
+
+Primary Materials:
+- Salt.
+- Copper.
+- Gold.
+- Sun Crystal.
+- Glass.
+- Clay.
+- Sandstone.
+- Desert leather.
+- Heat-resistant wood.
+- Aromatic resins.
+
+Production Identity:
+Solar equipment, glasswork, preservation, caravans, ritual objects, and heat protection.
+
+FROSTVEIL EXPANSE
+
+Primary Materials:
+- Frostiron.
+- Glacial ice.
+- Frostglass.
+- Fur.
+- Wool.
+- Bone.
+- Renewable ivory-like horn.
+- Cold-resistant leather.
+- Slate.
+- Rare frozen herbs.
+
+Production Identity:
+Insulation, survival equipment, cold storage, climbing, and extreme-weather construction.
+
+THE SHATTERED CROWN
+
+Primary Materials:
+- Crownsteel.
+- Silver.
+- Marble.
+- Slate.
+- Stained glass.
+- Historical timber.
+- Memory Crystal.
+- Royal textiles.
+- Reclaimed armor.
+- Funerary materials.
+
+Production Identity:
+Restoration, relics, archives, memorials, inheritance, and contested provenance.
+
+======================================================================
+15. MATERIAL USAGE IN MAP DEVELOPMENT
+======================================================================
+
+Every detailed regional map should include the following resource layers:
+
+- Raw extraction sites.
+- Renewable gathering zones.
+- Farms and cultivation areas.
+- Creature-source habitats.
+- Processing facilities.
+- Warehouses.
+- Trade routes.
+- Export hubs.
+- Restricted resources.
+- Contaminated resources.
+- Seasonal availability.
+- Depleted sites.
+- Restoration projects.
+- Smuggling routes.
+- Salvage zones.
+
+This makes materials part of the actual geography instead of a disconnected crafting menu.
+
+======================================================================
+16. DECISIONS TO LOCK
+======================================================================
+
+- Ordinary materials remain relevant through repairability, accessibility, familiarity, and regional supply.
+- Rare materials create specialization rather than automatic superiority.
+- Material properties come from source, treatment, geometry, quality, condition, and component role.
+- Every material has harvesting, processing, maintenance, and end-of-life rules.
+- Creature materials can be gathered through renewable, nonlethal, ecological, and recovery-based methods.
+- Creature recruitment remains an alternative to killing creatures for components.
+- Provenance follows rare, historical, creature-derived, contaminated, Sacred, and Shard materials.
+- Regional materials shape architecture, clothing, trade, professions, roads, settlements, and political relationships.
+- Salvage and recycling are complete production systems.
+- Resource locations must be included while developing each detailed zone map.
+
+======================================================================
+17. NEXT DEVELOPMENT BLOCK
+======================================================================
+
+Define the material property and compatibility matrix, including:
+
+- Hardness.
+- Weight.
+- Flexibility.
+- Toughness.
+- Conductivity.
+- Insulation.
+- Magical resonance.
+- Weather resistance.
+- Heat resistance.
+- Cold resistance.
+- Water resistance.
+- Corruption resistance.
+- Repair difficulty.
+- Processing difficulty.
+- Maintenance frequency.
+- Regional availability.
+- Ideal component uses.
+- Poor component uses.
+- Compatibility conflicts.
+- Salvage value.
+- Provenance requirements.
+
+END OF DOCUMENT
