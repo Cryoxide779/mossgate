@@ -53,8 +53,8 @@ Google can reset it. It is still much easier to keep it safe.
 2. **Create app**: name *MossGate*, Game, Free.
 3. **Store listing**: use the text in `store/STORE_LISTING.md`, the icon `store/icon-512.png`,
    the feature graphic `store/feature-graphic.png` and the screenshots in `store/screenshots/`.
-4. **App content**: privacy policy URL from step 3. Data safety: *no data collected or shared*.
-   Content rating questionnaire: fantasy violence, no blood, no user interaction or chat.
+4. **App content**: privacy policy URL from step 3. Data safety: see **Online play → Play data safety answers** below.
+   Content rating questionnaire: fantasy violence, no blood; users interact (preset phrases only, no free chat).
    Ads: none. Target audience: 13 and older.
 5. **Testing → Closed testing**: create a track, upload the `.aab`, and add at least
    **12 testers** by email (a Google Group works well). They must stay opted in for
@@ -77,6 +77,21 @@ The game is multiplayer: every zone is shared, so players see each other, fight 
 share kill credit and quest progress, revive each other and use quick chat. The Veinway Deep can be
 played on open floors (others can join) or as a private solo descent.
 
-That online layer currently runs on the claude.ai version. For the Android app it needs its own online
-service (for example Firebase). The game is already built to switch it on when a service is connected,
-and the privacy policy and Play data safety form must be updated before it goes live in the app.
+Outside claude.ai (GitHub Pages and the Android app) the online layer runs on **Firebase**
+(project `mossgate-a3b56`): anonymous sign-in plus the Realtime Database. The connection code is the
+"MossGate online play" script near the top of `www/index.html`. If Firebase can't be reached the game
+simply plays offline.
+
+### One-time Firebase setup
+1. Firebase console → **Build → Authentication → Get started → Sign-in method → Anonymous → Enable**.
+2. **Build → Realtime Database → Create database**, location **United States (us-central1)**,
+   start in **locked mode**. (Another location changes the `databaseURL` in that script.)
+3. Realtime Database → **Rules** tab: replace everything with the contents of
+   `firebase/database.rules.json` and **Publish**.
+
+### Play data safety answers
+- Data collected: **Yes**. Shared with third parties: **No** (Firebase is a service provider).
+- **Personal info → Name**? No. **App activity → Other user-generated content**: Yes (character name),
+  collected, not shared, required for online play, purpose *App functionality*.
+- **Device or other IDs**: Yes (anonymous Firebase ID), purpose *App functionality*.
+- Data is encrypted in transit: **Yes**. Users can request deletion: **Yes** (contact email).

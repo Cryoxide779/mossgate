@@ -1,0 +1,30 @@
+{
+  "rules": {
+    "rooms": {
+      "$room": {
+        ".read": "auth != null && $room.matches(/^[A-Za-z0-9_-]{1,80}$/)",
+        "p": {
+          "$peer": {
+            ".write": "auth != null && $peer.beginsWith(auth.uid + '_')",
+            ".validate": "newData.hasChildren(['d', 's']) && newData.child('s').isNumber()"
+          }
+        },
+        "e": {
+          ".indexOn": ["ts"],
+          "$ev": {
+            ".write": "auth != null && ((newData.exists() && newData.child('peer').isString() && newData.child('peer').val().beginsWith(auth.uid + '_')) || (!newData.exists() && data.child('peer').isString() && data.child('peer').val().beginsWith(auth.uid + '_')))",
+            ".validate": "newData.hasChildren(['t', 'peer', 'ts']) && newData.child('t').isString() && newData.child('t').val().length < 16 && newData.child('ts').isNumber()"
+          }
+        }
+      }
+    },
+    "veinway": {
+      ".read": "auth != null",
+      ".indexOn": ["best"],
+      "$uid": {
+        ".write": "auth != null && auth.uid === $uid",
+        ".validate": "newData.hasChildren(['nm', 'best', 'lv']) && newData.child('nm').isString() && newData.child('nm').val().length <= 12 && newData.child('best').isNumber() && newData.child('best').val() <= 100"
+      }
+    }
+  }
+}
