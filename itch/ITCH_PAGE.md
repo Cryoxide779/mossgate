@@ -43,7 +43,7 @@ The fortress-city of MossGate fell in a single night. Its seals opened from the 
 
 MossGate is a hand-crafted pixel-art side-scrolling RPG with no classes. You become what you practice.
 
-**Seven regions, nearly a hundred places.** Walk from the river crossings of CrestHollow through the spirit-haunted Whisper Woods, the forges of Stonebridge, the islands of Misty Fen Lake, the drowning towers of Marrowbog and the frontier forts of the Old Watchtower, to the crystal wound of the Sundering Scar.
+**Nine regions, well over a hundred places.** Walk from the river crossings of CrestHollow through the spirit-haunted Whisper Woods, the forges of Stonebridge, the islands of Misty Fen Lake, the drowning towers of Marrowbog and the frontier forts of the Old Watchtower, to the crystal wound of the Sundering Scar, the open Golden Plains and the uncharted canopy of the Silverwood Wilds.
 
 **No class lock-in.** Choose one of ten starting kits, then train any of more than twenty disciplines. Blades, spears, shields, bows, nature magic, necromancy, armour, gathering and crafting all grow with use.
 
