@@ -98,7 +98,7 @@ const netPeers=()=>NET.room?NET.peers:[];
 function netScale(){if(Z.id!=='deep')return;const k=1+netPeers().length,f=1+.6*(k-1);for(const m of S.mobs){if(m.di==null||m.dead||!m.bmhp)continue;const frac=m.hp/m.mhp;m.mhp=Math.round(m.bmhp*f);m.hp=Math.max(1,Math.round(m.mhp*frac))}}
 function netHit(m){m.mine=S.t;if(!NET.room||m.ni==null)return;NET.hq.set(m.ni,Math.max(0,m.hp/m.mhp))}
 function netKill(m){if(!NET.room||m.ni==null||m.remote)return;NET.room.emit('kill',{k:NET.key,i:m.ni}).catch(()=>{})}
-function netRemoteKill(m){m.remote=1;m.hp=0;m.dead=1;const deep=Z.id==='deep';m.resp=deep?999:(m.d.resp||6);
+function netRemoteKill(m){m.remote=1;m.hp=0;m.dead=1;const deep=Z.id==='deep';m.resp=deep?999:(m.d.resp||RESP_NORMAL);
   for(let i=0;i<10;i++)S.parts.push({x:m.x,y:m.y-m.d.h/2,vx:rnd(-80,80),vy:rnd(-140,-30),t:0,life:.7,c:['#9bd04c','#f2e6c8','#3a3550'][i%3],g:320,s:1});
   const helped=m.mine&&S.t-m.mine<15;if(!deep&&!helped)return;const ge=Math.round(expFor(m)*(deep?.6:.7));gainExp(ge);S.nums.push({x:m.x,y:m.y-m.d.h-14,txt:'+'+ge+' EXP · SHARED',t:-.1,c:'#c8d468'});
   if(helped){qKill(m);conKill(m);crKill(m);compKill(m)}}

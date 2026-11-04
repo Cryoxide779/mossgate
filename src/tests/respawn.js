@@ -1,0 +1,5 @@
+const {chromium}=require('playwright');(async()=>{const b=await chromium.launch();const p=await b.newPage();const errs=[];p.on('pageerror',e=>errs.push(e.message));await p.goto('file://'+process.cwd()+'/dbgp.html');await p.waitForTimeout(600);const ev=(f,a)=>p.evaluate(f,a);
+await ev(()=>{const T=window.__T;T.beginWith({name:'Aya',cls:'ronin',look:{...T.DEF_LOOK,sex:1}},{lv:20,exp:0,sh:100,pt:3,inv:[],eq:null,sk:{},zone:0,q:{m1:{s:'d'},m2:{s:'d'}},fl:{crIntro:1,hints:9},tmin:false,mat:{meat:20}});T.pl.cr={id:null,wait:9999};T.pl.hp=T.pl.mhp=99999});
+console.log(await ev(async()=>{const T=window.__T;T.enterZone(T.ZONES.findIndex(z=>z.id==='outskirts'));const m=T.S.mobs.find(m=>!m.d.fly&&!m.d.elite);T.pl.x=m.def[2];T.pl.y=T.topAt(T.pl.x);T.killMob(m);const r0=m.resp;m.resp=.1;
+  await new Promise(r=>setTimeout(r,1500));const near=m.dead;T.pl.x=m.def[2]>1500?300:m.def[2]+900;T.pl.y=T.topAt(T.pl.x);await new Promise(r=>setTimeout(r,4000));return 'resp '+r0+' deadWhileNear '+near+' deadAfterLeaving '+!!m.dead}));
+console.log(errs);await b.close()})();

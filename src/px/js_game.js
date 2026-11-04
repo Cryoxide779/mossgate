@@ -60,6 +60,7 @@ const sfx={slash:()=>noise(.1,.07,2600),hit:()=>tone(150,.1,'triangle',.08,-60),
   slam:()=>{tone(70,.4,'sawtooth',.1,-30);noise(.3,.08,200)},portal:()=>tone(330,.35,'sine',.05,500),jump:()=>tone(330,.08,'square',.02,180)};
 
 /* ---------- physics ---------- */
+const RESP_NORMAL=35,respNear=m=>{const x=m.def[2];return Math.abs(x-pl.x)<W*.5+60&&(m.def[1]===-2||Math.abs((SEG[m.def[1]]?SEG[m.def[1]].y:pl.y)-pl.y)<H*.6)};
 const GRAV=760,JV=272,SPD=86;
 function landY(x,py,ny){if(ny<py)return null;let best=null;for(const s of SEG)if(x>=s.x-1&&x<=s.x+s.w+1&&py<=s.y+.5&&ny>=s.y&&(best===null||s.y<best))best=s.y;return best}
 function wallPush(o,dx){for(const s of SEG){if(s.t==='float')continue;if(o.x+5>s.x&&o.x-5<s.x+s.w&&o.y>s.y+1){if(dx>0)o.x=s.x-5;else if(dx<0)o.x=s.x+s.w+5}}}
@@ -81,7 +82,7 @@ function hitMob(m,mult,dir){if(m.dead)return;const crit=Math.random()<.12+(pl.gs
   practice(.4,1.6);if(m.hp<=0)killMob(m)}
 function killMob(m){if(pl.sm.corpse>0&&!m.bloomed){m.bloomed=1;for(let i=0;i<10;i++){const a=i/10*6.28;S.parts.push({x:m.x,y:m.y-m.d.h/2,vx:Math.cos(a)*70,vy:Math.sin(a)*70,t:0,life:.4,c:i%2?'#9bd04c':'#7a4aa0',g:0,s:2})}
     setTimeout(()=>aoe(m.x,m.y-m.d.h/2,30,pl.sm.corpse),0)}
-  m.dead=1;m.resp=m.d.resp||6;qKill(m);huntDrops(m);conKill(m);crKill(m);crDrops(m);compKill(m);netKill(m);{const dx=expFor(m)*.6;practice(dx,5);dGain(armorClass(),dx*.25)}const ge=expFor(m);gainExp(ge);S.nums.push({x:m.x,y:m.y-m.d.h-14,txt:'+'+ge+' EXP',t:-.1,c:'#f2e6c8'});
+  m.dead=1;m.resp=m.d.resp||RESP_NORMAL;qKill(m);huntDrops(m);conKill(m);crKill(m);crDrops(m);compKill(m);netKill(m);{const dx=expFor(m)*.6;practice(dx,5);dGain(armorClass(),dx*.25)}const ge=expFor(m);gainExp(ge);S.nums.push({x:m.x,y:m.y-m.d.h-14,txt:'+'+ge+' EXP',t:-.1,c:'#f2e6c8'});
   for(let i=0;i<(m.d.boss?40:14);i++)S.parts.push({x:m.x,y:m.y-m.d.h/2,vx:rnd(-90,90),vy:rnd(-150,-30),t:0,life:.8,c:['#9bd04c','#f2e6c8','#3a3550','#d4483a'][i%4],g:320,s:Math.random()<.3?2:1});
   const gd=GEAR[m.t];if(gd)for(let i=0;i<(gd.drops||1);i++)if(Math.random()<gd.drop)S.drops.push({k:'gear',it:rollDrop(m.t,!!m.d.boss,m.lv),x:m.x,y:m.y-8,vx:rnd(-50,50),vy:rnd(-200,-140),t:0});
   const n=m.d.boss?8:1+(Math.random()*2|0);for(let i=0;i<n;i++)S.drops.push({k:'shard',amt:Math.max(1,Math.round(rnd(...m.d.shard)*(1+.12*(m.lv-1))/n)),x:m.x,y:m.y-8,vx:rnd(-60,60),vy:rnd(-190,-110),t:0});
@@ -204,7 +205,7 @@ function update(dt){
   }
   // creatures
   for(const m of S.mobs){
-    if(m.dead){if(m.temp)continue;m.resp-=dt;if(m.resp<=0&&!pl.dead)Object.assign(m,spawnMob(m.def));continue}
+    if(m.dead){if(m.temp)continue;m.resp-=dt;if(m.resp<=0&&!pl.dead){if(respNear(m)){m.resp=3;continue}Object.assign(m,spawnMob(m.def))}continue}
     const d=m.d;m.flash=Math.max(0,m.flash-dt);m.aggro=Math.max(0,m.aggro-dt);m.ph+=dt;
     if(m.psn&&m.psn.t>0){m.psn.t-=dt;m.psn.a+=dt;if(m.psn.a>=1){m.psn.a-=1;m.hp-=m.psn.dps;S.nums.push({x:m.x,y:m.y-d.h-4,v:m.psn.dps,t:0,c:'#9bd04c'});if(m.hp<=0){killMob(m);continue}}}
     if(S.t-(m.pT||0)>2)m.poise=Math.min(m.mpoise,m.poise+m.mpoise*.25*dt);

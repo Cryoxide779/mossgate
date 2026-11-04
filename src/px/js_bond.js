@@ -41,7 +41,7 @@ function bondNear(){const c=CB();if(c.own.length>=12)return null;for(const m of 
 function befChance(m){return clamp(.3+.04*dRank('handling')+(m.stun>0?.15:0)+(m.d.passive?.1:0)+(Z.id==='mossroot'?.2:0)-.05*Math.max(0,m.lv-pl.lv)-(m.d.elite?.2:0),.05,.92)}
 function bondLabel(n){const r=DIET[FAM_OF(n.m.t)];return'Befriend · '+n.m.d.name+' ('+(mat(r)?'offer 1 '+RES[r].n:'needs 1 '+RES[r].n)+') '+Math.round(befChance(n.m)*100)+'%'}
 function befriend(m){const r=DIET[FAM_OF(m.t)];if(mat(r)<1){banner('You need an offering','1 '+RES[r].n+' for a '+m.d.name);return}pl.mat[r]--;
-  if(Math.random()<befChance(m)){m.dead=1;m.resp=m.d.resp||20;const c=CB(),id=m.t+'-'+cid(),nick=NICKS.filter(n=>!Object.values(c.b).some(b=>b.n.startsWith(n+',')))[Math.random()*20|0]||NICKS[Math.random()*NICKS.length|0];
+  if(Math.random()<befChance(m)){m.dead=1;m.resp=m.d.resp||RESP_NORMAL;const c=CB(),id=m.t+'-'+cid(),nick=NICKS.filter(n=>!Object.values(c.b).some(b=>b.n.startsWith(n+',')))[Math.random()*20|0]||NICKS[Math.random()*NICKS.length|0];
     c.b[id]={t:m.t,n:nick+', '+m.d.name,tr:10,lv:Math.max(1,Math.min(pl.lv,m.lv)),xp:0};c.own.push(id);if(!c.act){c.act=id;spawnComp()}dGain('handling',30);qBond();
     for(let i=0;i<18;i++){const a=i/18*6.28;S.parts.push({x:m.x,y:m.y-m.d.h/2,vx:Math.cos(a)*50,vy:Math.sin(a)*50-20,t:0,life:.9,c:i%3?'#ff8aa0':'#ffd27a',g:-10,s:i%4?1:2})}
     S.nums.push({x:m.x,y:m.y-m.d.h-10,txt:'BEFRIENDED',t:-.2,c:'#ff8aa0'});banner(nick+' will follow you',m.d.name+' · open Quests to call or command');[523,659,784,1046].forEach((f,i)=>setTimeout(()=>tone(f,.2,'sine',.05),i*120))}
