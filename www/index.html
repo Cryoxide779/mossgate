@@ -297,7 +297,7 @@ button:focus-visible{outline:2px solid var(--moss);outline-offset:2px}
   <div class="col"><div class="hdr">Contract<button class="btn sm alt" id="bdclose">Close</button></div><div class="detail px" id="bddet"></div></div>
 </div></div>
 <div class="ov" id="gmenu" hidden><div class="panel">
-  <div class="col"><div class="hdr"><span>Export save</span><small>MossGate</small></div><div id="gmexp"></div></div>
+  <div class="col"><div id="gmgame"></div><div class="hdr"><span>Export save</span><small>MossGate</small></div><div id="gmexp"></div></div>
   <div class="col"><div class="hdr">Import save<button class="btn sm alt" id="gmclose">Close</button></div><div id="gmimp"></div></div>
 </div></div>
 <div class="ov" id="deepm" hidden><div class="panel">
@@ -3126,7 +3126,12 @@ function readCode(txt){const t=String(txt||'').replace(/\s+/g,'');const m=t.matc
 let GM={msg:'',ask:null,code:''};
 function openMenu(fromTitle){GM={msg:'',ask:null,code:'',title:!!fromTitle};if(fromTitle){$('gmenu').hidden=false}else pauseFor('gmenu');renderMenu()}
 function closeMenu(){if(GM.title){$('gmenu').hidden=true;return}unpause('gmenu')}
+const NATIVE=()=>!!(window.Capacitor&&window.Capacitor.isNativePlatform&&window.Capacitor.isNativePlatform());
+const appPlugin=()=>NATIVE()&&window.Capacitor.Plugins&&window.Capacitor.Plugins.App;
+function toTitle(){if(pl.ch)save();try{if(typeof netLeave==='function')netLeave()}catch(_){}setTimeout(()=>location.reload(),150)}
+function exitGame(){if(pl.ch)save();const A=appPlugin();if(A&&A.exitApp)A.exitApp();else toTitle()}
 function renderMenu(){const sv=loadSave(),has=!!(sv&&sv.ch);
+  $('gmgame').hidden=GM.title;$('gmgame').innerHTML=GM.title?'':`<div class="hdr"><span>Menu</span><small>Paused</small></div><div class="crbtns"><button class="btn sm" data-gm="resume">Resume</button><button class="btn sm alt" data-gm="save">Save now</button><button class="btn sm alt" data-gm="title">${GM.askT?'Tap again: save and return to title':'Return to title'}</button>${NATIVE()?`<button class="btn sm alt" data-gm="exit">${GM.askX?'Tap again: save and exit':'Exit game'}</button>`:''}</div>${GM.saved?'<p class="crp" style="color:var(--moss)">Saved.</p>':''}`;
   $('gmexp').innerHTML=has?`<p class="crp">Your save lives on this device only. To move <b>${esc(sv.ch.name)}</b> (Lv ${sv.lv|0}) to another phone, browser or the Android app, copy this code and paste it there under Import.</p>
     <div class="crbtns"><button class="btn sm" data-gm="copy">Copy save code</button><button class="btn sm alt" data-gm="dl">Download save file</button><button class="btn sm alt" data-gm="show">Show code</button></div>
     ${GM.code?`<textarea class="gmcode" readonly>${GM.code}</textarea>`:''}`:'<p class="crp dim">No character saved on this device yet.</p>';
@@ -3136,7 +3141,9 @@ function renderMenu(){const sv=loadSave(),has=!!(sv&&sv.ch);
     ${GM.msg?`<div class="${GM.err?'warn':'crp'}">${GM.msg}</div>`:''}`;
   if(GM.pending)$('gmin').value=GM.pending}
 async function copyText(t){try{await navigator.clipboard.writeText(t);return true}catch(_){}try{const a=document.createElement('textarea');a.value=t;a.style.position='fixed';a.style.opacity='0';document.body.appendChild(a);a.select();const ok=document.execCommand('copy');a.remove();return ok}catch(_){return false}}
-$('gmenu').addEventListener('click',async e=>{const b=e.target.closest('[data-gm],#gmclose');if(!b)return;if(b.id==='gmclose')return closeMenu();const k=b.dataset.gm;GM.err=0;
+$('gmenu').addEventListener('click',async e=>{const b=e.target.closest('[data-gm],#gmclose');if(!b)return;if(b.id==='gmclose')return closeMenu();const k=b.dataset.gm;GM.err=0;GM.saved=0;
+  if(k==='resume')return closeMenu();if(k==='save'){save();GM.saved=1;return renderMenu()}
+  if(k==='title'){if(!GM.askT){GM.askT=1;return renderMenu()}return toTitle()}if(k==='exit'){if(!GM.askX){GM.askX=1;return renderMenu()}return exitGame()}GM.askT=GM.askX=0;
   if(k==='copy'){const c=saveCode();GM.code=c;GM.msg=(await copyText(c))?'Copied. Paste it into Import on your other device.':'Copy was blocked here. Use Show code and copy it by hand.';GM.err=0}
   else if(k==='show')GM.code=saveCode();
   else if(k==='dl'){const c=saveCode(),sv=loadSave(),fn='mossgate-'+String(sv.ch.name).replace(/[^a-z0-9]/gi,'')+'-lv'+(sv.lv|0)+'.mgsave';let dl=null;try{dl=window.claude&&window.claude.use?await window.claude.use('downloads'):null}catch(_){}
@@ -3147,6 +3154,12 @@ $('gmenu').addEventListener('click',async e=>{const b=e.target.closest('[data-gm
   renderMenu()});
 $('gmenu').addEventListener('change',e=>{if(e.target.id!=='gmf')return;const f=e.target.files&&e.target.files[0];if(!f)return;const rd=new FileReader();rd.onload=()=>{GM.pending=String(rd.result||'').trim();GM.msg='File read. Tap Load this save.';GM.err=0;renderMenu()};rd.readAsText(f)});
 $('menubtn').addEventListener('click',()=>openMenu(false));$('impbtn').addEventListener('click',()=>{initAudio();openMenu(true)});
+/* Android back button: close whatever is open, otherwise open the menu */
+(function(){const A=appPlugin();if(!A||!A.addListener)return;A.addListener('backButton',()=>{
+  if(!$('gmenu').hidden){closeMenu();return}if(typeof DLG!=='undefined'&&DLG){closeDlg();return}
+  for(const id of['inv','tree','quests','craft','board','market','crisis','deepm']){const el=$(id);if(el&&!el.hidden){if(id==='crisis')closeCrisis();else if(id==='deepm'){DEEPM=null;unpause('deepm')}else unpause(id);return}}
+  if(!$('creator').hidden){$('creator').hidden=true;$('title').hidden=false;return}if(!$('title').hidden){A.exitApp();return}openMenu(false)})})();
+addEventListener('keydown',e=>{if(e.code!=='Escape'||e.target.tagName==='INPUT'||e.target.tagName==='TEXTAREA')return;if(!$('gmenu').hidden){closeMenu();return}if(pl.ch&&S.started&&!S.paused&&!pl.dead)openMenu(false)});
 
 /* ---------- rendering ---------- */
 const wfC=document.createElement('canvas');let wfX=null,wfI=null,wcols=[];
@@ -3454,6 +3467,6 @@ requestAnimationFrame(loop);
 
 })();
 </script>
-<script>window.MG_BUILD='2026.11.03-1758';if('serviceWorker' in navigator&&location.protocol==='https:'){addEventListener('load',()=>navigator.serviceWorker.register('sw.js').catch(()=>{}))}</script>
+<script>window.MG_BUILD='2026.11.03-1916';if('serviceWorker' in navigator&&location.protocol==='https:'){addEventListener('load',()=>navigator.serviceWorker.register('sw.js').catch(()=>{}))}</script>
 
 </html>

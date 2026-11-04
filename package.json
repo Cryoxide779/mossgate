@@ -9,7 +9,8 @@
   },
   "dependencies": {
     "@capacitor/android": "latest",
-    "@capacitor/core": "latest"
+    "@capacitor/core": "latest",
+    "@capacitor/app": "latest"
   },
   "devDependencies": {
     "@capacitor/assets": "latest",
