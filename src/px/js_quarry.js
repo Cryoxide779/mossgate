@@ -74,7 +74,7 @@ const SBI=zIdx('stonebridge'),QI=ZONES.length,QFI=QI+1;
   seg:[[0,1200,250],[260,100,204,'plank'],[560,90,186,'f'],[840,100,204,'plank']],mobs:[['crusher',0,900],['blaster',1,300],['blaster',3,880]],
   portals:[{x:22,to:QI,tx:1730}],labels:[[600,'The Stamp Floor',110]],props:[['barricade',140],['stoneblocks',420],['crane',620],['railcart',760],['scaff',1060]],trees:[],rockfall:[480,760]};
  prepZone(Q);prepZone(F);for(const z of[Q,F]){z.nodes=[];z.stations=[];z.rockfall=z.rockfall.map(x=>x+EDGE)}ZONES.push(Q,F);
- const SB=ZONES[SBI];SB.portals.push({x:990+EDGE,to:QI,tx:70+EDGE});(SB.labels=SB.labels||[]).push([990+EDGE,'Quarry Road',44])}
+ const SB=ZONES[SBI];SB.portals.push({x:990+EDGE,to:QI,tx:70+EDGE})}
 MAPXY.quarry=[27,90];MAPXY.qfort=[17,96];WAYS.quarry=110;
 NPCS.dagna={name:'Foreman Dagna',title:'Quarry strike leader',x:150+EDGE,cls:'ronin',look:{sex:1,build:2,face:3,hair:4,hairC:2,beard:0,skin:4,eye:0,outfit:2},eq:{head:'gob',chest:'r_start',hands:'gob'},
   lines:['The Road Company cut wages to rebuild the bridge. We put our picks down. Then the Freeband walked in and picked them up.','Forty years I have cut that face. I will not watch bandits run my crane.','Stone does not care who owns it. People do.']};

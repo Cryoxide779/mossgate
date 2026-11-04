@@ -90,7 +90,7 @@ const BOGI=zIdx('bog'),LABI=ZONES.length,VATI=LABI+1;
   seg:[[0,1100,250],[280,90,204,'f'],[700,90,204,'f']],mobs:[['subject9',0,820],['vatslime',0,420]],portals:[{x:22,to:LABI,tx:1630}],
   labels:[[560,'Vat Nine',100]],props:[['pipes',130],['vat',240,1],['vat',420],['tbarrel',540],['vat',660,1],['cage',980]],trees:[]};
  prepZone(L);prepZone(V);L.nodes=[];V.nodes=[];L.stations=[];V.stations=[];ZONES.push(L,V);
- const B=ZONES[BOGI];B.portals.push({x:1470+EDGE,to:LABI,tx:60+EDGE});(B.labels=B.labels||[]).push([1470+EDGE,'Laboratory',48]);B.npcs.push('mirelle')}
+ const B=ZONES[BOGI];B.portals.push({x:1470+EDGE,to:LABI,tx:60+EDGE});B.npcs.push('mirelle')}
 MAPXY.lab=[70,66];MAPXY.vats=[80,60];WAYS.lab=150;
 /* the assistant who got out */
 NPCS.mirelle={name:'Mirelle Varn',title:'Former laboratory assistant',x:1400+EDGE,cls:'weaver',look:{sex:1,build:0,face:4,hair:2,hairC:7,beard:0,skin:1,eye:1,outfit:5},eq:{head:'vatslime',chest:'w_start'},

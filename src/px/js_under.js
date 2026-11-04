@@ -61,7 +61,7 @@ const TOWNI=zIdx('town'),UI=ZONES.length,CI=UI+1;
   pools:[{x0:300,x1:860,y:258}],mobs:[['oldpale',2,1000],['drainooze',0,200]],portals:[{x:22,to:UI,tx:1830}],labels:[[580,'The Great Cistern',120]],
   props:[['pipes',140],['sluice',260],['vent',940],['grate',1080]],trees:[],vents:[940]};
  prepZone(U);prepZone(C);for(const z of[U,C]){z.nodes=[];z.stations=[];z.vents=z.vents.map(x=>x+EDGE);if(z.valves)z.valves=z.valves.map(x=>x+EDGE)}ZONES.push(U,C);
- const T=ZONES[TOWNI];T.portals.push({x:430+EDGE,to:UI,tx:70+EDGE});(T.labels=T.labels||[]).push([430+EDGE,'Underworks',30])}
+ const T=ZONES[TOWNI];T.portals.push({x:430+EDGE,to:UI,tx:70+EDGE})}
 MAPXY.under=[12,46];MAPXY.cistern=[5,38];WAYS.under=140;
 NPCS.corra={name:'Waterwarden Corra',title:'Keeper of the Underworks',x:150+EDGE,cls:'weaver',look:{sex:1,build:1,face:2,hair:3,hairC:3,beard:0,skin:3,eye:2,outfit:4},eq:{head:'drainooze',chest:'drainooze',feet:'drainooze'},
   lines:['Every street above has a drain below. Every drain has someone keeping it clear. Lately that is just me.','The Charter fixes roofs because people can see roofs.','Down here we do not ask why you came. We ask whether you can turn a valve.']};
