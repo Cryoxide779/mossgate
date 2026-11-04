@@ -348,7 +348,8 @@ body.ctled #hud,body.ctled #tr,body.ctled #qtrack,body.ctled #talkbtn,body.ctled
 /* MossGate online play outside claude.ai (GitHub Pages + the Android app).
    Provides the same small room/db/user surface the game uses inside claude.ai, backed by
    Firebase Realtime Database with anonymous sign-in. Loaded only in the web/app build. */
-(()=>{if(window.claude)return;
+(()=>{const ONLINE=false; /* set true once Firebase setup (README → Online play) is done */
+if(!ONLINE||window.claude)return;
 const CFG={apiKey:"AIzaSyCcVKSQbLl8Q6HA3L5-sufMbA8zf3pkIHc",authDomain:"mossgate-a3b56.firebaseapp.com",
   databaseURL:"https://mossgate-a3b56-default-rtdb.firebaseio.com",projectId:"mossgate-a3b56",
   storageBucket:"mossgate-a3b56.firebasestorage.app",messagingSenderId:"124414195175",appId:"1:124414195175:web:21fda3a4a8356b5e7df942"};
@@ -4205,6 +4206,6 @@ requestAnimationFrame(loop);
 
 })();
 </script>
-<script>window.MG_BUILD='2026.11.03-2058';if('serviceWorker' in navigator&&location.protocol==='https:'){addEventListener('load',()=>navigator.serviceWorker.register('sw.js').catch(()=>{}))}</script>
+<script>window.MG_BUILD='2026.11.03-2115';if('serviceWorker' in navigator&&location.protocol==='https:'){addEventListener('load',()=>navigator.serviceWorker.register('sw.js').catch(()=>{}))}</script>
 
 </html>

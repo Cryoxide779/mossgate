@@ -53,8 +53,8 @@ Google can reset it. It is still much easier to keep it safe.
 2. **Create app**: name *MossGate*, Game, Free.
 3. **Store listing**: use the text in `store/STORE_LISTING.md`, the icon `store/icon-512.png`,
    the feature graphic `store/feature-graphic.png` and the screenshots in `store/screenshots/`.
-4. **App content**: privacy policy URL from step 3. Data safety: see **Online play → Play data safety answers** below.
-   Content rating questionnaire: fantasy violence, no blood; users interact (preset phrases only, no free chat).
+4. **App content**: privacy policy URL from step 3. Data safety: *no data collected or shared* (while online play is off).
+   Content rating questionnaire: fantasy violence, no blood, no user interaction or chat.
    Ads: none. Target audience: 13 and older.
 5. **Testing → Closed testing**: create a track, upload the `.aab`, and add at least
    **12 testers** by email (a Google Group works well). They must stay opted in for
@@ -78,7 +78,10 @@ share kill credit and quest progress, revive each other and use quick chat. The 
 played on open floors (others can join) or as a private solo descent.
 
 Outside claude.ai (GitHub Pages and the Android app) the online layer runs on **Firebase**
-(project `mossgate-a3b56`): anonymous sign-in plus the Realtime Database. The connection code is the
+(project `mossgate-a3b56`): anonymous sign-in plus the Realtime Database.
+**It is currently switched off** (`ONLINE=false` in that script), so the app collects nothing.
+To launch it: do the setup below, set `ONLINE=true`, update the privacy policy, and switch the
+Play data safety and content rating answers to the ones listed here. The connection code is the
 "MossGate online play" script near the top of `www/index.html`. If Firebase can't be reached the game
 simply plays offline.
 
@@ -89,7 +92,7 @@ simply plays offline.
 3. Realtime Database → **Rules** tab: replace everything with the contents of
    `firebase/database.rules.json` and **Publish**.
 
-### Play data safety answers
+### Play data safety answers (only once online play is on)
 - Data collected: **Yes**. Shared with third parties: **No** (Firebase is a service provider).
 - **Personal info → Name**? No. **App activity → Other user-generated content**: Yes (character name),
   collected, not shared, required for online play, purpose *App functionality*.
