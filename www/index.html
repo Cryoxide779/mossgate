@@ -4039,7 +4039,7 @@ const SBI=zIdx('stonebridge'),QI=ZONES.length,QFI=QI+1;
   portals:[{x:22,to:QI,tx:1730}],labels:[[600,'The Stamp Floor',110]],props:[['barricade',140],['stoneblocks',420],['crane',620],['railcart',760],['scaff',1060]],trees:[],rockfall:[480,760]};
  prepZone(Q);prepZone(F);for(const z of[Q,F]){z.nodes=[];z.stations=[];z.rockfall=z.rockfall.map(x=>x+EDGE)}ZONES.push(Q,F);
  const SB=ZONES[SBI];SB.portals.push({x:990+EDGE,to:QI,tx:70+EDGE});(SB.labels=SB.labels||[]).push([990+EDGE,'Quarry Road',78])}
-MAPXY.quarry=[27,90];MAPXY.qfort=[17,96];WAYS.quarry=110;
+MAPXY.quarry=[33,91];MAPXY.qfort=[24,97];WAYS.quarry=110;
 NPCS.dagna={name:'Foreman Dagna',title:'Quarry strike leader',x:150+EDGE,cls:'ronin',look:{sex:1,build:2,face:3,hair:4,hairC:2,beard:0,skin:4,eye:0,outfit:2},eq:{head:'gob',chest:'r_start',hands:'gob'},
   lines:['The Road Company cut wages to rebuild the bridge. We put our picks down. Then the Freeband walked in and picked them up.','Forty years I have cut that face. I will not watch bandits run my crane.','Stone does not care who owns it. People do.']};
 BARKS.dagna=['Picks down, heads up.','Mind the overhang.','No scabs, no bandits.'];
@@ -4266,7 +4266,7 @@ const ROADI=zIdx('road'),RUI=ZONES.length,CEI=RUI+1;
   labels:[[450,'The Wine Cellar',100]],props:[['crates',140],['crates',420],['fire',600],['crates',820]],trees:[]};
  prepZone(Ru);prepZone(Ce);for(const z of[Ru,Ce]){z.nodes=[];z.stations=[]}Ru.salv=Ru.salv.map(x=>x+EDGE);Ru.trapped=Ru.trapped.map(x=>x+EDGE);Ru.hatch+=EDGE;ZONES.push(Ru,Ce);
  const Rd=ZONES[ROADI];Rd.portals.push({x:860+EDGE,to:RUI,tx:70+EDGE});(Rd.labels=Rd.labels||[]).push([860+EDGE,'Emberwatch',78])}
-MAPXY.ruins=[4,68];MAPXY.cellar=[2,80];
+MAPXY.ruins=[11,74];MAPXY.cellar=[10,88];
 NPCS.hadda={name:'Caravaneer Hadda',title:'Survivor of Emberwatch',x:150+EDGE,cls:'ronin',look:{sex:1,build:1,face:1,hair:6,hairC:5,beard:0,skin:2,eye:3,outfit:3},eq:{head:'scavenger',chest:'r_start'},
   lines:['Emberwatch was the last good bed on the Ash Road. Then the Gatefall came down the road on fire.','Some of my people are still under that rubble. I can hear them when the wind drops.','Maeve kept the inn for thirty years. She would not leave her cellar. She still has not.']};
 BARKS.hadda=['Listen for knocking.','Mind the hounds.','Thirty years of hospitality.'];
@@ -4363,7 +4363,7 @@ const OUTI=zIdx('outskirts'),BWI=ZONES.length,BLI=BWI+1;
   labels:[[520,'The Den',100]],props:[['rootmass',200],['shroom',460],['rootmass',900]],trees:[]};
  prepZone(Bw);prepZone(Bl);for(const z of[Bw,Bl]){z.nodes=[];z.stations=[]}Bw.snares=Bw.snares.map(x=>x+EDGE);Bw.springX+=EDGE;ZONES.push(Bw,Bl);
  ZONES[OUTI].portals.push({x:860+EDGE,to:BWI,tx:70+EDGE});(ZONES[OUTI].labels=ZONES[OUTI].labels||[]).push([860+EDGE,'Briarwood',78])}
-MAPXY.briarwood=[48,58];MAPXY.briarlair=[58,54];
+MAPXY.briarwood=[46,58];MAPXY.briarlair=[63,51];
 NPCS.bryn={name:'Ranger Bryn',title:'Keeper of Briarwood',x:150+EDGE,cls:'weaver',look:{sex:1,build:1,face:3,hair:2,hairC:1,beard:0,skin:2,eye:2,outfit:2},eq:{head:'moss',chest:'moss',feet:'wolf'},
   lines:['Briarwood is a nursery. Bears, boar, every fox in the Reach is born here. The poachers know it too.','Kill what threatens you, sure. But a mother bear protecting cubs is not a monster.','I would rather talk an animal down than put one down. Takes longer. Works better.']};
 BARKS.bryn=['Easy, easy.','Watch for snares.','The cubs are watching.'];
@@ -4452,7 +4452,7 @@ const TWI=zIdx('tower'),SGI=ZONES.length;
   props:[['depot',160],['banner',300],['watchtower',420],['banner',560],['gatewall',880],['siegetent',1280],['fire',1380],['siegetent',1520],['cart',1620]],trees:[],gateX:880,depotX:160};
  prepZone(Sg);Sg.nodes=[];Sg.stations=[];Sg.gateX+=EDGE;Sg.depotX+=EDGE;ZONES.push(Sg);
  const Tw=ZONES[TWI];Tw.portals.push({x:1180+EDGE,to:SGI,tx:70+EDGE});(Tw.labels=Tw.labels||[]).push([1180+EDGE,'The Siege Line',78])}
-MAPXY.siege=[30,30];
+MAPXY.siege=[24,40];
 NPCS.vell={name:'Sergeant Vell',title:'Charter Militia, Old Watchtower',x:240+EDGE,cls:'ronin',look:{sex:0,build:2,face:4,hair:3,hairC:2,beard:3,skin:3,eye:0,outfit:3},eq:{head:'warden',chest:'warden',feet:'warden'},
   lines:['Twelve militia, one gate, and a Freeband warchief who wants this tower for his own toll road.','Every soldier has a job in a siege. Even the cook. Especially the cook.','The tower stood through the Gatefall. It is not falling to bandits.']};
 BARKS.vell=['Hold the line!','Crates to the gate!','Eyes on the camp.'];
@@ -4979,6 +4979,6 @@ let UIZ=1;addEventListener('resize',()=>setTimeout(uiScale,30));uiScale();setInt
 
 })();
 </script>
-<script>window.MG_BUILD='2026.11.04-0032';if('serviceWorker' in navigator&&location.protocol==='https:'){addEventListener('load',()=>navigator.serviceWorker.register('sw.js').catch(()=>{}))}</script>
+<script>window.MG_BUILD='2026.11.04-0043';if('serviceWorker' in navigator&&location.protocol==='https:'){addEventListener('load',()=>navigator.serviceWorker.register('sw.js').catch(()=>{}))}</script>
 
 </html>

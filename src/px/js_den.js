@@ -44,7 +44,7 @@ const OUTI=zIdx('outskirts'),BWI=ZONES.length,BLI=BWI+1;
   labels:[[520,'The Den',100]],props:[['rootmass',200],['shroom',460],['rootmass',900]],trees:[]};
  prepZone(Bw);prepZone(Bl);for(const z of[Bw,Bl]){z.nodes=[];z.stations=[]}Bw.snares=Bw.snares.map(x=>x+EDGE);Bw.springX+=EDGE;ZONES.push(Bw,Bl);
  ZONES[OUTI].portals.push({x:860+EDGE,to:BWI,tx:70+EDGE});(ZONES[OUTI].labels=ZONES[OUTI].labels||[]).push([860+EDGE,'Briarwood',78])}
-MAPXY.briarwood=[48,58];MAPXY.briarlair=[58,54];
+MAPXY.briarwood=[46,58];MAPXY.briarlair=[63,51];
 NPCS.bryn={name:'Ranger Bryn',title:'Keeper of Briarwood',x:150+EDGE,cls:'weaver',look:{sex:1,build:1,face:3,hair:2,hairC:1,beard:0,skin:2,eye:2,outfit:2},eq:{head:'moss',chest:'moss',feet:'wolf'},
   lines:['Briarwood is a nursery. Bears, boar, every fox in the Reach is born here. The poachers know it too.','Kill what threatens you, sure. But a mother bear protecting cubs is not a monster.','I would rather talk an animal down than put one down. Takes longer. Works better.']};
 BARKS.bryn=['Easy, easy.','Watch for snares.','The cubs are watching.'];

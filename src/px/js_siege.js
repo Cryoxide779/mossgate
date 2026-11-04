@@ -38,7 +38,7 @@ const TWI=zIdx('tower'),SGI=ZONES.length;
   props:[['depot',160],['banner',300],['watchtower',420],['banner',560],['gatewall',880],['siegetent',1280],['fire',1380],['siegetent',1520],['cart',1620]],trees:[],gateX:880,depotX:160};
  prepZone(Sg);Sg.nodes=[];Sg.stations=[];Sg.gateX+=EDGE;Sg.depotX+=EDGE;ZONES.push(Sg);
  const Tw=ZONES[TWI];Tw.portals.push({x:1180+EDGE,to:SGI,tx:70+EDGE});(Tw.labels=Tw.labels||[]).push([1180+EDGE,'The Siege Line',78])}
-MAPXY.siege=[30,30];
+MAPXY.siege=[24,40];
 NPCS.vell={name:'Sergeant Vell',title:'Charter Militia, Old Watchtower',x:240+EDGE,cls:'ronin',look:{sex:0,build:2,face:4,hair:3,hairC:2,beard:3,skin:3,eye:0,outfit:3},eq:{head:'warden',chest:'warden',feet:'warden'},
   lines:['Twelve militia, one gate, and a Freeband warchief who wants this tower for his own toll road.','Every soldier has a job in a siege. Even the cook. Especially the cook.','The tower stood through the Gatefall. It is not falling to bandits.']};
 BARKS.vell=['Hold the line!','Crates to the gate!','Eyes on the camp.'];
