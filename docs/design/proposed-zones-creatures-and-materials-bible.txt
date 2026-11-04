@@ -1,0 +1,3733 @@
+THE FALL OF MOSSGATE
+
+STUDIO EDITION
+
+PROPOSED TERRITORY BIBLE
+
+Zone Creatures and Materials
+
+Seven Proposed Regions • Recruitable Species • Resource Ecosystems
+
+Document Control
+
+This bible extends the seven proposed map packages with zone-specific
+creature rosters, recruitable companion paths, renewable and recovery
+materials, processing chains, and resource-map requirements. All names
+and rules remain Proposed until approved through Studio Governance.
+
+  -----------------------------------------------------------------------
+  CREATURE INVARIANT
+  Every creature in this document has at least one species-appropriate
+  recruitment route. Recruitment, rescue, trust, sanctuary, repair,
+  cleansing, contract, migration support, and ritual partnership are
+  valid paths. Creature materials do not require killing by default.
+  -----------------------------------------------------------------------
+
+  -----------------------------------------------------------------------
+
+Shared Creature Tiers
+
+  -----------------------------------------------------------------------
+  Tier                                Production Meaning
+  ----------------------------------- -----------------------------------
+  Common                              Frequently observed; supports
+                                      ecology, learning, professions, and
+                                      early recruitment.
+
+  Uncommon                            Localized or behaviorally
+                                      specialized; requires knowledge,
+                                      equipment, or relationship work.
+
+  Rare                                Limited habitat, unusual
+                                      capability, or complex recruitment
+                                      chain.
+
+  Legendary                           Region-defining individual or
+                                      species; recruitment is a major
+                                      quest, accord, restoration, or
+                                      long-term bond rather than a loot
+                                      reward.
+  -----------------------------------------------------------------------
+
+Shared Material Rules
+
+  -----------------------------------------------------------------------
+  Rule                                Requirement
+  ----------------------------------- -----------------------------------
+  Source                              Every material has a physical,
+                                      biological, magical, historical, or
+                                      recovered source.
+
+  Method                              Harvesting states whether gathering
+                                      is renewable, nonlethal,
+                                      recovery-based, agricultural,
+                                      salvaged, mined, or restricted.
+
+  Processing                          Raw resources require named
+                                      facilities, skills, tools, and
+                                      risks.
+
+  Use                                 Materials support specific
+                                      components, structures, medicine,
+                                      trade, rituals, or creature
+                                      equipment.
+
+  Lifecycle                           Condition, repair, contamination,
+                                      recycling, reuse, and end-of-life
+                                      are defined.
+
+  Provenance                          Rare, historical, creature-derived,
+                                      Sacred, corrupted, and Shard
+                                      materials retain source records.
+
+  Geography                           Extraction, habitats, processing,
+                                      storage, trade, smuggling,
+                                      restriction, depletion, and
+                                      restoration appear on zone maps.
+  -----------------------------------------------------------------------
+
+1. The Golden Plains
+
+Wide Horizons. Enduring People.
+
+  -----------------------------------------------------------------------
+  STATUS: PROPOSED — NOT YET CANONICAL
+  Creature and material content is designed to support open grasslands,
+  farms, herds, caravans, storms, and stewardship. Final species count
+  and names require zone approval.
+  -----------------------------------------------------------------------
+
+  -----------------------------------------------------------------------
+
+A. Creature Roster Summary
+
+  -----------------------------------------------------------------------
+  Creature                Tier                    Ecological and Gameplay
+                                                  Role
+  ----------------------- ----------------------- -----------------------
+  Sunmane Courser         Common                  Fast herd animal and
+                                                  regional mount.
+
+  Prairie Burrower        Common                  Soil-turning omnivore
+                                                  that aerates fields and
+                                                  exposes roots.
+
+  Skybloom Crane          Common                  Wetland and field bird
+                                                  that marks seasons and
+                                                  pollinator cycles.
+
+  Emberhorn Ram           Uncommon                Hardy upland grazer and
+                                                  defensive livestock
+                                                  guardian.
+
+  Longroad Hound          Uncommon                Caravan-bred scent and
+                                                  route guardian.
+
+  Stormcrest Roc          Rare                    Large aerial predator
+                                                  and weather-sensitive
+                                                  regional sentinel.
+
+  Stonecircle Aurox       Rare                    Massive herd guardian
+                                                  linked to ancient
+                                                  grassland markers.
+
+  Prairie Colossus        Legendary               Ancient
+                                                  ecosystem-shaping
+                                                  grazer and living
+                                                  regional landmark.
+  -----------------------------------------------------------------------
+
+B. Creature Production Profiles
+
+GLD-CR-01 • Sunmane Courser (Common)
+
+  -----------------------------------------------------------------------
+  Field                               Definition
+  ----------------------------------- -----------------------------------
+  Body Plan and Signature             Tall equine body, broad lungs,
+                                      golden mane, dark lower legs, and
+                                      heat-shedding coat.
+
+  Habitat                             Open prairie, ranch margins, and
+                                      protected herd corridors.
+
+  Behavior                            Social, alert, migratory, and
+                                      reluctant to leave familiar herd
+                                      structures.
+
+  Gameplay Functions                  Mounted travel, caravan scouting,
+                                      racing, herding, and weather
+                                      sensing.
+
+  Recruitment Path                    Trust through herd assistance,
+                                      rescue from wire or fire, ranch
+                                      apprenticeship, or adoption from a
+                                      sanctuary.
+
+  Bond and Companion Roles            Mount, scout, courier, herd guide,
+                                      and agricultural partner.
+
+  Equipment Compatibility             Saddle, light barding, cargo
+                                      panniers, signal tack, and
+                                      heat-safe harness.
+
+  Renewable Materials                 Brushed mane fiber, shed coat,
+                                      manure, and voluntary blood samples
+                                      for veterinary research.
+
+  Recovery Materials                  Lawfully recovered hide, hoof, and
+                                      bone only after natural death or
+                                      authorized ecological recovery.
+
+  Risks and Care                      Requires social contact, large
+                                      grazing space, hoof care, and
+                                      gradual load training.
+
+  World-State Response                Moves with drought and fire;
+                                      restored migration routes improve
+                                      health and recruitment.
+  -----------------------------------------------------------------------
+
+GLD-CR-02 • Prairie Burrower (Common)
+
+  -----------------------------------------------------------------------
+  Field                               Definition
+  ----------------------------------- -----------------------------------
+  Body Plan and Signature             Low badger-like body, shovel claws,
+                                      striped face, and dust-resistant
+                                      eyes.
+
+  Habitat                             Field edges, banks, old road berms,
+                                      and grassland warrens.
+
+  Behavior                            Family-colony life; defensive near
+                                      dens but curious around farms.
+
+  Gameplay Functions                  Tracking, digging, hidden-cache
+                                      detection, soil improvement, and
+                                      small-tunnel access.
+
+  Recruitment Path                    Protect a colony, restore a damaged
+                                      warren, provide safe farm
+                                      boundaries, or raise an orphan
+                                      through sanctuary care.
+
+  Bond and Companion Roles            Forager, excavation helper, truffle
+                                      finder, and camp sentry.
+
+  Equipment Compatibility             Soft digging guards, scent satchel,
+                                      survey tags, and lightweight pack
+                                      harness.
+
+  Renewable Materials                 Shed claws, brushed fur, recovered
+                                      burrow minerals, and manure-rich
+                                      soil.
+
+  Recovery Materials                  Recovered hide and bone from
+                                      natural deaths; dens are protected
+                                      from destructive extraction.
+
+  Risks and Care                      Sensitive to vibration, flooding,
+                                      and isolation.
+
+  World-State Response                Thrives under stewardship; road
+                                      expansion or overplowing fragments
+                                      colonies.
+  -----------------------------------------------------------------------
+
+GLD-CR-03 • Skybloom Crane (Common)
+
+  -----------------------------------------------------------------------
+  Field                               Definition
+  ----------------------------------- -----------------------------------
+  Body Plan and Signature             Long-legged crane with blue-gold
+                                      wing markings and resonant throat
+                                      sac.
+
+  Habitat                             Irrigation basins, river shallows,
+                                      flower fields, and flooded farms.
+
+  Behavior                            Pair-bonded, migratory, ritualized
+                                      dances, and strong route memory.
+
+  Gameplay Functions                  Navigation, message carrying, seed
+                                      distribution, flood warning, and
+                                      ceremonial events.
+
+  Recruitment Path                    Safeguard nesting ground, heal an
+                                      injured migrant, return a lost
+                                      mate, or earn flock acceptance
+                                      through route restoration.
+
+  Bond and Companion Roles            Aerial scout, signal partner, seed
+                                      carrier, and weather observer.
+
+  Equipment Compatibility             Leg bands, message capsule, soft
+                                      chest harness, and reflective storm
+                                      marker.
+
+  Renewable Materials                 Molted feathers, abandoned
+                                      eggshell, guano, and naturally shed
+                                      keratin.
+
+  Recovery Materials                  Recovered remains only under
+                                      sanctuary or cultural rules.
+
+  Risks and Care                      Requires open flight space, wetland
+                                      access, and pair or flock contact.
+
+  World-State Response                Migration routes expand or collapse
+                                      with water and agricultural
+                                      choices.
+  -----------------------------------------------------------------------
+
+GLD-CR-04 • Emberhorn Ram (Uncommon)
+
+  -----------------------------------------------------------------------
+  Field                               Definition
+  ----------------------------------- -----------------------------------
+  Body Plan and Signature             Heavy sheep-like body,
+                                      ember-colored spiral horns, dense
+                                      wool, and heat-resistant hooves.
+
+  Habitat                             Southwind uplands, rocky ranches,
+                                      and firebreak zones.
+
+  Behavior                            Protective, stubborn,
+                                      herd-oriented, and capable of
+                                      sensing smoke.
+
+  Gameplay Functions                  Wool production, climbing, fire
+                                      warning, cargo, and defensive
+                                      charge.
+
+  Recruitment Path                    Ranch service, wildfire rescue,
+                                      calm handling, or winning trust
+                                      after treating horn or hoof injury.
+
+  Bond and Companion Roles            Pack animal, fire patrol, guardian,
+                                      climbing assistant, and wool
+                                      partner.
+
+  Equipment Compatibility             Fire-safe blankets, horn guards,
+                                      panniers, rescue line, and medium
+                                      barding.
+
+  Renewable Materials                 Wool, shed horn layers, milk, and
+                                      manure.
+
+  Recovery Materials                  Hide, horn, and bone only from
+                                      lawful recovery; breeding and
+                                      welfare are regulated.
+
+  Risks and Care                      Needs shearing, hoof maintenance,
+                                      herd companionship, and cooling
+                                      after exertion.
+
+  World-State Response                Population grows with restored
+                                      upland pastures; severe fire
+                                      creates rescue events.
+  -----------------------------------------------------------------------
+
+GLD-CR-05 • Longroad Hound (Uncommon)
+
+  -----------------------------------------------------------------------
+  Field                               Definition
+  ----------------------------------- -----------------------------------
+  Body Plan and Signature             Lean canid with long legs, broad
+                                      paws, wind-facing ears, and
+                                      patterned travel coat.
+
+  Habitat                             Road stations, caravan camps,
+                                      plains margins, and abandoned
+                                      routes.
+
+  Behavior                            Cooperative, territorial around
+                                      caravans, and excellent at
+                                      recognizing route scent.
+
+  Gameplay Functions                  Tracking, guard work, finding lost
+                                      travelers, detecting ambush, and
+                                      route memory.
+
+  Recruitment Path                    Rescue from an abandoned caravan,
+                                      handler contract, sanctuary
+                                      adoption, or long-term caravan
+                                      service.
+
+  Bond and Companion Roles            Scout, guard, rescue tracker,
+                                      messenger, and family companion.
+
+  Equipment Compatibility             Light armor, scent kit, message
+                                      harness, paw guards, and rescue
+                                      pack.
+
+  Renewable Materials                 Brushed fur, shed claws, scent
+                                      samples, and training knowledge.
+
+  Recovery Materials                  Recovered materials only after
+                                      natural death; unlawful breeding is
+                                      prohibited.
+
+  Risks and Care                      Needs structured purpose, social
+                                      contact, paw care, and mental work.
+
+  World-State Response                Road safety and caravan politics
+                                      affect trust and distribution.
+  -----------------------------------------------------------------------
+
+GLD-CR-06 • Stormcrest Roc (Rare)
+
+  -----------------------------------------------------------------------
+  Field                               Definition
+  ----------------------------------- -----------------------------------
+  Body Plan and Signature             Broad-winged raptor with silver
+                                      storm feathers, crest plumes, and
+                                      powerful gripping feet.
+
+  Habitat                             Mesa nests, storm ridges, and wide
+                                      thermal corridors.
+
+  Behavior                            Solitary except during nesting;
+                                      avoids dense settlement and reacts
+                                      to atmospheric pressure.
+
+  Gameplay Functions                  Aerial travel, storm prediction,
+                                      rescue lift, high scouting, and
+                                      large-target combat support.
+
+  Recruitment Path                    Long quest to protect a nest,
+                                      repair storm towers, return a
+                                      stolen egg without claiming it, and
+                                      earn a voluntary bond.
+
+  Bond and Companion Roles            Aerial scout, rescue carrier,
+                                      weather sentinel, and regional
+                                      guardian.
+
+  Equipment Compatibility             Custom chest harness, rider rig
+                                      only for suitable individuals,
+                                      wing-safe armor, and signal
+                                      beacons.
+
+  Renewable Materials                 Molted feathers, abandoned shell,
+                                      naturally shed talon sheath, and
+                                      nest materials.
+
+  Recovery Materials                  Recovered remains under sanctuary
+                                      supervision; eggs and live feathers
+                                      are never harvest loot.
+
+  Risks and Care                      Requires enormous range, flight
+                                      freedom, specialized feeding, and
+                                      no forced mounting.
+
+  World-State Response                Storm and development corridors
+                                      change nests; stewardship can
+                                      reopen flight routes.
+  -----------------------------------------------------------------------
+
+GLD-CR-07 • Stonecircle Aurox (Rare)
+
+  -----------------------------------------------------------------------
+  Field                               Definition
+  ----------------------------------- -----------------------------------
+  Body Plan and Signature             Towering bovine body, stone-pattern
+                                      horns, heavy shoulder hump, and
+                                      moss-mottled hide.
+
+  Habitat                             Stonecircle March, ancestral
+                                      migration lanes, and river meadows.
+
+  Behavior                            Matriarchal herds, ritual circling,
+                                      strong memory, and fierce calf
+                                      defense.
+
+  Gameplay Functions                  Heavy hauling, ceremonial travel,
+                                      barrier breaking, herd protection,
+                                      and land-memory quests.
+
+  Recruitment Path                    Restore a migration corridor,
+                                      protect calves, resolve ranch
+                                      conflict, and receive herd
+                                      acceptance rather than ownership
+                                      capture.
+
+  Bond and Companion Roles            Heavy transport, guardian,
+                                      agricultural power, diplomatic
+                                      symbol, and migration guide.
+
+  Equipment Compatibility             Broad yoke, padded cargo frame,
+                                      ceremonial cloth, horn protection,
+                                      and heavy nonrestrictive barding.
+
+  Renewable Materials                 Shed coat, horn flakes, manure, and
+                                      naturally abandoned bedding.
+
+  Recovery Materials                  Bone, horn, and hide only from
+                                      authorized natural-death recovery
+                                      with herd rites.
+
+  Risks and Care                      Needs herd access, migration space,
+                                      gentle load limits, and social
+                                      consent.
+
+  World-State Response                Land enclosure and water policy
+                                      directly change herd behavior.
+  -----------------------------------------------------------------------
+
+GLD-CR-08 • Prairie Colossus (Legendary)
+
+  -----------------------------------------------------------------------
+  Field                               Definition
+  ----------------------------------- -----------------------------------
+  Body Plan and Signature             Enormous six-legged herbivore with
+                                      grass-covered back, wind-sensing
+                                      frills, and tree-like horns.
+
+  Habitat                             Remote prairie basin and
+                                      continental migration path.
+
+  Behavior                            Slow, nonaggressive, accompanied by
+                                      smaller species, and sensitive to
+                                      water and thunder.
+
+  Gameplay Functions                  Region-scale migration event,
+                                      traveling habitat, disaster rescue,
+                                      and world-state restoration.
+
+  Recruitment Path                    Multi-stage accord: restore water,
+                                      clear migration barriers, protect
+                                      dependent species, and establish a
+                                      relationship with one willing
+                                      juvenile or emissary.
+
+  Bond and Companion Roles            Legendary transport, mobile
+                                      sanctuary, ecological guardian, and
+                                      settlement-relief partner under
+                                      strict limits.
+
+  Equipment Compatibility             Observation platforms and care
+                                      structures only; no conventional
+                                      armor or forced saddle.
+
+  Renewable Materials                 Naturally shed horn bark,
+                                      back-grown herbs, dropped fibers,
+                                      and soil enriched by passage.
+
+  Recovery Materials                  No ordinary recovery harvest.
+                                      Remains become protected ecological
+                                      and memorial sites.
+
+  Risks and Care                      Requires continental space, water,
+                                      dependent-species protection, and
+                                      nonownership governance.
+
+  World-State Response                Migration can renew or devastate
+                                      landscapes depending on human
+                                      planning and climate.
+  -----------------------------------------------------------------------
+
+C. Zone Material Catalog
+
+  ----------------------------------------------------------------------------------
+  Material       Class          Source and       Primary Uses     Risks /
+                                Processing                        Restrictions
+  -------------- -------------- ---------------- ---------------- ------------------
+  Sunwood        Managed        Harvested from   Wagons, bows,    Overharvest
+                 hardwood       windbreak groves tool handles,    increases erosion
+                                through          shade            and fire spread;
+                                rotational       structures,      grove provenance
+                                pruning;         heat-resistant   required.
+                                kiln-dried and   frames, and      
+                                oil-cured.       companion        
+                                                 harnesses.       
+
+  Skybloom Fiber Plant fiber    Collected after  Light cloth,     Harvest timing
+                                flowering from   decorative       must preserve
+                                cultivated       banners,         pollination and
+                                prairie plants;  breathable       seed cycles.
+                                retted, spun,    padding,         
+                                and woven.       filters, and     
+                                                 ritual wraps.    
+
+  Ambergrain     Agricultural   Clean straw      Insulation,      Fire and moisture
+  Straw          composite      mixed with clay, temporary        risk without
+  Composite                     resin, or lime   structures,      correct treatment.
+                                and pressed into carts, animal    
+                                panels.          bedding, and     
+                                                 low-cost         
+                                                 housing.         
+
+  Prairie Clay   Ceramic        River and        Brick, tile,     Pits alter
+                 mineral        floodplain clay  pottery, cistern drainage and
+                                dug from         lining, ovens,   nesting habitat.
+                                controlled pits; molds, and       
+                                washed, wedged,  medicine         
+                                fired.           vessels.         
+
+  Emberhorn Wool Renewable      Sheared during   Insulation, fire Welfare, shearing
+                 creature fiber seasonal care;   blankets, armor  skill, and heat
+                                cleaned, graded, padding,         management are
+                                spun, and        tenting, and     mandatory.
+                                felted.          cold-night       
+                                                 equipment.       
+
+  Aurox          Renewable hard Naturally shed   Grip scales,     Cannot justify
+  Hornflake      organic        outer horn       inlay, signal    horn cutting; herd
+                                layers collected tools,           and cultural
+                                on migration     ceremonial       permission
+                                routes; cleaned  fittings, and    required.
+                                and laminated.   durable buttons. 
+
+  Longroad       Processed hide Mostly livestock Harnesses,       Source and welfare
+  Leather        class          or lawful        boots, saddles,  provenance
+                                recovery hide;   packs, armor     required.
+                                vegetable tanned layers, and      
+                                and waxed.       wagon belts.     
+
+  Stormglass     Mineral glass  Fulgurite-rich   Weather          Sharp,
+  Sand           feedstock      sand collected   instruments,     lightning-active
+                                after storms;    lenses, signal   deposits may
+                                sorted and       glass, and       retain charge.
+                                carefully        decorative       
+                                remelted.        conduits.        
+
+  Fieldstone     Construction   Local limestone  Mortar, plaster, Kiln fuel and
+  Lime           mineral        burned in kilns  soil treatment,  caustic handling
+                                and slaked.      sanitation, and  require controls.
+                                                 waterworks.      
+
+  Prairie Resin  Plant resin    Tapped from      Adhesive,        Overtapping kills
+                                managed shrubs   waterproofing,   windbreak shrubs
+                                without killing  bow work, wagon  and weakens soil
+                                the plant;       repair, and      protection.
+                                filtered and     incense.         
+                                reduced.                          
+  ----------------------------------------------------------------------------------
+
+D. Material Geography
+
+  -----------------------------------------------------------------------
+  Map Layer                           Required Placement
+  ----------------------------------- -----------------------------------
+  Production Belt                     Map farms, ranches, groves, mills,
+                                      tanneries, kilns, ropeworks,
+                                      storage, and markets.
+
+  Migration Layer                     Wildherd, crane, roc, and Colossus
+                                      corridors with seasonal dates.
+
+  Fire Layer                          Fuel density, firebreaks, wells,
+                                      lookout points, evacuation routes,
+                                      and burn history.
+
+  Water Layer                         Irrigation, floodplain, ponds,
+                                      drinking access, drought priority,
+                                      and contamination.
+
+  Trade Layer                         Grain, wool, leather, wagon, salt,
+                                      and tool flows toward neighboring
+                                      regions.
+  -----------------------------------------------------------------------
+
+E. Regional Production Chains
+
+  -----------------------------------------------------------------------
+  Chain                               Flow and Regional Function
+  ----------------------------------- -----------------------------------
+  Grain and Straw                     Farm → mill → food market; straw →
+                                      panel yard, bedding, fuel, and
+                                      compost.
+
+  Wool                                Ranch → wash house → spinning hall
+                                      → cloth, felt, armor padding, and
+                                      blankets.
+
+  Sunwood                             Managed grove → saw yard →
+                                      seasoning → wagon, bow, structure,
+                                      and repair shops.
+
+  Stormglass                          Storm field → protected collection
+                                      → glassworks → lens and
+                                      weather-instrument production.
+
+  Creature Partnership                Sanctuary/ranch → training and
+                                      welfare → transport, rescue,
+                                      migration, and renewable materials.
+  -----------------------------------------------------------------------
+
+F. Creature-Material Ethics and Law
+
+-   Wild herd corridors cannot be fenced without approved crossings.
+
+-   Eggs, live feathers, horns, and companion bodies are not ordinary
+    loot.
+
+-   Working creatures require load, rest, habitat, and retirement rules.
+
+-   Legendary Prairie Colossus relationships use accord and stewardship,
+    not ownership.
+
+G. Approval Questions
+
+-   Which creature is the zone mascot and first regional recruitment?
+
+-   Are working-animal enterprises controllable by players?
+
+-   How much breeding detail is exposed to gameplay?
+
+-   Does the Prairie Colossus appear as one individual, a species, or
+    both?
+
+2. Silverwood Wilds
+
+Untamed Beauty. Hidden Wonders.
+
+  -----------------------------------------------------------------------
+  STATUS: PROPOSED — NOT YET CANONICAL
+  Designed for canopy, river, glade, and deep-wilderness ecology. Species
+  must remain distinct from Whisper Woods through remoteness, multi-layer
+  traversal, and expedition relationships.
+  -----------------------------------------------------------------------
+
+  -----------------------------------------------------------------------
+
+A. Creature Roster Summary
+
+  -----------------------------------------------------------------------
+  Creature                Tier                    Ecological and Gameplay
+                                                  Role
+  ----------------------- ----------------------- -----------------------
+  Silverbrush Hare        Common                  Seed disperser and
+                                                  trail indicator.
+
+  Mistreach Otter         Common                  River social species
+                                                  and aquatic guide.
+
+  Canopy Glider           Common                  Arboreal pollinator and
+                                                  light courier.
+
+  Thornroot Tapir         Uncommon                Large understory
+                                                  browser and root-path
+                                                  maker.
+
+  Moonshade Lynx          Uncommon                Nocturnal predator and
+                                                  spirit-sensitive
+                                                  tracker.
+
+  Feylight Moth           Rare                    Large luminous
+                                                  pollinator and magical
+                                                  indicator.
+
+  Emerald Spineback       Rare                    Large armored forest
+                                                  climber and guardian.
+
+  Rootsong Warden         Rare                    Living plant-construct
+                                                  guardian of sanctuary
+                                                  networks.
+
+  Silverwood Leviathan    Legendary               Ancient canopy-scale
+                                                  creature and moving
+                                                  habitat.
+  -----------------------------------------------------------------------
+
+B. Creature Production Profiles
+
+SLV-CR-01 • Silverbrush Hare (Common)
+
+  -----------------------------------------------------------------------
+  Field                               Definition
+  ----------------------------------- -----------------------------------
+  Body Plan and Signature             Long-limbed hare with reflective
+                                      guard hairs.
+
+  Habitat                             Glades and root terraces.
+
+  Behavior                            Crepuscular, social,
+                                      freeze-and-listen behavior.
+
+  Gameplay Functions                  Trail finding, herb discovery, and
+                                      danger warning.
+
+  Recruitment Path                    Restore cover, rescue a leveret, or
+                                      gain trust through repeated quiet
+                                      visits.
+
+  Bond and Companion Roles            Scout, garden helper, and camp
+                                      alert.
+
+  Equipment Compatibility             Soft collar, tiny satchel, no armor
+                                      beyond weather cover.
+
+  Renewable Materials                 Brushed fur and nesting fiber.
+
+  Recovery Materials                  Natural-death recovery only.
+
+  Risks and Care                      Stress-sensitive; needs hiding
+                                      space.
+
+  World-State Response                Declines with overharvest; returns
+                                      under protected understory.
+  -----------------------------------------------------------------------
+
+SLV-CR-02 • Mistreach Otter (Common)
+
+  -----------------------------------------------------------------------
+  Field                               Definition
+  ----------------------------------- -----------------------------------
+  Body Plan and Signature             Large otter with silver whiskers
+                                      and webbed paws.
+
+  Habitat                             Mistreach River and falls.
+
+  Behavior                            Playful colony behavior and tool
+                                      use.
+
+  Gameplay Functions                  Swimming, retrieval, fishing
+                                      cooperation, and water rescue.
+
+  Recruitment Path                    Clean a den, rescue colony members,
+                                      or assist seasonal fishing.
+
+  Bond and Companion Roles            Aquatic scout, retriever, rescue
+                                      partner.
+
+  Equipment Compatibility             Float harness, message tube, soft
+                                      paw guards.
+
+  Renewable Materials                 Shed whiskers, fur brushings,
+                                      abandoned shells.
+
+  Recovery Materials                  Recovered remains under sanctuary
+                                      rules.
+
+  Risks and Care                      Needs water, colony contact, and
+                                      enrichment.
+
+  World-State Response                Water pollution changes den
+                                      locations.
+  -----------------------------------------------------------------------
+
+SLV-CR-03 • Canopy Glider (Common)
+
+  -----------------------------------------------------------------------
+  Field                               Definition
+  ----------------------------------- -----------------------------------
+  Body Plan and Signature             Small mammal with broad membranes
+                                      and luminous tail tip.
+
+  Habitat                             Upper canopy and flowering trees.
+
+  Behavior                            Nocturnal, colony nesting, route
+                                      memory.
+
+  Gameplay Functions                  Canopy scouting, pollination, small
+                                      delivery.
+
+  Recruitment Path                    Protect a colony, build nest boxes,
+                                      or heal wing membrane.
+
+  Bond and Companion Roles            Scout, pollinator, messenger.
+
+  Equipment Compatibility             Leg band, light capsule, no rigid
+                                      armor.
+
+  Renewable Materials                 Shed fur and nesting fiber.
+
+  Recovery Materials                  Natural recovery only.
+
+  Risks and Care                      Fragile membrane; cannot carry
+                                      heavy loads.
+
+  World-State Response                Canopy fragmentation blocks
+                                      movement.
+  -----------------------------------------------------------------------
+
+SLV-CR-04 • Thornroot Tapir (Uncommon)
+
+  -----------------------------------------------------------------------
+  Field                               Definition
+  ----------------------------------- -----------------------------------
+  Body Plan and Signature             Stocky tapir-like body with
+                                      bark-pattern hide and sensitive
+                                      trunk.
+
+  Habitat                             Flooded forest and thorn passes.
+
+  Behavior                            Family groups, cautious, clears
+                                      dense paths.
+
+  Gameplay Functions                  Trail opening, scent detection,
+                                      cargo, and restoration.
+
+  Recruitment Path                    Heal thorn injury, restore salt
+                                      lick, or reunite family.
+
+  Bond and Companion Roles            Pack partner, path maker,
+                                      ecological worker.
+
+  Equipment Compatibility             Padded panniers, face guard, light
+                                      bark armor.
+
+  Renewable Materials                 Shed bristles, dung, naturally worn
+                                      hoof material.
+
+  Recovery Materials                  Authorized recovery hide and bone.
+
+  Risks and Care                      Needs mud wallows and family
+                                      contact.
+
+  World-State Response                Creates new paths when flood
+                                      patterns shift.
+  -----------------------------------------------------------------------
+
+SLV-CR-05 • Moonshade Lynx (Uncommon)
+
+  -----------------------------------------------------------------------
+  Field                               Definition
+  ----------------------------------- -----------------------------------
+  Body Plan and Signature             Long-legged lynx with silver ear
+                                      fans and dark reflective coat.
+
+  Habitat                             Moonshade Grove and quiet ridges.
+
+  Behavior                            Solitary, observant, avoids noisy
+                                      camps.
+
+  Gameplay Functions                  Stealth tracking, spirit trail
+                                      detection, ambush warning.
+
+  Recruitment Path                    Long trust chain through territory
+                                      protection, injured-prey
+                                      resolution, and quiet observation.
+
+  Bond and Companion Roles            Tracker, stealth companion, spirit
+                                      scout.
+
+  Equipment Compatibility             Silent harness, soft joint guards,
+                                      light sensory mantle.
+
+  Renewable Materials                 Shed fur, whiskers, claw sheaths.
+
+  Recovery Materials                  Natural-death recovery only.
+
+  Risks and Care                      Needs autonomy, private rest, and
+                                      low-noise handling.
+
+  World-State Response                Leaves disturbed groves; returns to
+                                      protected corridors.
+  -----------------------------------------------------------------------
+
+SLV-CR-06 • Feylight Moth (Rare)
+
+  -----------------------------------------------------------------------
+  Field                               Definition
+  ----------------------------------- -----------------------------------
+  Body Plan and Signature             Person-sized moth with patterned
+                                      wings and soft lantern abdomen.
+
+  Habitat                             Feylight Glade and rare bloom
+                                      routes.
+
+  Behavior                            Migratory, light-sensitive,
+                                      harmless when undisturbed.
+
+  Gameplay Functions                  Night navigation, magical
+                                      detection, calming light, and
+                                      pollination.
+
+  Recruitment Path                    Protect migration, cultivate host
+                                      plants, and receive voluntary
+                                      cocoon-bonded emergence.
+
+  Bond and Companion Roles            Aerial guide, healer support,
+                                      garden partner.
+
+  Equipment Compatibility             No armor; optional soft rune bands
+                                      and light diffuser.
+
+  Renewable Materials                 Shed scales, empty cocoon silk, and
+                                      abandoned egg cases.
+
+  Recovery Materials                  No killing harvest; dead specimens
+                                      become research donations.
+
+  Risks and Care                      Light pollution and rough handling
+                                      are dangerous.
+
+  World-State Response                Population reflects magical and
+                                      ecological health.
+  -----------------------------------------------------------------------
+
+SLV-CR-07 • Emerald Spineback (Rare)
+
+  -----------------------------------------------------------------------
+  Field                               Definition
+  ----------------------------------- -----------------------------------
+  Body Plan and Signature             Six-limbed reptilian herbivore with
+                                      leaf-like plates.
+
+  Habitat                             Emerald Spire cliffs and canopy
+                                      bridges.
+
+  Behavior                            Territorial around feeding trees,
+                                      calm when routines are respected.
+
+  Gameplay Functions                  Climbing transport, shield role,
+                                      vegetation clearing, and high-route
+                                      access.
+
+  Recruitment Path                    Restore feeding grove, remove
+                                      traps, and complete a climbing
+                                      trust trial.
+
+  Bond and Companion Roles            Guardian, mount for suitable
+                                      individuals, heavy carrier.
+
+  Equipment Compatibility             Custom flexible barding between
+                                      plates, cargo frame, climbing
+                                      harness.
+
+  Renewable Materials                 Naturally shed plates, skin molt,
+                                      and claw sheaths.
+
+  Recovery Materials                  Recovery scales and bone only with
+                                      sanctuary approval.
+
+  Risks and Care                      Needs mineral diet, vertical
+                                      habitat, and plate care.
+
+  World-State Response                Routes shift after storms and
+                                      logging.
+  -----------------------------------------------------------------------
+
+SLV-CR-08 • Rootsong Warden (Rare)
+
+  -----------------------------------------------------------------------
+  Field                               Definition
+  ----------------------------------- -----------------------------------
+  Body Plan and Signature             Humanoid/elk-like woven root body
+                                      with fungal lights.
+
+  Habitat                             Sanctuary nodes, old groves, and
+                                      Rootbound Gate.
+
+  Behavior                            Slow, evaluative, communicates
+                                      through vibration and growth.
+
+  Gameplay Functions                  Healing terrain, barrier creation,
+                                      carrying, and ecological memory.
+
+  Recruitment Path                    Repair a damaged Warden, earn grove
+                                      permission, or enter a stewardship
+                                      contract.
+
+  Bond and Companion Roles            Sanctuary guardian, builder,
+                                      healer, and historian.
+
+  Equipment Compatibility             Living-vine fittings, tool mounts,
+                                      no conventional armor.
+
+  Renewable Materials                 Pruned living fiber, resin, spores,
+                                      and fallen bark.
+
+  Recovery Materials                  Broken pieces may be reused only
+                                      with consent or confirmed dormancy.
+
+  Risks and Care                      Requires soil, water, fungi, and
+                                      periodic rooting.
+
+  World-State Response                Strength follows sanctuary health.
+  -----------------------------------------------------------------------
+
+SLV-CR-09 • Silverwood Leviathan (Legendary)
+
+  -----------------------------------------------------------------------
+  Field                               Definition
+  ----------------------------------- -----------------------------------
+  Body Plan and Signature             Immense serpentine herbivore with
+                                      branch antlers and mossed scales.
+
+  Habitat                             Deepest canopy and river
+                                      headwaters.
+
+  Behavior                            Rarely seen; carries plants and
+                                      small creatures.
+
+  Gameplay Functions                  Region-scale traversal event,
+                                      ecological restoration, and
+                                      ancient-memory quest.
+
+  Recruitment Path                    Restore river, protect migration,
+                                      resolve old harm, and form an
+                                      accord with a willing offspring or
+                                      avatar.
+
+  Bond and Companion Roles            Legendary guide, sanctuary partner,
+                                      and living route.
+
+  Equipment Compatibility             No normal equipment; only
+                                      noninvasive markers or care
+                                      platforms.
+
+  Renewable Materials                 Naturally shed scales, antler bark,
+                                      and carried rare plants.
+
+  Recovery Materials                  No harvest from death; remains are
+                                      protected landscapes.
+
+  Risks and Care                      Requires huge range and freedom.
+
+  World-State Response                Appearance signals major ecological
+                                      transition.
+  -----------------------------------------------------------------------
+
+C. Zone Material Catalog
+
+  -------------------------------------------------------------------------------------------
+  Material       Class               Source and Processing   Primary Uses     Risks /
+                                                                              Restrictions
+  -------------- ------------------- ----------------------- ---------------- ---------------
+  Silverwood     Rare hardwood       Only fallen or          Bows, precision  Illegal
+                                     stewardship-harvested   tools, light     clearcutting;
+                                     limbs; air-seasoned     laminates,       source
+                                     under low light.        instruments, and permissions
+                                                             spirit           required.
+                                                             equipment.       
+
+  Ironroot       Dense plant         Thin Ironroot strips    Shields,         Heavy and
+  Laminate       composite           steamed and layered     climbing gear,   difficult to
+                                     with resin.             bridge parts,    repair without
+                                                             armor backing.   specialists.
+
+  Feysilk        Renewable creature  Collected from empty    Light cloth,     Migration and
+                 fiber               Feylight cocoons;       magical filters, host plants
+                                     cleaned without         wing-safe        must be
+                                     chemical bleaching.     harness, and     protected.
+                                                             ceremonial       
+                                                             fabric.          
+
+  Moon Resin     Plant resin         Night-tapped from       Silent           Overtapping
+                                     mature trees in small   adhesives,       harms trees;
+                                     amounts; purified in    spirit varnish,  reacts badly to
+                                     cool stills.            bow work, and    heat.
+                                                             medical sealant. 
+
+  Starlight      Magical plant       Cultivated from         Focus recovery,  Wild collection
+  Orchid                             permitted cuttings;     navigation,      restricted.
+                                     dried or distilled.     medicine, and    
+                                                             ritual ink.      
+
+  Mistreach      River mineral       Formed around mineral   Jewelry, water   Dredging
+  Pearlstone                         cores in calm pools;    lenses,          damages dens
+                                     gathered by divers and  diagnostic       and spawning
+                                     otter partners.         tools, and       beds.
+                                                             inlay.           
+
+  Spineback      Renewable creature  Naturally shed plates   Light shields,   No plate
+  Plate          material            cleaned and             joint guards,    removal from
+                                     heat-shaped.            climbing         living animals.
+                                                             protection.      
+
+  Living         Plant fiber         Fast-growing vines      Rope, bridges,   Can root into
+  Vinecord                           cultivated on frames;   harnesses,       structures if
+                                     braided while flexible. flexible         untreated.
+                                                             structures.      
+
+  Glowspore Ink  Fungal/alchemical   Cultured fungi          Maps, night      Spores require
+                                     harvested under         markers, medical containment and
+                                     controlled humidity.    tracing, and     allergy
+                                                             warning signs.   controls.
+
+  Rootsong Fiber Living construct    Pruned with Warden      Resonant tools,  Unauthorized
+                 material            consent and stabilized  sanctuary        harvest
+                                     in resin baths.         repairs, and     disrupts Warden
+                                                             bond-sensitive   networks.
+                                                             equipment.       
+  -------------------------------------------------------------------------------------------
+
+D. Material Geography
+
+  -----------------------------------------------------------------------
+  Map Layer                           Required Placement
+  ----------------------------------- -----------------------------------
+  Canopy Resources                    Map vertical harvest zones, bridge
+                                      groves, nest restrictions, and fall
+                                      hazards.
+
+  River Resources                     Map pearlstone pools, medicine
+                                      banks, otter colonies, and flood
+                                      changes.
+
+  Sanctuary Rights                    Identify public, permitted,
+                                      restricted, and sacred gathering
+                                      zones.
+
+  Mobile Processing                   Place field labs, drying racks,
+                                      resin stills, seed vaults, and rope
+                                      camps.
+
+  Ecological Health                   Track canopy connectivity,
+                                      pollination, predator balance, and
+                                      water quality.
+  -----------------------------------------------------------------------
+
+E. Regional Production Chains
+
+  -----------------------------------------------------------------------
+  Chain                               Flow and Regional Function
+  ----------------------------------- -----------------------------------
+  Silverwood                          Stewardship allocation → pruning →
+                                      seasoning → bow/tool/laminate
+                                      craft.
+
+  Feysilk                             Host garden → migration → empty
+                                      cocoon recovery → cleaning →
+                                      weaving.
+
+  Medicine                            Field collection → sample control →
+                                      drying/distillation → clinic and
+                                      sanctuary.
+
+  Living Structures                   Vine cultivation → shaping →
+                                      rooting → maintenance and
+                                      controlled dormancy.
+
+  Creature Materials                  Observation/sanctuary → voluntary
+                                      or shed recovery → provenance →
+                                      specialized craft.
+  -----------------------------------------------------------------------
+
+F. Creature-Material Ethics and Law
+
+-   No clearcutting or den destruction.
+
+-   Rare flora and Warden materials require permission.
+
+-   Creature recruitment favors observation, rescue, and habitat
+    service.
+
+-   Legendary Leviathan accord cannot convert the creature into
+    property.
+
+G. Approval Questions
+
+-   Which species best demonstrates canopy recruitment?
+
+-   How legally binding are sanctuary permissions?
+
+-   Can players cultivate rare flora outside the Wilds?
+
+-   How much of the Leviathan is physical versus spirit-active?
+
+3. The Verdant Coast
+
+Cliffs, Currents, and Cultures.
+
+  -----------------------------------------------------------------------
+  STATUS: PROPOSED — NOT YET CANONICAL
+  Designed for open coasts, tides, ports, cliffs, fisheries, and
+  international trade. Species emphasize rescue, navigation, reef
+  stewardship, and cliff habitats.
+  -----------------------------------------------------------------------
+
+  -----------------------------------------------------------------------
+
+A. Creature Roster Summary
+
+  -----------------------------------------------------------------------
+  Creature                Tier                    Ecological and Gameplay
+                                                  Role
+  ----------------------- ----------------------- -----------------------
+  Cliffbill Gull          Common                  Coastal scavenger and
+                                                  weather indicator.
+
+  Tidepool Grazer         Common                  Reef-cleaning
+                                                  amphibious herbivore.
+
+  Windtail Ferret         Common                  Small cliff and rigging
+                                                  hunter.
+
+  Reefstrider             Uncommon                Long-legged shallows
+                                                  creature and reef
+                                                  guide.
+
+  Stormback Hound         Uncommon                Coastal rescue canid.
+
+  Coral Crown Turtle      Rare                    Large reef guardian and
+                                                  mobile nursery.
+
+  Galecrest Drake         Rare                    Cliff-flying predator
+                                                  and storm rider.
+
+  Bluewater Leviathan     Legendary               Ocean migrator and
+                                                  living navigation
+                                                  force.
+  -----------------------------------------------------------------------
+
+B. Creature Production Profiles
+
+VCO-CR-01 • Cliffbill Gull (Common)
+
+  -----------------------------------------------------------------------
+  Field                               Definition
+  ----------------------------------- -----------------------------------
+  Body Plan and Signature             Large gull with hooked colorful
+                                      bill and strong wind wings.
+
+  Habitat                             Ports, cliffs, and estuaries.
+
+  Behavior                            Colonial, clever, opportunistic.
+
+  Gameplay Functions                  Message carrying, weather cue,
+                                      salvage detection.
+
+  Recruitment Path                    Nest protection, injury treatment,
+                                      or harbor feeding contract.
+
+  Bond and Companion Roles            Scout and messenger.
+
+  Equipment Compatibility             Leg band and tiny message case.
+
+  Renewable Materials                 Molted feathers and abandoned
+                                      shell.
+
+  Recovery Materials                  Natural recovery only.
+
+  Risks and Care                      Needs flight freedom and clean
+                                      nesting site.
+
+  World-State Response                Port pollution shifts colonies.
+  -----------------------------------------------------------------------
+
+VCO-CR-02 • Tidepool Grazer (Common)
+
+  -----------------------------------------------------------------------
+  Field                               Definition
+  ----------------------------------- -----------------------------------
+  Body Plan and Signature             Goat-seal body with suction hooves
+                                      and short fins.
+
+  Habitat                             Tidal shelves and village reefs.
+
+  Behavior                            Herded in shallows; calm and
+                                      curious.
+
+  Gameplay Functions                  Reef cleaning, shell gathering,
+                                      shallow cargo.
+
+  Recruitment Path                    Reef restoration or village
+                                      husbandry.
+
+  Bond and Companion Roles            Aquatic pack partner and reef
+                                      worker.
+
+  Equipment Compatibility             Soft waterproof panniers and
+                                      buoyancy collar.
+
+  Renewable Materials                 Shed coat, milk, and hoof plates.
+
+  Recovery Materials                  Lawful recovery hide only.
+
+  Risks and Care                      Needs tide access and mineral diet.
+
+  World-State Response                Reef decline reduces health.
+  -----------------------------------------------------------------------
+
+VCO-CR-03 • Windtail Ferret (Common)
+
+  -----------------------------------------------------------------------
+  Field                               Definition
+  ----------------------------------- -----------------------------------
+  Body Plan and Signature             Long-bodied mustelid with balancing
+                                      tail fan.
+
+  Habitat                             Warehouses, ships, cliffs.
+
+  Behavior                            Curious, social, skilled climber.
+
+  Gameplay Functions                  Pest control, rigging access, small
+                                      retrieval.
+
+  Recruitment Path                    Shipboard trust, rescue, or guild
+                                      placement.
+
+  Bond and Companion Roles            Ship companion and scout.
+
+  Equipment Compatibility             Soft vest, message pouch.
+
+  Renewable Materials                 Brushed fur and shed claws.
+
+  Recovery Materials                  Natural recovery only.
+
+  Risks and Care                      Needs enrichment and safe rigging.
+
+  World-State Response                Trade volume changes populations.
+  -----------------------------------------------------------------------
+
+VCO-CR-04 • Reefstrider (Uncommon)
+
+  -----------------------------------------------------------------------
+  Field                               Definition
+  ----------------------------------- -----------------------------------
+  Body Plan and Signature             Four-legged crustacean-avian hybrid
+                                      with broad feet.
+
+  Habitat                             Coralreach shelf and lagoons.
+
+  Behavior                            Follows tides; defensive at nests.
+
+  Gameplay Functions                  Shallow transport, reef navigation,
+                                      harvest assistance.
+
+  Recruitment Path                    Protect spawning site and complete
+                                      pilot training.
+
+  Bond and Companion Roles            Water mount, guide, fisher partner.
+
+  Equipment Compatibility             Buoyant saddle, leg guards, cargo
+                                      rack.
+
+  Renewable Materials                 Molted shell and shed leg-spurs.
+
+  Recovery Materials                  Shell from natural death under reef
+                                      law.
+
+  Risks and Care                      Sensitive to deep water and coral
+                                      damage.
+
+  World-State Response                Healthy reefs expand routes.
+  -----------------------------------------------------------------------
+
+VCO-CR-05 • Stormback Hound (Uncommon)
+
+  -----------------------------------------------------------------------
+  Field                               Definition
+  ----------------------------------- -----------------------------------
+  Body Plan and Signature             Heavy water-resistant hound with
+                                      broad paws and insulating coat.
+
+  Habitat                             Stormcliff villages and rescue
+                                      stations.
+
+  Behavior                            Team-oriented, brave, scent-driven.
+
+  Gameplay Functions                  Rescue, tracking, rope work, and
+                                      surf retrieval.
+
+  Recruitment Path                    Join rescue corps, save handler, or
+                                      sanctuary adoption.
+
+  Bond and Companion Roles            Rescue, guard, and family
+                                      companion.
+
+  Equipment Compatibility             Flotation harness, rope reel, light
+                                      armor.
+
+  Renewable Materials                 Brushed fur and shed claws.
+
+  Recovery Materials                  Natural recovery only.
+
+  Risks and Care                      Requires training, rest, and
+                                      hearing protection in signal
+                                      stations.
+
+  World-State Response                Storm seasons create recruitment
+                                      stories.
+  -----------------------------------------------------------------------
+
+VCO-CR-06 • Coral Crown Turtle (Rare)
+
+  -----------------------------------------------------------------------
+  Field                               Definition
+  ----------------------------------- -----------------------------------
+  Body Plan and Signature             Massive sea turtle with coral-like
+                                      shell ridges.
+
+  Habitat                             Warm shelf and protected coves.
+
+  Behavior                            Migratory, calm, remembers safe
+                                      beaches.
+
+  Gameplay Functions                  Underwater travel, reef
+                                      restoration, cargo, and sanctuary
+                                      work.
+
+  Recruitment Path                    Protect nesting beach, remove
+                                      debris, and earn trust over
+                                      migration.
+
+  Bond and Companion Roles            Aquatic mount for suitable
+                                      individuals, nursery guardian.
+
+  Equipment Compatibility             Noninvasive handholds, cargo net,
+                                      no drilled fittings.
+
+  Renewable Materials                 Naturally shed shell flakes and
+                                      attached dead coral.
+
+  Recovery Materials                  No shell harvest from living
+                                      turtles.
+
+  Risks and Care                      Needs clean route and nesting
+                                      beach.
+
+  World-State Response                Migration maps respond to shipping
+                                      and reef health.
+  -----------------------------------------------------------------------
+
+VCO-CR-07 • Galecrest Drake (Rare)
+
+  -----------------------------------------------------------------------
+  Field                               Definition
+  ----------------------------------- -----------------------------------
+  Body Plan and Signature             Medium drake with sail-like crest
+                                      and saltproof scales.
+
+  Habitat                             Sea arches and high cliffs.
+
+  Behavior                            Pair nesting, territorial, rides
+                                      coastal updrafts.
+
+  Gameplay Functions                  Aerial scouting, rescue, combat,
+                                      and route access.
+
+  Recruitment Path                    Nest defense, stolen-egg return,
+                                      storm rescue, and voluntary
+                                      juvenile bond.
+
+  Bond and Companion Roles            Aerial companion, guardian,
+                                      courier.
+
+  Equipment Compatibility             Wing-safe harness, chest armor,
+                                      signal mount.
+
+  Renewable Materials                 Molt scales, shed crest film,
+                                      abandoned shell.
+
+  Recovery Materials                  Natural recovery only; eggs
+                                      protected.
+
+  Risks and Care                      Needs large flight corridor and
+                                      salt baths.
+
+  World-State Response                Cliff construction can displace
+                                      nests.
+  -----------------------------------------------------------------------
+
+VCO-CR-08 • Bluewater Leviathan (Legendary)
+
+  -----------------------------------------------------------------------
+  Field                               Definition
+  ----------------------------------- -----------------------------------
+  Body Plan and Signature             Whale-serpent body with luminous
+                                      line patterns and island-sized
+                                      fins.
+
+  Habitat                             Offshore lanes and deep migration
+                                      routes.
+
+  Behavior                            Ancient migrator, communicates
+                                      through low tones.
+
+  Gameplay Functions                  World event, rescue, navigation,
+                                      ecological restoration.
+
+  Recruitment Path                    Restore song routes, stop harmful
+                                      hunting, and form an accord through
+                                      a chosen emissary.
+
+  Bond and Companion Roles            Legendary navigator and ocean
+                                      guardian.
+
+  Equipment Compatibility             No armor; optional tracking markers
+                                      by consent.
+
+  Renewable Materials                 Shed baleen-like plates, skin
+                                      slough, and song records.
+
+  Recovery Materials                  No ordinary harvesting.
+
+  Risks and Care                      Requires open ocean and protected
+                                      soundscape.
+
+  World-State Response                Shipping, storms, and player policy
+                                      alter migration.
+  -----------------------------------------------------------------------
+
+C. Zone Material Catalog
+
+  -----------------------------------------------------------------------------------
+  Material       Class          Source and          Primary Uses     Risks /
+                                Processing                           Restrictions
+  -------------- -------------- ------------------- ---------------- ----------------
+  Saltwind       Metal alloy    Copper-tin alloy    Ship fittings,   Requires
+  Bronze                        cast with           shields, bells,  imported tin and
+                                corrosion-control   tools, and       careful galvanic
+                                techniques.         coastal armor.   pairing.
+
+  Reefcord Hemp  Plant fiber    Salt-tolerant hemp  Rope, nets,      Poor retting
+                                retted in fresh     sails, lifts,    pollutes
+                                water and tarred.   and rescue       estuaries.
+                                                    lines.           
+
+  Cliff          Stone          Terrace quarrying   Harbors, stairs, Quarrying
+  Limestone                     and block cutting.  sea walls,       destabilizes
+                                                    houses, and      cliffs if
+                                                    lime.            uncontrolled.
+
+  Tidepool Shell Renewable      Naturally shed or   Roof tiles,      Collection
+                 organic        recovered shell     armor scales,    quotas protect
+                                cleaned and         containers, and  nursery habitat.
+                                laminated.          inlay.           
+
+  Stormback Fur  Renewable      Brushed during      Water-shedding   No live skin
+                 creature fiber seasonal shedding.  lining, rescue   harvest.
+                                                    blankets, and    
+                                                    cold spray       
+                                                    protection.      
+
+  Coralstone     Marine mineral Dead coral          Reef repair,     Living reef
+                                fragments cultured  filtration,      mining
+                                or recovered from   decorative       prohibited.
+                                storm breakage.     masonry, and     
+                                                    medicine         
+                                                    substrate.       
+
+  Seafoam Resin  Plant resin    Coastal shrub resin Waterproofing,   Flammable before
+                                purified with       flexible         curing.
+                                saltwater wash.     sealant, and     
+                                                    boat repair.     
+
+  Whaleoil       Alchemical oil Produced from fish  Lamps,           Designed to
+  Substitute                    byproducts, algae,  machinery,       prevent
+                                and plant oils.     waterproofing,   leviathan
+                                                    and soap.        hunting;
+                                                                     rancidity
+                                                                     control needed.
+
+  Galecrest      Renewable      Molted scales       Light            Nest access
+  Scale          creature       collected near      wind-resistant   restricted.
+                 material       approved nests.     armor, vane      
+                                                    instruments, and 
+                                                    decorative       
+                                                    inlay.           
+
+  Bluewater      Resonant       Sea-floor stones    Navigation       Overcollection
+  Songstone      mineral        shaped by leviathan instruments,     disrupts
+                                song and currents;  acoustic         acoustic
+                                diver recovered.    communication,   landmarks.
+                                                    and memorials.   
+  -----------------------------------------------------------------------------------
+
+D. Material Geography
+
+  -----------------------------------------------------------------------
+  Map Layer                           Required Placement
+  ----------------------------------- -----------------------------------
+  Tidal Rights                        Map intertidal ownership, public
+                                      harvest, sanctuary, and dangerous
+                                      current zones.
+
+  Port Production                     Shipyards, ropewalks, foundries,
+                                      salt pans, smokehouses, and
+                                      warehouses.
+
+  Reef Health                         Living coral, dead coral recovery,
+                                      nursery, turtle route, and
+                                      pollution layers.
+
+  Cliff Stability                     Quarries, roads, lifts, landslide
+                                      risk, nests, and rescue stations.
+
+  Open-Sea Migration                  Leviathan and drake corridors,
+                                      shipping separation, and beacon
+                                      coverage.
+  -----------------------------------------------------------------------
+
+E. Regional Production Chains
+
+  -----------------------------------------------------------------------
+  Chain                               Flow and Regional Function
+  ----------------------------------- -----------------------------------
+  Shipbuilding                        Imported/local timber → seasoning →
+                                      hull yard → bronze/rope/sail
+                                      fitting → launch and repair.
+
+  Salt                                Pan/evaporation → grading →
+                                      preservation, leather, medicine,
+                                      and trade.
+
+  Reef Stewardship                    Nursery monitoring → storm recovery
+                                      → cultured coralstone → restoration
+                                      works.
+
+  Rescue Industry                     Fiber/bronze/fur → flotation, rope,
+                                      signals, clinics, and training.
+
+  Acoustic Navigation                 Songstone recovery → tuning →
+                                      beacon and ship instruments.
+  -----------------------------------------------------------------------
+
+F. Creature-Material Ethics and Law
+
+-   Living coral cannot be mined.
+
+-   Leviathan hunting is incompatible with regional stewardship.
+
+-   Nesting cliffs and beaches require seasonal closures.
+
+-   Aquatic and aerial mounts need species-appropriate load and route
+    rules.
+
+G. Approval Questions
+
+-   Is Bluewater Leviathan one named individual or a migratory species?
+
+-   Can players own shipyards or rescue services?
+
+-   How are foreign material standards regulated?
+
+-   Which reef species is the first recruitable coastal companion?
+
+4. Emerald Isles
+
+Distant Shores. Bold Dreams.
+
+  -----------------------------------------------------------------------
+  STATUS: PROPOSED — NOT YET CANONICAL
+  Designed for island endemism, expedition sailing, underwater ruins,
+  volcanic terrain, and long-range creature partnerships.
+  -----------------------------------------------------------------------
+
+  -----------------------------------------------------------------------
+
+A. Creature Roster Summary
+
+  -----------------------------------------------------------------------
+  Creature                Tier                    Ecological and Gameplay
+                                                  Role
+  ----------------------- ----------------------- -----------------------
+  Lagoon Skipper          Common                  Small amphibious island
+                                                  courier.
+
+  Coconut Crabber         Common                  Large terrestrial crab
+                                                  and island recycler.
+
+  Beacon Swift            Common                  Long-range navigation
+                                                  bird.
+
+  Reefhorn Grazer         Uncommon                Shallow-water herbivore
+                                                  and living reef
+                                                  gardener.
+
+  Volcanic Shellback      Uncommon                Heat-tolerant island
+                                                  tortoise and pack
+                                                  animal.
+
+  Tempest Ray             Rare                    Flying aquatic ray that
+                                                  rides storm winds.
+
+  Drakefall Emberwing     Rare                    Volcanic island drake
+                                                  and thermal navigator.
+
+  Azure Trench Oracle     Legendary               Deep-sea intelligent
+                                                  creature and keeper of
+                                                  submerged history.
+  -----------------------------------------------------------------------
+
+B. Creature Production Profiles
+
+EMI-CR-01 • Lagoon Skipper (Common)
+
+  -----------------------------------------------------------------------
+  Field                               Definition
+  ----------------------------------- -----------------------------------
+  Body Plan and Signature             Otter-lizard body with finned tail.
+
+  Habitat                             Lagoons and village canals.
+
+  Behavior                            Social and playful.
+
+  Gameplay Functions                  Retrieval, fishing, small delivery.
+
+  Recruitment Path                    Village care, rescue, or
+                                      food-sharing trust.
+
+  Bond and Companion Roles            Courier and aquatic scout.
+
+  Equipment Compatibility             Soft satchel and float collar.
+
+  Renewable Materials                 Shed skin and whiskers.
+
+  Recovery Materials                  Natural recovery only.
+
+  Risks and Care                      Needs water and colony contact.
+
+  World-State Response                Storms scatter colonies.
+  -----------------------------------------------------------------------
+
+EMI-CR-02 • Coconut Crabber (Common)
+
+  -----------------------------------------------------------------------
+  Field                               Definition
+  ----------------------------------- -----------------------------------
+  Body Plan and Signature             Dog-sized crab with powerful claws
+                                      and patterned shell.
+
+  Habitat                             Beaches and palm groves.
+
+  Behavior                            Territorial but food-motivated.
+
+  Gameplay Functions                  Carrying, cracking, cleanup, and
+                                      digging.
+
+  Recruitment Path                    Protect molting burrow or assist
+                                      village compost.
+
+  Bond and Companion Roles            Cargo helper and beach worker.
+
+  Equipment Compatibility             Shell-safe cargo frame and claw
+                                      caps.
+
+  Renewable Materials                 Molted shell.
+
+  Recovery Materials                  Natural recovery shell only.
+
+  Risks and Care                      Needs molt refuge and calcium.
+
+  World-State Response                Waste management affects
+                                      population.
+  -----------------------------------------------------------------------
+
+EMI-CR-03 • Beacon Swift (Common)
+
+  -----------------------------------------------------------------------
+  Field                               Definition
+  ----------------------------------- -----------------------------------
+  Body Plan and Signature             Streamlined seabird with luminous
+                                      throat stripe.
+
+  Habitat                             Beacon towers and sea cliffs.
+
+  Behavior                            Migratory and route-faithful.
+
+  Gameplay Functions                  Navigation, messages, storm
+                                      warning.
+
+  Recruitment Path                    Restore beacon and nesting ledge.
+
+  Bond and Companion Roles            Scout and messenger.
+
+  Equipment Compatibility             Leg capsule only.
+
+  Renewable Materials                 Molted feathers and shell.
+
+  Recovery Materials                  Natural recovery only.
+
+  Risks and Care                      Light pollution can disorient.
+
+  World-State Response                Beacon network changes routes.
+  -----------------------------------------------------------------------
+
+EMI-CR-04 • Reefhorn Grazer (Uncommon)
+
+  -----------------------------------------------------------------------
+  Field                               Definition
+  ----------------------------------- -----------------------------------
+  Body Plan and Signature             Antelope-like marine mammal with
+                                      coral-shaped sensory horns.
+
+  Habitat                             Atolls and seagrass beds.
+
+  Behavior                            Herding and protective.
+
+  Gameplay Functions                  Aquatic mount, seagrass
+                                      restoration, cargo.
+
+  Recruitment Path                    Protect calves and restore grazing
+                                      bed.
+
+  Bond and Companion Roles            Water mount and ecological worker.
+
+  Equipment Compatibility             Buoyant saddle, horn guard, cargo
+                                      net.
+
+  Renewable Materials                 Shed horn velvet and skin slough.
+
+  Recovery Materials                  Natural recovery only.
+
+  Risks and Care                      Needs herd and broad shallows.
+
+  World-State Response                Reef decline forces migration.
+  -----------------------------------------------------------------------
+
+EMI-CR-05 • Volcanic Shellback (Uncommon)
+
+  -----------------------------------------------------------------------
+  Field                               Definition
+  ----------------------------------- -----------------------------------
+  Body Plan and Signature             Large tortoise with basalt-like
+                                      shell.
+
+  Habitat                             Drakefall slopes and warm forests.
+
+  Behavior                            Slow, calm, route memory.
+
+  Gameplay Functions                  Heavy cargo, heat transport,
+                                      evacuation.
+
+  Recruitment Path                    Rescue from eruption, provide
+                                      mineral diet, or settlement
+                                      husbandry.
+
+  Bond and Companion Roles            Pack, rescue, and farm partner.
+
+  Equipment Compatibility             Shell cradle with pressure
+                                      distribution.
+
+  Renewable Materials                 Shed scutes and dung.
+
+  Recovery Materials                  Natural recovery shell and bone.
+
+  Risks and Care                      Needs cooling, minerals, and no
+                                      drilled shell fittings.
+
+  World-State Response                Eruptions open and close ranges.
+  -----------------------------------------------------------------------
+
+EMI-CR-06 • Tempest Ray (Rare)
+
+  -----------------------------------------------------------------------
+  Field                               Definition
+  ----------------------------------- -----------------------------------
+  Body Plan and Signature             Broad manta body with air-water
+                                      breathing adaptations.
+
+  Habitat                             Tempest Isle and open channels.
+
+  Behavior                            Migratory, electrical
+                                      communication.
+
+  Gameplay Functions                  Air-sea scouting, rescue, storm
+                                      research.
+
+  Recruitment Path                    Repair nesting currents, treat
+                                      lightning injury, and form
+                                      voluntary flight bond.
+
+  Bond and Companion Roles            Aerial/aquatic guide and rescue
+                                      partner.
+
+  Equipment Compatibility             Soft chest rig and insulated
+                                      markers.
+
+  Renewable Materials                 Shed skin film and discharged
+                                      crystal nodules.
+
+  Recovery Materials                  Natural recovery only.
+
+  Risks and Care                      Sensitive to metal harnesses and
+                                      electrical overload.
+
+  World-State Response                Storm intensity changes migration.
+  -----------------------------------------------------------------------
+
+EMI-CR-07 • Drakefall Emberwing (Rare)
+
+  -----------------------------------------------------------------------
+  Field                               Definition
+  ----------------------------------- -----------------------------------
+  Body Plan and Signature             Compact drake with heat fins and
+                                      black-glass claws.
+
+  Habitat                             Caldera cliffs and lava tubes.
+
+  Behavior                            Colony nesting, heat-basking,
+                                      protective.
+
+  Gameplay Functions                  Aerial travel, heat detection,
+                                      rescue, and fire support.
+
+  Recruitment Path                    Protect colony, return abandoned
+                                      egg, manage eruption, and earn
+                                      juvenile bond.
+
+  Bond and Companion Roles            Aerial companion and geothermal
+                                      scout.
+
+  Equipment Compatibility             Heat-safe harness and flexible
+                                      scale guards.
+
+  Renewable Materials                 Molt scales, shed claw sheaths,
+                                      abandoned shell.
+
+  Recovery Materials                  Natural recovery only.
+
+  Risks and Care                      Needs heat, flight, and social
+                                      nesting.
+
+  World-State Response                Volcanic state alters colony sites.
+  -----------------------------------------------------------------------
+
+EMI-CR-08 • Azure Trench Oracle (Legendary)
+
+  -----------------------------------------------------------------------
+  Field                               Definition
+  ----------------------------------- -----------------------------------
+  Body Plan and Signature             Immense cephalopod-manta form with
+                                      bioluminescent script patterns.
+
+  Habitat                             Azure Trench and ancient submerged
+                                      stations.
+
+  Behavior                            Communicative, cautious,
+                                      long-lived.
+
+  Gameplay Functions                  Deep navigation, archive
+                                      translation, pressure shielding,
+                                      and diplomatic quests.
+
+  Recruitment Path                    Multi-stage communication, stop
+                                      destructive extraction, recover
+                                      lost records, and form an accord
+                                      through an avatar or willing young.
+
+  Bond and Companion Roles            Legendary research and navigation
+                                      partner.
+
+  Equipment Compatibility             No armor; consent-based translation
+                                      and tracking devices only.
+
+  Renewable Materials                 Naturally shed membrane, ink, and
+                                      mineralized skin fragments.
+
+  Recovery Materials                  No harvest from harm.
+
+  Risks and Care                      Requires deep-water freedom and
+                                      communication respect.
+
+  World-State Response                Responds to trench disturbance and
+                                      archive choices.
+  -----------------------------------------------------------------------
+
+C. Zone Material Catalog
+
+  --------------------------------------------------------------------------------------------
+  Material       Class                 Source and       Primary Uses      Risks / Restrictions
+                                       Processing                         
+  -------------- --------------------- ---------------- ----------------- --------------------
+  Island         Hardwood              Storm-fallen or  Ships, pylons,    Slow growth and
+  Ironwood                             managed island   tools, furniture, sacred groves
+                                       hardwood,        and heavy bows.   restrict harvest.
+                                       salt-seasoned.                     
+
+  Volcanic Glass Mineral glass         Obsidian         Cutting edges,    Brittle and
+                                       quarried or      mirrors, inlay,   dangerously sharp.
+                                       collected from   surgery, and      
+                                       cooled flows;    ritual tools.     
+                                       pressure flaked                    
+                                       and tempered.                      
+
+  Reef Pearl     Marine organic        Cultured with    Jewelry, optics,  Wild-bed overharvest
+                                       shell colonies   medicine, trade,  prohibited.
+                                       or recovered     and magical       
+                                       from abandoned   inlay.            
+                                       beds.                              
+
+  Tempest Nodule Creature/mineral      Naturally        Energy storage,   May retain dangerous
+                                       discharged by    warning devices,  charge.
+                                       Tempest Rays     and storm         
+                                       after storms;    instruments.      
+                                       insulated                          
+                                       collection.                        
+
+  Emberwing      Renewable creature    Molted scale     Heat-resistant    Nest disturbance
+  Scale          material              recovery at      laminate, forge   prohibited.
+                                       approved         gloves, and light 
+                                       colonies.        armor.            
+
+  Atoll Fiber    Plant fiber           Salt-tolerant    Sails, nets,      Freshwater-heavy
+                                       island plants    clothing,         processing must be
+                                       retted and       baskets, and      controlled.
+                                       braided.         light structures. 
+
+  Tide Crystal   Magical mineral       Reef and trench  Navigation,       Pressure and
+                                       deposits         pumps, underwater resonance
+                                       recovered by     equipment, and    instability.
+                                       divers and       weather sensing.  
+                                       creature                           
+                                       partners.                          
+
+  Pumicecrete    Construction          Pumice, lime,    Floating docks,   Weak if waterlogged
+                 composite             shell ash, and   earthquake-safe   or poorly cured.
+                                       fiber cast into  walls, and        
+                                       light blocks.    insulation.       
+
+  Deep Ink       Creature/alchemical   Voluntarily      Archive writing,  Intelligent-source
+                                       released Oracle  pressure labels,  consent and
+                                       ink or           ritual diagrams,  contamination
+                                       cultivated deep  and dyes.         controls.
+                                       cephalopod ink;                    
+                                       stabilized.                        
+
+  Singing Coral  Marine ceramic        Dead coral       Acoustic          Living coral
+  Ceramic                              powder blended   instruments,      collection
+                                       with clay and    underwater        forbidden.
+                                       fired.           markers, filters, 
+                                                        and tiles.        
+  --------------------------------------------------------------------------------------------
+
+D. Material Geography
+
+  -----------------------------------------------------------------------
+  Map Layer                           Required Placement
+  ----------------------------------- -----------------------------------
+  Island Endemism                     Map species by island and prevent
+                                      generic distribution.
+
+  Voyage Supply                       Freshwater, repair, shelter,
+                                      current, and emergency landing
+                                      layers.
+
+  Biosecurity                         Quarantine, invasive species,
+                                      disease, and cargo inspection
+                                      points.
+
+  Underwater Resources                Depth, pressure, reef, trench,
+                                      diving route, and sanctuary
+                                      overlays.
+
+  Volcanic Risk                       Flows, ash, geothermal sites,
+                                      evacuation, new land, and material
+                                      exposure.
+  -----------------------------------------------------------------------
+
+E. Regional Production Chains
+
+  -----------------------------------------------------------------------
+  Chain                               Flow and Regional Function
+  ----------------------------------- -----------------------------------
+  Island Shipcraft                    Ironwood/pumicecrete/fiber →
+                                      shipyards → expedition craft and
+                                      repair.
+
+  Pearl and Coral                     Cultivation → sanctuary inspection
+                                      → craft and trade.
+
+  Volcanic Glass                      Flow/quarry → knapping/tempering →
+                                      tools, optics, and ritual goods.
+
+  Storm Materials                     Forecast → safe recovery →
+                                      discharge → insulation and
+                                      instrument craft.
+
+  Deep Research                       Expedition → consent/sample control
+                                      → archive and medical processing.
+  -----------------------------------------------------------------------
+
+F. Creature-Material Ethics and Law
+
+-   Island isolation requires biosecurity and cultural permission.
+
+-   Intelligent deep-sea materials require explicit consent.
+
+-   No drilled shell or forced aerial equipment.
+
+-   Each island species retains its own recruitment path and habitat
+    needs.
+
+G. Approval Questions
+
+-   How many islands receive unique creature variants?
+
+-   Can players permanently settle remote islands?
+
+-   How does Oracle communication work mechanically?
+
+-   Are Tempest Rays mountable by all body types or only specialized
+    riders?
+
+5. Saltsong Desert
+
+Endless Horizons. Hidden Truths.
+
+  -----------------------------------------------------------------------
+  STATUS: PROPOSED — NOT YET CANONICAL
+  Designed around oasis ecology, shifting dunes, caravan survival, solar
+  materials, and buried infrastructure.
+  -----------------------------------------------------------------------
+
+  -----------------------------------------------------------------------
+
+A. Creature Roster Summary
+
+  -----------------------------------------------------------------------
+  Creature                Tier                    Ecological and Gameplay
+                                                  Role
+  ----------------------- ----------------------- -----------------------
+  Saltfoot Jerboa         Common                  Small dune scout and
+                                                  water finder.
+
+  Duneback Lizard         Common                  Heat-tolerant pack
+                                                  reptile.
+
+  Oasis Ibis              Common                  Water-quality indicator
+                                                  and messenger.
+
+  Glasshide Scarab        Uncommon                Mineral-processing
+                                                  insect and desert
+                                                  recycler.
+
+  Bonewind Jackal         Uncommon                Canyon scavenger and
+                                                  caravan tracker.
+
+  Mirage Serpent          Rare                    Sand-swimming magical
+                                                  reptile and navigation
+                                                  anomaly detector.
+
+  Suncrest Roc            Rare                    High desert aerial
+                                                  guardian.
+
+  Dune Cathedral Walker   Legendary               Colossal migratory
+                                                  desert creature
+                                                  carrying shade
+                                                  ecosystems.
+  -----------------------------------------------------------------------
+
+B. Creature Production Profiles
+
+SAL-CR-01 • Saltfoot Jerboa (Common)
+
+  -----------------------------------------------------------------------
+  Field                               Definition
+  ----------------------------------- -----------------------------------
+  Body Plan and Signature             Long-legged rodent with
+                                      salt-filtering ears.
+
+  Habitat                             Dune margins and caravan camps.
+
+  Behavior                            Nocturnal colony life.
+
+  Gameplay Functions                  Detect water, traps, and unstable
+                                      crust.
+
+  Recruitment Path                    Protect colony or raise rescued
+                                      juvenile.
+
+  Bond and Companion Roles            Scout and camp alert.
+
+  Equipment Compatibility             Tiny satchel only.
+
+  Renewable Materials                 Shed fur and whiskers.
+
+  Recovery Materials                  Natural recovery only.
+
+  Risks and Care                      Heat-sensitive by day.
+
+  World-State Response                Drought shifts colonies.
+  -----------------------------------------------------------------------
+
+SAL-CR-02 • Duneback Lizard (Common)
+
+  -----------------------------------------------------------------------
+  Field                               Definition
+  ----------------------------------- -----------------------------------
+  Body Plan and Signature             Large low lizard with sail back and
+                                      broad feet.
+
+  Habitat                             Salt roads and rocky desert.
+
+  Behavior                            Calm, basking, route-trained.
+
+  Gameplay Functions                  Cargo, hauling, heat sensing.
+
+  Recruitment Path                    Caravan apprenticeship or rescue.
+
+  Bond and Companion Roles            Pack and transport partner.
+
+  Equipment Compatibility             Shade canopy, panniers, foot
+                                      guards.
+
+  Renewable Materials                 Shed skin and sail keratin.
+
+  Recovery Materials                  Natural recovery hide.
+
+  Risks and Care                      Needs heat gradient and hydration.
+
+  World-State Response                Routes change with storms.
+  -----------------------------------------------------------------------
+
+SAL-CR-03 • Oasis Ibis (Common)
+
+  -----------------------------------------------------------------------
+  Field                               Definition
+  ----------------------------------- -----------------------------------
+  Body Plan and Signature             Tall bird with blue-black plumage
+                                      and bright bill.
+
+  Habitat                             Oases and cistern gardens.
+
+  Behavior                            Colonial and migratory.
+
+  Gameplay Functions                  Water testing, messages, pest
+                                      control.
+
+  Recruitment Path                    Restore nesting island or clean
+                                      oasis.
+
+  Bond and Companion Roles            Scout and garden partner.
+
+  Equipment Compatibility             Leg capsule.
+
+  Renewable Materials                 Molted feathers and shell.
+
+  Recovery Materials                  Natural recovery only.
+
+  Risks and Care                      Needs clean shallow water.
+
+  World-State Response                Leaves contaminated wells.
+  -----------------------------------------------------------------------
+
+SAL-CR-04 • Glasshide Scarab (Uncommon)
+
+  -----------------------------------------------------------------------
+  Field                               Definition
+  ----------------------------------- -----------------------------------
+  Body Plan and Signature             Large beetle with translucent
+                                      armored shell.
+
+  Habitat                             Glass Sea and ruin edges.
+
+  Behavior                            Collects mineral fragments;
+                                      communal burrows.
+
+  Gameplay Functions                  Material detection, excavation,
+                                      armor support.
+
+  Recruitment Path                    Protect colony, offer mineral feed,
+                                      or repair burrow.
+
+  Bond and Companion Roles            Excavation and material-sensing
+                                      partner.
+
+  Equipment Compatibility             Shell-safe harness and small cargo
+                                      tray.
+
+  Renewable Materials                 Molted chitin and polished
+                                      fragments.
+
+  Recovery Materials                  Natural recovery only.
+
+  Risks and Care                      Sensitive to vibration and
+                                      solvents.
+
+  World-State Response                Mining pressure relocates colonies.
+  -----------------------------------------------------------------------
+
+SAL-CR-05 • Bonewind Jackal (Uncommon)
+
+  -----------------------------------------------------------------------
+  Field                               Definition
+  ----------------------------------- -----------------------------------
+  Body Plan and Signature             Lean canid with large cooling ears
+                                      and striped coat.
+
+  Habitat                             Bonewind Canyon and old roads.
+
+  Behavior                            Family packs, cautious,
+                                      intelligent.
+
+  Gameplay Functions                  Tracking, rescue, threat detection.
+
+  Recruitment Path                    Return stolen pups, share water, or
+                                      sanctuary adoption.
+
+  Bond and Companion Roles            Tracker and guard.
+
+  Equipment Compatibility             Light cloth armor, paw wraps, water
+                                      pack.
+
+  Renewable Materials                 Brushed fur and shed claws.
+
+  Recovery Materials                  Natural recovery only.
+
+  Risks and Care                      Needs pack contact and rest shade.
+
+  World-State Response                Conflict and food waste affect
+                                      behavior.
+  -----------------------------------------------------------------------
+
+SAL-CR-06 • Mirage Serpent (Rare)
+
+  -----------------------------------------------------------------------
+  Field                               Definition
+  ----------------------------------- -----------------------------------
+  Body Plan and Signature             Long serpent with translucent fins
+                                      and refractive scales.
+
+  Habitat                             Shifting Dunes and buried ruins.
+
+  Behavior                            Solitary, follows heat gradients.
+
+  Gameplay Functions                  Hidden-route detection, rapid sand
+                                      travel, illusion diagnosis.
+
+  Recruitment Path                    Clean a corrupted den, return a
+                                      scale offering, and earn a ritual
+                                      bond.
+
+  Bond and Companion Roles            Guide, scout, and magical detector.
+
+  Equipment Compatibility             Flexible sensory bands; no rigid
+                                      armor.
+
+  Renewable Materials                 Molted scales and shed lens film.
+
+  Recovery Materials                  Natural recovery only.
+
+  Risks and Care                      Sensitive to cold and magical
+                                      interference.
+
+  World-State Response                Storms reveal different dens.
+  -----------------------------------------------------------------------
+
+SAL-CR-07 • Suncrest Roc (Rare)
+
+  -----------------------------------------------------------------------
+  Field                               Definition
+  ----------------------------------- -----------------------------------
+  Body Plan and Signature             Large raptor with golden crest and
+                                      reflective underside.
+
+  Habitat                             Mesas, Sunspire towers, and Great
+                                      Dune thermals.
+
+  Behavior                            Territorial nesting and
+                                      long-distance sight.
+
+  Gameplay Functions                  Aerial rescue, scouting, solar
+                                      alignment.
+
+  Recruitment Path                    Protect nest, repair observatory,
+                                      and gain a voluntary bond.
+
+  Bond and Companion Roles            Aerial scout and rescue carrier.
+
+  Equipment Compatibility             Heat-safe chest harness and signal
+                                      mirrors.
+
+  Renewable Materials                 Molted feathers and shell.
+
+  Recovery Materials                  Natural recovery only.
+
+  Risks and Care                      Requires flight corridor and
+                                      cooling.
+
+  World-State Response                Solar structures may aid or disrupt
+                                      nests.
+  -----------------------------------------------------------------------
+
+SAL-CR-08 • Dune Cathedral Walker (Legendary)
+
+  -----------------------------------------------------------------------
+  Field                               Definition
+  ----------------------------------- -----------------------------------
+  Body Plan and Signature             Enormous many-legged tortoise-like
+                                      body with sandstone shell towers.
+
+  Habitat                             Great Dune and ancient caravan
+                                      route.
+
+  Behavior                            Slow migration, hosts birds and
+                                      plants.
+
+  Gameplay Functions                  Mobile refuge, world event, route
+                                      restoration.
+
+  Recruitment Path                    Restore cistern chain, protect
+                                      migration, and establish accord
+                                      with a willing juvenile or
+                                      caretaker symbiote.
+
+  Bond and Companion Roles            Legendary refuge and caravan
+                                      guardian.
+
+  Equipment Compatibility             No armor; movable shade and care
+                                      structures only.
+
+  Renewable Materials                 Shed shell sand, garden plants, and
+                                      mineral deposits.
+
+  Recovery Materials                  No conventional harvest.
+
+  Risks and Care                      Requires huge route, water, and
+                                      nonownership law.
+
+  World-State Response                Migration defines trade and oasis
+                                      health.
+  -----------------------------------------------------------------------
+
+C. Zone Material Catalog
+
+  -----------------------------------------------------------------------------
+  Material       Class          Source and     Primary Uses      Risks /
+                                Processing                       Restrictions
+  -------------- -------------- -------------- ----------------- --------------
+  Sun Crystal    Magical        Mined from     Heat storage,     Overcharge and
+                 mineral        sun-exposed    light,            heat injury.
+                                veins and      purification,     
+                                stabilized in  navigation, and   
+                                shaded         solar machines.   
+                                workshops.                       
+
+  Saltglass      Glass          Pure salt-flat Windows, lenses,  Hygroscopic
+                                sand and       reflective        grades degrade
+                                mineral salts  panels, bottles,  in moisture.
+                                fused in       and signal        
+                                controlled     mirrors.          
+                                kilns.                           
+
+  Dunehide       Processed hide Livestock or   Water skins,      Source welfare
+                 class          lawful         boots, tents,     and cracking
+                                recovery hide  armor lining, and from poor
+                                tanned with    saddles.          oiling.
+                                salt and                         
+                                resin.                           
+
+  Aromatic Sun   Plant resin    Tapped from    Incense,          Flammable and
+  Resin                         oasis and      medicine,         culturally
+                                canyon shrubs; adhesive,         regulated.
+                                distilled.     sealant, and      
+                                               trade.            
+
+  Glasshide      Renewable      Molted scarab  Light armor,      No live-shell
+  Chitin         creature       shell cleaned  lenses, jewelry,  stripping.
+                 material       and            and heat shields. 
+                                heat-curved.                     
+
+  Mirage Scale   Renewable      Molted         Optics, illusion  False-image
+                 creature       refractive     diagnostics,      risk if
+                 material       scales         camouflage inlay. improperly
+                                collected from                   aligned.
+                                den trails.                      
+
+  Cistern        Ceramic        Fine clay,     Water storage,    Crack failure
+  Ceramic                       salt, fiber,   cooling vessels,  can
+                                and mineral    pipes, and        contaminate
+                                temper fired   filters.          supplies.
+                                in sealed                        
+                                kilns.                           
+
+  Bonewind       Mineral        Canyon         Plaster, molds,   Dust hazard
+  Gypsum                        deposits       medicine casts,   and cliff
+                                quarried and   and heat control. instability.
+                                ground.                          
+
+  Suncrest       Renewable      Molted         Heat-reflective   Nest
+  Feather        creature fiber feathers       fletching, fans,  disturbance
+                                recovered      signal gear, and  prohibited.
+                                below nests.   ceremonial use.   
+
+  Cathedral      Legendary      Naturally shed Heat-resistant    Collection
+  Shellsand      renewable      shell grains   mortar, sacred    quotas and
+                 mineral        collected      mosaic, and rare  migration
+                                after          composite.        rites apply.
+                                migration.                       
+  -----------------------------------------------------------------------------
+
+D. Material Geography
+
+  -----------------------------------------------------------------------
+  Map Layer                           Required Placement
+  ----------------------------------- -----------------------------------
+  Water Authority                     Map all wells, aquifers, cisterns,
+                                      rights, quality, and emergency
+                                      capacity.
+
+  Shifting Resources                  Show stable deposits separately
+                                      from storm-exposed temporary sites.
+
+  Shade and Heat                      Map shade structures, night routes,
+                                      heat basins, and cooling stations.
+
+  Caravan Economy                     Storage, repair, animal care,
+                                      customs, markets, and smuggling.
+
+  Creature Migration                  Jackal ranges, roc thermals,
+                                      serpent dens, and Cathedral route.
+  -----------------------------------------------------------------------
+
+E. Regional Production Chains
+
+  -----------------------------------------------------------------------
+  Chain                               Flow and Regional Function
+  ----------------------------------- -----------------------------------
+  Waterware                           Clay/gypsum/fiber → kiln → cistern,
+                                      pipe, filter, and cooling vessel.
+
+  Solar Craft                         Sun Crystal/glass/metal →
+                                      observatory and solar workshop →
+                                      devices.
+
+  Salt                                Extraction → grading → food,
+                                      leather, medicine, ritual, and
+                                      export.
+
+  Caravan Gear                        Dunehide/fiber/wood/metal → tents,
+                                      saddles, water packs, and wagons.
+
+  Renewable Creature Craft            Molt/feather/shellsand → sanctuary
+                                      inspection → specialized craft.
+  -----------------------------------------------------------------------
+
+F. Creature-Material Ethics and Law
+
+-   Water access cannot be denied to bonded creatures during
+    emergencies.
+
+-   No removal of live scarab shell or serpent scales.
+
+-   Roc nests receive seasonal exclusion zones.
+
+-   Cathedral Walker materials are collected only after voluntary
+    shedding.
+
+G. Approval Questions
+
+-   Is the Cathedral Walker singular or a species?
+
+-   How visible are water rights to the player?
+
+-   Can Sun Crystal power replace ordinary fuel broadly?
+
+-   Which desert creature supports first arrival and survival teaching?
+
+6. Frostveil Expanse
+
+Cold Lands. Deep Secrets.
+
+  -----------------------------------------------------------------------
+  STATUS: PROPOSED — NOT YET CANONICAL
+  Designed for glacier, mountain, geothermal, and sea-ice ecology with
+  expedition rescue and cold-adapted partnerships.
+  -----------------------------------------------------------------------
+
+  -----------------------------------------------------------------------
+
+A. Creature Roster Summary
+
+  -----------------------------------------------------------------------
+  Creature                Tier                    Ecological and Gameplay
+                                                  Role
+  ----------------------- ----------------------- -----------------------
+  Snowburrow Vole         Common                  Subnivean scout and
+                                                  avalanche indicator.
+
+  Frosthorn Goat          Common                  Mountain grazer and
+                                                  climbing pack animal.
+
+  Icefin Seal             Common                  Sea-ice fisher and
+                                                  rescue swimmer.
+
+  Sledfang Hound          Uncommon                Expedition transport
+                                                  and rescue canid.
+
+  Glacier Strider         Uncommon                Tall ice-walking
+                                                  herbivore.
+
+  Aurora Owl              Rare                    Magical aerial
+                                                  navigator and anomaly
+                                                  observer.
+
+  White Maw Ursine        Rare                    Massive cave bear and
+                                                  glacial guardian.
+
+  Glacierback Mammoth     Rare                    Large herd migrator and
+                                                  expedition support.
+
+  Aurora Crown Serpent    Legendary               Sky-borne polar serpent
+                                                  linked to aurora and
+                                                  weather.
+  -----------------------------------------------------------------------
+
+B. Creature Production Profiles
+
+FRO-CR-01 • Snowburrow Vole (Common)
+
+  -----------------------------------------------------------------------
+  Field                               Definition
+  ----------------------------------- -----------------------------------
+  Body Plan and Signature             Large pale vole with digging
+                                      forelimbs.
+
+  Habitat                             Snowfield edges and waystations.
+
+  Behavior                            Colonial beneath snow.
+
+  Gameplay Functions                  Detect voids, shelter, and soft
+                                      snow.
+
+  Recruitment Path                    Protect colony or raise rescued
+                                      young.
+
+  Bond and Companion Roles            Scout and camp helper.
+
+  Equipment Compatibility             Tiny marker vest.
+
+  Renewable Materials                 Shed fur and nesting fiber.
+
+  Recovery Materials                  Natural recovery only.
+
+  Risks and Care                      Heat-sensitive.
+
+  World-State Response                Snowpack changes routes.
+  -----------------------------------------------------------------------
+
+FRO-CR-02 • Frosthorn Goat (Common)
+
+  -----------------------------------------------------------------------
+  Field                               Definition
+  ----------------------------------- -----------------------------------
+  Body Plan and Signature             Dense-coated goat with translucent
+                                      horn tips.
+
+  Habitat                             Icewind slopes and cliffs.
+
+  Behavior                            Herded, sure-footed, alert.
+
+  Gameplay Functions                  Climbing, cargo, route finding.
+
+  Recruitment Path                    Herd service, rescue, or pasture
+                                      restoration.
+
+  Bond and Companion Roles            Pack and climbing partner.
+
+  Equipment Compatibility             Insulated panniers, hoof guards,
+                                      light barding.
+
+  Renewable Materials                 Wool, milk, shed horn layer.
+
+  Recovery Materials                  Natural recovery hide/horn.
+
+  Risks and Care                      Needs herd, minerals, hoof care.
+
+  World-State Response                Pass closure shifts herds.
+  -----------------------------------------------------------------------
+
+FRO-CR-03 • Icefin Seal (Common)
+
+  -----------------------------------------------------------------------
+  Field                               Definition
+  ----------------------------------- -----------------------------------
+  Body Plan and Signature             Heavy seal with fin ridges and
+                                      bright whiskers.
+
+  Habitat                             Sea-ice edge and glacial rivers.
+
+  Behavior                            Colonial and curious.
+
+  Gameplay Functions                  Water rescue, fishing, under-ice
+                                      retrieval.
+
+  Recruitment Path                    Free from net, protect rookery, or
+                                      sanctuary care.
+
+  Bond and Companion Roles            Aquatic rescue and scout.
+
+  Equipment Compatibility             Soft flotation marker, no rigid
+                                      armor.
+
+  Renewable Materials                 Shed fur and whiskers.
+
+  Recovery Materials                  Natural recovery only.
+
+  Risks and Care                      Needs water access and rookery
+                                      contact.
+
+  World-State Response                Sea-ice loss changes colonies.
+  -----------------------------------------------------------------------
+
+FRO-CR-04 • Sledfang Hound (Uncommon)
+
+  -----------------------------------------------------------------------
+  Field                               Definition
+  ----------------------------------- -----------------------------------
+  Body Plan and Signature             Powerful long-coated hound with
+                                      broad paws.
+
+  Habitat                             Frosthold and waystation routes.
+
+  Behavior                            Pack-working, vocal, route-trained.
+
+  Gameplay Functions                  Sled pulling, rescue, tracking,
+                                      warmth.
+
+  Recruitment Path                    Join expedition corps or adopt
+                                      retired/rescued hound.
+
+  Bond and Companion Roles            Transport, rescue, guard, family
+                                      companion.
+
+  Equipment Compatibility             Sled harness, paw boots, insulated
+                                      light armor.
+
+  Renewable Materials                 Brushed fur and shed claws.
+
+  Recovery Materials                  Natural recovery only.
+
+  Risks and Care                      Work/rest, paw, social, and
+                                      retirement rules.
+
+  World-State Response                Route network determines workload.
+  -----------------------------------------------------------------------
+
+FRO-CR-05 • Glacier Strider (Uncommon)
+
+  -----------------------------------------------------------------------
+  Field                               Definition
+  ----------------------------------- -----------------------------------
+  Body Plan and Signature             Long-legged deer-like body with
+                                      spreading ice-grip hooves.
+
+  Habitat                             Shimmering Icefield and valley
+                                      edges.
+
+  Behavior                            Migratory, cautious, follows stable
+                                      ice.
+
+  Gameplay Functions                  Ride, ice-route sensing, cargo.
+
+  Recruitment Path                    Protect migration, treat hoof
+                                      injury, or earn herd trust.
+
+  Bond and Companion Roles            Mount, guide, and migration
+                                      partner.
+
+  Equipment Compatibility             Flexible saddle, chest guard,
+                                      warmth blanket.
+
+  Renewable Materials                 Shed coat, antler, hoof plates.
+
+  Recovery Materials                  Natural recovery only.
+
+  Risks and Care                      Needs movement and herd contact.
+
+  World-State Response                Glacial break changes paths.
+  -----------------------------------------------------------------------
+
+FRO-CR-06 • Aurora Owl (Rare)
+
+  -----------------------------------------------------------------------
+  Field                               Definition
+  ----------------------------------- -----------------------------------
+  Body Plan and Signature             Large owl with iridescent aurora
+                                      feathers.
+
+  Habitat                             High valleys and observatory
+                                      towers.
+
+  Behavior                            Nocturnal, pair nesting, silent.
+
+  Gameplay Functions                  Night navigation, magical
+                                      detection, message carrying.
+
+  Recruitment Path                    Restore observatory, protect nest,
+                                      and form voluntary bond.
+
+  Bond and Companion Roles            Scout, guide, archive messenger.
+
+  Equipment Compatibility             Leg capsule and soft sensory hood.
+
+  Renewable Materials                 Molted feathers and shell.
+
+  Recovery Materials                  Natural recovery only.
+
+  Risks and Care                      Sensitive to bright artificial
+                                      light.
+
+  World-State Response                Aurora events alter behavior.
+  -----------------------------------------------------------------------
+
+FRO-CR-07 • White Maw Ursine (Rare)
+
+  -----------------------------------------------------------------------
+  Field                               Definition
+  ----------------------------------- -----------------------------------
+  Body Plan and Signature             Huge white bear with stone-dark
+                                      claws and ice-resistant fur.
+
+  Habitat                             White Maw caves and geothermal
+                                      valleys.
+
+  Behavior                            Solitary, protective, intelligent.
+
+  Gameplay Functions                  Heavy rescue, barrier breaking,
+                                      warmth, guardian role.
+
+  Recruitment Path                    Heal injured bear, protect cub,
+                                      restore food route, and earn long
+                                      trust.
+
+  Bond and Companion Roles            Guardian, rescue, heavy carrier
+                                      under limits.
+
+  Equipment Compatibility             Broad padded harness, head/shoulder
+                                      armor, rescue rig.
+
+  Renewable Materials                 Shed fur, claw sheaths, den
+                                      bedding.
+
+  Recovery Materials                  Natural recovery hide/bone only.
+
+  Risks and Care                      Needs vast territory, hibernation,
+                                      autonomy.
+
+  World-State Response                Mining and melt shift dens.
+  -----------------------------------------------------------------------
+
+FRO-CR-08 • Glacierback Mammoth (Rare)
+
+  -----------------------------------------------------------------------
+  Field                               Definition
+  ----------------------------------- -----------------------------------
+  Body Plan and Signature             Mammoth body with layered
+                                      frostproof coat and ice-breaking
+                                      tusks.
+
+  Habitat                             Deep valleys and stable glacier
+                                      routes.
+
+  Behavior                            Matriarchal herds, strong memory.
+
+  Gameplay Functions                  Heavy transport, route clearing,
+                                      shelter, rescue.
+
+  Recruitment Path                    Restore migration, protect calves,
+                                      and receive herd acceptance.
+
+  Bond and Companion Roles            Heavy transport and regional
+                                      guardian.
+
+  Equipment Compatibility             Insulated cargo frame, tusk guard,
+                                      nonrestrictive barding.
+
+  Renewable Materials                 Shed wool, tusk flakes, dung.
+
+  Recovery Materials                  Natural recovery ivory/hide under
+                                      herd rites.
+
+  Risks and Care                      Needs herd and huge range.
+
+  World-State Response                Glacial break and roads alter
+                                      migration.
+  -----------------------------------------------------------------------
+
+FRO-CR-09 • Aurora Crown Serpent (Legendary)
+
+  -----------------------------------------------------------------------
+  Field                               Definition
+  ----------------------------------- -----------------------------------
+  Body Plan and Signature             Enormous feathered serpentine body
+                                      with luminous fins.
+
+  Habitat                             High atmosphere over Frostveil
+                                      peaks.
+
+  Behavior                            Rare, migratory, responsive to
+                                      celestial events.
+
+  Gameplay Functions                  World event, storm calming,
+                                      long-range navigation, and magical
+                                      research.
+
+  Recruitment Path                    Repair Aurora Engine, resolve
+                                      Voidtouched disturbance, and form
+                                      accord through a chosen
+                                      scale-avatar.
+
+  Bond and Companion Roles            Legendary guide and weather
+                                      guardian.
+
+  Equipment Compatibility             No armor; consent-based observatory
+                                      markers only.
+
+  Renewable Materials                 Naturally shed aurora filaments and
+                                      scale dust.
+
+  Recovery Materials                  No harmful harvest.
+
+  Risks and Care                      Requires open sky and undisturbed
+                                      routes.
+
+  World-State Response                Appears according to regional
+                                      weather and restoration state.
+  -----------------------------------------------------------------------
+
+C. Zone Material Catalog
+
+  ---------------------------------------------------------------------------------
+  Material       Class            Source and       Primary Uses    Risks /
+                                  Processing                       Restrictions
+  -------------- ---------------- ---------------- --------------- ----------------
+  Frostiron      Metal            Cold-region ore  Ice tools, cold Heat instability
+                                  smelted in       structures,     if mistreated.
+                                  geothermal or    storage,        
+                                  specialized cold weapons, and    
+                                  forge cycles.    wards.          
+
+  Frostglass     Glass            Glacial silica   Windows,        Thermal shock if
+                                  and crystal      weather         poorly made.
+                                  melted then      instruments,    
+                                  annealed through cold storage,   
+                                  extreme          and lenses.     
+                                  temperature                      
+                                  cycling.                         
+
+  Glacier Wool   Renewable fiber  Sheared from     Insulation,     Must preserve
+                                  goats/mammoths   armor padding,  animal warmth
+                                  under seasonal   blankets,       and herd needs.
+                                  care.            tents, and      
+                                                   rescue gear.    
+
+  Aurora Feather Renewable        Molted owl       Navigation,     Light exposure
+                 creature fiber   feathers;        magical         degrades
+                                  stabilized in    sensing,        resonance.
+                                  dark storage.    fletching, and  
+                                                   ritual optics.  
+
+  Blue Ice       Ancient ice      Quarried in      Cold storage,   Glacier
+                 mineral          controlled       medicine,       stability and
+                                  blocks from      lenses, and     contamination.
+                                  nonstructural    research        
+                                  glacier zones.   samples.        
+
+  Geothermal     Mineral          Evaporated from  Medicine,       Some deposits
+  Salt                            hot springs,     preservation,   are toxic.
+                                  graded by        baths, and      
+                                  chemistry.       alchemy.        
+
+  Mammoth        Renewable        Shed wool        Heavy           Requires
+  Woolfelt       composite        washed, carded,  insulation,     herd-safe
+                                  and felted.      wall panels,    collection.
+                                                   sled covers,    
+                                                   and sound       
+                                                   dampening.      
+
+  White Maw      Fungal/organic   Cold-cave fungi  Cold-flexible   Spores and
+  Resin                           cultured and     repair, boot    contamination
+                                  rendered into    seal, and       require control.
+                                  adhesive.        medical         
+                                                   dressing.       
+
+  Starfall Alloy Meteoric metal   Impact fragments Precision       Unknown
+                                  recovered under  instruments,    resonance and
+                                  research         rare tools, and legal
+                                  authority and    magical         restriction.
+                                  alloyed.         containment.    
+
+  Aurora         Legendary        Naturally shed   Weather         Extremely rare;
+  Filament       magical fiber    by Aurora Crown  instruments,    no pursuit or
+                                  Serpent and      high magic      forced
+                                  collected after  conduits, and   collection.
+                                  events.          ceremonial      
+                                                   records.        
+  ---------------------------------------------------------------------------------
+
+D. Material Geography
+
+  -----------------------------------------------------------------------
+  Map Layer                           Required Placement
+  ----------------------------------- -----------------------------------
+  Cold Risk                           Map wind chill, shelter, geothermal
+                                      heat, avalanche, crevasse, and
+                                      whiteout zones.
+
+  Migration                           Goat, strider, seal, hound, bear,
+                                      mammoth, and serpent routes by
+                                      season.
+
+  Resource Safety                     Separate safe extraction from
+                                      structural glacier and sacred
+                                      zones.
+
+  Waystation Network                  Fuel, food, medicine, animal
+                                      shelter, beacon, and rescue
+                                      capacity.
+
+  Research Restrictions               Starfall, Voidtouched, archive, and
+                                      aurora access permissions.
+  -----------------------------------------------------------------------
+
+E. Regional Production Chains
+
+  -----------------------------------------------------------------------
+  Chain                               Flow and Regional Function
+  ----------------------------------- -----------------------------------
+  Cold Gear                           Wool/fur/felt/leather → wash/cure →
+                                      clothing, pads, tents, sled covers.
+
+  Frostiron                           Mine → protected transport →
+                                      specialized forge → tools and
+                                      structures.
+
+  Frostglass                          Silica/crystal → hot melt → staged
+                                      anneal → instruments and windows.
+
+  Geothermal                          Spring → heat/water/salt →
+                                      settlement, medicine, agriculture,
+                                      and craft.
+
+  Expedition Partnership              Sanctuary/corps → training/care →
+                                      sled, rescue, scouting, and
+                                      migration support.
+  -----------------------------------------------------------------------
+
+F. Creature-Material Ethics and Law
+
+-   Working hounds and pack animals require retirement and workload
+    limits.
+
+-   Mammoth ivory is not taken from living animals.
+
+-   Bear recruitment requires autonomy and territory.
+
+-   Aurora Serpent materials are event gifts, never hunted drops.
+
+G. Approval Questions
+
+-   How demanding is cold survival?
+
+-   Can Frostiron be worked outside Frostveil?
+
+-   Are mammoths mounts, caravan partners, or both?
+
+-   Is the Aurora Serpent tied to Shard history?
+
+7. The Shattered Crown
+
+Fallen Kingdoms. Rising Mysteries.
+
+  -----------------------------------------------------------------------
+  STATUS: PROPOSED — NOT YET CANONICAL
+  Designed for ruined kingdoms, succession, archives, mountain valleys,
+  fortresses, memorials, and contested provenance.
+  -----------------------------------------------------------------------
+
+  -----------------------------------------------------------------------
+
+A. Creature Roster Summary
+
+  -----------------------------------------------------------------------
+  Creature                Tier                    Ecological and Gameplay
+                                                  Role
+  ----------------------- ----------------------- -----------------------
+  Crownwall Pigeon        Common                  Urban ruin messenger
+                                                  and archive bird.
+
+  Blackthorn Mule         Common                  Valley transport hybrid
+                                                  and road worker.
+
+  Marbleback Ibex         Common                  Mountain grazer and
+                                                  pass guide.
+
+  Aqueduct Newt           Uncommon                Water-system indicator
+                                                  and maintenance helper.
+
+  Relic Hound             Uncommon                Scent tracker attuned
+                                                  to historical
+                                                  materials.
+
+  Stainedglass Stag       Rare                    Spirit-sensitive valley
+                                                  guardian and memorial
+                                                  creature.
+
+  Crownscale Gryphon      Rare                    Fortress aerial
+                                                  guardian and mountain
+                                                  courier.
+
+  Vault Sentinel          Rare                    Ancient intelligent
+                                                  construct guarding
+                                                  archives and public
+                                                  memory.
+
+  Crown of Echoes         Legendary               Collective
+                                                  spirit-creature formed
+                                                  from royal beasts,
+                                                  memories, and public
+                                                  history.
+  -----------------------------------------------------------------------
+
+B. Creature Production Profiles
+
+SCR-CR-01 • Crownwall Pigeon (Common)
+
+  -----------------------------------------------------------------------
+  Field                               Definition
+  ----------------------------------- -----------------------------------
+  Body Plan and Signature             Sturdy pigeon with crown-pattern
+                                      neck feathers.
+
+  Habitat                             Crownspire, forts, and aqueducts.
+
+  Behavior                            Colonial and route-faithful.
+
+  Gameplay Functions                  Messages, ruin navigation, return
+                                      paths.
+
+  Recruitment Path                    Restore loft or rescue flock.
+
+  Bond and Companion Roles            Messenger and city scout.
+
+  Equipment Compatibility             Leg capsules only.
+
+  Renewable Materials                 Molted feathers and guano.
+
+  Recovery Materials                  Natural recovery only.
+
+  Risks and Care                      Needs safe loft and grain.
+
+  World-State Response                War and restoration shift colonies.
+  -----------------------------------------------------------------------
+
+SCR-CR-02 • Blackthorn Mule (Common)
+
+  -----------------------------------------------------------------------
+  Field                               Definition
+  ----------------------------------- -----------------------------------
+  Body Plan and Signature             Robust mule with dark dorsal
+                                      stripe.
+
+  Habitat                             Blackthorn Vale and Crown Road.
+
+  Behavior                            Patient, intelligent, cautious.
+
+  Gameplay Functions                  Cargo, road work, agriculture,
+                                      evacuation.
+
+  Recruitment Path                    Work contract, sanctuary adoption,
+                                      or rescue.
+
+  Bond and Companion Roles            Transport and farm partner.
+
+  Equipment Compatibility             Panniers, cart harness, medium
+                                      barding.
+
+  Renewable Materials                 Brushed hair and manure.
+
+  Recovery Materials                  Natural recovery hide only.
+
+  Risks and Care                      Load, hoof, rest, and retirement
+                                      rules.
+
+  World-State Response                Road repair changes distribution.
+  -----------------------------------------------------------------------
+
+SCR-CR-03 • Marbleback Ibex (Common)
+
+  -----------------------------------------------------------------------
+  Field                               Definition
+  ----------------------------------- -----------------------------------
+  Body Plan and Signature             Ibex with pale stone-pattern coat
+                                      and long horns.
+
+  Habitat                             Twin Peaks and citadel slopes.
+
+  Behavior                            Herded, agile, weather-aware.
+
+  Gameplay Functions                  Climbing, scouting, material
+                                      carrying.
+
+  Recruitment Path                    Protect herd and repair salt lick.
+
+  Bond and Companion Roles            Climbing pack partner.
+
+  Equipment Compatibility             Light panniers and hoof guards.
+
+  Renewable Materials                 Shed coat and horn layers.
+
+  Recovery Materials                  Natural recovery only.
+
+  Risks and Care                      Needs herd and vertical space.
+
+  World-State Response                Pass closure changes herds.
+  -----------------------------------------------------------------------
+
+SCR-CR-04 • Aqueduct Newt (Uncommon)
+
+  -----------------------------------------------------------------------
+  Field                               Definition
+  ----------------------------------- -----------------------------------
+  Body Plan and Signature             Large blue newt with luminous
+                                      gills.
+
+  Habitat                             Aqueducts, cisterns, and springs.
+
+  Behavior                            Colony nesting and water-sensitive.
+
+  Gameplay Functions                  Leak detection, water testing,
+                                      underwater access.
+
+  Recruitment Path                    Clean channel, restore breeding
+                                      pool, or sanctuary bond.
+
+  Bond and Companion Roles            Waterworks partner and medical
+                                      indicator.
+
+  Equipment Compatibility             Soft marker band and sample pouch.
+
+  Renewable Materials                 Shed skin and eggshell.
+
+  Recovery Materials                  Natural recovery only.
+
+  Risks and Care                      Sensitive to toxins and dry
+                                      periods.
+
+  World-State Response                Aqueduct restoration expands range.
+  -----------------------------------------------------------------------
+
+SCR-CR-05 • Relic Hound (Uncommon)
+
+  -----------------------------------------------------------------------
+  Field                               Definition
+  ----------------------------------- -----------------------------------
+  Body Plan and Signature             Medium hound with silver-flecked
+                                      nose and calm posture.
+
+  Habitat                             Archives, tomb roads, and claimant
+                                      camps.
+
+  Behavior                            Bonded to handlers, careful around
+                                      remains.
+
+  Gameplay Functions                  Find evidence, lost people,
+                                      protected relics.
+
+  Recruitment Path                    Archive apprenticeship, handler
+                                      rescue, or sanctuary adoption.
+
+  Bond and Companion Roles            Investigation, rescue, and guard
+                                      companion.
+
+  Equipment Compatibility             Evidence harness, paw guards, light
+                                      armor.
+
+  Renewable Materials                 Brushed fur and shed claws.
+
+  Recovery Materials                  Natural recovery only.
+
+  Risks and Care                      Needs ethical scent training and
+                                      rest.
+
+  World-State Response                Claimant abuse affects trust.
+  -----------------------------------------------------------------------
+
+SCR-CR-06 • Stainedglass Stag (Rare)
+
+  -----------------------------------------------------------------------
+  Field                               Definition
+  ----------------------------------- -----------------------------------
+  Body Plan and Signature             Tall stag with translucent antlers
+                                      showing shifting colors.
+
+  Habitat                             Cathedral groves and King’s Rest.
+
+  Behavior                            Solitary or small ceremonial
+                                      groups.
+
+  Gameplay Functions                  Spirit navigation, memorial quests,
+                                      healing presence.
+
+  Recruitment Path                    Protect burial grove, resolve false
+                                      claim, and receive voluntary bond.
+
+  Bond and Companion Roles            Guide, ceremonial companion, spirit
+                                      scout.
+
+  Equipment Compatibility             Soft cloth, antler guards, no heavy
+                                      armor.
+
+  Renewable Materials                 Shed antler glass, coat, and light
+                                      residue.
+
+  Recovery Materials                  Natural recovery only under
+                                      funerary law.
+
+  Risks and Care                      Needs quiet sacred habitat.
+
+  World-State Response                War and desecration drive it away.
+  -----------------------------------------------------------------------
+
+SCR-CR-07 • Crownscale Gryphon (Rare)
+
+  -----------------------------------------------------------------------
+  Field                               Definition
+  ----------------------------------- -----------------------------------
+  Body Plan and Signature             Gryphon with slate feathers and
+                                      lion body marked like royal
+                                      heraldry.
+
+  Habitat                             Veiled Citadel, Twin Fortresses,
+                                      and Echo Hold.
+
+  Behavior                            Pair nesting, duty-oriented through
+                                      learned bonds.
+
+  Gameplay Functions                  Aerial transport, scouting,
+                                      defense, rescue.
+
+  Recruitment Path                    Restore eyrie, expose abusive
+                                      handler, and earn voluntary service
+                                      bond.
+
+  Bond and Companion Roles            Aerial guardian, courier, rescue
+                                      mount.
+
+  Equipment Compatibility             Custom saddle, chest armor,
+                                      wing-safe heraldry.
+
+  Renewable Materials                 Molted feathers, shed claws,
+                                      abandoned shell.
+
+  Recovery Materials                  Natural recovery only; eggs
+                                      protected.
+
+  Risks and Care                      Requires eyrie, flight, social
+                                      bond, and no coercive oath.
+
+  World-State Response                Faction control changes treatment.
+  -----------------------------------------------------------------------
+
+SCR-CR-08 • Vault Sentinel (Rare)
+
+  -----------------------------------------------------------------------
+  Field                               Definition
+  ----------------------------------- -----------------------------------
+  Body Plan and Signature             Stone-metal quadruped or humanoid
+                                      frame with Memory Crystal core.
+
+  Habitat                             Memory Vault and royal archives.
+
+  Behavior                            Rule-bound, interprets
+                                      authorization and preservation
+                                      needs.
+
+  Gameplay Functions                  Defense, archive access, lifting,
+                                      translation, and restoration.
+
+  Recruitment Path                    Repair, prove lawful purpose,
+                                      resolve conflicting orders, and
+                                      establish service contract or
+                                      personhood recognition.
+
+  Bond and Companion Roles            Archive guardian, builder,
+                                      historian, and companion if
+                                      autonomy is acknowledged.
+
+  Equipment Compatibility             Replaceable plates, tools, carrying
+                                      frame, no ownership branding.
+
+  Renewable Materials                 Worn plates and authorized
+                                      discarded components.
+
+  Recovery Materials                  Core, records, and identity parts
+                                      cannot be salvaged without consent
+                                      or confirmed death.
+
+  Risks and Care                      Needs maintenance, power, and legal
+                                      status.
+
+  World-State Response                Governance outcome changes freedom
+                                      and duties.
+  -----------------------------------------------------------------------
+
+SCR-CR-09 • Crown of Echoes (Legendary)
+
+  -----------------------------------------------------------------------
+  Field                               Definition
+  ----------------------------------- -----------------------------------
+  Body Plan and Signature             Shifting composite of stag,
+                                      gryphon, hound, and light.
+
+  Habitat                             Crownspire, King’s Rest, and major
+                                      memorial routes.
+
+  Behavior                            Appears during succession crises
+                                      and archival revelations.
+
+  Gameplay Functions                  Historical visions, covenant,
+                                      region-wide travel, and governance
+                                      climax.
+
+  Recruitment Path                    Reconcile conflicting histories,
+                                      protect public memory, and form a
+                                      covenant through a chosen stable
+                                      aspect.
+
+  Bond and Companion Roles            Legendary guide, memorial guardian,
+                                      and truth witness.
+
+  Equipment Compatibility             No conventional equipment; symbolic
+                                      regalia only by covenant.
+
+  Renewable Materials                 Voluntary memory fragments, light
+                                      residue, and manifested shed
+                                      symbols.
+
+  Recovery Materials                  No hostile harvest.
+
+  Risks and Care                      Requires truthful archive practice
+                                      and public remembrance.
+
+  World-State Response                Form changes with political and
+                                      historical outcomes.
+  -----------------------------------------------------------------------
+
+C. Zone Material Catalog
+
+  ------------------------------------------------------------------------------
+  Material       Class          Source and     Primary Uses     Risks /
+                                Processing                      Restrictions
+  -------------- -------------- -------------- ---------------- ----------------
+  Crownsteel     Historical     Recovered      Heirloom         Claim disputes
+                 alloy          royal metal    weapons,         and loss of
+                                documented,    bridges, seals,  historical
+                                cleaned,       armor, and       resonance.
+                                tested, and    restoration.     
+                                reforged with                   
+                                provenance                      
+                                preserved.                      
+
+  Memory Crystal Magical        Recovered from Records,         Distortion,
+                 archive        authorized     investigation,   privacy, and
+                 mineral        archives or    teaching,        false-evidence
+                                cultivated in  memorials, and   risk.
+                                controlled     identity         
+                                matrices.      safeguards.      
+
+  Royal Stained  Historical     Salvaged,      Windows, maps,   Cultural
+  Glass          glass          cataloged, or  ritual light,    protection and
+                                recreated from memorials, and   lead/toxin
+                                old formulas.  optics.          handling.
+
+  Blackthorn     Hardwood       Managed valley Furniture, bows, Orchard loss
+  Timber                        orchards and   restoration      affects food and
+                                stormfall      frames, and      culture.
+                                recovery.      carts.           
+
+  Marbleback     Renewable      Outer horn     Inlay, grips,    No horn cutting.
+  Hornlayer      creature       layers         instruments, and 
+                 material       naturally shed legal seals.     
+                                and collected                   
+                                on herd                         
+                                routes.                         
+
+  Aqueduct       Ceramic        Historic clay  Pipes, channels, Compatibility
+  Ceramic                       formulas       filters, roof    with old masonry
+                                reproduced and tile, and        required.
+                                fired with     restoration.     
+                                mineral                         
+                                temper.                         
+
+  Relic Silver   Historical     Recovered      Exorcist tools,  Ownership and
+                 metal          silver         archive seals,   funerary
+                                cataloged then medicine, and    restrictions.
+                                cleaned or     ceremonial       
+                                alloyed.       repair.          
+
+  Gryphon        Renewable      Molted         Wind vanes,      Eyrie entry
+  Slatefeather   creature       feathers       fletching, light restricted.
+                 material       collected at   armor, and       
+                                approved       heraldry.        
+                                eyries.                         
+
+  Sentinel Plate Construct      Authorized     Tools,           Cannot strip
+                 material       worn or        structural       active
+                                replaced armor inserts,         sentinels.
+                                plates with    replacement      
+                                identity       parts, and       
+                                records        study.           
+                                removed.                        
+
+  Echo Residue   Legendary      Voluntarily    Memorial ink,    Cannot be
+                 magical        manifested     truth rituals,   commodified
+                 material       after covenant public archive   without
+                                events.        markers.         destabilizing
+                                                                covenant.
+  ------------------------------------------------------------------------------
+
+D. Material Geography
+
+  -----------------------------------------------------------------------
+  Map Layer                           Required Placement
+  ----------------------------------- -----------------------------------
+  Claimant Control                    Map legal control separately from
+                                      physical occupation and public
+                                      access.
+
+  Relic Status                        Mark public, funerary, claimant,
+                                      evidence, abandoned, and protected
+                                      heritage zones.
+
+  Infrastructure                      Aqueducts, tunnels, roads, lifts,
+                                      forts, archives, and restoration
+                                      stages.
+
+  Creature Rights                     Eyries, burial groves, construct
+                                      jurisdictions, and valley herd
+                                      routes.
+
+  Memory Safety                       Archive access, privacy,
+                                      distortion, containment, and audit
+                                      locations.
+  -----------------------------------------------------------------------
+
+E. Regional Production Chains
+
+  -----------------------------------------------------------------------
+  Chain                               Flow and Regional Function
+  ----------------------------------- -----------------------------------
+  Crownsteel Restoration              Recovery → catalog → testing →
+                                      conservation/forge → public or
+                                      heirloom use.
+
+  Aqueduct Repair                     Clay/stone/metal → workshops →
+                                      pipe/channel/bridge → water
+                                      restoration.
+
+  Archive Conservation                Crystal/glass/textile/ink →
+                                      controlled lab → record, display,
+                                      and teaching.
+
+  Valley Production                   Orchard/wool/timber/silver → local
+                                      craft → inter-valley trade.
+
+  Creature and Construct Service      Sanctuary/eyrie/archive →
+                                      consent/contract → rescue, defense,
+                                      travel, and knowledge.
+  -----------------------------------------------------------------------
+
+F. Creature-Material Ethics and Law
+
+-   Tombs and memorial creatures are protected from ordinary loot logic.
+
+-   Construct cores and memories are identity-bearing, not salvage by
+    default.
+
+-   Gryphon bonds cannot be inherited as property without renewed
+    consent.
+
+-   Historical materials retain provenance even after reforging or
+    repair.
+
+G. Approval Questions
+
+-   What status do intelligent constructs hold?
+
+-   Can Memory Crystals be admitted as legal evidence?
+
+-   Which claimant controls creature and relic law?
+
+-   Is the Crown of Echoes a spirit, creature, or public magical
+    institution?
+
+Cross-Zone Creature and Material Index
+
+  -----------------------------------------------------------------------
+  Zone                    Creatures               Signature Materials
+  ----------------------- ----------------------- -----------------------
+  1. The Golden Plains    Sunmane Courser,        Sunwood, Skybloom
+                          Prairie Burrower,       Fiber, Ambergrain Straw
+                          Skybloom Crane,         Composite, Prairie
+                          Emberhorn Ram, Longroad Clay, Emberhorn Wool,
+                          Hound, Stormcrest Roc,  Aurox Hornflake,
+                          Stonecircle Aurox,      Longroad Leather,
+                          Prairie Colossus        Stormglass Sand,
+                                                  Fieldstone Lime,
+                                                  Prairie Resin
+
+  2. Silverwood Wilds     Silverbrush Hare,       Silverwood, Ironroot
+                          Mistreach Otter, Canopy Laminate, Feysilk, Moon
+                          Glider, Thornroot       Resin, Starlight
+                          Tapir, Moonshade Lynx,  Orchid, Mistreach
+                          Feylight Moth, Emerald  Pearlstone, Spineback
+                          Spineback, Rootsong     Plate, Living Vinecord,
+                          Warden, Silverwood      Glowspore Ink, Rootsong
+                          Leviathan               Fiber
+
+  3. The Verdant Coast    Cliffbill Gull,         Saltwind Bronze,
+                          Tidepool Grazer,        Reefcord Hemp, Cliff
+                          Windtail Ferret,        Limestone, Tidepool
+                          Reefstrider, Stormback  Shell, Stormback Fur,
+                          Hound, Coral Crown      Coralstone, Seafoam
+                          Turtle, Galecrest       Resin, Whaleoil
+                          Drake, Bluewater        Substitute, Galecrest
+                          Leviathan               Scale, Bluewater
+                                                  Songstone
+
+  4. Emerald Isles        Lagoon Skipper, Coconut Island Ironwood,
+                          Crabber, Beacon Swift,  Volcanic Glass, Reef
+                          Reefhorn Grazer,        Pearl, Tempest Nodule,
+                          Volcanic Shellback,     Emberwing Scale, Atoll
+                          Tempest Ray, Drakefall  Fiber, Tide Crystal,
+                          Emberwing, Azure Trench Pumicecrete, Deep Ink,
+                          Oracle                  Singing Coral Ceramic
+
+  5. Saltsong Desert      Saltfoot Jerboa,        Sun Crystal, Saltglass,
+                          Duneback Lizard, Oasis  Dunehide, Aromatic Sun
+                          Ibis, Glasshide Scarab, Resin, Glasshide
+                          Bonewind Jackal, Mirage Chitin, Mirage Scale,
+                          Serpent, Suncrest Roc,  Cistern Ceramic,
+                          Dune Cathedral Walker   Bonewind Gypsum,
+                                                  Suncrest Feather,
+                                                  Cathedral Shellsand
+
+  6. Frostveil Expanse    Snowburrow Vole,        Frostiron, Frostglass,
+                          Frosthorn Goat, Icefin  Glacier Wool, Aurora
+                          Seal, Sledfang Hound,   Feather, Blue Ice,
+                          Glacier Strider, Aurora Geothermal Salt,
+                          Owl, White Maw Ursine,  Mammoth Woolfelt, White
+                          Glacierback Mammoth,    Maw Resin, Starfall
+                          Aurora Crown Serpent    Alloy, Aurora Filament
+
+  7. The Shattered Crown  Crownwall Pigeon,       Crownsteel, Memory
+                          Blackthorn Mule,        Crystal, Royal Stained
+                          Marbleback Ibex,        Glass, Blackthorn
+                          Aqueduct Newt, Relic    Timber, Marbleback
+                          Hound, Stainedglass     Hornlayer, Aqueduct
+                          Stag, Crownscale        Ceramic, Relic Silver,
+                          Gryphon, Vault          Gryphon Slatefeather,
+                          Sentinel, Crown of      Sentinel Plate, Echo
+                          Echoes                  Residue
+  -----------------------------------------------------------------------
+
+Proposed Decisions
+
+-   Every proposed-zone creature is recruitable through at least one
+    species-appropriate path.
+
+-   Renewable and recovery-based creature materials are standard; lethal
+    harvesting is not the default economy.
+
+-   Intelligent, spirit-active, legendary, and construct beings require
+    consent, covenant, contract, or personhood-aware rules.
+
+-   Each zone map must show habitats, migrations, sanctuaries,
+    recruitment sites, resource sources, processing, storage, trade,
+    restriction, depletion, and restoration.
+
+-   Rare materials create specialization and provenance rather than
+    automatic numerical superiority.
+
+-   All content in this bible remains Proposed until the related zone is
+    approved.
+
+  -----------------------------------------------------------------------
+  BIBLE STATUS
+  Seven proposed zones now include 56 proposed creatures, 70 materials,
+  recruitment paths, equipment compatibility, ethical sourcing,
+  production chains, map layers, and approval questions.
+  -----------------------------------------------------------------------
+
+  -----------------------------------------------------------------------

@@ -12,7 +12,7 @@ Ashveil Reach has 14 regions. Seven ship now (level cap 35). Each future region 
 | 20–25 | Marrowbog | built to sheet: Mudcarver Village, the Grasping Reeds, Fenwatch Outpost, Veilfen Hollows (the Thin Place choice), Rotmire Deep and the Sinking Spire | marrowbog.png |
 | 25–30 | Old Watchtower | built to sheet: Ravengate Crossing and Stonewatch Citadel, Bastion Fields and the Memorial Plains, Graystone Holds, Sentinel Pass, Talonreach Outpost and the Shattered Vale | old-watchtower.png |
 | 30–35 | The Sundering Scar (launch endgame) | built to sheet: Riftwatch Bastion, the Bleeding Fields, Mirror Basin, Echo Hollows, Veinfall Chasm, the Shardspire (the Wound choice) | hollow-scar.png |
-| 35–40 | The Golden Plains | future, overview on proposed-regions.png | proposed-regions.png |
+| 35–40 | The Golden Plains | built from the proposed map package and creatures bible: Sunfield, the Longroad, Skybloom Fields, the Ambergrain Belt, Wildherd Basin, Southwind Uplands, Stormwell, Longroad Redoubt, Stonecircle March | docs/design |
 | 40–45 | Silverwood Wilds | future, overview on proposed-regions.png | proposed-regions.png |
 | 45–50 | The Verdant Coast | future, overview on proposed-regions.png | proposed-regions.png |
 | 50–55 | Emerald Isles | future, overview on proposed-regions.png | proposed-regions.png |
@@ -39,3 +39,6 @@ Epilogue hook for future regions: Ossery Vale, the Concordance Chair.
 1. All seven built regions match their sheets, including every named location (js_more.js builds the remaining sheet locations from compact descriptions with addPlace()).
 2. Future regions as their sheets are made.
 3. Guilds and factions once online play (Firebase) is switched on.
+
+## Proposed territories
+Built from docs/design/seven-proposed-zone-map-packages and proposed-zones-creatures-and-materials-bible. Bible rules followed: every wild species can be befriended; wild creatures that are fought are driven off, not killed; creature materials come from care (shearing, shed horn), never loot. Fights are with people (bandits, poachers, tyrants).

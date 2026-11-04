@@ -8,7 +8,7 @@ const REGIONS=[
   {id:'marrowbog',n:'Marrowbog',lv:[20,25],built:1},
   {id:'watchtower',n:'Old Watchtower',lv:[25,30],built:1},
   {id:'scar',n:'The Sundering Scar',lv:[30,35],built:1},
-  {id:'golden',n:'The Golden Plains',lv:[35,40]},
+  {id:'golden',n:'The Golden Plains',lv:[35,40],built:1},
   {id:'silverwood',n:'Silverwood Wilds',lv:[40,45]},
   {id:'verdant',n:'The Verdant Coast',lv:[45,50]},
   {id:'emerald',n:'Emerald Isles',lv:[50,55]},
@@ -150,7 +150,7 @@ function renderMastery(){if(!MXP)return;const M=MX(),capped=pl.lv>=CAP;
 $('mastery').addEventListener('click',e=>{const b=e.target.closest('[data-mx],#mxclose');if(!b||!MXP)return;if(b.id==='mxclose'){MXP=null;return unpause('mastery')}
   const M=MX(),k=b.dataset.mx;if(!M.pts||mxRank(k)>=MX_MAX)return;M.pts--;M.r[k]=mxRank(k)+1;recalc();sfx.pick();save();renderMastery()});
 /* ---------- the edges of the map: roads to regions not yet charted ---------- */
-const SEALED={road:[{x:-90,r:'frostveil',t:'The Ash Road north'}],town:[{x:-150,r:'golden',t:'The south road'}],tower:[{x:-90,r:'crown',t:'Northwatch pass'}],
+const SEALED={road:[{x:-90,r:'frostveil',t:'The Ash Road north'}],tower:[{x:-90,r:'crown',t:'Northwatch pass'}],
   falls:[{x:-120,r:'emerald',t:'Fenwater ferry'}],reach:[{x:160,r:'saltsong',t:'The dry road'}],hollow:[{x:-80,r:'verdant',t:'The cliff road west'}],elderwood:[{x:-60,r:'silverwood',t:'A silver-barked trail'}],stonewatch:[{x:-40,r:'golden',t:'The plains road east'}]};
 const sX=s=>s.x<0?Z.x1+s.x:s.x+EDGE;
 function sealedNear(){const L=SEALED[Z.id];if(!L)return null;for(const s of L)if(Math.abs(pl.x-sX(s))<18)return{k:'sealed',s};return null}
