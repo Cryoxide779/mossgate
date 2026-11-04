@@ -16,7 +16,7 @@ function titleOf(){let b=KIT().disc;for(const d of COMBAT_D)if(dXP(d)>dXP(b))b=d
 function setupClassUI(){if(!pl.ch)return;$('nmt').textContent=pl.ch.name+' · '+titleOf();const w=WEAP(),verb=w==='bow'?'shoot':w==='staff'||w==='tome'?'cast':'slash',nm=[];
   for(let i=0;i<3;i++){const info=techInfo(pl.lo[i]),b=$('b-s'+(i+1));b.hidden=!info||(!!info.ult&&!info.learned);nm.push(info?info.n:'-');if(info)b.innerHTML=`<span>${info.n.split(' ')[0]}<small>${info.mp}</small></span>`}
   $('b-atk').innerHTML=`<span>${verb[0].toUpperCase()+verb.slice(1)}</span>`;
-  $('keys').innerHTML=`<b>←→</b> move · <b>Z</b> jump · <b>X</b> ${verb} · <b>C</b> ${nm[0]} · <b>V</b> ${nm[1]} · <b>B</b> ${nm[2]} · <b>Shift</b> roll · <b>F</b> guard/parry · <b>P</b> tonic · <b>I</b> bag · <b>T</b> disciplines · <b>Q</b> quests · <b>Y</b> crisis · <b>M</b> map · <b>G</b> companion command · <b>↑</b> talk/portal`}
+  $('keys').innerHTML=`<b>←→</b> move · <b>Z</b> jump · <b>X</b> ${verb} · <b>C</b> ${nm[0]} · <b>V</b> ${nm[1]} · <b>B</b> ${nm[2]} · <b>Shift</b> roll · <b>F</b> guard/parry · <b>P</b> tonic · <b>I</b> bag · <b>T</b> disciplines · <b>Q</b> quests · <b>Y</b> crisis · <b>M</b> map · <b>R</b> call/send home companion · <b>G</b> companion command · <b>↑</b> talk/portal`}
 
 /* ---------- touch ---------- */
 $('touch').hidden=!isTouch;$('keys').hidden=isTouch;

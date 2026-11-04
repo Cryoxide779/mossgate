@@ -20,7 +20,7 @@ const CAP=Math.max(...REGIONS.filter(r=>r.built).map(r=>r.lv[1])),CAP_MAX=70;
 const ZBAND={town:['cresthollow',1,1],hearth:['cresthollow',1,1],home:['cresthollow',1,1],hunt:['cresthollow',2,2],road:['cresthollow',1,2],ruins:['cresthollow',2,4],under:['cresthollow',3,4],cellar:['cresthollow',4,4],cistern:['cresthollow',5,5],riversmeet:['cresthollow',2,3],stonefield:['cresthollow',3,4],mirefen:['cresthollow',4,5],highsteps:['cresthollow',1,1],
   outskirts:['whisper',5,6],briarwood:['whisper',6,7],oak:['whisper',6,8],briarlair:['whisper',7,7],whisperwood:['whisper',5,5],whispergrove:['whisper',6,7],moonpetal:['whisper',7,8],thornveil:['whisper',8,9],elderwood:['whisper',9,10],hermit:['whisper',7,8],sawmill:['whisper',8,10],mossroot:['whisper',9,10],
   stonebridge:['stonebridge',10,10],quarry:['stonebridge',11,13],qfort:['stonebridge',14,14],rivermere:['stonebridge',10,10],ironvale:['stonebridge',11,11],granite:['stonebridge',12,13],blackgate:['stonebridge',13,14],stonewatch:['stonebridge',14,15],
-  falls:['mistyfen',15,17],shrine:['mistyfen',17,19],
+  falls:['mistyfen',15,17],shrine:['mistyfen',17,19],fenwater:['mistyfen',15,15],reedshore:['mistyfen',16,17],glasswater:['mistyfen',17,18],serpent:['mistyfen',18,19],archive:['mistyfen',19,20],
   bog:['marrowbog',20,22],lab:['marrowbog',21,23],reach:['marrowbog',23,25],vats:['marrowbog',24,24],
   tower:['watchtower',25,27],siege:['watchtower',26,28],gate:['watchtower',27,29],outcrop:['watchtower',28,30],
   scar:['scar',30,32],inner:['scar',32,34],hollow:['scar',35,35]};

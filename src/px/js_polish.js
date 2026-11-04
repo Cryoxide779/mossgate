@@ -42,23 +42,29 @@ document.addEventListener('visibilitychange',()=>{if(document.hidden){if(pl.ch&&
   else{try{AC&&AC.state==='suspended'&&AC.resume()}catch(_){}}});
 addEventListener('pagehide',()=>{if(pl.ch&&$('title').hidden&&$('creator').hidden)try{save()}catch(_){}});
 /* ---------- top bar: shards, tonics, bag and a "more" button; everything else lives in a labelled drop-down ---------- */
-const MORE_ROWS=[['cmdbtn',()=>{const b=actBond();return b?'Companion · '+CMD_N[compCmd()]:'Companion'},1],['qbtn','Quests'],['mxbtn',()=>pl.mx&&pl.mx.pts?'Mastery · '+pl.mx.pts+' to spend':'Mastery'],['treebtn','Disciplines'],['mapbtn','Map'],['saybtn',()=>{const n=NET.cap?netPeers().length:0;return n?'Say · '+(n+1)+' here':'Say'},1],['sndbtn',()=>SND.on?'Sound · on':'Sound · off',1],['menubtn','Menu & saves'],['fs','Fullscreen']];
+/* companions: one tap to call your companion out or send it home */
+function compOut(){const c=pl.comp;return!!(c&&c.act&&c.b&&c.b[c.act])}
+function toggleComp(){const c=CB();if(!c.own.length){banner('No companions yet','Befriend a creature first');return}
+  if(c.act){const b=c.b[c.act];c.last=c.act;setComp(c.act);banner('Sent home',b.n.split(',')[0]+' waits for you at home')}
+  else{const id=c.last&&c.b[c.last]?c.last:c.own[0];setComp(id);banner('Called',c.b[id].n.split(',')[0]+' is at your side')}}
+addEventListener('keydown',e=>{if(e.code==='KeyR'&&!e.repeat&&e.target.tagName!=='INPUT'&&e.target.tagName!=='TEXTAREA'&&pl.ch&&S.started&&!S.paused)toggleComp()});
+const MORE_ROWS=[['comptog',()=>compOut()?'Companion · out (tap to send home)':'Companion · home (tap to call)',1],['cmdbtn',()=>{const b=actBond();return b?'Command · '+CMD_N[compCmd()]:'Command'},1],['qbtn','Quests'],['mxbtn',()=>pl.mx&&pl.mx.pts?'Mastery · '+pl.mx.pts+' to spend':'Mastery'],['treebtn','Disciplines'],['mapbtn','Map'],['saybtn',()=>{const n=NET.cap?netPeers().length:0;return n?'Say · '+(n+1)+' here':'Say'},1],['sndbtn',()=>SND.on?'Sound · on':'Sound · off',1],['menubtn','Menu & saves'],['fs','Fullscreen']];
 (()=>{const tr=$('tr'),more=document.createElement('button');more.className='ib px';more.id='morebtn';more.setAttribute('aria-label','More');more.setAttribute('aria-expanded','false');
   more.innerHTML='<svg viewBox="0 0 18 18" fill="#f2e6c8"><rect x="2" y="2" width="5" height="5"/><rect x="11" y="2" width="5" height="5"/><rect x="2" y="11" width="5" height="5"/><rect x="11" y="11" width="5" height="5"/></svg>';
   tr.insertBefore(more,$('bagbtn').nextSibling);
   const pn=document.createElement('div');pn.id='morepn';pn.className='px';pn.hidden=true;document.body.appendChild(pn);
   const mk=(id,svg)=>{const b=document.createElement('button');b.className='ib px';b.id=id;b.innerHTML=svg;return b};
-  const extra={};extra.mapbtn=mk('mapbtn','<svg viewBox="0 0 18 18" fill="none" stroke="#f2e6c8" stroke-width="2"><path d="M1.5 4l5-2 5 2 5-2v12l-5 2-5-2-5 2z"/><path d="M6.5 2v12M11.5 4v12"/></svg>');
+  const extra={};extra.comptog=mk('comptog','<svg viewBox="0 0 18 18" fill="#9bd04c"><ellipse cx="9" cy="12" rx="4" ry="3.4"/><circle cx="4" cy="7" r="1.8"/><circle cx="7.4" cy="4" r="1.8"/><circle cx="10.6" cy="4" r="1.8"/><circle cx="14" cy="7" r="1.8"/></svg>');extra.mapbtn=mk('mapbtn','<svg viewBox="0 0 18 18" fill="none" stroke="#f2e6c8" stroke-width="2"><path d="M1.5 4l5-2 5 2 5-2v12l-5 2-5-2-5 2z"/><path d="M6.5 2v12M11.5 4v12"/></svg>');
   extra.mxbtn=mk('mxbtn','<svg viewBox="0 0 18 18" fill="none" stroke="#ffd27a" stroke-width="2"><path d="M9 1.5l2.2 4.6 5 .6-3.7 3.4 1 5-4.5-2.5-4.5 2.5 1-5L1.8 6.7l5-.6z"/></svg>');
   extra.saybtn=mk('saybtn','<svg viewBox="0 0 18 18" fill="none" stroke="#f2e6c8" stroke-width="2"><path d="M2 3h14v9H8l-4 3v-3H2z"/></svg>');
   for(const[id]of MORE_ROWS){let b=$(id)||extra[id];if(!b)continue;const row=b;row.classList.add('mrow');const lb=document.createElement('span');lb.className='mlb';row.appendChild(lb);pn.appendChild(row)}
-  $('mapbtn').onclick=()=>{closeMore();openMap()};$('mxbtn').onclick=()=>{closeMore();openMastery()};
+  $('mapbtn').onclick=()=>{closeMore();openMap()};$('comptog').onclick=()=>toggleComp();$('mxbtn').onclick=()=>{closeMore();openMastery()};
   $('saybtn').addEventListener('click',e=>{e.stopPropagation();closeMore();$('shoutbar').classList.toggle('open')});
   more.addEventListener('click',e=>{e.stopPropagation();pn.hidden?openMore():closeMore()});
   pn.addEventListener('click',e=>{const r=e.target.closest('.mrow');if(!r)return;const row=MORE_ROWS.find(x=>x[0]===r.id);setTimeout(()=>{if(row&&row[2])labelMore();else closeMore()},0)});
   document.addEventListener('pointerdown',e=>{if(!pn.hidden&&!e.target.closest('#morepn,#morebtn'))closeMore()},true);
   $('saylist').addEventListener('click',()=>setTimeout(()=>$('shoutbar').classList.remove('open'),0));
-  setInterval(()=>{more.classList.toggle('dot',$('treebtn').classList.contains('dot'));$('saybtn').hidden=!NET.cap;if(!pn.hidden)labelMore()},700)})();
+  setInterval(()=>{more.classList.toggle('dot',$('treebtn').classList.contains('dot'));$('saybtn').hidden=!NET.cap;$('comptog').hidden=!(pl.comp&&pl.comp.own&&pl.comp.own.length);if(!pn.hidden)labelMore()},700)})();
 function labelMore(){for(const[id,l]of MORE_ROWS){const b=$(id);if(!b)continue;const s=b.querySelector('.mlb');const t=typeof l==='function'?l():l;if(s&&s.textContent!==t)s.textContent=t}}
 function openMore(){labelMore();$('morepn').hidden=false;$('morebtn').setAttribute('aria-expanded','true');$('morebtn').classList.add('on')}
 function closeMore(){$('morepn').hidden=true;$('morebtn').setAttribute('aria-expanded','false');$('morebtn').classList.remove('on')}
