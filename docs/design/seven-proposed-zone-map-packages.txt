@@ -1,0 +1,2430 @@
+THE FALL OF MOSSGATE
+
+STUDIO EDITION
+
+PROPOSED TERRITORY ATLAS
+
+Seven Zone Map Packages
+
+Golden Plains • Silverwood Wilds • Verdant Coast • Emerald Isles
+Saltsong Desert • Frostveil Expanse • Shattered Crown
+
+Atlas Control
+
+This document develops the seven territories positioned beyond the
+approved core progression ending at The Sundering Scar. Every package is
+intentionally marked Proposed. The layouts are detailed enough for
+review, blockout planning, and continent reconciliation, but none
+becomes canon until approved through Chapter 31 governance.
+
+  -----------------------------------------------------------------------
+  MAP PACKAGE PROMISE
+  Each zone receives a practical geography, settlement network, routes,
+  travel scale, dungeons, resource layers, creature habitats, recruitment
+  geography, world-state variations, and a list of required detailed
+  maps.
+  -----------------------------------------------------------------------
+
+  -----------------------------------------------------------------------
+
+Shared Mapping Standards
+
+  -----------------------------------------------------------------------
+  Standard                            Required Treatment
+  ----------------------------------- -----------------------------------
+  Orientation                         North-up regional master map plus
+                                      local maps aligned to the same
+                                      coordinate system.
+
+  Scale                               Regional scale in kilometers;
+                                      settlement and dungeon scales in
+                                      meters.
+
+  Elevation                           Contour bands, cliffs, passes,
+                                      water falls, and traversal-grade
+                                      changes.
+
+  Routes                              Main roads, secondary roads,
+                                      trails, waterways, sea lanes,
+                                      hidden paths, emergency routes, and
+                                      progression gates.
+
+  Travel                              Walking, mount, wagon, vessel,
+                                      weather, and hazard modifiers.
+
+  Settlements                         District boundaries, building
+                                      footprints, services, logistics,
+                                      defenses, creature facilities, and
+                                      world-state variants.
+
+  Sites                               Exterior approach, threshold, route
+                                      loop, alternate route, encounter
+                                      spaces, recruitment opportunity,
+                                      resource layer, core objective,
+                                      shortcut, recovery point, exit, and
+                                      aftermath.
+
+  Resources                           Extraction, renewable gathering,
+                                      processing, warehousing, trade,
+                                      restriction, contamination,
+                                      salvage, and restoration.
+
+  Creatures                           Habitats, migration, sanctuary,
+                                      recruitment, conflict, care, and
+                                      safe passage.
+
+  Status                              All seven territories remain
+                                      Proposed until explicitly approved.
+  -----------------------------------------------------------------------
+
+Proposed Continent Sequence Beyond The Sundering Scar
+
+  -----------------------------------------------------------------------
+  Order                               Territory and Strategic Function
+  ----------------------------------- -----------------------------------
+  1                                   The Golden Plains — provisioning,
+                                      mounted travel, caravans,
+                                      agriculture, and open-frontier
+                                      settlement.
+
+  2                                   Silverwood Wilds — deep wilderness,
+                                      rare recruitment, sanctuary
+                                      systems, and untamed ecological
+                                      networks.
+
+  3                                   The Verdant Coast — ports, cliffs,
+                                      cultural exchange, maritime trade,
+                                      and coastal defense.
+
+  4                                   Emerald Isles — expedition sailing,
+                                      island cultures, underwater routes,
+                                      rare materials, and remote ruins.
+
+  5                                   Saltsong Desert — caravan survival,
+                                      oases, buried cities, glasswork,
+                                      salt, and solar systems.
+
+  6                                   Frostveil Expanse — extreme cold,
+                                      glaciers, expedition logistics,
+                                      ancient ice, and isolated
+                                      strongholds.
+
+  7                                   The Shattered Crown — ruined
+                                      kingdoms, contested succession,
+                                      royal infrastructure, archives, and
+                                      restoration.
+  -----------------------------------------------------------------------
+
+1. The Golden Plains
+
+Wide Horizons. Enduring People.
+
+  -----------------------------------------------------------------------
+  STATUS: PROPOSED — NOT YET CANONICAL
+  A broad interior territory proposed as the first expansion beyond the
+  approved core. It must justify its size through mounted travel,
+  agriculture, herds, caravans, settlement growth, and visible supply
+  relationships with the rest of Ashveil Reach.
+  -----------------------------------------------------------------------
+
+  -----------------------------------------------------------------------
+
+A. Regional Purpose and Gameplay Identity
+
+  -----------------------------------------------------------------------
+  Map Control                         Definition
+  ----------------------------------- -----------------------------------
+  Primary Fantasy                     Cross immense grasslands where
+                                      farms, herds, roads, and moving
+                                      communities determine regional
+                                      life.
+
+  Gameplay Pillars                    Mounted traversal, caravan
+                                      protection, agriculture, creature
+                                      herding, weather reading,
+                                      open-field encounters, and
+                                      settlement projects.
+
+  Continental Role                    Primary grain, fiber, livestock,
+                                      leather, wagon, and provisioning
+                                      exporter.
+
+  Player Progression                  Transitions from road-level travel
+                                      to regional logistics and land
+                                      stewardship.
+
+  Visual Identity                     Golden grasses, wide river valleys,
+                                      windbreak groves, distant mesas,
+                                      storm fronts, mills, silos, and
+                                      long roads.
+
+  Map Risk                            Empty scale. The map must maintain
+                                      meaningful travel rhythm without
+                                      filling every field with
+                                      encounters.
+  -----------------------------------------------------------------------
+
+B. Canonical Scale and Spatial Structure
+
+  -----------------------------------------------------------------------
+  Measurement                         Proposed Value / Rule
+  ----------------------------------- -----------------------------------
+  Regional Footprint                  Approximately 180 km east-west by
+                                      135 km north-south for planning;
+                                      subject to continent
+                                      reconciliation.
+
+  Major Hub Spacing                   35–55 km between major settlements;
+                                      12–25 km between villages, ranches,
+                                      and waystations.
+
+  Vertical Range                      Low basin near 140 m; upland rim
+                                      near 1,100 m.
+
+  Travel Rhythm                       Safe or serviced stop every 12–18
+                                      km on principal roads.
+
+  Water Logic                         Two major rivers, seasonal
+                                      tributaries, irrigation canals,
+                                      prairie ponds, and drought basins.
+
+  Border Connections                  Core territories west/northwest;
+                                      Verdant Coast south; Silverwood
+                                      Wilds southeast; Saltsong
+                                      approaches east.
+  -----------------------------------------------------------------------
+
+C. Major Geographic Districts
+
+  -----------------------------------------------------------------------
+  District                            Landscape, Function, and Layout
+  ----------------------------------- -----------------------------------
+  Sunfield Basin                      Capital basin, irrigated farms,
+                                      granaries, civic canals, dense
+                                      roads, mills, and central markets.
+
+  Skybloom Fields                     High-flower prairie, pollinator
+                                      habitats, medicine plots, low stone
+                                      circles, and seasonal gathering.
+
+  Wildherd Basin                      Large animal migration and
+                                      recruitment territory with
+                                      protected corridors and ranch
+                                      disputes.
+
+  The Longroad                        Continent-scale caravan spine with
+                                      tollhouses, inns, wagon yards,
+                                      shrines, and bandit pressure.
+
+  Ambergrain Belt                     Industrial agriculture, silos,
+                                      windmills, river barges, and
+                                      fire-risk management.
+
+  Southwind Uplands                   Ranch mesas, wind farms, training
+                                      grounds, cliff routes, and access
+                                      toward coastal lands.
+
+  Stonecircle March                   Ancient markers, disputed grazing
+                                      rights, buried roads, and
+                                      weather-observation sites.
+  -----------------------------------------------------------------------
+
+D. Settlement Network
+
+  -----------------------------------------------------------------------
+  Settlement                          Role and Required Layout Package
+  ----------------------------------- -----------------------------------
+  Sunfield                            Capital package: canal districts,
+                                      grain exchange, caravan court,
+                                      animal market, civic terraces,
+                                      temple, mills, warehouses, and
+                                      outer farms.
+
+  Hearthstead                         Large agricultural town:
+                                      cooperative barns, clinic, school,
+                                      processing yards, and flood-safe
+                                      housing.
+
+  Windcrest Ranch                     Mounted-travel and creature-work
+                                      center: paddocks, breeding
+                                      controls, sanctuary, training
+                                      loops, and tack production.
+
+  Prairie’s Rest                      Longroad service town: inn
+                                      district, wagon repair, water
+                                      reserve, guards, market, and
+                                      traveler camp.
+
+  Ambergrain Silo District            Production settlement built around
+                                      mills, silos, firebreaks, docks,
+                                      and guarded storage.
+
+  Southwind Pass                      Fortified pass village controlling
+                                      desert and coast-bound traffic.
+  -----------------------------------------------------------------------
+
+E. Key Sites and Dungeons
+
+  -----------------------------------------------------------------------
+  Site                                Map Function and Internal Layout
+  ----------------------------------- -----------------------------------
+  Stonecircle                         Open-air archaeological site with
+                                      celestial alignment, underground
+                                      chambers, spirit interaction, and
+                                      public ritual state.
+
+  Wildherd Crossing                   Seasonal migration mega-event map
+                                      with observation ridges, rescue
+                                      routes, poacher camps, and
+                                      nonlethal interventions.
+
+  The Buried Road                     Subsurface imperial road exposed by
+                                      erosion; tunnel segments, collapsed
+                                      stations, history, and salvage.
+
+  Stormwell                           Ancient waterworks beneath a dry
+                                      basin; hydraulic puzzle,
+                                      restoration path, and drought
+                                      consequence.
+
+  Ashen Farmstead                     Burned agricultural site supporting
+                                      rescue, investigation, rebuilding,
+                                      or land-transfer outcomes.
+
+  Longroad Redoubt                    Bandit-held toll fort with combat,
+                                      infiltration, negotiation, and
+                                      lawful-transfer aftermath.
+  -----------------------------------------------------------------------
+
+F. Roads, Routes, and Travel
+
+  -----------------------------------------------------------------------
+  Route                               Connection and Travel Rule
+  ----------------------------------- -----------------------------------
+  The Longroad                        Primary east-west caravan route;
+                                      engineered grades, bridge stations,
+                                      and reliable wayfinding.
+
+  Riverway                            Barge and ferry corridor connecting
+                                      Sunfield, Ambergrain, and coastal
+                                      exports.
+
+  Herd Paths                          Seasonal routes that may close
+                                      roads and change creature
+                                      distribution.
+
+  Southwind Road                      Climbs toward the coast and desert;
+                                      exposed to dust and crosswinds.
+
+  Prairie Trails                      Fast mounted shortcuts with limited
+                                      services and storm exposure.
+
+  Emergency Firebreaks                Wide cut routes used during
+                                      grassfire, evacuation, patrol, and
+                                      migration control.
+  -----------------------------------------------------------------------
+
+G. Resource and Material Layers
+
+  -----------------------------------------------------------------------
+  Resource Layer                      Placement and Gameplay Use
+  ----------------------------------- -----------------------------------
+  Agriculture                         Grain, flax, hemp, medicine, dye
+                                      flowers, orchard belts, and seed
+                                      reserves.
+
+  Livestock                           Wool, milk, leather, manure, draft
+                                      labor, and renewable creature
+                                      materials.
+
+  Clay and Limestone                  River clay, kiln yards, plaster,
+                                      drainage, and civic construction.
+
+  Sunwood Groves                      Managed windbreaks providing
+                                      heat-resistant timber and bow
+                                      stock.
+
+  Salvage                             Old road stone, broken wagons,
+                                      abandoned irrigation, and
+                                      battlefield remains.
+
+  Processing                          Mills, tanneries, ropeworks,
+                                      textile halls, granaries,
+                                      smokehouses, and wagon yards.
+  -----------------------------------------------------------------------
+
+H. Creature Ecology and Recruitment Geography
+
+  -----------------------------------------------------------------------
+  Ecology Layer                       Map Requirement
+  ----------------------------------- -----------------------------------
+  Wildherd Corridor                   Protected migration corridor for
+                                      herd creatures and recruitment
+                                      encounters.
+
+  Ranch Interface                     Domestic and wild populations meet
+                                      at controlled grazing boundaries.
+
+  River Habitat                       Wetland birds, amphibians, fish,
+                                      medicinal plants, and seasonal
+                                      flood refuge.
+
+  Predator Range                      Open-plains predators follow herds;
+                                      patrol maps must include den and
+                                      avoidance routes.
+
+  Recruitment Geography               Taming, rescue, herding service,
+                                      injured-animal care, and migration
+                                      quests.
+
+  Conflict Layer                      Poaching, land claims, crop
+                                      protection, predator control, and
+                                      sanctuary authority.
+  -----------------------------------------------------------------------
+
+I. World-State Variants
+
+  -----------------------------------------------------------------------
+  State                               Map and Settlement Changes
+  ----------------------------------- -----------------------------------
+  Prosperous Harvest                  Full markets, safe roads, high
+                                      exports, festivals, and
+                                      construction.
+
+  Drought                             Shrinking water, failed crops,
+                                      migration pressure, rationing, and
+                                      Stormwell restoration.
+
+  Grassfire                           Evacuation routes, smoke, damaged
+                                      farms, animal rescue, and firebreak
+                                      projects.
+
+  Caravan War                         Road closures, armed escorts,
+                                      shortages, contested toll sites,
+                                      and alternate routes.
+
+  Restored Stewardship                Healthy migration, shared water,
+                                      renewed farms, and improved
+                                      regional trust.
+  -----------------------------------------------------------------------
+
+J. Detailed Layout Deliverables
+
+-   Golden Plains regional master map with contours, water, roads,
+    districts, and 1 km grid.
+
+-   Sunfield capital map at district and building-footprint level.
+
+-   Longroad travel strip maps in 10 km production segments.
+
+-   Wildherd migration and recruitment map with seasonal overlays.
+
+-   Stormwell dungeon plan and hydraulic-state variants.
+
+-   Agricultural production, processing, storage, and export overlay.
+
+-   Drought, fire, caravan-war, and restored-state map variants.
+
+K. Approval Questions
+
+-   Does the region belong in the launch world, first expansion, or
+    distant future?
+
+-   How much mounted gameplay is required before entering the Plains?
+
+-   Are land ownership and agricultural enterprises player-accessible
+    here?
+
+-   Which herd species becomes the region’s signature recruitable
+    companion?
+
+-   How strongly should drought and fire alter permanent settlement
+    layouts?
+
+2. Silverwood Wilds
+
+Untamed Beauty. Hidden Wonders.
+
+  -----------------------------------------------------------------------
+  STATUS: PROPOSED — NOT YET CANONICAL
+  A deep southern wilderness proposed as a counterpart to Whisper Woods.
+  Unlike the stewarded and spiritually legible Whisper Woods, Silverwood
+  must feel expansive, poorly mapped, highly biodiverse, and resistant to
+  permanent settlement.
+  -----------------------------------------------------------------------
+
+  -----------------------------------------------------------------------
+
+A. Regional Purpose and Gameplay Identity
+
+  -----------------------------------------------------------------------
+  Map Control                         Definition
+  ----------------------------------- -----------------------------------
+  Primary Fantasy                     Enter an enormous living wilderness
+                                      where routes are learned through
+                                      ecology, creatures, stars, rivers,
+                                      and local knowledge.
+
+  Gameplay Pillars                    Expedition planning, rare creature
+                                      recruitment, field research,
+                                      sanctuary creation, climbing, river
+                                      traversal, and low-impact camps.
+
+  Continental Role                    Rare medicine, flexible woods,
+                                      resins, dyes, spirit-active flora,
+                                      and conservation knowledge.
+
+  Player Progression                  Tests independence from formal
+                                      roads and services.
+
+  Visual Identity                     Silver-barked canopy, deep green
+                                      wetlands, luminous glades, massive
+                                      roots, mist waterfalls, and
+                                      vertical forest layers.
+
+  Map Risk                            Overlap with Whisper Woods.
+                                      Identity must emphasize remoteness,
+                                      navigation uncertainty, canopy
+                                      layers, and temporary rather than
+                                      urban infrastructure.
+  -----------------------------------------------------------------------
+
+B. Canonical Scale and Spatial Structure
+
+  -----------------------------------------------------------------------
+  Measurement                         Proposed Value / Rule
+  ----------------------------------- -----------------------------------
+  Regional Footprint                  Approximately 150 km by 150 km for
+                                      planning; fragmented by rivers and
+                                      inaccessible canopy.
+
+  Mapped Certainty                    Only 45–60% reliably mapped at
+                                      entry; player and faction maps
+                                      differ.
+
+  Vertical Range                      River lowlands near 80 m;
+                                      escarpments and canopy ridges near
+                                      1,600 m.
+
+  Travel Rhythm                       Camps and sanctuaries every 15–30
+                                      km, but routes change seasonally.
+
+  Water Logic                         One major river, three tributary
+                                      systems, falls, sink pools, flooded
+                                      forest, and hidden springs.
+
+  Border Connections                  Golden Plains west; Verdant Coast
+                                      south; core forest systems north;
+                                      uncertain eastern boundary.
+  -----------------------------------------------------------------------
+
+C. Major Geographic Districts
+
+  -----------------------------------------------------------------------
+  District                            Landscape, Function, and Layout
+  ----------------------------------- -----------------------------------
+  Greenwood Enclave                   Primary low-impact settlement and
+                                      expedition base on elevated root
+                                      terraces.
+
+  Silent Canopy                       Dense multi-level forest where
+                                      ground travel is poor and canopy
+                                      routes dominate.
+
+  Moonshade Grove                     Spirit-sensitive basin with
+                                      protected nocturnal ecology and
+                                      strict access rules.
+
+  Starlight Falls                     Waterfall escarpment, climbing
+                                      routes, river source, and rare
+                                      medicinal habitats.
+
+  Thornroot Pass                      Narrow natural corridor controlled
+                                      by living barriers, predators, and
+                                      shifting access.
+
+  Feylight Glade                      Luminous wetland opening with
+                                      navigation anomalies and high-value
+                                      flora.
+
+  Deepwood Ruins                      Pre-forest or forest-consumed
+                                      architecture with layered surface
+                                      and underground routes.
+
+  Emerald Spire                       Vertical rock-and-root landmark
+                                      used for orientation, research, and
+                                      late-zone challenge.
+  -----------------------------------------------------------------------
+
+D. Settlement Network
+
+  -----------------------------------------------------------------------
+  Settlement                          Role and Required Layout Package
+  ----------------------------------- -----------------------------------
+  Greenwood Enclave                   Canopy and root settlement:
+                                      expedition hall, sanctuary, field
+                                      clinic, archive, ropeworks, seed
+                                      vault, and river docks.
+
+  Mistreach Station                   Small scientific outpost with
+                                      weather instruments, sample
+                                      control, maps, and emergency
+                                      shelter.
+
+  Moonshade Refuge                    Restricted sanctuary supporting
+                                      injured creatures, nocturnal study,
+                                      and low-light access.
+
+  Thornroot Camp                      Temporary ranger and trade camp
+                                      that moves with route conditions.
+
+  Fallsward Hamlet                    River and climbing community below
+                                      Starlight Falls; mills, rope
+                                      bridges, and rescue services.
+  -----------------------------------------------------------------------
+
+E. Key Sites and Dungeons
+
+  -----------------------------------------------------------------------
+  Site                                Map Function and Internal Layout
+  ----------------------------------- -----------------------------------
+  Deepwood Ruins                      Multi-layer dungeon with canopy
+                                      entry, root chambers, flooded
+                                      archive, creature nesting, and
+                                      non-destructive research path.
+
+  Emerald Spire                       Vertical expedition map with
+                                      climbing, flying companions,
+                                      weather exposure, and observation
+                                      platforms.
+
+  The Silent Nest                     Rare-creature breeding and
+                                      recruitment territory requiring
+                                      stealth, care, and ecological
+                                      protection.
+
+  Feylight Mirrors                    Wetland pools that distort path
+                                      memory; investigation and
+                                      spirit-resolution site.
+
+  Rootbound Gate                      Living threshold responding to
+                                      relationships, materials, and
+                                      regional stewardship.
+
+  Starfall Hollow                     Meteoric or magical impact site
+                                      supporting rare materials and
+                                      dangerous ecological change.
+  -----------------------------------------------------------------------
+
+F. Roads, Routes, and Travel
+
+  -----------------------------------------------------------------------
+  Route                               Connection and Travel Rule
+  ----------------------------------- -----------------------------------
+  Mistreach River                     Primary navigation spine by canoe,
+                                      raft, shoreline trail, and elevated
+                                      roots.
+
+  Canopy Ways                         Rope, root, and natural-bridge
+                                      network; weather-sensitive and
+                                      creature-dependent.
+
+  Ranger Marks                        Low-impact trails marked by
+                                      carvings, scent, sound, and
+                                      seasonal signs.
+
+  Flood Routes                        Temporary wet-season paths
+                                      connecting glades and ruins.
+
+  Thornroot Pass                      Main overland connection to
+                                      neighboring regions; periodically
+                                      closed by growth or conflict.
+
+  Emergency Beacons                   Nonpermanent signal sites visible
+                                      from canopy elevations.
+  -----------------------------------------------------------------------
+
+G. Resource and Material Layers
+
+  -----------------------------------------------------------------------
+  Resource Layer                      Placement and Gameplay Use
+  ----------------------------------- -----------------------------------
+  Managed Wood                        Silverwood, Ironroot, fallen
+                                      Elderwood traces, and fast-growing
+                                      structural species.
+
+  Medicinal Network                   Silverfern, resins, antidote
+                                      plants, fungal medicines, and
+                                      veterinary herbs.
+
+  Fiber and Dye                       Vines, flexible bark, luminous
+                                      dyes, camouflage pigments, and rope
+                                      plants.
+
+  Renewable Creature Materials        Molt, feathers, antlers, silk,
+                                      secretions, and companion-assisted
+                                      gathering.
+
+  Restricted Flora                    Spirit-active plants requiring
+                                      sanctuary or cultural permission.
+
+  Processing                          Mobile drying racks, field
+                                      laboratories, resin stills,
+                                      ropeworks, and seed vaults.
+  -----------------------------------------------------------------------
+
+H. Creature Ecology and Recruitment Geography
+
+  -----------------------------------------------------------------------
+  Ecology Layer                       Map Requirement
+  ----------------------------------- -----------------------------------
+  Canopy Ecosystem                    Flying, climbing, gliding, and
+                                      arboreal species across multiple
+                                      vertical layers.
+
+  River Ecosystem                     Aquatic and shoreline species;
+                                      seasonal spawning and migration.
+
+  Predator Territories                Large overlapping ranges rather
+                                      than fixed encounter pockets.
+
+  Sanctuary Web                       Small connected refuges rather than
+                                      one central sanctuary.
+
+  Recruitment Geography               Observation, rescue, ecological
+                                      service, trust, nesting assistance,
+                                      and migration support.
+
+  No-Clearcut Rule                    Resource routes must preserve
+                                      canopy continuity and habitat
+                                      corridors.
+  -----------------------------------------------------------------------
+
+I. World-State Variants
+
+  -----------------------------------------------------------------------
+  State                               Map and Settlement Changes
+  ----------------------------------- -----------------------------------
+  Healthy Wilds                       Stable migrations, open ranger
+                                      routes, luminous glades, and
+                                      functioning sanctuaries.
+
+  Overharvest                         Closed groves, creature
+                                      displacement, degraded rivers, and
+                                      faction conflict.
+
+  Great Flood                         Changed waterways, new access, lost
+                                      camps, rescue demands, and exposed
+                                      ruins.
+
+  Predator Collapse                   Prey imbalance, damaged vegetation,
+                                      recruitment opportunities, and
+                                      restoration work.
+
+  Protected Network                   Player-supported sanctuaries,
+                                      mapped corridors, limited services,
+                                      and renewed biodiversity.
+  -----------------------------------------------------------------------
+
+J. Detailed Layout Deliverables
+
+-   Silverwood regional map with confidence layers and seasonal
+    navigability.
+
+-   Greenwood Enclave settlement and canopy verticality plan.
+
+-   Mistreach River route map with landing points and flood variants.
+
+-   Deepwood Ruins multi-level plan.
+
+-   Emerald Spire vertical traversal diagram.
+
+-   Creature habitat, migration, sanctuary, and recruitment overlay.
+
+-   Overharvest, flood, collapse, and restored-ecology variants.
+
+K. Approval Questions
+
+-   Is Silverwood distinct enough from Whisper Woods to become a full
+    region?
+
+-   How much of the map should remain uncertain or procedurally updated?
+
+-   Can players establish temporary camps or permanent sanctuaries?
+
+-   Which traversal abilities are required for canopy routes?
+
+-   What cultural authority controls rare plant and creature access?
+
+3. The Verdant Coast
+
+Cliffs, Currents, and Cultures.
+
+  -----------------------------------------------------------------------
+  STATUS: PROPOSED — NOT YET CANONICAL
+  A proposed continental coast focused on ports, trade, cliff
+  settlements, fisheries, diplomacy, and coastal hazards. It must remain
+  distinct from Misty Fen Lake by emphasizing open sea, tidal cliffs,
+  international routes, and larger maritime infrastructure.
+  -----------------------------------------------------------------------
+
+  -----------------------------------------------------------------------
+
+A. Regional Purpose and Gameplay Identity
+
+  -----------------------------------------------------------------------
+  Map Control                         Definition
+  ----------------------------------- -----------------------------------
+  Primary Fantasy                     Travel a dramatic inhabited
+                                      coastline where ports, cliff roads,
+                                      sea caves, fisheries, and foreign
+                                      trade shape daily life.
+
+  Gameplay Pillars                    Maritime commerce, cliff traversal,
+                                      sailing, coastal rescue, diplomacy,
+                                      storms, fisheries, and port
+                                      development.
+
+  Continental Role                    Major export coast and gateway to
+                                      the Emerald Isles and distant
+                                      lands.
+
+  Player Progression                  Expands lake boating into
+                                      open-water navigation and
+                                      multinational logistics.
+
+  Visual Identity                     White limestone cliffs, green
+                                      terraces, blue coves, sea arches,
+                                      lighthouse chains, storm walls, and
+                                      dense ports.
+
+  Map Risk                            Redundancy with Misty Fen Lake. The
+                                      coast must emphasize tidal systems,
+                                      ocean swells, cliff elevation, and
+                                      international traffic.
+  -----------------------------------------------------------------------
+
+B. Canonical Scale and Spatial Structure
+
+  -----------------------------------------------------------------------
+  Measurement                         Proposed Value / Rule
+  ----------------------------------- -----------------------------------
+  Regional Footprint                  Approximately 210 km of coastline
+                                      with 40–75 km inland depth.
+
+  Hub Spacing                         Major port every 60–90 km; fishing
+                                      villages and lighthouse stations
+                                      every 15–30 km.
+
+  Vertical Range                      Sea level to 1,300 m coastal
+                                      escarpments.
+
+  Travel Rhythm                       Road travel is indirect; sea lanes
+                                      are faster but weather dependent.
+
+  Water Logic                         Tides, estuaries, sea caves, cliff
+                                      falls, reef shelves, and storm
+                                      channels.
+
+  Border Connections                  Golden Plains inland; Silverwood
+                                      Wilds northeast; Emerald Isles
+                                      offshore; Misty Fen trade routes
+                                      northwest.
+  -----------------------------------------------------------------------
+
+C. Major Geographic Districts
+
+  -----------------------------------------------------------------------
+  District                            Landscape, Function, and Layout
+  ----------------------------------- -----------------------------------
+  Seabright Estuary                   Capital port, river mouth,
+                                      shipyards, customs, markets,
+                                      foreign quarter, and flood
+                                      defenses.
+
+  Cliffhome Terraces                  Vertical agricultural and
+                                      residential coast with lifts,
+                                      stairs, tunnels, and cliff roads.
+
+  Coralreach Shelf                    Shallow warm coast, fisheries, reef
+                                      stewardship, diving, and marine
+                                      recruitment.
+
+  Stormcliff                          Exposed headland with old defenses,
+                                      shipwrecks, wind hazards, and
+                                      signal towers.
+
+  Driftwood Coves                     Small villages, salvage, boat
+                                      repair, smugglers, and hidden
+                                      beaches.
+
+  Crystal Arch Coast                  Monumental sea arches, sacred
+                                      sites, caves, and dangerous
+                                      currents.
+
+  Emerald Gate                        Southern strait controlling traffic
+                                      to the islands and desert routes.
+  -----------------------------------------------------------------------
+
+D. Settlement Network
+
+  -----------------------------------------------------------------------
+  Settlement                          Role and Required Layout Package
+  ----------------------------------- -----------------------------------
+  Seabright                           Capital package: harbor basins,
+                                      shipyards, customs, fish market,
+                                      foreign quarter, warehouses, civic
+                                      ridge, and flood gates.
+
+  Cliffhome                           Vertical town package: terraces,
+                                      lifts, switchbacks, cliff housing,
+                                      rescue stations, and water capture.
+
+  Coralreach                          Fishing and reef settlement:
+                                      hatchery, sanctuary, diving guild,
+                                      market, and conservation court.
+
+  Seafarer’s Rest                     Major road-and-sea inn town with
+                                      caravan yard, drydock, clinic, and
+                                      lighthouse service.
+
+  Stormcliff Hold                     Fortified headland outpost
+                                      controlling dangerous sea lanes and
+                                      coastal defenses.
+
+  Emerald Gate                        Strait settlement and naval
+                                      checkpoint connecting mainland and
+                                      island routes.
+  -----------------------------------------------------------------------
+
+E. Key Sites and Dungeons
+
+  -----------------------------------------------------------------------
+  Site                                Map Function and Internal Layout
+  ----------------------------------- -----------------------------------
+  Crystal Arch                        Sea-cave and cliff dungeon with
+                                      tidal timing, sacred chambers,
+                                      alternate boat and climbing
+                                      entries.
+
+  Whalen’s Deep                       Open-water and underwater
+                                      expedition site with rescue,
+                                      research, and legendary creature
+                                      interaction.
+
+  Stormcliff Batteries                Ruined coastal defenses, siege
+                                      machinery, wind puzzles, and
+                                      reconstruction path.
+
+  The Drowned Customs House           Tidal ruin exposing trade records,
+                                      contraband, and disputed ownership.
+
+  Saltwind Monastery                  Cliff sanctuary using wind, bells,
+                                      water collection, and mediation
+                                      quests.
+
+  Black Keel Wreck                    Shipwreck salvage site with legal
+                                      claims, survivors, hazards, and
+                                      persistent recovery state.
+  -----------------------------------------------------------------------
+
+F. Roads, Routes, and Travel
+
+  -----------------------------------------------------------------------
+  Route                               Connection and Travel Rule
+  ----------------------------------- -----------------------------------
+  Coastal Crown Road                  Main inland route linking ports
+                                      above the cliffs.
+
+  Lower Cliffway                      Dangerous local path connecting
+                                      coves, caves, lifts, and fishing
+                                      villages.
+
+  Bluewater Lane                      Primary open-sea shipping route
+                                      with lighthouse coverage.
+
+  Reef Passage                        Shallow protected route requiring
+                                      local pilots and tide knowledge.
+
+  Emerald Strait                      High-value international and island
+                                      connection vulnerable to storms and
+                                      conflict.
+
+  Emergency Beacon Chain              Lighthouse and signal network used
+                                      for storm warnings, rescue, and
+                                      war.
+  -----------------------------------------------------------------------
+
+G. Resource and Material Layers
+
+  -----------------------------------------------------------------------
+  Resource Layer                      Placement and Gameplay Use
+  ----------------------------------- -----------------------------------
+  Maritime Materials                  Salt, hemp, sailcloth, bronze,
+                                      driftwood, shell, coral, fish oil,
+                                      and coastal herbs.
+
+  Fisheries                           Seasonal fish, shellfish, kelp,
+                                      medicine, and creature-safe harvest
+                                      zones.
+
+  Quarries                            Limestone and decorative coastal
+                                      stone along controlled terraces.
+
+  Shipbuilding                        Timber imports, ropeworks, tar,
+                                      fittings, canvas, drydocks, and
+                                      salvage.
+
+  Trade Goods                         Foreign textiles, spices, tools,
+                                      archives, and rare island
+                                      materials.
+
+  Processing                          Salt pans, smokehouses, oil
+                                      presses, ropewalks, bronze
+                                      foundries, and cold stores.
+  -----------------------------------------------------------------------
+
+H. Creature Ecology and Recruitment Geography
+
+  -----------------------------------------------------------------------
+  Ecology Layer                       Map Requirement
+  ----------------------------------- -----------------------------------
+  Reef Shelf                          Nursery habitat with strict
+                                      navigation and harvest controls.
+
+  Cliff Colonies                      Bird, drake, and climbing-creature
+                                      nesting zones.
+
+  Tidal Caves                         Amphibious and aquatic recruitment
+                                      sites accessible by tide.
+
+  Open Sea                            Large migratory creature routes and
+                                      event-scale encounters.
+
+  Recruitment Geography               Rescue, navigation partnership,
+                                      reef restoration, fishing
+                                      cooperation, and storm survival.
+
+  Port Conflict                       Noise, pollution, shipping,
+                                      hunting, and sanctuary needs create
+                                      spatial tradeoffs.
+  -----------------------------------------------------------------------
+
+I. World-State Variants
+
+  -----------------------------------------------------------------------
+  State                               Map and Settlement Changes
+  ----------------------------------- -----------------------------------
+  Open Trade                          Busy ports, maintained beacons,
+                                      stable fisheries, and regular
+                                      foreign traffic.
+
+  Great Storm                         Closed sea lanes, wrecks, flood
+                                      maps, rescue zones, and damaged
+                                      cliffs.
+
+  Blockade                            Restricted harbor, rationing,
+                                      smuggling, defended straits, and
+                                      inland detours.
+
+  Reef Decline                        Fish shortage, damaged coral,
+                                      creature displacement, and
+                                      restoration projects.
+
+  Renewed Coast                       Clean harbor, protected reefs,
+                                      rebuilt beacon chain, and improved
+                                      cultural exchange.
+  -----------------------------------------------------------------------
+
+J. Detailed Layout Deliverables
+
+-   Verdant Coast regional strip map with tides, cliffs, sea lanes, and
+    inland roads.
+
+-   Seabright harbor and district map.
+
+-   Cliffhome vertical settlement section and top-down plan.
+
+-   Emerald Strait navigation and defense map.
+
+-   Crystal Arch tidal dungeon plan.
+
+-   Coastal resource, fishery, reef, and shipping overlays.
+
+-   Storm, blockade, reef-decline, and restored-coast variants.
+
+K. Approval Questions
+
+-   Does the region represent the main international gateway of Ashveil
+    Reach?
+
+-   How much open-sea sailing is required before players enter?
+
+-   Are foreign cultures represented as full factions or distant trade
+    partners?
+
+-   Can players own or operate vessels and coastal businesses?
+
+-   How permanent are storm and reef-state changes?
+
+4. Emerald Isles
+
+Distant Shores. Bold Dreams.
+
+  -----------------------------------------------------------------------
+  STATUS: PROPOSED — NOT YET CANONICAL
+  A proposed island-chain expedition region. It should not be a simple
+  extension of the Verdant Coast; the Isles need distinct cultures,
+  navigation hazards, island-specific ecosystems, underwater ruins, and
+  long-range expedition structure.
+  -----------------------------------------------------------------------
+
+  -----------------------------------------------------------------------
+
+A. Regional Purpose and Gameplay Identity
+
+  -----------------------------------------------------------------------
+  Map Control                         Definition
+  ----------------------------------- -----------------------------------
+  Primary Fantasy                     Lead expeditions through a
+                                      scattered island chain where every
+                                      island has a different route,
+                                      ecology, settlement pattern, and
+                                      historical secret.
+
+  Gameplay Pillars                    Sailing, expedition logistics,
+                                      island hopping, diving, cultural
+                                      diplomacy, rare creature
+                                      recruitment, storm survival, and
+                                      remote-base management.
+
+  Continental Role                    Rare maritime materials, navigation
+                                      knowledge, distant trade, and
+                                      access to the Azure Deep.
+
+  Player Progression                  Moves from coastal sailing to
+                                      extended voyages with limited
+                                      resupply.
+
+  Visual Identity                     Turquoise reefs, volcanic islands,
+                                      bright ports, storm walls, jungle
+                                      interiors, deep trenches, and
+                                      beacon towers.
+
+  Map Risk                            Excessive fragmentation. The island
+                                      network needs clear voyage arcs and
+                                      meaningful reasons to revisit
+                                      routes.
+  -----------------------------------------------------------------------
+
+B. Canonical Scale and Spatial Structure
+
+  -----------------------------------------------------------------------
+  Measurement                         Proposed Value / Rule
+  ----------------------------------- -----------------------------------
+  Regional Footprint                  Archipelago spanning roughly 260 km
+                                      north-south and 190 km east-west.
+
+  Island Classes                      One major hub island, three large
+                                      adventure islands, six smaller
+                                      service or mystery islands, and
+                                      reef chains.
+
+  Sea Travel                          10–35 km between common stops;
+                                      50–80 km for high-risk crossings.
+
+  Vertical Range                      Deep trench below mapped scale;
+                                      volcanic peaks up to 2,200 m.
+
+  Navigation                          Wind, tide, current, reef depth,
+                                      storms, and beacon coverage shown
+                                      as separate overlays.
+
+  Border Connections                  Verdant Coast west; Misty Fen
+                                      routes northwest; open ocean east
+                                      and south.
+  -----------------------------------------------------------------------
+
+C. Major Geographic Districts
+
+  -----------------------------------------------------------------------
+  District                            Landscape, Function, and Layout
+  ----------------------------------- -----------------------------------
+  Emerald Haven Island                Capital harbor, shipyards,
+                                      terraces, farms, archives, and
+                                      expedition headquarters.
+
+  Luminous Atoll                      Protected lagoon, low islands, reef
+                                      village, sanctuary, and
+                                      bioluminescent ecology.
+
+  Drakefall Isle                      High volcanic island with cliffs,
+                                      nesting grounds, lava tubes, and
+                                      old fortifications.
+
+  Tempest Isle                        Storm-exposed island with wind
+                                      research, lightning hazards, and
+                                      shipwreck coast.
+
+  Singing Reefs                       Wide reef maze that produces sound
+                                      through tides and carries
+                                      navigation clues.
+
+  Shattered Atoll                     Broken ruin ring, submerged
+                                      streets, salvage, and disputed
+                                      historical claims.
+
+  Azure Trench                        Deep-water boundary supporting
+                                      research, legendary creatures, and
+                                      late-region expeditions.
+
+  Last Beacon Chain                   Remote navigation towers linking
+                                      safe return routes.
+  -----------------------------------------------------------------------
+
+D. Settlement Network
+
+  -----------------------------------------------------------------------
+  Settlement                          Role and Required Layout Package
+  ----------------------------------- -----------------------------------
+  Emerald Haven                       Capital package: layered harbor,
+                                      lower market, shipyards, expedition
+                                      quarter, island council, housing
+                                      terraces, and naval sanctuary.
+
+  Tidewhisper                         Lagoon settlement built on piles
+                                      and reef stone with diving,
+                                      fishing, and creature care.
+
+  Navigator’s Rest                    Remote expedition port with repair
+                                      slips, maps, weather archive,
+                                      clinic, and storage.
+
+  Drakefall Village                   Cliff settlement balancing farming,
+                                      nesting territories, lava risk, and
+                                      ritual access.
+
+  Tempest Station                     Storm research and rescue outpost
+                                      with insulated towers and emergency
+                                      harbor.
+
+  Last Beacon                         Tiny strategic settlement
+                                      supporting long-range navigation
+                                      and final resupply.
+  -----------------------------------------------------------------------
+
+E. Key Sites and Dungeons
+
+  -----------------------------------------------------------------------
+  Site                                Map Function and Internal Layout
+  ----------------------------------- -----------------------------------
+  Sunken Atoll City                   Underwater urban dungeon with
+                                      diving routes, air spaces,
+                                      currents, records, and restoration
+                                      choices.
+
+  Drakefall Caldera                   Volcanic traversal and
+                                      creature-recruitment zone with lava
+                                      tubes and nesting shelves.
+
+  The Singing Labyrinth               Reef navigation site solved through
+                                      sound, tide, local knowledge, and
+                                      creature assistance.
+
+  Tempest Crown                       Lightning-struck peak with weather
+                                      machinery and high-risk research.
+
+  Azure Descent                       Deep-trench expedition using
+                                      vehicle, diving companion, pressure
+                                      shelters, and staged checkpoints.
+
+  The Last Beacon Vault               Ancient navigation archive and
+                                      world-map revelation site.
+  -----------------------------------------------------------------------
+
+F. Roads, Routes, and Travel
+
+  -----------------------------------------------------------------------
+  Route                               Connection and Travel Rule
+  ----------------------------------- -----------------------------------
+  Emerald Circuit                     Reliable trade loop connecting
+                                      major islands under normal weather.
+
+  Reef Route                          Shallow route for small vessels and
+                                      local pilots.
+
+  Deepwater Lane                      Fast open-water route for large
+                                      ships with limited safe refuge.
+
+  Storm Shadow Route                  Seasonal route around Tempest Isle
+                                      using wind lee and emergency coves.
+
+  Trench Expedition Line              Prepared research path with caches,
+                                      markers, and rescue contingencies.
+
+  Beacon Chain                        Signal network defining safe
+                                      approach, departure, and emergency
+                                      bearings.
+  -----------------------------------------------------------------------
+
+G. Resource and Material Layers
+
+  -----------------------------------------------------------------------
+  Resource Layer                      Placement and Gameplay Use
+  ----------------------------------- -----------------------------------
+  Island Materials                    Exotic hardwood, island fibers,
+                                      rare dyes, volcanic glass,
+                                      medicinal fruit, and aromatic
+                                      resins.
+
+  Marine Materials                    Pearl, shell, coral, kelp, Tide
+                                      Crystal, deep-sea compounds, and
+                                      renewable molts.
+
+  Volcanic Materials                  Basalt, pumice, sulfur,
+                                      heat-resistant clay, metal traces,
+                                      and glass.
+
+  Ship Support                        Timber, rope, sailcloth, tar,
+                                      bronze fittings, freshwater, and
+                                      preserved food.
+
+  Restricted Resources                Drake molt, deep-trench samples,
+                                      sacred coral, and navigation
+                                      crystals.
+
+  Processing                          Reef workshops, smokehouses, glass
+                                      kilns, ropeworks, dive labs, and
+                                      shipyards.
+  -----------------------------------------------------------------------
+
+H. Creature Ecology and Recruitment Geography
+
+  -----------------------------------------------------------------------
+  Ecology Layer                       Map Requirement
+  ----------------------------------- -----------------------------------
+  Island Endemism                     Each major island has distinct
+                                      species variations and recruitment
+                                      stories.
+
+  Reef Networks                       Connected nursery and migration
+                                      habitats affected by shipping and
+                                      storms.
+
+  Drake Territories                   Nesting paths, feeding grounds,
+                                      flight corridors, and village
+                                      coexistence.
+
+  Deep Sea                            Large migratory and legendary
+                                      creatures requiring noncombat study
+                                      and rescue options.
+
+  Recruitment Geography               Storm rescue, nesting assistance,
+                                      reef protection, navigation bonds,
+                                      and diving partnership.
+
+  Biosecurity                         Travel between islands can spread
+                                      disease, invasive species, or
+                                      corruption.
+  -----------------------------------------------------------------------
+
+I. World-State Variants
+
+  -----------------------------------------------------------------------
+  State                               Map and Settlement Changes
+  ----------------------------------- -----------------------------------
+  Open Circuit                        Stable winds, active beacons,
+                                      healthy reefs, and regular trade.
+
+  Storm Season                        Closed routes, refuge pressure,
+                                      damaged villages, rescue, and
+                                      changed currents.
+
+  Reef Bleaching                      Reduced food, exposed ruins,
+                                      displaced creatures, and
+                                      restoration urgency.
+
+  Volcanic Event                      Evacuation, ash, new land, blocked
+                                      harbor, and revealed lava tubes.
+
+  Unified Isles                       Shared beacon system, protected
+                                      migration, equitable trade, and
+                                      stronger expedition network.
+  -----------------------------------------------------------------------
+
+J. Detailed Layout Deliverables
+
+-   Archipelago navigation chart with wind, tide, current, depth, reef,
+    and beacon overlays.
+
+-   Emerald Haven capital and harbor map.
+
+-   Individual maps for Luminous Atoll, Drakefall Isle, Tempest Isle,
+    and Shattered Atoll.
+
+-   Sunken Atoll City underwater multi-level plan.
+
+-   Azure Descent staged expedition plan.
+
+-   Island ecology, biosecurity, recruitment, and resource overlay.
+
+-   Storm, bleaching, volcanic, and unified-isles variants.
+
+K. Approval Questions
+
+-   Is the archipelago part of Ashveil Reach politically or only
+    geographically?
+
+-   What vessel ownership and crew systems are required?
+
+-   How much underwater traversal is expected?
+
+-   Which island cultures require dedicated language, architecture, and
+    governance bibles?
+
+-   Can some islands permanently change shape through volcanic or storm
+    events?
+
+5. Saltsong Desert
+
+Endless Horizons. Hidden Truths.
+
+  -----------------------------------------------------------------------
+  STATUS: PROPOSED — NOT YET CANONICAL
+  A proposed eastern desert built around salt, glass, solar systems,
+  caravan navigation, buried infrastructure, and oasis politics. Its map
+  must support survival and trade without becoming a featureless sand
+  field.
+  -----------------------------------------------------------------------
+
+  -----------------------------------------------------------------------
+
+A. Regional Purpose and Gameplay Identity
+
+  -----------------------------------------------------------------------
+  Map Control                         Definition
+  ----------------------------------- -----------------------------------
+  Primary Fantasy                     Cross a shifting desert where
+                                      water, shade, stars, salt roads,
+                                      and buried cities determine
+                                      survival.
+
+  Gameplay Pillars                    Caravan planning, heat management,
+                                      navigation, oasis diplomacy,
+                                      excavation, glasswork, solar magic,
+                                      and storm survival.
+
+  Continental Role                    Salt, copper, gold, glass, Sun
+                                      Crystal, preservation goods,
+                                      resins, and eastward trade.
+
+  Player Progression                  Transforms familiar road travel
+                                      into route planning under scarcity
+                                      and moving terrain.
+
+  Visual Identity                     Salt flats, red dunes, black mesas,
+                                      blue oases, glass ruins, sun
+                                      towers, caravan cities, and night
+                                      skies.
+
+  Map Risk                            Navigation frustration. Shifting
+                                      terrain must create adaptation
+                                      without constantly invalidating
+                                      player learning.
+  -----------------------------------------------------------------------
+
+B. Canonical Scale and Spatial Structure
+
+  -----------------------------------------------------------------------
+  Measurement                         Proposed Value / Rule
+  ----------------------------------- -----------------------------------
+  Regional Footprint                  Approximately 230 km east-west by
+                                      170 km north-south.
+
+  Hub Spacing                         Oases and fortified stops every
+                                      25–45 km along safe routes.
+
+  Vertical Range                      Salt basins below surrounding
+                                      terrain; mesas and ranges up to
+                                      1,900 m.
+
+  Travel Windows                      Day, night, season, heat, and storm
+                                      timing materially affect routes.
+
+  Water Logic                         Deep aquifers, oases, cistern
+                                      chains, seasonal wadis, and
+                                      controlled wells.
+
+  Border Connections                  Golden Plains west; Verdant Coast
+                                      southwest; Shattered Crown north;
+                                      eastern lands unresolved.
+  -----------------------------------------------------------------------
+
+C. Major Geographic Districts
+
+  -----------------------------------------------------------------------
+  District                            Landscape, Function, and Layout
+  ----------------------------------- -----------------------------------
+  Sunspire Basin                      Capital oasis and solar-city
+                                      district with canals, shade
+                                      streets, towers, markets, and
+                                      archives.
+
+  Shifting Dunes                      Mobile landscape where routes,
+                                      ruins, and resource deposits emerge
+                                      seasonally.
+
+  Salt Flats                          High-speed but exposed corridor
+                                      with mirages, crust hazards,
+                                      extraction camps, and ritual
+                                      boundaries.
+
+  Bonewind Canyon                     Protected route, fossil beds, cliff
+                                      villages, ambush sites, and hidden
+                                      water.
+
+  Mirage Oasis Belt                   Politically linked water
+                                      settlements controlling trade and
+                                      migration.
+
+  Ember Pyramid Expanse               Hot rocky desert, solar ruins,
+                                      glass fields, and ancient
+                                      infrastructure.
+
+  Great Dune                          Massive landmark and weather engine
+                                      affecting regional winds.
+  -----------------------------------------------------------------------
+
+D. Settlement Network
+
+  -----------------------------------------------------------------------
+  Settlement                          Role and Required Layout Package
+  ----------------------------------- -----------------------------------
+  Sunspire                            Capital package: oasis core, canal
+                                      districts, caravan court, glass
+                                      quarter, Sun Crystal observatory,
+                                      shaded housing, and outer cisterns.
+
+  Mirage Oasis                        Trade and diplomatic town with
+                                      water law, gardens, inns, animal
+                                      care, and guarded wells.
+
+  Dunebreaker Keep                    Fortress and storm shelter
+                                      controlling a critical pass.
+
+  Caravan’s End                       Major logistics town with wagon
+                                      yards, storage, repair, market, and
+                                      route intelligence.
+
+  Saltworker Camps                    Seasonal extraction settlements
+                                      with evaporation fields, worker
+                                      housing, and transport depots.
+
+  Bonewind Village                    Canyon settlement using cliff
+                                      shade, wind towers, cisterns, and
+                                      fossil craft.
+  -----------------------------------------------------------------------
+
+E. Key Sites and Dungeons
+
+  -----------------------------------------------------------------------
+  Site                                Map Function and Internal Layout
+  ----------------------------------- -----------------------------------
+  The Lost City                       Buried multi-district ruin revealed
+                                      by shifting dunes; excavation,
+                                      vertical sand pressure, archives,
+                                      and competing claims.
+
+  Ember Pyramid                       Solar-mechanical dungeon with light
+                                      routing, heat storage, ceremonial
+                                      chambers, and dangerous overload
+                                      states.
+
+  The Glass Sea                       Fused desert field with
+                                      reflections, cutting hazards, rare
+                                      materials, and altered navigation.
+
+  Deep Cistern Network                Subterranean water infrastructure
+                                      connecting settlements and
+                                      supporting restoration choices.
+
+  Sunken Observatory                  Astronomical site used for
+                                      navigation, weather, and historical
+                                      mapping.
+
+  Salt Cathedral                      Natural crystal cavern, ritual
+                                      site, mining conflict, and
+                                      contamination-control location.
+  -----------------------------------------------------------------------
+
+F. Roads, Routes, and Travel
+
+  -----------------------------------------------------------------------
+  Route                               Connection and Travel Rule
+  ----------------------------------- -----------------------------------
+  Salt Road                           Main trade route across stable
+                                      flats; fastest but exposed.
+
+  Oasis Chain                         Reliable service route with tolls,
+                                      diplomacy, and water law.
+
+  Night Caravan Route                 Star-guided route safer from heat
+                                      but vulnerable to predators and
+                                      navigation failure.
+
+  Bonewind Pass                       Canyon road protected from storms
+                                      but easy to control.
+
+  Dune Paths                          Temporary shortcuts visible through
+                                      weather, scouts, or local
+                                      knowledge.
+
+  Cistern Route                       Subterranean emergency and
+                                      smuggling path with access
+                                      restrictions.
+  -----------------------------------------------------------------------
+
+G. Resource and Material Layers
+
+  -----------------------------------------------------------------------
+  Resource Layer                      Placement and Gameplay Use
+  ----------------------------------- -----------------------------------
+  Minerals                            Salt, copper, gold traces,
+                                      sandstone, clay, gypsum, and rare
+                                      metals.
+
+  Solar Materials                     Sun Crystal, heat-treated glass,
+                                      reflective metal, and storage
+                                      ceramics.
+
+  Organic Materials                   Desert leather, heat-resistant
+                                      wood, aromatic resins, medicinal
+                                      succulents, and dye plants.
+
+  Water Economy                       Cisterns, wells, condensation,
+                                      transport, purification, and legal
+                                      rights.
+
+  Salvage                             Buried city metal, glass, ceramics,
+                                      caravan remains, and ancient
+                                      mechanisms.
+
+  Processing                          Glass kilns, salt pans, metalworks,
+                                      resin stills, preservation houses,
+                                      and waterworks.
+  -----------------------------------------------------------------------
+
+H. Creature Ecology and Recruitment Geography
+
+  -----------------------------------------------------------------------
+  Ecology Layer                       Map Requirement
+  ----------------------------------- -----------------------------------
+  Oasis Habitat                       Dense biodiversity and recruitment
+                                      opportunities around limited water.
+
+  Dune Migration                      Burrowing and sand-traveling
+                                      creatures follow storm and
+                                      temperature patterns.
+
+  Canyon Refuge                       Climbing, nesting, and nocturnal
+                                      species use shaded cliffs.
+
+  Salt Adaptation                     Specialized creatures tolerate
+                                      mineral exposure and crust terrain.
+
+  Recruitment Geography               Caravan rescue, water sharing, den
+                                      protection, navigation partnership,
+                                      and heat care.
+
+  Conflict Layer                      Water theft, overgrazing, mining,
+                                      trade law, and sacred-site access.
+  -----------------------------------------------------------------------
+
+I. World-State Variants
+
+  -----------------------------------------------------------------------
+  State                               Map and Settlement Changes
+  ----------------------------------- -----------------------------------
+  Stable Caravan Season               Open routes, full markets, working
+                                      cisterns, and active excavation.
+
+  Drought Emergency                   Closed wells, rationing, migration,
+                                      conflict, and water-restoration
+                                      quests.
+
+  Great Sandstorm                     Buried roads, exposed ruins,
+                                      damaged settlements, and temporary
+                                      route changes.
+
+  Water War                           Fortified oases, restricted travel,
+                                      smuggling, and diplomatic missions.
+
+  Renewed Waters                      Restored cisterns, fair access,
+                                      revived gardens, and stable
+                                      migration.
+  -----------------------------------------------------------------------
+
+J. Detailed Layout Deliverables
+
+-   Saltsong regional map with stable and shifting terrain layers.
+
+-   Sunspire capital and water-infrastructure map.
+
+-   Oasis-chain travel map with water capacity and shelter spacing.
+
+-   Lost City excavation phases and multi-level layout.
+
+-   Ember Pyramid solar-routing plan.
+
+-   Water, salt, mineral, caravan, and smuggling overlays.
+
+-   Drought, sandstorm, water-war, and renewed-water variants.
+
+K. Approval Questions
+
+-   How dynamic should dune movement be between play sessions?
+
+-   Is water an inventory resource, expedition budget, or contextual
+    survival system?
+
+-   Can players control wells, caravans, or excavation enterprises?
+
+-   What cultures and political agreements govern oasis access?
+
+-   How does Sun magic relate to existing Sacred and Arcane systems?
+
+6. Frostveil Expanse
+
+Cold Lands. Deep Secrets.
+
+  -----------------------------------------------------------------------
+  STATUS: PROPOSED — NOT YET CANONICAL
+  A proposed northern extreme-environment region emphasizing expedition
+  logistics, glaciers, cold-adapted settlements, ancient ice, and limited
+  safe infrastructure. The region should test preparation without
+  becoming an attrition simulator.
+  -----------------------------------------------------------------------
+
+  -----------------------------------------------------------------------
+
+A. Regional Purpose and Gameplay Identity
+
+  -----------------------------------------------------------------------
+  Map Control                         Definition
+  ----------------------------------- -----------------------------------
+  Primary Fantasy                     Lead carefully prepared expeditions
+                                      across glaciers and mountain cold
+                                      where weather, shelter, companions,
+                                      and route knowledge determine
+                                      survival.
+
+  Gameplay Pillars                    Cold preparation, climbing, sled
+                                      travel, ice navigation, rescue,
+                                      ancient research, isolated
+                                      communities, and aurora phenomena.
+
+  Continental Role                    Frostiron, Frostglass, cold
+                                      storage, rare herbs, fur, wool,
+                                      glacial research, and northern
+                                      routes.
+
+  Player Progression                  Tests long-range expedition
+                                      competence, equipment management,
+                                      and environmental interpretation.
+
+  Visual Identity                     Blue glaciers, black rock, white
+                                      valleys, aurora skies, ice caves,
+                                      wind-carved forts, hot springs, and
+                                      ancient silhouettes.
+
+  Map Risk                            Punitive survival. Weather must
+                                      create route decisions and stories
+                                      without constant maintenance
+                                      chores.
+  -----------------------------------------------------------------------
+
+B. Canonical Scale and Spatial Structure
+
+  -----------------------------------------------------------------------
+  Measurement                         Proposed Value / Rule
+  ----------------------------------- -----------------------------------
+  Regional Footprint                  Approximately 220 km by 190 km with
+                                      large inaccessible ice and mountain
+                                      areas.
+
+  Safe Nodes                          Heated shelter, waystation, or
+                                      marked refuge every 18–35 km on
+                                      maintained routes.
+
+  Vertical Range                      Coastal or valley ice near 0–200 m;
+                                      peaks beyond 3,500 m.
+
+  Map Layers                          Surface, crevasse, subglacial,
+                                      seasonal sea ice, and storm
+                                      visibility.
+
+  Travel Modes                        Foot, snowshoe, sled, climbing,
+                                      mount, glider, and ice vessel where
+                                      supported.
+
+  Border Connections                  Shattered Crown south; northern sea
+                                      or wasteland beyond; route toward
+                                      core mountains unresolved.
+  -----------------------------------------------------------------------
+
+C. Major Geographic Districts
+
+  -----------------------------------------------------------------------
+  District                            Landscape, Function, and Layout
+  ----------------------------------- -----------------------------------
+  Frosthold Valley                    Capital stronghold around
+                                      geothermal water, sheltered farms,
+                                      workshops, and expedition services.
+
+  Shimmering Icefield                 Open glacier with crevasses,
+                                      reflected light, moving ice, and
+                                      rare mineral exposures.
+
+  Icewind Pass                        Primary mountain route controlled
+                                      by weather, avalanche, forts, and
+                                      rescue stations.
+
+  Starfall Crater                     Impact basin with unusual heat,
+                                      crystal, research camps, and
+                                      altered ecology.
+
+  White Maw                           Glacial canyon and cave network
+                                      swallowing rivers and revealing
+                                      ancient layers.
+
+  Deep Glacier                        Subglacial environment containing
+                                      archives, creatures, and unstable
+                                      pressure systems.
+
+  Northern Watch                      Remote defense and observation
+                                      territory facing unknown northern
+                                      threats.
+  -----------------------------------------------------------------------
+
+D. Settlement Network
+
+  -----------------------------------------------------------------------
+  Settlement                          Role and Required Layout Package
+  ----------------------------------- -----------------------------------
+  Frosthold                           Capital package: geothermal core,
+                                      insulated districts, expedition
+                                      market, cold forge, archive,
+                                      sanctuary, and outer farms.
+
+  Glacial Waystation                  Modular refuge with supplies,
+                                      rescue gear, animal shelter,
+                                      weather instruments, and emergency
+                                      beacon.
+
+  Northern Watch                      Fortified border settlement with
+                                      signal towers, long-range scouts,
+                                      and evacuation tunnels.
+
+  Icewind Village                     Pass community supporting climbing,
+                                      sleds, wool, guides, and avalanche
+                                      response.
+
+  Starfall Camp                       Scientific and mining settlement
+                                      with containment, medical, and
+                                      temporary housing.
+
+  Hot-Spring Hamlet                   Small agricultural and healing
+                                      community around geothermal water.
+  -----------------------------------------------------------------------
+
+E. Key Sites and Dungeons
+
+  -----------------------------------------------------------------------
+  Site                                Map Function and Internal Layout
+  ----------------------------------- -----------------------------------
+  Voidtouched Ruins                   Ancient ice-locked settlement with
+                                      reality anomalies, preserved
+                                      records, and containment choices.
+
+  Deep Glacier Archive                Subglacial dungeon of ice chambers,
+                                      frozen mechanisms, memory records,
+                                      and pressure hazards.
+
+  White Maw Caverns                   Dynamic ice caves with flood,
+                                      collapse, creature dens, and
+                                      multiple seasonal entrances.
+
+  Starfall Core                       Impact-site research dungeon with
+                                      heat gradient and unusual
+                                      materials.
+
+  Aurora Engine                       Mountain installation linked to
+                                      weather, navigation, and magical
+                                      phenomena.
+
+  Lost Expedition Route               Distributed narrative site
+                                      involving camps, markers, rescue,
+                                      and recovered decisions.
+  -----------------------------------------------------------------------
+
+F. Roads, Routes, and Travel
+
+  -----------------------------------------------------------------------
+  Route                               Connection and Travel Rule
+  ----------------------------------- -----------------------------------
+  Icewind Road                        Maintained pass route between
+                                      Frosthold and southern territories.
+
+  Sledway                             Marked low-grade corridor across
+                                      valleys and stable ice.
+
+  Glacier Line                        Seasonal high-speed route that
+                                      changes with crevasses and melt.
+
+  Northern Watch Route                Sparse fortified road with caches,
+                                      beacon towers, and escort needs.
+
+  Subglacial River                    Dangerous cave and water route
+                                      accessible during limited
+                                      conditions.
+
+  Storm Refuge Chain                  Emergency shelters and signal
+                                      markers defining survivable
+                                      crossings.
+  -----------------------------------------------------------------------
+
+G. Resource and Material Layers
+
+  -----------------------------------------------------------------------
+  Resource Layer                      Placement and Gameplay Use
+  ----------------------------------- -----------------------------------
+  Metals and Stone                    Frostiron, slate, hard granite,
+                                      silver traces, and meteor
+                                      materials.
+
+  Ice Materials                       Frostglass, ancient ice, preserved
+                                      samples, and cold-storage blocks.
+
+  Organic Materials                   Wool, fur, renewable horn,
+                                      cold-resistant leather, oil, and
+                                      rare frozen herbs.
+
+  Geothermal Resources                Heat, mineral water, agriculture,
+                                      medicine, and crafting.
+
+  Salvage                             Lost expeditions, ancient ruins,
+                                      old fortifications, and
+                                      ice-revealed wreckage.
+
+  Processing                          Cold forges, smokehouses, wool
+                                      halls, iceworks, drying rooms, and
+                                      research labs.
+  -----------------------------------------------------------------------
+
+H. Creature Ecology and Recruitment Geography
+
+  -----------------------------------------------------------------------
+  Ecology Layer                       Map Requirement
+  ----------------------------------- -----------------------------------
+  Valley Refuges                      Dense life around geothermal water
+                                      and sheltered vegetation.
+
+  Glacier Species                     Cold-adapted creatures use
+                                      crevasses, ice caves, and seasonal
+                                      routes.
+
+  Mountain Migration                  Climbing and flying species follow
+                                      passes and wind conditions.
+
+  Sea-Ice Edge                        Marine and terrestrial ecosystems
+                                      meet seasonally.
+
+  Recruitment Geography               Rescue, shared shelter, migration
+                                      aid, den protection, sled
+                                      partnership, and healing.
+
+  Climate Pressure                    Warming, storms, mining, and route
+                                      expansion alter habitat maps.
+  -----------------------------------------------------------------------
+
+I. World-State Variants
+
+  -----------------------------------------------------------------------
+  State                               Map and Settlement Changes
+  ----------------------------------- -----------------------------------
+  Stable Winter                       Marked routes, active waystations,
+                                      regular expeditions, and safe
+                                      reserves.
+
+  Whiteout Cycle                      Route closure, lost parties,
+                                      changed visibility, and beacon
+                                      dependence.
+
+  Glacial Break                       Collapsed paths, floods, new caves,
+                                      stranded settlements, and exposed
+                                      ruins.
+
+  Northern Threat                     Fortification, refugee movement,
+                                      escort routes, and restricted
+                                      travel.
+
+  Renewed Network                     Expanded refuge chain, shared
+                                      weather intelligence, and protected
+                                      migration.
+  -----------------------------------------------------------------------
+
+J. Detailed Layout Deliverables
+
+-   Frostveil regional map with seasonal ice, visibility, and
+    route-safety overlays.
+
+-   Frosthold capital and geothermal infrastructure map.
+
+-   Icewind Pass route and avalanche map.
+
+-   White Maw seasonal cave plans.
+
+-   Deep Glacier Archive multi-level plan.
+
+-   Waystation, beacon, rescue, resource, and migration overlay.
+
+-   Whiteout, glacial-break, threat, and renewed-network variants.
+
+K. Approval Questions
+
+-   What cold-survival systems are mandatory versus optional assistance?
+
+-   How often can glacier routes change without destroying player
+    learning?
+
+-   What is the northern threat, and should it remain undefined?
+
+-   Can players construct or upgrade waystations?
+
+-   How do Frostiron and Voidtouched ruins connect to the greater Shard
+    history?
+
+7. The Shattered Crown
+
+Fallen Kingdoms. Rising Mysteries.
+
+  -----------------------------------------------------------------------
+  STATUS: PROPOSED — NOT YET CANONICAL
+  A proposed late-stage region of ruined mountain kingdoms, contested
+  succession, royal roads, archives, memorials, and restoration. It must
+  connect political history to physical geography rather than functioning
+  as a generic ruined-castle zone.
+  -----------------------------------------------------------------------
+
+  -----------------------------------------------------------------------
+
+A. Regional Purpose and Gameplay Identity
+
+  -----------------------------------------------------------------------
+  Map Control                         Definition
+  ----------------------------------- -----------------------------------
+  Primary Fantasy                     Explore a broken realm where roads,
+                                      forts, tombs, archives, and living
+                                      communities all carry competing
+                                      claims about who should rebuild.
+
+  Gameplay Pillars                    Archaeology, diplomacy, succession,
+                                      fortress restoration, mountain
+                                      traversal, archive investigation,
+                                      and contested provenance.
+
+  Continental Role                    Crownsteel, silver, marble, Memory
+                                      Crystal, royal textiles, relics,
+                                      archives, and northern routes.
+
+  Player Progression                  Tests mature political choices,
+                                      legacy systems, ownership,
+                                      successors, and world restoration.
+
+  Visual Identity                     Needle mountains, ruined aqueducts,
+                                      hanging roads, crown-shaped
+                                      citadels, red valleys, stained
+                                      glass, snow, and memorial
+                                      architecture.
+
+  Map Risk                            Lore overload. Every ruin must
+                                      connect to present communities,
+                                      routes, claims, and player choices.
+  -----------------------------------------------------------------------
+
+B. Canonical Scale and Spatial Structure
+
+  -----------------------------------------------------------------------
+  Measurement                         Proposed Value / Rule
+  ----------------------------------- -----------------------------------
+  Regional Footprint                  Approximately 185 km east-west by
+                                      160 km north-south.
+
+  Settlement Pattern                  Fortified valleys separated by high
+                                      passes; 25–60 km between major
+                                      inhabited centers.
+
+  Vertical Range                      Valley floors near 500 m; crown
+                                      peaks above 3,200 m.
+
+  Infrastructure                      Royal roads, aqueducts, tunnels,
+                                      lifts, bridge ruins, and fortress
+                                      chains.
+
+  Seasonality                         Snow closes secondary passes;
+                                      aqueduct and tunnel routes remain
+                                      strategic.
+
+  Border Connections                  Frostveil north; Saltsong Desert
+                                      south; Old Watchtower or Sundering
+                                      approaches west depending final
+                                      continent placement.
+  -----------------------------------------------------------------------
+
+C. Major Geographic Districts
+
+  -----------------------------------------------------------------------
+  District                            Landscape, Function, and Layout
+  ----------------------------------- -----------------------------------
+  Crownspire Vale                     Capital ruin and living lower city
+                                      divided between restoration,
+                                      preservation, and competing
+                                      claimants.
+
+  Broken Marches                      Fortified valleys and abandoned
+                                      farms scarred by civil war and
+                                      route collapse.
+
+  Veiled Citadel Range                High hidden fortress system
+                                      controlling archives,
+                                      observatories, and mountain passes.
+
+  King’s Rest                         Royal tomb valley, memorial
+                                      landscape, funerary law, and
+                                      disputed inheritance.
+
+  Blackthorn Vale                     Productive but isolated valley with
+                                      surviving villages, orchards,
+                                      mines, and local authority.
+
+  Twin Peaks                          Strategic mountain gateway with
+                                      paired forts, lifts, tunnels, and
+                                      weather exposure.
+
+  Echo Fortress Frontier              Remote defensive complex facing
+                                      Frostveil routes and unknown
+                                      northern pressure.
+
+  Fallen Aqueduct Corridor            Ruined water infrastructure linking
+                                      valleys and defining restoration
+                                      projects.
+  -----------------------------------------------------------------------
+
+D. Settlement Network
+
+  -----------------------------------------------------------------------
+  Settlement                          Role and Required Layout Package
+  ----------------------------------- -----------------------------------
+  Crownspire Lower City               Capital package: inhabited
+                                      districts beneath the ruined crown,
+                                      councils, markets, archives,
+                                      restoration yards, and claimant
+                                      quarters.
+
+  Blackthorn                          Surviving valley town with
+                                      agriculture, silverwork, local
+                                      governance, and guarded
+                                      independence.
+
+  Marchwarden                         Military and road-repair settlement
+                                      controlling the Broken Marches.
+
+  Veilgate                            Mountain scholarly settlement
+                                      servicing the hidden citadel and
+                                      observatories.
+
+  King’s Rest Township                Funerary, memorial, pilgrimage, and
+                                      legal service settlement.
+
+  Echo Hold                           Northern fortress-community with
+                                      veterans, scouts, refugees, and
+                                      supply tunnels.
+  -----------------------------------------------------------------------
+
+E. Key Sites and Dungeons
+
+  -----------------------------------------------------------------------
+  Site                                Map Function and Internal Layout
+  ----------------------------------- -----------------------------------
+  Crownspire Citadel                  Massive multi-district fortress
+                                      ruin with throne complex, public
+                                      halls, collapsed crown towers,
+                                      archives, and restoration states.
+
+  Memory Vault                        Archive dungeon using Memory
+                                      Crystals, conflicting records,
+                                      identity protections, and
+                                      historical reconstruction.
+
+  Ruined Cathedral                    Sacred and civic site with stained
+                                      glass, crypts, public sanctuary,
+                                      and contested ceremony.
+
+  Fallen Aqueduct                     Long-form infrastructure dungeon
+                                      with tunnels, bridges, water
+                                      controls, and settlement
+                                      consequences.
+
+  Twin Fortresses                     Paired siege and traversal site
+                                      connected by lifts, tunnels, and
+                                      exposed bridges.
+
+  King’s Rest Necropolis              Tomb valley with funerary law,
+                                      spirits, grave protection,
+                                      succession evidence, and nonlooting
+                                      rules.
+
+  Veiled Citadel                      High-altitude archive and
+                                      observatory reachable through
+                                      multiple faction-controlled routes.
+  -----------------------------------------------------------------------
+
+F. Roads, Routes, and Travel
+
+  -----------------------------------------------------------------------
+  Route                               Connection and Travel Rule
+  ----------------------------------- -----------------------------------
+  Crown Road                          Primary restored royal road
+                                      connecting valleys and claimants.
+
+  Aqueduct Walk                       Elevated and tunnel route providing
+                                      water and alternate travel.
+
+  Twin Peaks Pass                     Major seasonal gateway toward
+                                      Frostveil.
+
+  March Roads                         Damaged military roads with forts,
+                                      bridges, and reconstruction
+                                      projects.
+
+  King’s Processional                 Ceremonial road with legal,
+                                      religious, and memorial
+                                      restrictions.
+
+  Smuggler Tunnels                    Old supply tunnels bypassing
+                                      claimant checkpoints and snow
+                                      closures.
+  -----------------------------------------------------------------------
+
+G. Resource and Material Layers
+
+  -----------------------------------------------------------------------
+  Resource Layer                      Placement and Gameplay Use
+  ----------------------------------- -----------------------------------
+  Historical Metals                   Crownsteel, silver, reclaimed
+                                      armor, bells, gates, tools, and
+                                      structural fittings.
+
+  Stone and Glass                     Marble, slate, stained glass,
+                                      carved stone, mortar, and monument
+                                      materials.
+
+  Archive Materials                   Memory Crystal, inks, royal
+                                      textiles, seals, books, and
+                                      preservation compounds.
+
+  Valley Production                   Fruit, wool, timber, herbs, grain,
+                                      and mountain livestock.
+
+  Relic Governance                    Objects classified as public,
+                                      funerary, claimant-owned,
+                                      abandoned, evidence, or protected
+                                      heritage.
+
+  Processing                          Restoration yards, silver
+                                      workshops, glass studios, archives,
+                                      masonry schools, and textile
+                                      conservation.
+  -----------------------------------------------------------------------
+
+H. Creature Ecology and Recruitment Geography
+
+  -----------------------------------------------------------------------
+  Ecology Layer                       Map Requirement
+  ----------------------------------- -----------------------------------
+  Valley Habitats                     Distinct isolated populations and
+                                      domesticated-wild interfaces.
+
+  High Pass Species                   Climbing, flying, and cold-adapted
+                                      creatures use fort ruins and cliff
+                                      corridors.
+
+  Tomb Ecology                        Protected scavengers,
+                                      spirit-sensitive species, and
+                                      memorial sanctuary rules.
+
+  War Ruins                           Creatures occupy abandoned forts,
+                                      mines, aqueducts, and villages.
+
+  Recruitment Geography               Rescue, oath, restoration service,
+                                      archive guardianship, mount
+                                      partnership, and sanctuary work.
+
+  Claim Conflict                      Factions may label the same
+                                      creature sacred guardian, pest,
+                                      property, or military asset.
+  -----------------------------------------------------------------------
+
+I. World-State Variants
+
+  -----------------------------------------------------------------------
+  State                               Map and Settlement Changes
+  ----------------------------------- -----------------------------------
+  Fragmented Realm                    Closed roads, rival checkpoints,
+                                      failing aqueducts, separate
+                                      markets, and contested history.
+
+  Claimant War                        Sieges, refugees, blocked archives,
+                                      damaged valleys, and shifting
+                                      control.
+
+  Preservation Accord                 Protected ruins, shared archives,
+                                      limited restoration, and memorial
+                                      access.
+
+  Restored Crown                      Rebuilt roads and institutions
+                                      under one settlement or coalition
+                                      outcome.
+
+  Commonwealth Renewal                Distributed governance, regional
+                                      autonomy, shared infrastructure,
+                                      and multi-perspective history.
+  -----------------------------------------------------------------------
+
+J. Detailed Layout Deliverables
+
+-   Shattered Crown regional map with claimant control and historic
+    infrastructure overlays.
+
+-   Crownspire Lower City and Citadel maps across ruin and restoration
+    states.
+
+-   Fallen Aqueduct corridor map linking multiple settlements.
+
+-   King’s Rest necropolis map with legal and sacred boundaries.
+
+-   Twin Fortresses vertical siege and traversal plan.
+
+-   Archive, relic, provenance, settlement, road, and creature overlays.
+
+-   Fragmented, war, preservation, restored-crown, and commonwealth
+    variants.
+
+K. Approval Questions
+
+-   Is the region a former unified kingdom, empire, or confederation?
+
+-   Does a legitimate hereditary claim exist, or is legitimacy
+    intentionally unresolved?
+
+-   Can the player influence monarchy, coalition, commonwealth, or
+    permanent fragmentation?
+
+-   What historical relationship connects the Crown to The Sundering
+    Scar?
+
+-   How much restoration can permanently alter Crownspire and the
+    aqueduct network?
+
+Cross-Zone Reconciliation
+
+The seven proposed territories should be reconciled together before any
+individual region is approved. Roads, watersheds, mountain chains,
+trade, climate, cultures, creature migration, and historical
+infrastructure must connect across borders.
+
+  -----------------------------------------------------------------------
+  Reconciliation Layer                Required Decision
+  ----------------------------------- -----------------------------------
+  Continent Placement                 Lock each territory’s position
+                                      relative to the approved seven
+                                      regions.
+
+  Watersheds                          Ensure rivers originate, flow, and
+                                      terminate believably across
+                                      borders.
+
+  Mountain Chains                     Connect Frostveil, Shattered Crown,
+                                      Old Watchtower, Stonebridge, and
+                                      desert rain shadows.
+
+  Climate                             Define prevailing winds, coasts,
+                                      currents, rainfall, temperature,
+                                      and seasonal transitions.
+
+  Trade                               Map food, metal, timber, salt,
+                                      medicine, textiles, ships, and rare
+                                      materials.
+
+  Progression                         Separate launch, expansion,
+                                      optional, high-risk, and endgame
+                                      territories.
+
+  Culture                             Prevent each biome from being
+                                      treated as one uniform culture.
+
+  Creatures                           Map migrations and species variants
+                                      without breaking the recruitability
+                                      invariant.
+
+  History                             Connect ruins, roads, wars,
+                                      migrations, and The Sundering Scar
+                                      without forcing one explanation.
+
+  Technical Scope                     Estimate region size, streaming,
+                                      travel, persistence, and
+                                      world-state costs before approval.
+  -----------------------------------------------------------------------
+
+Recommended Approval Sequence
+
+  -----------------------------------------------------------------------
+  Gate                                Order and Reason
+  ----------------------------------- -----------------------------------
+  Approval 1                          The Golden Plains: provides food
+                                      and travel logic for the southern
+                                      and eastern continent.
+
+  Approval 2                          The Verdant Coast: establishes
+                                      ocean access and international
+                                      trade.
+
+  Approval 3                          Emerald Isles: depends on coastal
+                                      sailing and vessel rules.
+
+  Approval 4                          Silverwood Wilds: must be
+                                      differentiated from Whisper Woods
+                                      after continent ecology is clearer.
+
+  Approval 5                          Saltsong Desert: depends on
+                                      rain-shadow, trade, and water
+                                      systems.
+
+  Approval 6                          Frostveil Expanse: depends on
+                                      northern mountains, expedition
+                                      systems, and cold survival.
+
+  Approval 7                          The Shattered Crown: should be
+                                      approved last because its history
+                                      and roads connect several other
+                                      regions.
+  -----------------------------------------------------------------------
+
+  -----------------------------------------------------------------------
+  ATLAS STATUS
+  All seven proposed zones now have structured map packages. They remain
+  noncanonical until continent reconciliation, approval questions, and
+  governance decisions are completed.
+  -----------------------------------------------------------------------
+
+  -----------------------------------------------------------------------
