@@ -1,0 +1,24 @@
+const {chromium}=require('playwright');const fs=require('fs');
+(async()=>{const b=await chromium.launch();const ctx=await b.newContext({viewport:{width:844,height:390},deviceScaleFactor:2,isMobile:true,hasTouch:true});await ctx.addInitScript({content:fs.readFileSync('mockroom.js','utf8')});
+const errs=[];const mkp=async(nm,sex,out)=>{const p=await ctx.newPage();p.on('pageerror',e=>errs.push(nm+e.stack));await p.goto('file://'+process.cwd()+'/dbgp.html');await p.waitForTimeout(800);
+  await p.evaluate(([nm,sex,out])=>{const T=window.__T;T.beginWith({name:nm,cls:sex?'weaver':'ronin',look:{...T.DEF_LOOK,sex,outfit:out,hair:sex?3:1}},{lv:12,exp:0,sh:0,pt:3,inv:[],eq:null,sk:{},zone:5,q:{m1:{s:'d'},m2:{s:'d'}},fl:{crIntro:1}});T.pl.cr={id:null,wait:9999};T.pl.hp=T.pl.mhp=5000},[nm,sex,out]);return p};
+const A=await mkp('Aya',1,2),B=await mkp('Bram',0,5);
+for(const p of [A,B])await p.evaluate(()=>window.__T.deepEnter(3));await A.waitForTimeout(1800);
+const st=p=>p.evaluate(()=>{const T=window.__T;return{peers:T.netPeers().length,mobs:T.S.mobs.filter(m=>m.di!=null).map(m=>Math.round(m.hp)+'/'+m.mhp+(m.dead?'x':'')).join(' ')}});
+console.log('A',await st(A));console.log('B',await st(B));
+await A.evaluate(()=>{const T=window.__T,m=T.S.mobs.find(q=>q.di===0);T.pl.x=m.x-30;T.pl.y=m.y;T.hitMob(m,3,1)});
+await B.evaluate(()=>{const T=window.__T,m=T.S.mobs.find(q=>q.di===0);T.pl.x=m.x+40;T.pl.y=m.y});await A.waitForTimeout(600);
+console.log('after A hit, B sees',await st(B));
+await A.evaluate(()=>{const T=window.__T,m=T.S.mobs.find(q=>q.di===1);T.killMob(m)});await A.waitForTimeout(500);console.log('after A kill, B sees',await st(B));
+await A.waitForTimeout(800);await A.screenshot({path:'mp_A.png'});await B.screenshot({path:'mp_B.png'});
+// down & revive
+await B.evaluate(()=>{const T=window.__T;T.pl.hp=1;T.pl.inv=0;T.pl.roll=0;T.hurtPl(999,T.pl.x+10,null)});await B.waitForTimeout(500);
+console.log('B down',await B.evaluate(()=>({dead:window.__T.pl.dead,down:window.__T.pl.down,ov:document.getElementById('dead').hidden})));
+await A.evaluate(()=>{const T=window.__T,p=T.netPeers()[0];T.pl.x=p.presence.x;T.pl.y=p.presence.y});await A.waitForTimeout(400);
+console.log('A label',await A.evaluate(()=>document.getElementById('talkbtn').textContent));await A.screenshot({path:'mp_rev.png'});
+await A.evaluate(()=>document.getElementById('talkbtn').dispatchEvent(new PointerEvent('pointerdown',{bubbles:true})));await A.waitForTimeout(500);
+console.log('B after revive',await B.evaluate(()=>({dead:window.__T.pl.dead,hp:window.__T.pl.hp})));
+await A.evaluate(()=>{document.querySelectorAll('#shoutbar button')[0].dispatchEvent(new PointerEvent('pointerdown',{bubbles:true}))});await B.waitForTimeout(500);await B.screenshot({path:'mp_shout.png'});
+await A.evaluate(()=>{const T=window.__T;for(const m of T.S.mobs)if(m.di!=null&&!m.dead)T.killMob(m)});await B.waitForTimeout(1200);
+console.log('B clear',await B.evaluate(()=>window.__T.S.mobs.filter(m=>m.di!=null&&!m.dead).length+' best '+window.__T.DP().best));
+console.log(errs);await b.close()})();

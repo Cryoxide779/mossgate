@@ -1,0 +1,17 @@
+const {chromium}=require('playwright');const fs=require('fs');
+(async()=>{const b=await chromium.launch();const ctx=await b.newContext({viewport:{width:844,height:390},deviceScaleFactor:1,isMobile:true,hasTouch:true});await ctx.addInitScript({content:fs.readFileSync('mockroom.js','utf8')});
+const errs=[];const mkp=async(nm,sex,out,zone,hm)=>{const p=await ctx.newPage();p.on('pageerror',e=>errs.push(nm+e.stack));await p.goto('file://'+process.cwd()+'/dbgp.html');await p.waitForTimeout(800);
+  await p.evaluate(([nm,sex,out,zone,hm])=>{const T=window.__T;T.beginWith({name:nm,cls:sex?'weaver':'ronin',look:{...T.DEF_LOOK,sex,outfit:out,hair:sex?3:1}},{lv:6,exp:0,sh:0,pt:3,inv:[],eq:null,sk:{},zone,q:{m1:{s:'d'},m2:{s:'d'}},fl:{crIntro:1},hm});T.pl.cr={id:null,wait:9999}},[nm,sex,out,zone,hm]);return p};
+const zH=20;
+const A=await mkp('Aya',1,2,zH,{lot:0,tier:1,lay:['bed','rug','hearth','lamp','planter','shelf','chest'],inv:{},stash:[],smat:{},grow:{},open:true});await A.waitForTimeout(500);
+await A.evaluate(()=>window.__T.enterHome(null));await A.waitForTimeout(1200);
+const B=await mkp('Bram',0,5,zH,null);await B.waitForTimeout(1500);
+console.log('A zone',await A.evaluate(()=>window.__T.GZ.id+' '+window.__T.NET.key));
+await B.evaluate(()=>{const T=window.__T;T.pl.x=262+190;});await B.waitForTimeout(300);console.log('B near',await B.evaluate(()=>JSON.stringify(window.__T.S.nearCr)));
+await B.evaluate(()=>window.__T.openVisit());await B.waitForTimeout(200);console.log('list',await B.evaluate(()=>document.getElementById('vislist').innerText));await B.screenshot({path:'hm_visit.png'});
+await B.evaluate(()=>document.querySelector('[data-vh="0"]').click());await B.waitForTimeout(1800);
+console.log('B zone',await B.evaluate(()=>window.__T.GZ.name+' '+window.__T.NET.key+' peers '+window.__T.netPeers().length),'A peers',await A.evaluate(()=>window.__T.netPeers().length));
+await B.evaluate(()=>{const T=window.__T;T.pl.x=T.GZ.x0+300});await B.waitForTimeout(600);await B.screenshot({path:'hm_guest.png'});
+console.log('B near furn (should be null)',await B.evaluate(()=>JSON.stringify(window.__T.S.nearCr)));
+await B.evaluate(()=>{const T=window.__T;T.pl.x=T.GZ.x0+22});await B.waitForTimeout(300);console.log('B door',await B.evaluate(()=>JSON.stringify(window.__T.S.nearCr)));
+console.log('ERR',errs.join('\n'));await b.close()})();

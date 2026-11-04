@@ -1,0 +1,11 @@
+const {chromium}=require('playwright');const fs=require('fs');
+(async()=>{const b=await chromium.launch();const ctx=await b.newContext({viewport:{width:844,height:390}});await ctx.addInitScript({content:fs.readFileSync('fakefb.js','utf8')+';{const f=window.__fbImport;window.__fbImport=async u=>{await new Promise(r=>setTimeout(r,2500));return f(u)}}'});
+const errs=[];const mk=async nm=>{const p=await ctx.newPage();p.on('pageerror',e=>errs.push(e.stack));await p.goto('file://'+process.cwd()+'/dbgfb.html');await p.waitForTimeout(300);
+ await p.evaluate(nm=>{const T=window.__T;T.beginWith({name:nm,cls:'ronin',look:{...T.DEF_LOOK}},{lv:6,exp:0,sh:0,pt:3,inv:[],eq:null,sk:{},zone:5,q:{m1:{s:'d'}},fl:{crIntro:1}})},nm);return p};
+const A=await mk('Aya'),B=await mk('Bram');await A.waitForTimeout(5000);
+for(const[n,p]of[['A',A],['B',B]])console.log(n,await p.evaluate(()=>window.__T.NET.key+' peers '+window.__T.netPeers().length+' shout '+!document.getElementById('shoutbar').hidden));
+await A.evaluate(async()=>{const T=window.__T;const r=T.NET.db.collection('veinway').doc(T.NET.uid);await r.set({nm:'Aya',best:7,lv:6,t:1})});
+await B.evaluate(async()=>{const T=window.__T;await T.NET.db.collection('veinway').doc(T.NET.uid).set({nm:'Bram',best:12,lv:6,t:1})});
+console.log(await B.evaluate(async()=>{const s=await window.__T.NET.db.collection('veinway').orderBy('best','desc').limit(20).get();return JSON.stringify(s.docs.map(d=>d.data().nm+d.data().best))}));
+await B.close();await A.waitForTimeout(500);console.log('after B leaves, A peers',await A.evaluate(()=>window.__T.netPeers().length));
+console.log('ERR',errs.join('\n'));await b.close()})();
