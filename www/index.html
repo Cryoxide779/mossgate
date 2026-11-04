@@ -195,6 +195,14 @@ button:focus-visible{outline:2px solid var(--moss);outline-offset:2px}
 .crl{display:grid;gap:3px;padding:6px 8px;background:rgba(242,230,200,.05);border:2px solid #000;box-shadow:inset 0 0 0 2px rgba(242,230,200,.1);font-size:9px;line-height:1.45}.crlh{display:flex;justify-content:space-between}.crl b{font-weight:400;font-size:10px;color:var(--crc)}.crl em{font-style:normal;color:var(--moss)}.crl>span{opacity:.8}
 .crbtns{display:flex;flex-wrap:wrap;gap:4px;margin-top:2px}.crbtns .btn{font-size:9px;padding:5px 7px}.crbtns small{opacity:.7}
 #crright{display:grid;gap:6px}
+#mapov .panel{grid-template-columns:minmax(0,2fr) minmax(0,1fr)}@media (max-width:560px){#mapov .panel{grid-template-columns:1fr}}
+#mapgrid{position:relative;width:100%;aspect-ratio:16/9;min-height:200px;background:radial-gradient(ellipse at 40% 50%,rgba(70,100,60,.35),rgba(8,18,20,.2) 70%),repeating-linear-gradient(0deg,rgba(242,230,200,.03) 0 1px,transparent 1px 12px),repeating-linear-gradient(90deg,rgba(242,230,200,.03) 0 1px,transparent 1px 12px);border:2px solid #000;box-shadow:inset 0 0 0 2px rgba(242,230,200,.12)}
+#mapgrid svg{position:absolute;inset:4%;width:92%;height:92%;overflow:visible}#mapgrid line{stroke:#c8a050;stroke-width:.6;stroke-dasharray:1.6 1;vector-effect:non-scaling-stroke}#mapgrid line{stroke-width:2px}#mapgrid line.unk{stroke:rgba(242,230,200,.25)}
+.mpn{position:absolute;transform:translate(-50%,-50%);margin:0;padding:2px 4px 2px 12px;border:2px solid #000;background:#1a2a24;color:var(--cream);font:inherit;font-size:8px;white-space:nowrap;cursor:pointer;box-shadow:inset 0 0 0 1px rgba(242,230,200,.25)}
+#mapgrid .mpn{left:calc(4% + var(--x));}
+.mpn::before{content:"";position:absolute;left:3px;top:50%;width:5px;height:5px;margin-top:-2.5px;background:#9bd04c;box-shadow:0 0 0 1px #000}.mpn.safe::before{background:#ffd27a}.mpn.unk{opacity:.55;color:#8d8aa3}.mpn.unk::before{background:#555}
+.mpn.cris{box-shadow:inset 0 0 0 1px var(--ember)}.mpn.cris::before{background:var(--ember)}.mpn.here{box-shadow:inset 0 0 0 2px #fff4c2}.mpn.sel{background:#2f4a3a}
+.mpn .ws{position:absolute;right:-5px;top:-5px;width:7px;height:7px;background:#4a5a5e;transform:rotate(45deg);box-shadow:0 0 0 1px #000}.mpn .ws.on{background:#6ee6ee;box-shadow:0 0 0 1px #000,0 0 6px #6ee6ee}
 #ctlbar{position:fixed;z-index:60;top:calc(8px + env(safe-area-inset-top,0px));left:50%;transform:translateX(-50%);width:min(560px,calc(100% - 24px));display:grid;gap:6px;padding:8px 10px;background:rgba(8,18,20,.92);border:2px solid #000;box-shadow:inset 0 0 0 2px var(--ember);font-size:9px}
 .cth{display:flex;gap:8px;align-items:baseline;flex-wrap:wrap}.cth b{font-weight:400;color:var(--ember);font-size:11px}.cth span{opacity:.8}
 .ctrow{display:flex;flex-wrap:wrap;gap:6px 12px;align-items:center}.ctrow label{display:flex;gap:6px;align-items:center}.ctrow input[type=range]{width:110px;accent-color:#9bd04c}.ctrow em{font-style:normal;color:var(--moss);min-width:30px}.ctseg{display:flex;gap:4px;align-items:center}
@@ -217,7 +225,7 @@ body.ctled #hud,body.ctled #tr,body.ctled #qtrack,body.ctled #talkbtn,body.ctled
 #b-s3{right:144px;bottom:56px;width:50px;height:50px}#b-pot{right:172px;bottom:118px;width:42px;height:42px}
 @media (max-height:440px){#pad{width:204px;height:160px}#b-atk{width:64px;height:64px}#b-jump{right:72px;width:48px;height:48px}#b-roll{right:128px;width:42px;height:42px}
   #b-guard{right:72px;bottom:56px;width:46px;height:46px}#b-s1{bottom:72px;width:46px;height:46px}#b-s2{right:54px;bottom:108px;width:44px;height:44px}#b-s3{right:124px;bottom:50px;width:44px;height:44px}#b-pot{right:150px;bottom:104px;width:38px;height:38px}}
-#creator,#inv,#tree,#quests,#craft,#board,#market,#crisis,#deepm,#gmenu{place-items:stretch}
+#creator,#inv,#tree,#quests,#craft,#board,#market,#crisis,#deepm,#gmenu,#mapov{place-items:stretch}
 @media (max-width:560px){#creator .panel,#inv .panel,#tree .panel{grid-template-columns:1fr}#creator .panel{grid-template-rows:180px minmax(0,1fr)}}
 @media (prefers-reduced-motion:reduce){#expf,.bar i,#fade{transition:none}}
 </style>
@@ -305,6 +313,10 @@ body.ctled #hud,body.ctled #tr,body.ctled #qtrack,body.ctled #talkbtn,body.ctled
 <div class="ov" id="gmenu" hidden><div class="panel">
   <div class="col"><div id="gmgame"></div><div class="hdr"><span>Export save</span><small>MossGate</small></div><div id="gmexp"></div></div>
   <div class="col"><div class="hdr">Import save<button class="btn sm alt" id="gmclose">Close</button></div><div id="gmimp"></div></div>
+</div></div>
+<div class="ov" id="mapov" hidden><div class="panel">
+  <div class="col"><div class="hdr"><span>Ashveil Reach</span><small id="mapfoot"></small></div><div id="mapgrid"></div></div>
+  <div class="col"><div class="hdr">Place<button class="btn sm alt" id="mapclose">Close</button></div><div class="detail px" id="mapdet"></div></div>
 </div></div>
 <div class="ov" id="deepm" hidden><div class="panel">
   <div class="col"><div class="hdr"><span>The Veinway Deep</span><small>100 floors</small></div><div id="dmleft"></div></div>
@@ -434,14 +446,14 @@ const ZONES=[
        [256,44,214,'f'],[300,92,168,'f'],[1060,38,214],[1110,112,178,'f']],
   pool:{x0:430,x1:560,y:263},wf:{x:352,w:34,b:250},
   mobs:[['bogslime',1,330],['moss',6,640],['bogslime',6,700],['moss',10,1150],['bogslime',10,1300],['lurker',2,480],['wisp',-2,620],['wisp',-2,1180],['wisp',-2,260]],
-  portals:[{x:22,to:7,tx:1440},{x:1380,to:8,tx:70}],props:[['shrine',862],['reeds',140],['reeds',640],['cart',1200]],shrine:{x0:870,x1:930,y:198},
+  portals:[{x:22,to:7,tx:1440},{x:1380,to:8,tx:70},{x:1240,to:15,tx:70}],props:[['shrine',862],['reeds',140],['reeds',640],['cart',1200]],shrine:{x0:870,x1:930,y:198},
   trees:[[24,112,41,[110,70,250,40]],[1110,1200,43,[1112,60,980,34]]]},
  {id:'gate',name:'The Broken Road',ch:'The Sundering Scar',theme:'dusk',lv:[5,8],req:5,ww:1800,start:70,
   seg:[[0,240,250],[240,140,232],[380,260,250],[640,70,230],[710,300,214],[1010,110,236],[1120,380,250],[1500,300,236],
        [270,80,192,'f'],[450,100,208,'f'],[560,80,170,'f'],[780,100,174,'f'],[930,80,136,'f'],[1180,100,208,'f'],[1300,90,170,'f'],[1560,100,196,'f']],
   mobs:[['husk',0,160],['husk',2,520],['husk',4,840],['husk',6,1240],['husk',6,1420],['husk',7,1660],['raider',2,600],['raider',6,1300],['wolf',7,1700],
         ['wisp',-2,400],['wisp',-2,900],['wisp',-2,1320],['wisp',-2,1650]],
-  portals:[{x:22,to:9,tx:1340},{x:1778,to:10,tx:70}],
+  portals:[{x:22,to:9,tx:1340},{x:1778,to:10,tx:70},{x:1300,to:17,tx:70}],
   props:[['blade',120],['banner',300],['grave',470],['blade',560],['lantern',690],['gatearch',1300],['banner',1180],['grave',1440],['blade',1370],['lantern',1530],['banner',1700],['blade',1600]],
   trees:[[40,105,51,null,1],[1610,1680,53,[1612,80,1500,50],1]]},
  {id:'hollow',name:'Scar Heart',ch:'The Sundering Scar',theme:'blood',lv:[12,12],req:10,ww:960,start:70,
@@ -450,7 +462,7 @@ const ZONES=[
  {id:'road',name:'The Ash Road',ch:'Ashveil Reach',theme:'grove',lv:[1,3],req:1,ww:1300,start:90,
   seg:[[0,300,250],[300,120,240],[420,280,250],[700,90,234],[790,510,250],[330,80,200,'plank'],[560,90,206,'f'],[900,90,204,'f'],[1060,80,196,'f']],
   mobs:[['moss',2,500],['moss',2,640],['moss',4,960],['moss',4,1120],['moss',6,600],['moss',0,250]],
-  portals:[{x:1278,to:5,tx:70}],npcs:['ysel','ren'],
+  portals:[{x:1278,to:5,tx:70},{x:1060,to:18,tx:70}],npcs:['ysel','ren'],
   props:[['sign',40],['crates',170],['grave',200],['cart',300],['tent',350],['cart',420],['cairn',520],['fire',726],['tent',770],['lantern',880],['grave',980],['crates',1130],['sign',1220]],
   trees:[[60,140,47,[142,60,260,40]],[1000,1080,49,null]]},
  {id:'town',name:'CrestHollow',ch:'Ashveil Reach',safe:1,theme:'town',lv:[1,1],req:1,ww:1800,start:70,
@@ -463,7 +475,7 @@ const ZONES=[
  {id:'oak',name:'Fallen Oak Grove',ch:'Ashveil Reach',theme:'oak',lv:[3,5],req:2,ww:1500,start:70,
   seg:[[0,300,250],[300,140,234],[440,300,250],[740,120,226],[860,240,214],[1100,400,250],[350,80,192,'f'],[560,100,206,'f'],[900,90,172,'f'],[1180,90,206,'f'],[1320,80,180,'f']],
   mobs:[['moss',0,200],['rotstag',2,520],['moss',2,650],['treant',4,980],['rotstag',5,1250],['moss',5,1400],['boar',5,1150],['moss',7,600],['wisp',-2,380]],
-  portals:[{x:22,to:0,tx:1440},{x:1478,to:14,tx:70}],
+  portals:[{x:22,to:0,tx:1440},{x:1478,to:14,tx:70},{x:1200,to:16,tx:70}],
   props:[['sign',140],['grave',300],['cairn',500],['lantern',760],['deadoak',980],['grave',1250],['pillar',1420]],
   trees:[[40,110,61,null,1],[1300,1370,63,[1302,70,1200,46],1]]},
  {id:'stonebridge',name:'Stonebridge',ch:'Ashveil Reach',safe:1,theme:'town',lv:[2,2],req:2,ww:1500,start:70,
@@ -520,6 +532,30 @@ const ZONES=[
   portals:[{x:22,to:6,tx:1420}],
   labels:[[250,'Mossroot Burrows',44]],props:[['burrow',140],['shroom',226],['lantern',296],['fire',372],['burrow',462],['shroom',640],['shroom',860],['burrow',1070],['shroom',1310],['sign',1440]],
   trees:[]}
+,
+ {id:'shrine',name:'The Overgrown Shrine',ch:'Ashveil Reach',theme:'grove',lv:[4,6],req:3,ww:1300,start:70,
+  seg:[[0,280,250],[280,140,236],[420,300,222],[720,160,236],[880,420,250],[320,80,190,'f'],[500,110,172,'f'],[760,80,196,'f']],
+  mobs:[['wisp',-2,380],['lantern',2,600],['wisp',-2,760],['husk',3,780],['lantern',4,1150],['wisp',-2,1180]],
+  portals:[{x:22,to:1,tx:1240}],
+  props:[['lantern',160],['grave',330],['pillar',480],['shrinegate',1010],['cairn',1200],['lantern',1270]],
+  trees:[[40,120,111,[122,64,240,40]],[1190,1270,113,null]]},
+ {id:'hermit',name:'Old Hermit’s Hut',ch:'Ashveil Reach',theme:'oak',lv:[3,5],req:3,ww:1000,start:70,
+  seg:[[0,360,250],[360,120,238],[480,520,250],[400,80,196,'f'],[720,90,206,'f']],
+  mobs:[['rotstag',2,820],['moss',0,250]],
+  portals:[{x:22,to:6,tx:1180}],
+  props:[['deadoak',190],['lantern',470],['hut',650],['cairn',870]],
+  trees:[[880,960,115,null,1]]},
+ {id:'outcrop',name:'Shardstone Outcrop',ch:'The Sundering Scar',theme:'scar',lv:[6,8],req:6,ww:1400,start:70,
+  seg:[[0,260,250],[260,160,234],[420,260,250],[680,120,228],[800,200,212],[1000,400,250],[300,80,192,'f'],[560,100,200,'f'],[840,90,170,'f'],[1120,90,206,'f']],
+  mobs:[['shardslime',2,520],['scargob',4,900],['shardslime',5,1150],['drake',-2,700],['husk',0,180]],
+  portals:[{x:22,to:2,tx:1300}],
+  props:[['shard',200],['tent',320],['crates',380],['shard',600],['sealstone',760],['shard',960],['shard',1230],['brazier',1330]],
+  trees:[]},
+ {id:'hunt',name:'Hunter’s Camp',ch:'Ashveil Reach',safe:1,theme:'grove',lv:[2,2],req:2,ww:1000,start:70,
+  seg:[[0,1000,250],[300,80,206,'plank']],
+  mobs:[],portals:[{x:22,to:4,tx:1060}],
+  labels:[[500,'Hunter’s Camp',56]],props:[['tent',220],['rack',330],['fire',440],['tent',680],['crates',770],['cart',860]],
+  trees:[[30,110,117,[112,60,250,40]],[880,960,119,null]]}
 ];
 /* Edge margin: every zone gets extra walkable-looking ground past its exits, so the camera can keep
    the player and the edge portals clear of the touch controls. */
@@ -1613,13 +1649,13 @@ function burst(x,y,c){for(let i=0;i<10;i++){const a=i/10*6.28;S.parts.push({x,y,
 /* ---------- zone travel ---------- */
 function enterZone(i,tx){S.zone=i;const L=useZone(i);S.L=L;S.mobs=Z.mobs.map(d=>spawnMob(d));S.proj=[];S.eproj=[];S.waves=[];S.allies=[];S.drops=[];S.fx=[];S.parts=[];S.nums=[];
   pl.x=tx??Z.start;pl.y=topAt(pl.x);pl.vx=pl.vy=0;pl.onG=true;pl.dash=null;S.portalCd=.8;S.cam=clamp(pl.x-W*.45,0,Math.max(0,WW-W));S.camY=clamp(pl.y-H*.64,0,WH-H);
-  spawnComp();crPopulate();netZone();banner((Z.safe?Z.ch+' · Safe haven':Z.ch+' · Lv '+(Z.lv[0]===Z.lv[1]?Z.lv[0]:Z.lv[0]+'–'+Z.lv[1]))+' · '+timeName()+(WX_N[weather()]?' · '+WX_N[weather()]:''),Z.name);resetAmb();save()}
+  spawnComp();crPopulate();netZone();markSeen();banner((Z.safe?Z.ch+' · Safe haven':Z.ch+' · Lv '+(Z.lv[0]===Z.lv[1]?Z.lv[0]:Z.lv[0]+'–'+Z.lv[1]))+' · '+timeName()+(WX_N[weather()]?' · '+WX_N[weather()]:''),Z.name);resetAmb();save()}
 function travel(po){if(deepTravel(po))return;S.paused=true;const f=$('fade');f.style.opacity=1;sfx.portal();setTimeout(()=>{enterZone(po.to,po.tx);S.paused=false;f.style.opacity=0},320)}
 
 /* ---------- update ---------- */
 function update(dt){
   if(S.hs>0){S.hs-=dt;dt*=.15}
-  tickNodes(dt);tickBuffs(dt);tickMarket(dt);crTick(dt);compTick(dt);deepTick(dt);netTick(dt);tickFolk(dt);ambUpdate(dt);S.t+=dt;const dir=(inp.right?1:0)-(inp.left?1:0),sm=pl.sm;S.nearPortal=null;S.portalCd=Math.max(0,S.portalCd-dt);
+  tickNodes(dt);tickBuffs(dt);tickMarket(dt);crTick(dt);compTick(dt);deepTick(dt);netTick(dt);reachTick(dt);tickFolk(dt);ambUpdate(dt);S.t+=dt;const dir=(inp.right?1:0)-(inp.left?1:0),sm=pl.sm;S.nearPortal=null;S.portalCd=Math.max(0,S.portalCd-dt);
   if(!pl.dead){
     for(const k of['inv','cd','potCd','drop'])pl[k]=Math.max(0,pl[k]-dt);for(let si=0;si<3;si++)pl.slotCd[si]=Math.max(0,pl.slotCd[si]-dt);
     pl.regen+=dt;if(pl.regen>=1){pl.regen=0;pl.mp=Math.min(pl.mmp,pl.mp+Math.round((2+pl.lv*.3)*(pl.sm.mpR||1)));if(S.t-pl.lastHurt>5)pl.hp=Math.min(pl.mhp,pl.hp+1+pl.lv*.2|0);
@@ -2054,6 +2090,7 @@ function npcMark(id){let m='';for(const k in QUESTS){const q=QUESTS[k],st=qSt(k)
 function qObj(k){const q=QUESTS[k],g=q.goal,st=qSt(k)||{n:0};
   if(qReady(k)&&g.t!=='talk')return'Return to '+NPCS[qTurnIn(k)].name;
   if(g.t==='talk')return'Speak to '+NPCS[g.npc].name;
+  if(g.t==='event')return st.n>=g.n?'Return to '+NPCS[qTurnIn(k)].name:g.lab;
   if(g.t==='bond')return'Creatures befriended '+st.n+'/'+g.n;
   if(g.t==='parry')return g.lab+' '+st.n+'/'+g.n;
   if(g.t==='lore')return st.n>=1?'Return to '+NPCS[qTurnIn(k)].name:'Read: '+LORE[g.id].t;
@@ -2076,7 +2113,7 @@ function qGather(r,n){for(const k of qActive()){const g=QUESTS[k].goal,st=qSt(k)
 function qCraft(){for(const k of qActive()){const g=QUESTS[k].goal,st=qSt(k);if(g.t==='craft'&&st.n<g.n){st.n++;qProgress(k,'Crafted')}}}
 function qShrine(){for(const k of qActive()){const g=QUESTS[k].goal,st=qSt(k);if(g.t==='shrine'&&g.zone===Z.id&&st.n<1){st.n=1;qProgress(k)}}}
 function qReward(k,ci){const q=QUESTS[k];let r=q.reward;qSt(k).s='d';if(q.goal.t==='pay')pl.shards-=q.goal.n;
-  if(q.choices&&ci!=null){const c=q.choices[ci];pl.flags=pl.flags||{};pl.flags[k]=c.flag;r={...r,...c.reward};banner('Charter: '+c.n,q.title)}
+  if(q.choices&&ci!=null){const c=q.choices[ci];pl.flags=pl.flags||{};pl.flags[k]=c.flag;r={...r,...c.reward};banner((k==='t3'?'Charter: ':'Choice: ')+c.n,q.title)}if(r.fl){Object.assign(pl.flags,r.fl);setTimeout(()=>questFlag(r.fl),400)}
   if(r.comp){pl.comp=pl.comp||{own:[],act:null};if(!pl.comp.own.includes(r.comp))pl.comp.own.push(r.comp);CB();pl.comp.act=r.comp;spawnComp();setTimeout(()=>banner('Companion joined',COMPS[r.comp].n),2600)}
   if(r.sh)pl.shards+=r.sh;if(r.pots)pl.pots=Math.min(9,pl.pots+r.pots);if(r.sp)pl.bsp=(pl.bsp||0)+r.sp;
   if(r.item){const[s0,slot,rar]=r.item,src=s0==='START'?(START[pl.ch.cls]||'r_start'):s0,it=makeItem(src,slot,slot==='weapon'?WEAP():null,rar,Math.max(1,pl.lv));
@@ -2222,7 +2259,7 @@ function nearNode(){for(const nd of Z.nodes||[]){if(nd.ch<=0)continue;if(nd.r===
   if(Math.abs(pl.x-nd.x)<18&&Math.abs(pl.y-topAt(nd.x))<26)return nd}return null}
 function nearStation(){return(Z.stations||[]).find(s=>Math.abs(pl.x-s.x)<34&&pl.onG)||null}
 function gather(nd){if(S.t-(pl.gT||-9)<.7)return;pl.gT=S.t;const R0=RES[nd.r],d=R0.d,rk2=dRank(d),n=1+(Math.random()<.25+.06*rk2?1:0);nd.ch--;if(nd.ch<=0)nd.regrow=45;
-  addMat(nd.r,n,nd.x,topAt(nd.x));crGather(nd);dGain(d,6+rk2);for(let i=0;i<8;i++)S.parts.push({x:nd.x+rnd(-6,6),y:topAt(nd.x)-6,vx:rnd(-40,40),vy:rnd(-90,-30),t:0,life:.5,c:R0.c,g:300,s:1});
+  addMat(nd.r,n,nd.x,topAt(nd.x));crGather(nd);regionGather(nd);dGain(d,6+rk2);for(let i=0;i<8;i++)S.parts.push({x:nd.x+rnd(-6,6),y:topAt(nd.x)-6,vx:rnd(-40,40),vy:rnd(-90,-30),t:0,life:.5,c:R0.c,g:300,s:1});
   ({timber:()=>noise(.08,.06,700),ore:()=>tone(1200,.06,'square',.03,-300),shard:()=>tone(1600,.2,'triangle',.03,400),fish:()=>tone(300,.2,'sine',.04,200)}[nd.r]||(()=>sfx.pick()))();save()}
 function tickNodes(dt){for(const nd of Z.nodes||[])if(nd.ch<=0){nd.regrow-=dt;if(nd.regrow<=0)nd.ch=3}}
 /* hunting: beasts give hide and meat */
@@ -2235,17 +2272,17 @@ function tickBuffs(dt){if(!pl.buffs)return;let ch=0;for(const k in pl.buffs){pl.
   if(pl.buffs.stew){pl.stewT=(pl.stewT||0)+dt;if(pl.stewT>=1){pl.stewT=0;if(pl.hp<pl.mhp)pl.hp=Math.min(pl.mhp,pl.hp+3)}}}
 function buffMods(m){const b=pl.buffs||{};if(b.ward)m.def+=15;if(b.skewer)m.atkP+=.1;if(b.vigor)m.mpR=(m.mpR||1)*2;return m}
 /* crafting */
-const rcpOk=R=>dRank(R.d)>=R.r||(R.r===1&&dRank(R.d)>=0);
+const rcpOk=R=>(!R.flag||!!(pl.flags&&pl.flags[R.flag]))&&(dRank(R.d)>=R.r||(R.r===1&&dRank(R.d)>=0));
 const hasMats=R=>Object.entries(R.need).every(([k,n])=>mat(k)>=n);
 function craftRarity(R){const r=dRank(R.d),x=Math.random();let q=x<.02+.04*Math.max(0,r-5)?3:x<.1+.05*r?2:x<.4+.04*r?1:0;return Math.max(q,R.min||0)}
 function doCraft(R){if(!hasMats(R)||!rcpOk(R))return;for(const[k,n]of Object.entries(R.need))pl.mat[k]-=n;let msg;
-  if(R.use==='crisis'){pl.relief=pl.relief||{};pl.relief[R.id]=(pl.relief[R.id]||0)+1;msg=R.n+' (relief supply)'}else if(R.use){if(R.use==='pots'){pl.pots=Math.min(9,pl.pots+2);msg='+2 tonics'}else{useBuff(R.use);msg=BUFF_N[R.use]}}
+  if(R.use==='crisis'){pl.relief=pl.relief||{};pl.relief[R.id]=(pl.relief[R.id]||0)+1;msg=R.n+(R.qe?'':' (relief supply)');if(R.qe)qEvent(R.qe)}else if(R.use==='pots3'){pl.pots=Math.min(9,pl.pots+3);msg='+3 tonics'}else if(R.use==='purge'){usePurge();msg='Resonance calmed'}else if(R.use){if(R.use==='pots'){pl.pots=Math.min(9,pl.pots+2);msg='+2 tonics'}else{useBuff(R.use);msg=BUFF_N[R.use]}}
   else{const[slot,weap]=R.make,rar=craftRarity(R),it=makeItem(R.set||'ironwork',slot,weap||null,rar,Math.max(1,pl.lv));for(const k in it.st)it.st[k]=Math.round(it.st[k]*1.15);it.by=pl.ch.name;it.rcp=R.id;
     if(pl.bag.length<BAG_MAX)pl.bag.push(it);else S.drops.push({k:'gear',it,x:pl.x,y:pl.y-8,vx:0,vy:-160,t:0});msg=RAR[rar].n+' '+itemName(it)}
   dGain(R.d,10+Object.values(R.need).reduce((a,b)=>a+b,0)*3);qCraft();[523,784,1046].forEach((f,i)=>setTimeout(()=>tone(f,.12,'square',.03),i*80));S.craftMsg=msg;save()}
 let CRAFT=null;
 function openCraft(st){CRAFT={st,d:ST_DISC[st.k][0],sel:null};pauseFor('craft');renderCraft()}
-function renderCraft(){if(!CRAFT)return;const st=CRAFT.st,ds=ST_DISC[st.k],list=RECIPES.filter(R=>R.d===CRAFT.d);if(!CRAFT.sel||!list.some(R=>R.id===CRAFT.sel))CRAFT.sel=list[0].id;const R=list.find(x=>x.id===CRAFT.sel);
+function renderCraft(){if(!CRAFT)return;const st=CRAFT.st,ds=ST_DISC[st.k],list=RECIPES.filter(R=>R.d===CRAFT.d&&(!R.flag||(pl.flags&&pl.flags[R.flag])));if(!CRAFT.sel||!list.some(R=>R.id===CRAFT.sel))CRAFT.sel=list[0].id;const R=list.find(x=>x.id===CRAFT.sel);
   $('crname').textContent=st.n;
   $('crtabs').innerHTML=ds.map(d=>`<button class="dtab${d===CRAFT.d?' sel':''}" data-cd="${d}">${DISC[d].n}<b>${dRank(d)}</b></button>`).join('');
   $('crlist').innerHTML=list.map(x=>`<button class="qi${x.id===CRAFT.sel?' sel':''}${rcpOk(x)?'':' dn'}" data-cr="${x.id}"><b>${x.n}</b><span>${rcpOk(x)?(hasMats(x)?'Ready to make':'Missing materials'):'Needs '+DISC[x.d].n+' rank '+x.r}</span></button>`).join('');
@@ -2753,13 +2790,13 @@ function crCalm(m){const D=crD();if(!m||m.dead)return;m.dead=1;m.calmed=1;crAdd(
   for(let i=0;i<16;i++)S.parts.push({x:m.x+rnd(-8,8),y:m.y-rnd(4,20),vx:rnd(-20,20),vy:rnd(-40,-10),t:0,life:1,c:i%2?'#f2e6c8':D.col,g:-20,s:1});
   S.nums.push({x:m.x,y:m.y-34,txt:'CALMED',t:-.1,c:'#c8d468'});[392,523,659].forEach((f,i)=>setTimeout(()=>tone(f,.25,'sine',.04),i*140))}
 /* interaction: calm, clues */
-function crNear(){const C=crAct();if(!C)return reviveNear()||bondNear();const D=CRISES[C.id];
+function crNear(){const C=crAct();if(!C)return reviveNear()||wayNear()||bondNear();const D=CRISES[C.id];
   if(D.marks.calm)for(const m of S.mobs)if(m.cr==='mark'&&!m.dead&&!m.aggro&&Math.abs(m.x-pl.x)<30&&Math.abs(m.y-pl.y)<26)return{k:'calm',m};
-  if(C.st<=3)for(let i=0;i<D.clues.length;i++){const c=D.clues[i];if(c.z!==Z.id||C.clues.includes(i))continue;const x=c.x+EDGE;if(Math.abs(pl.x-x)<16&&Math.abs(pl.y-topAt(x))<26)return{k:'clue',i}}return reviveNear()||bondNear()}
-function crUse(n){if(n.k==='rev')return netRevive(n.p);if(n.k==='bef')return befriend(n.m);const C=crAct();if(!C)return;const D=CRISES[C.id];if(n.k==='calm')return crCalm(n.m);
+  if(C.st<=3)for(let i=0;i<D.clues.length;i++){const c=D.clues[i];if(c.z!==Z.id||C.clues.includes(i))continue;const x=c.x+EDGE;if(Math.abs(pl.x-x)<16&&Math.abs(pl.y-topAt(x))<26)return{k:'clue',i}}return reviveNear()||wayNear()||bondNear()}
+function crUse(n){if(n.k==='way')return useWay();if(n.k==='rev')return netRevive(n.p);if(n.k==='bef')return befriend(n.m);const C=crAct();if(!C)return;const D=CRISES[C.id];if(n.k==='calm')return crCalm(n.m);
   if(n.k==='clue'&&!C.clues.includes(n.i)){C.clues.push(n.i);crAdd('invest',8);dGain('commerce',2);const c=D.clues[n.i];tone(660,.15,'triangle',.04);setTimeout(()=>tone(880,.2,'triangle',.04),120);
     let msg='<b>'+c.t+'.</b> '+c.txt;if(C.clues.length===D.clues.length){crAdd('invest',10);msg+='<br><br><b>The cause is clear.</b> '+D.cause}openCrisis(msg);save()}}
-function crLabel(n){return n.k==='rev'?'Revive · '+String((n.p.presence||{}).nm||'ally').slice(0,14):n.k==='bef'?bondLabel(n):n.k==='calm'?'Calm · '+n.m.d.name:'Investigate · '+crD().clues[n.i].t}
+function crLabel(n){return n.k==='way'?(pl.flags&&pl.flags.waynet?'Waystone · Travel':'Waystone · Examine'):n.k==='rev'?'Revive · '+String((n.p.presence||{}).nm||'ally').slice(0,14):n.k==='bef'?bondLabel(n):n.k==='calm'?'Calm · '+n.m.d.name:'Investigate · '+crD().clues[n.i].t}
 /* economy and legacy hooks */
 function crPayMul(c){let m=1;const C=crAct(),L=pl.leg||{};if(C&&C.st>=1&&C.st<=3&&c.k==='supply'&&CRISES[C.id].want.includes(c.r))m*=1.5;
   if(c.k==='freight'){if(L.bridge==='win')m*=1.15;else if(L.bridge==='fail')m*=1.1}if(c.k==='bounty'&&L.signal==='win')m*=1.15;return m}
@@ -3122,6 +3159,185 @@ setTimeout(netInit,50);
 function reviveNear(){const p=netNear();return p?{k:'rev',p}:null}
 document.querySelectorAll('#saylist button').forEach((b,i)=>b.addEventListener('pointerdown',e=>{e.preventDefault();e.stopPropagation();netShout(i)}));$('saytg').addEventListener('pointerdown',e=>{e.preventDefault();e.stopPropagation();$('shoutbar').classList.toggle('open')});
 
+/* ---------- the rest of Ashveil Reach: waystone network + map (Bible 20.16–20.17), Overgrown Shrine, Old Hermit's Hut,
+   Shardstone Outcrop, Hunter's Camp, Creature Green ---------- */
+const zIdx=id=>ZONES.findIndex(z=>z.id===id);
+/* set dressing */
+Object.assign(PROPS,{
+  shrinegate(x,X,Y){const P=px3(x),S=TH.rock,M=TH.moss,L=TH.leaf;
+    for(let y=0;y<10;y++)for(let k=-60;k<=60;k++){const row=y/5|0;P(X+k,Y-y,(k+60+(row%2)*6)%12===0||y%5===4?S[1]:pick(S,.55-(k+60)/240+(y%5===0?.15:0),X+k,y))}
+    for(const sx of[-46,46]){for(let y=10;y<92;y++)for(let k=-7;k<=7;k++){const u=(k+7)/14,crack=fbm(k*.5,y*.2,sx+9)>.72;P(X+sx+k,Y-y,crack?S[1]:pick(S,.75-u*.5+(fbm(k*.4,y*.3,sx)-.5)*.3,X+k,y))}
+      for(let y=14;y<90;y+=3){const k=Math.round(Math.sin(y*.3+sx)*6);P(X+sx+k,Y-y,pick(M,.6,X,y));P(X+sx+k+1,Y-y,pick(M,.4,X,y));if(y%9===0){P(X+sx+k-1,Y-y+1,pick(L,.7,X,y));P(X+sx+k+2,Y-y-1,[212,72,58])}}}
+    for(let y=92;y<104;y++){const sag=y<96?0:1;for(let k=-62;k<=62;k++)P(X+k,Y-y+sag*Math.round(Math.abs(k)/40),y===103?S[6]:pick(S,.6-(y-92)*.03+(fbm(k*.3,y*.4,4)-.5)*.3,X+k,y))}
+    for(let k=-66;k<=66;k+=2){const d=Math.round(Math.sin(k*.21)*2+(fbm(k*.1,1,7)*6));for(let j=0;j<d;j++){P(X+k,Y-104+j+4,pick(M,.7-j*.08,X+k,j));P(X+k+1,Y-104+j+4,pick(M,.5,X+k,j))}}
+    for(let i=0;i<14;i++){const k=-58+Math.floor(hash(i,1,X)*116),len=6+Math.floor(hash(i,2,X)*18);for(let j=0;j<len;j++){P(X+k+Math.round(Math.sin(j*.5+i)),Y-100+j,pick(L,.4+j*.02,X+k,j))}P(X+k,Y-100+len,[226,214,186])}
+    for(let y=0;y<4;y++)for(let k=-16;k<=16;k++)P(X+k,Y-10-y,pick(S,.7-y*.08,X+k,y));
+    Z.glows.push([X,Y-60,40,'150,255,210'])},
+  hut(x,X,Y){const P=px3(x),W=TH.wood,B=TH.bark,M=TH.moss,S=TH.rock;
+    for(let y=0;y<8;y++)for(let k=-46;k<=46;k++)P(X+k,Y-y,pick(S,.55-k/200+(fbm(k*.4,y*.4,3)-.5)*.3,X+k,y));
+    for(let y=8;y<48;y++)for(let k=-42;k<=42;k++){const log=Math.floor((y-8)/6),edge=(y-8)%6===5;P(X+k,Y-y,edge?B[1]:pick(B,.6-(k+42)/170+((y-8)%6===0?.2:0)+(fbm(k*.6,y*.2,5)-.5)*.25,X+k,y))}
+    for(let y=8;y<48;y++)for(const k of[-44,-43,43,44])P(X+k,Y-y,pick(B,.35,X+k,y));
+    for(let y=8;y<34;y++)for(let k=-8;k<=8;k++)P(X+k,Y-y,k===-8||k===8||y===33?B[1]:pick(W,.5-(k+8)/40+((k+8)%4===0?-.2:0),X+k,y));P(X+5,Y-20,[226,190,90]);
+    for(const wx of[-30,22]){for(let y=26;y<38;y++)for(let k=0;k<10;k++)P(X+wx+k,Y-y,k===0||k===9||y===26||y===37||k===5||y===31?B[1]:[255,214,140]);}
+    for(let y=48;y<82;y++){const hw=Math.round(56*(1-(y-48)/36));for(let k=-hw;k<=hw;k++){const thatch=(k*3+y*7)%5;P(X+k,Y-y,Math.abs(k)>hw-2?M[1]:pick(M,.45+(thatch===0?.3:0)-(y-48)*.004+(fbm(k*.3,y*.5,8)-.5)*.4,X+k,y))}}
+    for(let k=-58;k<=58;k+=3){const d=2+Math.round(hash(k,1,X)*5);for(let j=0;j<d;j++)P(X+k,Y-48+j,pick(M,.5-j*.08,X+k,j))}
+    for(let y=72;y<96;y++)for(let k=24;k<32;k++)P(X+k,Y-y,y===95?S[6]:pick(S,.6-(k-24)/20,X+k,y));
+    for(let i=0;i<10;i++){const k=24+Math.floor(hash(i,4,X)*8),y=98+i*3;P(X+k+Math.round(Math.sin(i)*2),Y-y,[180,176,170])}
+    for(const[k,c]of[[-36,[184,74,66]],[-30,[226,190,90]],[30,[134,180,127]],[38,[184,74,66]]]){P(X+k,Y-1,[90,140,60]);P(X+k,Y-2,[90,140,60]);P(X+k,Y-3,c);P(X+k+1,Y-3,c);P(X+k-1,Y-3,c);P(X+k,Y-4,c)}
+    Z.glows.push([X-25,Y-32,22,'255,200,120']);Z.glows.push([X+27,Y-32,22,'255,200,120'])},
+  pen(x,X,Y){const P=px3(x),W=TH.wood;for(const k of[-40,-20,0,20,40]){for(let y=0;y<20;y++){P(X+k,Y-y,pick(W,.7,X,y));P(X+k+1,Y-y,pick(W,.35,X,y))}P(X+k,Y-20,W[6])}
+    for(const y of[7,15])for(let k=-40;k<=41;k++){P(X+k,Y-y,pick(W,.6,X+k,y));P(X+k,Y-y+1,W[2])}
+    for(let y=0;y<9;y++){const hw=Math.round(12*(1-y/9));for(let k=-hw;k<=hw;k++)P(X+56+k,Y-y,pick(R(['#5a4a1a','#8a7a2a','#b8a03a','#e0c860','#f6e8a0']),.7-y*.04+(hash(k,y,3)-.5)*.4,X+k,y))}
+    for(let k=-36;k<=36;k+=6)if(hash(k,2,X)>.4){P(X+k,Y-1,[90,140,60]);P(X+k+1,Y-2,[120,170,80])}}});
+{const t=ZONES[zIdx('town')];t.props.push(['pen',1560+EDGE]);t.labels.push([1560+EDGE,'Creature Green',66]);t.npcs.push('odette');
+ const h=ZONES[zIdx('hunt')];h.stations.push({x:440+EDGE,k:'cook',n:'Trackers’ Fire'},{x:560+EDGE,k:'board',n:'Hunter’s Camp Board'});h.props.push(['board',560+EDGE]);
+ const add=(id,L)=>{ZONES[zIdx(id)].nodes=L.map(([r,x])=>({r,x:x+EDGE,ch:3,regrow:0}))};
+ add('outcrop',[['shard',520],['shard',700],['shard',880],['ore',980],['shard',1080],['shard',1260]]);add('hermit',[['herb',300],['mush',560],['herb',780],['timber',920]]);add('shrine',[['herb',240],['herb',640],['timber',1120]]);add('hunt',[]);
+ ZONES[zIdx('hermit')].stations=[{x:560+EDGE,k:'alchemy',n:'Ambry’s Still',req:'ha1'}];}
+BOARDS.hunt={n:'Hunter’s Camp Board',town:'Hunter’s Camp',want:['hide','meat','herb'],to:['town','outskirts'],kinds:{bounty:3,supply:1,freight:1}};
+/* people */
+Object.assign(NPCS,{
+  ivo:{name:'Sister Ivo',title:'Keeper of the Overgrown Shrine',x:860,cls:'weaver',look:{sex:1,build:0,face:2,hair:5,hairC:6,beard:0,skin:5,eye:2,outfit:3},eq:{head:'w_start',chest:'w_start'},
+    lines:['The waystones were never magic doors. They are promises the old roads made to each other. This shrine keeps the promises.','The spirits here are not wicked. They are lost, and loud about it.','Fix one stone and the next one remembers how to listen.']},
+  ambry:{name:'Old Ambry',title:'Hermit of the Grove',x:560,cls:'necro',look:{sex:0,build:0,face:4,hair:6,hairC:7,beard:4,skin:3,eye:3,outfit:4},eq:{head:'moss',chest:'n_start'},
+    lines:['Everyone in CrestHollow knows my name and nobody visits. That suits me and it suits them.','I remember the Grove before the loggers. Before the Wardens. Before MossGate, almost.','Ask a question you can stand to hear answered.']},
+  brannoc:{name:'Brannoc Vey',title:'Free Claim Prospector',x:340,cls:'ronin',look:{sex:0,build:2,face:3,hair:2,hairC:2,beard:3,skin:2,eye:0,outfit:1},eq:{head:'scargob',chest:'leatherwork'},
+    lines:['Shardstone is the only honest money left in the Reach. It does not lie about what it is worth.','The Exorcists want to count every stone we lift. Let them dig it themselves.','Mind the hum. When the ground starts singing, step back.']},
+  sel:{name:'Auditor Sel',title:'Exorcist Survey',x:450,cls:'weaver',look:{sex:1,build:1,face:1,hair:3,hairC:0,beard:0,skin:6,eye:4,outfit:4},eq:{head:'wisp',chest:'shardsteel'},
+    lines:['Every stone lifted here changes the resonance under the Scar. Someone has to keep count.','I am not here to stop the mining. I am here so the mining does not stop us.','Shardstone remembers being part of something larger. It wants to go back.']},
+  tess:{train:['archery','hunting','handling'],name:'Tracker Tess',title:'Hunter’s Camp',x:500,cls:'ashbow',look:{sex:1,build:1,face:2,hair:4,hairC:3,beard:0,skin:2,eye:1,outfit:1},eq:{head:'wolf',chest:'a_start'},
+    lines:['Read the ground before you read the map. The ground is newer.','We send out maps and weather from here. Half the caravans read them.','If you see a lantern flashing three times in the woods, that is one of mine in trouble.']},
+  odette:{train:['handling'],name:'Odette',title:'Creature Green Handler',x:1600,cls:'weaver',look:{sex:1,build:2,face:0,hair:2,hairC:5,beard:0,skin:4,eye:0,outfit:2},eq:{head:'rotstag',chest:'leatherwork'},
+    lines:['Every creature that walks into CrestHollow gets registered, fed and looked at by a healer. Including yours.','A companion that trusts you will tell you things a map cannot.','Feed them what they like, not what you have. They notice.']}});
+{const ZN2={shrine:['ivo'],hermit:['ambry'],outcrop:['brannoc','sel'],hunt:['tess']};for(const z of ZONES)if(ZN2[z.id])z.npcs.push(...ZN2[z.id])}
+for(const id of['ivo','ambry','brannoc','sel','tess','odette'])NPCS[id].x+=EDGE;
+Object.assign(BARKS,{ivo:['Quiet, little ones.','The stones remember.','Mind the roots.'],ambry:['Hm.','Mind the herbs.','Visitors. Again.'],brannoc:['Hear it hum?','Claim’s mine.','Good seam today.'],sel:['Counting.','Too loud today.','Step back from the vent.'],tess:['Wind’s turning.','Tracks are fresh.','Keep your bow dry.'],odette:['Next!','Gentle with that one.','Who’s hungry?']});
+Object.assign(LORE,{
+  hermA:{z:'hermit',x:150,k:'stone',t:'Moss-Eaten Marker',txt:'Older than the Warden roads: a circle of cut stones, one carved with a gate and a tree growing through it. Somebody built MossGate on top of something that was already here.'},
+  hermB:{z:'hermit',x:900,k:'book',t:'Ambry’s Journal',txt:'“The Concordance came asking about the grove again. Wanted the old root-maps. I burned them in front of the clerk. The Chair’s seal was on his letter.”'},
+  trap:{z:'outskirts',x:1120,k:'note',t:'Trapper’s Flag',txt:'A torn red flag tied to a branch, and three arrow notches cut beneath it: the Hunter’s Camp signal for a trapper hurt and holed up. Tracks lead toward the Grove.'}});
+RECIPES.push(
+  {id:'ritualmortar',d:'alchemy',r:1,n:'Ritual Mortar',use:'crisis',qe:'mortar',need:{herb:2,shard:1,timber:1},desc:'Shrine mortar mixed with shardstone dust, for re-seating a waystone. Sister Ivo needs one.'},
+  {id:'eldertonic',d:'alchemy',r:2,n:'Ambry’s Elder Tonic ×3',use:'pots3',flag:'ambry',need:{herb:3,mush:2},desc:'The hermit’s own recipe. Three tonics from one brew.'},
+  {id:'deepward',d:'alchemy',r:3,n:'Hermit’s Deepward',use:'ward',flag:'ambry',need:{herb:2,mush:1,shard:1},desc:'An older, stronger Ward Draught: +15 defense for 2 minutes, brewed the hermit’s way.'},
+  {id:'purgesalt',d:'alchemy',r:2,n:'Purging Salts',use:'purge',flag:'auditor',need:{herb:2,shard:1},desc:'Exorcist salts that drain resonance from shardstone. Use at the Outcrop to calm the ground.'});
+USE_D.pots3='Adds 3 tonics.';USE_D.purge='Lowers Shardstone Outcrop resonance by 50.';
+/* quests */
+Object.assign(QUESTS,{
+  ws1:{title:'The Silent Waystone',giver:'ivo',lv:4,
+    offer:'Every waystone in the Reach is tied to this one, and this one has gone silent. The spirits here woke when it did, and they are frightened. Quiet five of the wisps around the shrine so I can hear the stone again.',
+    desc:'Quiet the restless wisps around the Overgrown Shrine.',goal:{t:'kill',mob:'wisp',n:5,zone:'shrine',lab:'Restless spirits quieted'},where:'The Overgrown Shrine, past Misty Fen Lake',
+    prog:'The wisps drift above the shrine paths.',done:'Listen. There: a hum under the stone. It is not dead, only unseated. It needs mortar, the old kind.',reward:{exp:420,sh:40}},
+  ws2:{title:'Ritual Mortar',giver:'ivo',pre:'ws1',
+    offer:'The old keepers bound waystones with mortar mixed from herbs, timber ash and a pinch of shardstone. Any alchemy rack can make it. Brew one batch of Ritual Mortar and bring it here.',
+    desc:'Craft Ritual Mortar at an alchemy rack.',goal:{t:'event',id:'mortar',n:1,lab:'Craft Ritual Mortar at an alchemy rack'},where:'Any alchemy rack (CrestHollow, Marrowbog, Mossroot Hollow)',
+    prog:'Two herbs, one shardstone, one timber.',done:'Good mortar. It smells like rain on old stone. Now the hard part: when I re-seat the stone, everything lost around here will come running toward it.',reward:{exp:380,sh:30}},
+  ws3:{title:'Hold the Shrine',giver:'ivo',pre:'ws2',lv:5,
+    offer:'When the stone wakes it will call every spirit within a mile, and some of them are not wisps. Touch the waystone under the gate when you are ready, then hold until it settles. Bring friends if you have them.',
+    desc:'Touch the shrine waystone and hold off what it calls.',goal:{t:'event',id:'shrinedef',n:1,lab:'Touch the shrine waystone and hold the shrine'},where:'The Overgrown Shrine, under the great gate',
+    prog:'Three waves, then the stone settles.',done:'Feel that? Every waystone you have touched just remembered this one. You can travel between any you have found now. Touch a stone, open the map, and go.',reward:{exp:900,sh:80,fl:{waynet:1}}},
+  ha1:{title:'Roots and Rumors',giver:'ambry',lv:4,
+    offer:'You want something from me. Everybody does. Fine: bring me five herbs from the Grove, the good ones, and I will tell you one true thing and let you use my still.',
+    desc:'Gather 5 Herbs for Old Ambry.',goal:{t:'gather',res:'herb',n:5},where:'Fallen Oak Grove and the hermit’s clearing',
+    prog:'Leave the roots in the ground.',done:'One true thing: MossGate was built on a root-circle older than the Wardens, and the Concordance has been trying to find the old maps of it ever since. Use my still. My recipes are better than the Hollow’s.',reward:{exp:500,sh:30,fl:{ambry:1}}},
+  ha2:{title:'The Grove Ledger',giver:'ambry',pre:'ha1',lv:5,to:'garr',
+    offer:'Garr’s crew at Logger’s Rest cut the old grove last winter. Illegally. I have their tally ledger, and I want you to take it to Garr. What you do when you get there is your business. That is the point.',
+    desc:'Take Ambry’s ledger to Garr at Logger’s Rest and decide what happens.',goal:{t:'talk',npc:'garr'},where:'Logger’s Rest, Whisper Woods',
+    prog:'Garr is at Logger’s Rest.',done:'...Where did you get that? Look. The Concordance paid us to clear those trees, and paid well. We did not ask why. What happens now is up to you.',reward:{exp:600},
+    choices:[{n:'Expose the crew',d:'Take the ledger to Captain Holt. The crew is fined and the grove is protected.',flag:'grove_exposed',reward:{sh:40,item:['treant','head',2]}},
+      {n:'Let Garr make it right',d:'Garr replants the grove and pays you for your silence.',flag:'grove_replant',reward:{sh:160}},
+      {n:'Ask who paid',d:'Garr names the Concordance clerk who signed the order. A lead, but nothing else.',flag:'grove_lead',reward:{exp:400,sp:1}}]},
+  ha3:{title:'Older Than the Wardens',giver:'ambry',pre:'ha2',lv:6,
+    offer:'There is a marker in my clearing older than any road. Read it. Then read my journal by the cairn. Then ask me again why I live out here.',
+    desc:'Read Ambry’s journal by the cairn.',goal:{t:'lore',id:'hermB',n:1},where:'Old Hermit’s Hut, by the cairn',
+    prog:'The journal is by the cairn on the far side of the clearing.',done:'The Chair’s seal, on a letter asking for root-maps, years before the Gatefall. Your Archivist will want to know. Tell her the hermit says hello, and that she was right about everything.',reward:{exp:900,sh:60,item:['rotstag','charm',2]}},
+  oc1:{title:'Claim Dispute',giver:'sel',lv:6,to:'brannoc',
+    offer:'I need a resonance sample, and the Free Claim crew will not let me near their seams. Mine six shardstone here, watch how the ground answers, then talk to Brannoc. Someone has to settle this claim.',
+    desc:'Mine 6 Shardstone at the Outcrop, then settle the claim with Brannoc.',goal:{t:'gather',res:'shard',n:6},where:'Shardstone Outcrop',
+    prog:'Watch the resonance meter while you mine. If it fills, the ground erupts.',done:'So the Exorcists sent you. Fine. Here is the truth: we mine fast because the Concordance buys everything we lift and asks no questions. Sel wants it slow and counted. You have seen the ground. You decide.',reward:{exp:800},
+    choices:[{n:'Back the miners',d:'Free Claim keeps mining. Shard nodes here yield an extra stone more often.',flag:'claim_miners',reward:{sh:150}},
+      {n:'Back the audit',d:'Mining is counted and slowed. Resonance builds a third slower, and Sel teaches you Purging Salts.',flag:'claim_audit',reward:{exp:400,fl:{auditor:1}}},
+      {n:'Split the claim',d:'Half the seams each. A little of both.',flag:'claim_split',reward:{sh:70,exp:200}}]},
+  hc1:{title:'Three Flashes',giver:'tess',lv:2,
+    offer:'One of my trappers missed the evening call. Red flag, three notches: that is our signal for hurt and hiding. It was spotted near the east end of Whisper Woods. Find the flag and tell me which way the tracks go.',
+    desc:'Find the trapper’s signal flag in Whisper Woods.',goal:{t:'lore',id:'trap',n:1},where:'Whisper Woods, near the east end',
+    prog:'Look for a red flag on a branch.',done:'Toward the Grove. Good, there is shelter there. I will send a team. Here: every tracker should own a decent pair of boots.',reward:{exp:260,sh:30,item:['wolf','feet',1]}},
+  hc2:{title:'Route Intelligence',giver:'tess',pre:'hc1',lv:3,
+    offer:'Caravans buy our route reports. I need eyes on the roads. Visit the Overgrown Shrine and Hunter’s Camp waystones... no, start simpler: clear five wolves off the Whisper Woods trail and I will mark it safe.',
+    desc:'Clear wolves from the Whisper Woods trail.',goal:{t:'kill',mob:'wolf',n:5,zone:'outskirts',lab:'Wolves cleared'},where:'Whisper Woods',
+    prog:'Wolves run the middle of the trail.',done:'Trail marked safe on tonight’s report. That is fifty caravans that will not lose a mule. Not bad for an afternoon.',reward:{exp:320,sh:40}},
+  cg1:{title:'Registration',giver:'odette',lv:2,
+    offer:'Every creature in CrestHollow gets registered at the Green. If you want to walk around town with one, befriend it first. Break its guard or find a gentle one, offer it food it likes, and bring it home.',
+    desc:'Befriend any creature and register it at the Creature Green.',goal:{t:'bond',n:1},where:'Anywhere; Mossroot Hollow is gentlest',
+    prog:'Beasts eat meat, slimes herbs, sporecaps mushrooms, goblins salvage, spirits shardstone.',done:'Registered and fed. If it ever gets hurt, the Green’s healers are free for registered companions. Here, a treat bag. They will love you for it.',reward:{exp:300,sh:30,pots:2}}});
+function questFlag(fl){if(fl.waynet){for(const id in(pl.flags.ways||{}))pl.flags.ways[id]=2;pl.flags.ways=pl.flags.ways||{};pl.flags.ways.shrine=2;banner('The waystone network wakes','Touch any waystone you have found to travel');[392,523,659,784,1046].forEach((f,i)=>setTimeout(()=>tone(f,.3,'triangle',.05),i*110));save()}}
+function qEvent(id){for(const k of qActive()){const g=QUESTS[k].goal,st=qSt(k);if(g.t==='event'&&g.id===id&&st.n<g.n){st.n=g.n;qProgress(k,'Done')}}}
+/* ---------- waystones and the map ---------- */
+const WAYS={town:500,outskirts:1260,stonebridge:1180,falls:1000,tower:1040,bog:1460,hunt:940,shrine:1010,scar:1040,mossroot:760,sawmill:180,outcrop:250};
+const MAPXY={road:[8,58],hunt:[14,80],town:[24,58],outskirts:[38,48],oak:[52,40],mossroot:[66,30],hermit:[56,22],sawmill:[38,26],stonebridge:[30,74],falls:[42,84],shrine:[54,92],bog:[60,74],reach:[76,78],tower:[24,34],gate:[22,14],outcrop:[38,6],scar:[10,8],inner:[4,24],hollow:[16,22]};
+const WAYS_ST=id=>(pl.flags.ways||{})[id]|0;
+function markSeen(){pl.flags=pl.flags||{};pl.flags.seen=pl.flags.seen||{};if(Z.id!=='deep')pl.flags.seen[Z.id]=1}
+function wayX(){const x=WAYS[Z.id];return x==null?null:x+EDGE}
+function wayNear(){const x=wayX();if(x==null)return null;return Math.abs(pl.x-x)<18&&Math.abs(pl.y-topAt(x))<26?{k:'way'}:null}
+function useWay(){pl.flags.ways=pl.flags.ways||{};const net=!!pl.flags.waynet,was=WAYS_ST(Z.id);
+  if(Z.id==='shrine'&&!net){const k=qActive().find(q=>q==='ws3');if(k){startShrineDef();return}banner('A silent waystone','Sister Ivo is trying to wake it');return}
+  pl.flags.ways[Z.id]=net?2:1;if(!was){S.nums.push({x:pl.x,y:pl.y-44,txt:net?'WAYSTONE ATTUNED':'WAYSTONE FOUND',t:0,c:'#6ee6ee'});tone(880,.2,'triangle',.04);setTimeout(()=>tone(1320,.25,'triangle',.04),120)}
+  save();if(!net&&!was){banner('A dormant waystone','Its network is anchored at the Overgrown Shrine, past Misty Fen Lake');return}openMap(true)}
+function drawWays(cx,cy){const x0=wayX();if(x0==null)return;const x=ri(x0-cx);if(x<-30||x>W+30)return;const y=ri(topAt(x0)-cy),st=WAYS_ST(Z.id),on=st===2||(!!pl.flags.waynet&&st);
+  CR_SPR['way'+(on?1:0)]=CR_SPR['way'+(on?1:0)]||nodeLayer(18,40,L=>{const P=(a,b,c)=>sp(L,a,b,c);for(let yy=4;yy<38;yy++){const w=yy<8?Math.max(2,Math.round((yy-3)*1.4)):6;for(let k=-w;k<=w;k++)P(9+k,yy,pick(RAMP.rock,.65-(k+w)/(2*w+1)*.45+(fbm(k*.5,yy*.3,4)-.5)*.3,9+k,yy))}
+    for(let k=-8;k<=8;k++){P(9+k,38,RAMP.rock[3]);P(9+k,39,RAMP.rock[2])}for(const yy of[14,20,26])for(let k=-2;k<=2;k++)P(9+k,yy+(Math.abs(k)===2?1:0),on?RUNE[3]:RAMP.rock[1]);
+    for(let yy=10;yy<36;yy+=4)P(3+(yy%8===2?1:0),yy,pick(RAMP.moss,.6,3,yy));P(15,30,pick(RAMP.moss,.6,15,30));if(on){P(9,15,RUNE[4]);P(9,21,RUNE[4]);P(9,27,RUNE[4])}});
+  if(on){g.save();g.globalCompositeOperation='lighter';glow(x,y-20,22,'110,230,240',.28+Math.sin(S.t*2.5)*.08);g.restore()}g.drawImage(CR_SPR['way'+(on?1:0)],x-9,y-39);
+  if(S.nearCr&&S.nearCr.k==='way')ptext(on?'▲ TRAVEL':'▲ WAYSTONE',x,y-50+Math.sin(S.t*4),'#6ee6ee')}
+function mapHops(a,b){const q=[[a,0]],seen={[a]:1};while(q.length){const[z,d]=q.shift();if(z===b)return d;for(const p of ZONES[zIdx(z)].portals){const t=ZONES[p.to];if(!t||t.id==='deep'||seen[t.id])continue;seen[t.id]=1;q.push([t.id,d+1])}}return 6}
+const wayFee=id=>4+3*mapHops(Z.id==='deep'?'town':Z.id,id);
+let MAP=null;
+function openMap(atWay){MAP={at:!!atWay,sel:Z.id==='deep'?'town':Z.id,msg:''};pauseFor('mapov');renderMap()}
+function renderMap(){if(!MAP)return;const seen=(pl.flags.seen||{}),C=crAct(),cz=C?CRISES[C.id].zones:[];const ids=Object.keys(MAPXY).filter(id=>zIdx(id)>=0);
+  const lines=[];for(const id of ids){if(!seen[id])continue;for(const p of ZONES[zIdx(id)].portals){const t=ZONES[p.to];if(!t||!MAPXY[t.id]||id>t.id&&seen[t.id])continue;const[a,b]=MAPXY[id],[c,d]=MAPXY[t.id];lines.push(`<line x1="${a}" y1="${b}" x2="${c}" y2="${d}" class="${seen[t.id]?'':'unk'}"/>`)}}
+  const here=Z.id==='deep'?'town':Z.id;
+  $('mapgrid').innerHTML=`<svg viewBox="0 0 100 100" preserveAspectRatio="none">${lines.join('')}</svg>`+ids.map(id=>{const z=ZONES[zIdx(id)],[x,y]=MAPXY[id],s=seen[id],w=WAYS[id]!=null?WAYS_ST(id):-1;
+    return`<button class="mpn${s?'':' unk'}${id===here?' here':''}${id===MAP.sel?' sel':''}${z.safe?' safe':''}${cz.includes(id)?' cris':''}" style="left:${4+x*.92}%;top:${4+y*.92}%" data-mz="${id}">${w>0?`<i class="ws${w===2||(pl.flags.waynet&&w)?' on':''}"></i>`:''}<span>${s?z.name.replace(/^The /,''):'?'}</span></button>`}).join('');
+  const id=MAP.sel,z=ZONES[zIdx(id)],s=seen[id],w=WAYS[id]!=null?WAYS_ST(id):-1,net=!!pl.flags.waynet,canGo=MAP.at&&net&&w>=1&&id!==here,fee=wayFee(id);
+  $('mapdet').innerHTML=`<div class="dn">${s?z.name:'Unexplored'}</div><div class="dm">${s?(z.safe?'Safe haven':'Level '+z.lv[0]+'–'+z.lv[1])+' · '+z.ch:'Find the road there to learn more.'}${id===here?' · You are here':''}</div>
+    ${s&&cz.includes(id)?`<p class="crp" style="color:var(--ember)">Crisis: ${CRISES[C.id].n}</p>`:''}
+    ${w<0?'':`<p class="crp">${w===0?'There is a waystone here you have not found.':net?'Waystone attuned.':'Waystone found, but dormant until the Overgrown Shrine is restored.'}</p>`}
+    ${id==='town'&&s?'<p class="crp dim">The Veinway Stair to the Deep is in the east of CrestHollow.</p>':''}
+    ${canGo?`<button class="btn sm" data-mgo="${id}" ${pl.shards<fee?'disabled':''}>Travel · ${fee} shards</button>`:MAP.at?'':(net?'<p class="crp dim">Stand at a waystone to travel.</p>':'')}
+    ${MAP.msg?`<div class="warn">${MAP.msg}</div>`:''}`;
+  $('mapfoot').textContent=net?'Waystones: travel between any you have touched. They move people, not cargo.':'The waystone network is silent. Sister Ivo at the Overgrown Shrine, past Misty Fen Lake, is trying to wake it.'}
+$('mapov').addEventListener('click',e=>{const b=e.target.closest('[data-mz],[data-mgo],#mapclose');if(!b)return;if(b.id==='mapclose'){MAP=null;return unpause('mapov')}
+  if(b.dataset.mz){MAP.sel=b.dataset.mz;MAP.msg='';return renderMap()}
+  const id=b.dataset.mgo,fee=wayFee(id);if(hasCargo()){MAP.msg='Waystones carry people, not cargo. Deliver or drop your freight first.';return renderMap()}
+  if(S.mobs.some(m=>!m.dead&&m.aggro>0&&Math.abs(m.x-pl.x)<160)){MAP.msg='Too dangerous to focus. Get clear of the fight first.';return renderMap()}
+  if(pl.shards<fee)return;pl.shards-=fee;MAP=null;unpause('mapov');const zi=zIdx(id);S.paused=true;const f=$('fade');f.style.opacity=1;tone(660,.4,'sine',.05,600);
+  setTimeout(()=>{enterZone(zi,WAYS[id]+EDGE+20);S.paused=false;f.style.opacity=0;for(let i=0;i<24;i++){const a=i/24*6.28;S.parts.push({x:pl.x,y:pl.y-16,vx:Math.cos(a)*60,vy:Math.sin(a)*60,t:0,life:.7,c:i%2?'#6ee6ee':'#d8ffff',g:0,s:1})}},420)});
+/* ---------- Overgrown Shrine defense ---------- */
+const SDEF_W=[['wisp','wisp','husk'],['lantern','wisp','husk','wisp'],['husk','husk','lantern','wisp','treant']];
+function startShrineDef(){if(S.sdef)return;S.sdef={wave:-1,t:1.5};banner('The waystone wakes','Hold the shrine');tone(98,1,'sawtooth',.05,40)}
+function shrineDefTick(dt){const D=S.sdef;if(!D)return;if(Z.id!=='shrine'||pl.dead){S.sdef=null;S.mobs=S.mobs.filter(m=>!m.sd);banner('The stone falls silent','Try again when you are ready');return}
+  const alive=S.mobs.filter(m=>m.sd&&!m.dead).length;if(D.wave>=0&&alive)return;D.t-=dt;if(D.t>0)return;
+  D.wave++;if(D.wave>=SDEF_W.length){S.sdef=null;S.mobs=S.mobs.filter(m=>!m.sd);qEvent('shrinedef');banner('The shrine holds','Return to Sister Ivo');return}
+  D.t=3;banner('Wave '+(D.wave+1)+' of '+SDEF_W.length,'They come for the stone');const X=WAYS.shrine+EDGE;
+  SDEF_W[D.wave].forEach((t,i)=>{const fly=MOBS[t].fly,side=i%2?1:-1,x=X+side*(140+i*20),si=SEG.findIndex(s=>s.t==='solid'&&x>=s.x&&x<=s.x+s.w);const m=spawnMob([t,fly?-2:Math.max(0,si),x],Z.lv[1]+(t==='treant'?0:0));m.x=x;m.sd=1;m.temp=1;m.aggro=99;if(t==='treant'){m.d={...m.d,name:'Shrine-Sick Treant'};m.mhp=m.hp=Math.round(m.mhp*.7)}S.mobs.push(m)})}
+function drawShrineDef(){if(!S.sdef)return;const n=S.mobs.filter(m=>m.sd&&!m.dead).length;ptext('HOLD THE SHRINE · WAVE '+Math.max(1,S.sdef.wave+1)+'/'+SDEF_W.length+(n?' · '+n+' LEFT':''),W/2,58,'#6ee6ee')}
+/* ---------- Shardstone Outcrop resonance ---------- */
+function outcropRes(){return pl.flags.res|0}
+function regionGather(nd){if(Z.id!=='outcrop'||nd.r!=='shard')return;const f=pl.flags;f.res=(f.res|0)+(f.oc1==='claim_audit'?10:f.oc1==='claim_split'?13:15);
+  if((f.oc1==='claim_miners'&&Math.random()<.35)||(f.oc1==='claim_split'&&Math.random()<.15))addMat('shard',1,nd.x,topAt(nd.x)-12);
+  if(f.res>=100){f.res=20;outcropErupt()}else if(f.res>=50&&!(S.mobs.filter(m=>m.oc&&!m.dead).length>2)){const m=spawnMob(['shardslime',0,pl.x+rnd(-120,120)],Z.lv[1]);m.x=clamp(pl.x+(Math.random()<.5?-110:110),Z.x0+20,Z.x1-20);m.y=topAt(m.x);m.minX=m.x-80;m.maxX=m.x+80;m.oc=1;m.temp=1;m.aggro=8;S.mobs.push(m);S.nums.push({x:m.x,y:m.y-24,txt:'DRAWN BY THE HUM',t:-.1,c:'#c9a8ff'})}}
+function outcropErupt(){banner('Shard eruption','The ground throws back what you took');tone(70,1,'sawtooth',.07,-20);noise(.8,.08,500);
+  for(let i=0;i<30;i++){const a=i/30*6.28;S.parts.push({x:pl.x,y:pl.y-6,vx:Math.cos(a)*130,vy:Math.sin(a)*90-60,t:0,life:.9,c:i%2?'#c9a8ff':'#f0e2ff',g:200,s:2})}
+  hurtPl(Math.round(pl.mhp*.3),pl.x+1,null);S.crE=S.crE||[];for(let i=0;i<6;i++)S.crE.push({x:pl.x+rnd(-90,90),t:0})}
+function outcropTick(dt){if(Z.id!=='outcrop'){return}pl.flags.res=Math.max(0,(pl.flags.res|0)-dt*.6)}
+function drawOutcrop(cx,cy){if(Z.id!=='outcrop')return;const r=outcropRes(),w=70,x=ri(W/2-w/2),y=40;g.fillStyle='#000';g.fillRect(x-1,y-1,w+2,5);g.fillStyle=r>75?'#ff6a8a':r>45?'#c9a8ff':'#6a5a9a';g.fillRect(x,y,ri(w*r/100),3);ptext('RESONANCE',W/2,y+9,r>75?'#ff6a8a':'#c9a8ff');
+  if(S.crE&&S.crE.length){S.crE=S.crE.filter(e=>{e.t+=.016;const X=ri(e.x-cx),Y=ri(topAt(e.x)-cy),h=Math.min(1,e.t*4)*Math.max(0,1-(e.t-1)*1.5)*16;if(h>0){g.fillStyle='#000';g.fillRect(X-3,Y-ri(h)-1,7,ri(h)+1);g.fillStyle='#5a4290';g.fillRect(X-2,Y-ri(h),5,ri(h));g.fillStyle='#c9a8ff';g.fillRect(X-1,Y-ri(h),2,ri(h))}return e.t<1.8})}}
+/* purge salts item effect */
+function usePurge(){pl.flags.res=Math.max(0,(pl.flags.res|0)-50);banner('Purging Salts','The ground goes quiet');}
+function reachTick(dt){shrineDefTick(dt);outcropTick(dt)}
+function drawReach(cx,cy){drawWays(cx,cy);drawShrineDef();drawOutcrop(cx,cy)}
+addEventListener('keydown',e=>{if(e.code==='KeyM'&&e.target.tagName!=='INPUT'&&e.target.tagName!=='TEXTAREA'){if(!$('mapov').hidden){MAP=null;unpause('mapov')}else if(pl.ch&&S.started&&!S.paused)openMap(false)}});
+
 /* ---------- save transfer: move a character between devices (claude.ai, browser, Android app) ---------- */
 const SAVE_K='mossgate-px2';
 function svHash(s){let h=2166136261>>>0;for(let i=0;i<s.length;i++){h^=s.charCodeAt(i);h=Math.imul(h,16777619)>>>0}return h.toString(16).padStart(8,'0')}
@@ -3137,7 +3353,7 @@ const appPlugin=()=>NATIVE()&&window.Capacitor.Plugins&&window.Capacitor.Plugins
 function toTitle(){if(pl.ch)save();try{if(typeof netLeave==='function')netLeave()}catch(_){}setTimeout(()=>location.reload(),150)}
 function exitGame(){if(pl.ch)save();const A=appPlugin();if(A&&A.exitApp)A.exitApp();else toTitle()}
 function renderMenu(){const sv=loadSave(),has=!!(sv&&sv.ch);
-  $('gmgame').hidden=GM.title;$('gmgame').innerHTML=GM.title?'':`<div class="hdr"><span>Menu</span><small>Paused</small></div><div class="crbtns"><button class="btn sm" data-gm="resume">Resume</button><button class="btn sm alt" data-gm="save">Save now</button>${isTouch?'<button class="btn sm alt" data-gm="ctl">Edit controls</button>':''}<button class="btn sm alt" data-gm="title">${GM.askT?'Tap again: save and return to title':'Return to title'}</button>${NATIVE()?`<button class="btn sm alt" data-gm="exit">${GM.askX?'Tap again: save and exit':'Exit game'}</button>`:''}</div>${GM.saved?'<p class="crp" style="color:var(--moss)">Saved.</p>':''}`;
+  $('gmgame').hidden=GM.title;$('gmgame').innerHTML=GM.title?'':`<div class="hdr"><span>Menu</span><small>Paused</small></div><div class="crbtns"><button class="btn sm" data-gm="resume">Resume</button><button class="btn sm alt" data-gm="map">Map</button><button class="btn sm alt" data-gm="save">Save now</button>${isTouch?'<button class="btn sm alt" data-gm="ctl">Edit controls</button>':''}<button class="btn sm alt" data-gm="title">${GM.askT?'Tap again: save and return to title':'Return to title'}</button>${NATIVE()?`<button class="btn sm alt" data-gm="exit">${GM.askX?'Tap again: save and exit':'Exit game'}</button>`:''}</div>${GM.saved?'<p class="crp" style="color:var(--moss)">Saved.</p>':''}`;
   $('gmexp').innerHTML=has?`<p class="crp">Your save lives on this device only. To move <b>${esc(sv.ch.name)}</b> (Lv ${sv.lv|0}) to another phone, browser or the Android app, copy this code and paste it there under Import.</p>
     <div class="crbtns"><button class="btn sm" data-gm="copy">Copy save code</button><button class="btn sm alt" data-gm="dl">Download save file</button><button class="btn sm alt" data-gm="show">Show code</button></div>
     ${GM.code?`<textarea class="gmcode" readonly>${GM.code}</textarea>`:''}`:'<p class="crp dim">No character saved on this device yet.</p>';
@@ -3148,7 +3364,7 @@ function renderMenu(){const sv=loadSave(),has=!!(sv&&sv.ch);
   if(GM.pending)$('gmin').value=GM.pending}
 async function copyText(t){try{await navigator.clipboard.writeText(t);return true}catch(_){}try{const a=document.createElement('textarea');a.value=t;a.style.position='fixed';a.style.opacity='0';document.body.appendChild(a);a.select();const ok=document.execCommand('copy');a.remove();return ok}catch(_){return false}}
 $('gmenu').addEventListener('click',async e=>{const b=e.target.closest('[data-gm],#gmclose');if(!b)return;if(b.id==='gmclose')return closeMenu();const k=b.dataset.gm;GM.err=0;GM.saved=0;
-  if(k==='resume')return closeMenu();if(k==='ctl'){GM.title=true;return openCtlEd()}if(k==='save'){save();GM.saved=1;return renderMenu()}
+  if(k==='resume')return closeMenu();if(k==='map'){closeMenu();return openMap(false)}if(k==='ctl'){GM.title=true;return openCtlEd()}if(k==='save'){save();GM.saved=1;return renderMenu()}
   if(k==='title'){if(!GM.askT){GM.askT=1;return renderMenu()}return toTitle()}if(k==='exit'){if(!GM.askX){GM.askX=1;return renderMenu()}return exitGame()}GM.askT=GM.askX=0;
   if(k==='copy'){const c=saveCode();GM.code=c;GM.msg=(await copyText(c))?'Copied. Paste it into Import on your other device.':'Copy was blocked here. Use Show code and copy it by hand.';GM.err=0}
   else if(k==='show')GM.code=saveCode();
@@ -3275,7 +3491,7 @@ function render(){
     for(let i=0;i<14;i++){const a=S.t*3+i*.45,r=3+(i%5)*1.4;g.fillStyle=lk?(i%2?'#d4483a':'#ff9a7a'):(i%2?'#6ec6e2':'#d8f6ff');g.fillRect(ri(x+Math.cos(a)*r*.8),ri(y-16+Math.sin(a)*r*1.6),1,1)}
     if(S.nearPortal===po)ptext(po.next?'▲ DESCEND TO FLOOR '+(S.deep.n+1):lk?'SEALED · LV '+ZONES[po.to].req:'▲ '+ZONES[po.to].name.toUpperCase(),x,y-48+Math.sin(S.t*4),lk?'#ff6b6b':'#f2e6c8')}
   for(const w of S.waves){if(w.t<0)continue;const x=ri(w.x-cx),y=ri(SEG[0].y-cy),hgt=6+ri(Math.sin(w.t*30)*2);g.fillStyle='#5a4a50';g.fillRect(x-3,y-hgt,6,hgt);g.fillStyle='#8a7a80';g.fillRect(x-2,y-hgt,2,hgt);g.fillStyle='#ffb24a';g.fillRect(x-1,y-3,2,2)}
-  drawFolk(cx,cy);drawNpcs(cx,cy);drawNodes(cx,cy);drawLore(cx,cy);drawCrisis(cx,cy);drawDeep(cx,cy);drawPeers(cx,cy);
+  drawFolk(cx,cy);drawNpcs(cx,cy);drawNodes(cx,cy);drawLore(cx,cy);drawCrisis(cx,cy);drawDeep(cx,cy);drawReach(cx,cy);drawPeers(cx,cy);
   for(const m of S.mobs)if(!m.dead)drawMob(m,cx,cy);
   for(const dr of S.drops){const x=ri(dr.x-cx),y=ri(dr.y-cy)-ri(Math.sin(S.t*4+dr.x)*1.5)-(dr.g?2:0);
     if(dr.k==='shard'){g.fillStyle='#000';g.fillRect(x-2,y-3,5,7);g.fillStyle='#d4483a';g.fillRect(x-1,y-2,3,5);g.fillRect(x-2,y,5,1);g.fillStyle='#ffd0c0';g.fillRect(x-1,y-2,1,1)}
@@ -3348,7 +3564,7 @@ function titleOf(){let b=KIT().disc;for(const d of COMBAT_D)if(dXP(d)>dXP(b))b=d
 function setupClassUI(){if(!pl.ch)return;$('nmt').textContent=pl.ch.name+' · '+titleOf();const w=WEAP(),verb=w==='bow'?'shoot':w==='staff'||w==='tome'?'cast':'slash',nm=[];
   for(let i=0;i<3;i++){const info=techInfo(pl.lo[i]),b=$('b-s'+(i+1));b.hidden=!info||(!!info.ult&&!info.learned);nm.push(info?info.n:'-');if(info)b.innerHTML=`<span>${info.n.split(' ')[0]}<small>${info.mp}</small></span>`}
   $('b-atk').innerHTML=`<span>${verb[0].toUpperCase()+verb.slice(1)}</span>`;
-  $('keys').innerHTML=`<b>←→</b> move · <b>Z</b> jump · <b>X</b> ${verb} · <b>C</b> ${nm[0]} · <b>V</b> ${nm[1]} · <b>B</b> ${nm[2]} · <b>Shift</b> roll · <b>F</b> guard/parry · <b>P</b> tonic · <b>I</b> bag · <b>T</b> disciplines · <b>Q</b> quests · <b>Y</b> crisis · <b>G</b> companion command · <b>↑</b> talk/portal`}
+  $('keys').innerHTML=`<b>←→</b> move · <b>Z</b> jump · <b>X</b> ${verb} · <b>C</b> ${nm[0]} · <b>V</b> ${nm[1]} · <b>B</b> ${nm[2]} · <b>Shift</b> roll · <b>F</b> guard/parry · <b>P</b> tonic · <b>I</b> bag · <b>T</b> disciplines · <b>Q</b> quests · <b>Y</b> crisis · <b>M</b> map · <b>G</b> companion command · <b>↑</b> talk/portal`}
 
 /* ---------- touch ---------- */
 $('touch').hidden=!isTouch;$('keys').hidden=isTouch;
@@ -3412,7 +3628,7 @@ $('rise').onclick=()=>{if(deepRise()){$('dead').hidden=true;pl.hp=pl.mhp;pl.mp=p
 /* ---------- inventory ---------- */
 const DC=$('dc'),DX=DC.getContext('2d');
 function pauseFor(id){S.paused=true;$(id).hidden=false;for(const k in inp)inp[k]=0}
-function unpause(id){if($(id))$(id).hidden=true;S.paused=['inv','tree','quests','prolog','craft','board','market','crisis','deepm','gmenu'].some(k=>!$(k).hidden)||!!DLG}
+function unpause(id){if($(id))$(id).hidden=true;S.paused=['inv','tree','quests','prolog','craft','board','market','crisis','deepm','gmenu','mapov'].some(k=>!$(k).hidden)||!!DLG}
 function openInv(){if(!S.started||pl.dead)return;pauseFor('inv');renderInv()}
 function slotHTML(it,label,data,sel){return `<button class="slot${sel?' sel':''}" ${data} style="--rc:${it?RAR[it.r].c:'rgba(242,230,200,.2)'}" aria-label="${it?itemName(it):label+' (empty)'}">${it?`<img src="${iconURL(it)}" alt="">`:`<span class="lb">${label}</span>`}</button>`}
 function statLines(it,cmp){return Object.keys(STAT_N).filter(k=>it.st[k]||(cmp&&cmp.st[k])).map(k=>{const v=it.st[k]||0,d=cmp?v-(cmp.st[k]||0):0;return `<li>${STAT_N[k]} <b>+${v}</b>${cmp&&d?` <span class="${d>0?'up':'down'}">${d>0?'▲':'▼'}${Math.abs(d)}</span>`:''}</li>`}).join('')}
@@ -3518,6 +3734,6 @@ requestAnimationFrame(loop);
 
 })();
 </script>
-<script>window.MG_BUILD='2026.11.03-1930';if('serviceWorker' in navigator&&location.protocol==='https:'){addEventListener('load',()=>navigator.serviceWorker.register('sw.js').catch(()=>{}))}</script>
+<script>window.MG_BUILD='2026.11.03-2001';if('serviceWorker' in navigator&&location.protocol==='https:'){addEventListener('load',()=>navigator.serviceWorker.register('sw.js').catch(()=>{}))}</script>
 
 </html>
