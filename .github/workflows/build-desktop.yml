@@ -1,0 +1,62 @@
+# Builds the desktop app (Windows, macOS, Linux) from the same www/ game.
+# Output: one zip per system, ready to upload to itch.io or to Steam as a depot.
+# Run it from Actions → "Build desktop app" → Run workflow, or push a tag starting with v.
+name: Build desktop app
+on:
+  workflow_dispatch: {}
+  push:
+    tags: ['v*']
+jobs:
+  build:
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - os: windows-latest
+            name: windows
+            flag: --win
+            dir: win-unpacked
+          - os: ubuntu-24.04
+            name: linux
+            flag: --linux
+            dir: linux-unpacked
+          - os: macos-latest
+            name: mac
+            flag: --mac --universal
+            dir: mac-universal
+    runs-on: ${{ matrix.os }}
+    defaults:
+      run:
+        working-directory: desktop
+        shell: bash
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: '22'
+      - name: Install
+        run: npm install --no-audit --no-fund
+      - name: Prepare game files
+        run: node prepare.js
+      - name: Build
+        env:
+          CSC_IDENTITY_AUTO_DISCOVERY: 'false'
+        run: npx electron-builder ${{ matrix.flag }} --publish never
+      - name: Zip
+        run: |
+          cd release
+          ls
+          D="${{ matrix.dir }}"
+          if [ ! -d "$D" ]; then D=$(ls -d *-unpacked mac* 2>/dev/null | head -1); fi
+          echo "packing $D"
+          if [ "${{ matrix.name }}" = "windows" ]; then
+            7z a -tzip "../MossGate-${{ matrix.name }}.zip" "./$D/*" > /dev/null
+          elif [ "${{ matrix.name }}" = "mac" ]; then
+            ditto -c -k --keepParent "$D/MossGate.app" "../MossGate-${{ matrix.name }}.zip"
+          else
+            (cd "$D" && zip -qr "../../MossGate-${{ matrix.name }}.zip" .)
+          fi
+      - uses: actions/upload-artifact@v5
+        with:
+          name: MossGate-${{ matrix.name }}
+          path: desktop/MossGate-${{ matrix.name }}.zip

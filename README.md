@@ -98,3 +98,14 @@ simply plays offline.
   collected, not shared, required for online play, purpose *App functionality*.
 - **Device or other IDs**: Yes (anonymous Firebase ID), purpose *App functionality*.
 - Data is encrypted in transit: **Yes**. Users can request deletion: **Yes** (contact email).
+
+## itch.io and desktop
+
+- **itch.io (browser):** every "Publish game update" run also produces an **mossgate-itch** artifact.
+  Download it and upload the zip inside to itch.io, ticked "played in the browser".
+  Page text, settings and images are in `itch/` (`ITCH_PAGE.md` and `itch/media/`).
+- **Desktop (Windows, macOS, Linux):** **Actions → Build desktop app → Run workflow.** When it finishes,
+  download **MossGate-windows**, **MossGate-mac** and **MossGate-linux**. Each holds a zip ready for
+  itch.io (tick the matching platform) or for a Steam depot.
+- The macOS build is not notarized, so the first launch needs right-click → Open. Notarizing needs a paid
+  Apple developer account and can be added to the workflow later.

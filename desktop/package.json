@@ -1,0 +1,60 @@
+{
+  "name": "mossgate-desktop",
+  "productName": "MossGate",
+  "version": "1.0.0",
+  "description": "MossGate, a pixel-art side-scrolling RPG",
+  "main": "main.js",
+  "private": true,
+  "scripts": {
+    "prepare-game": "node prepare.js",
+    "start": "node prepare.js && electron .",
+    "dist": "node prepare.js && electron-builder --publish never"
+  },
+  "devDependencies": {
+    "electron": "33.2.1",
+    "electron-builder": "25.1.8",
+    "@fontsource/silkscreen": "^5.0.0"
+  },
+  "build": {
+    "appId": "com.cryoxide.mossgate",
+    "productName": "MossGate",
+    "directories": {
+      "output": "release",
+      "buildResources": "build"
+    },
+    "files": [
+      "main.js",
+      "app/**/*"
+    ],
+    "asar": true,
+    "win": {
+      "target": [
+        {
+          "target": "dir"
+        }
+      ],
+      "icon": "build/icon.png",
+      "executableName": "MossGate"
+    },
+    "linux": {
+      "target": [
+        {
+          "target": "dir"
+        }
+      ],
+      "icon": "build/icon.png",
+      "category": "Game",
+      "executableName": "mossgate"
+    },
+    "mac": {
+      "target": [
+        {
+          "target": "dir"
+        }
+      ],
+      "icon": "build/icon.png",
+      "category": "public.app-category.role-playing-games",
+      "identity": null
+    }
+  }
+}
