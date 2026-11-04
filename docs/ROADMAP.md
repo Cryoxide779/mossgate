@@ -10,7 +10,7 @@ Ashveil Reach has 14 regions. Seven ship now (level cap 35). Each future region 
 | 10–15 | Stonebridge | built to sheet: Ironvale and the Blackwheel Forges, Granite Peaks, Blackgate Pass, Rivermere Docks, Stonewatch Fort and Eastgate Pass, the Deepcut Quarry | stonebridge.png |
 | 15–20 | Misty Fen Lake | built to sheet: Fenwater Port (ferries), Reedshore Village, Glasswater Reef, Serpent Islands and Lighthouse Spire, the Sunken Archive | misty-fen-lake.png |
 | 20–25 | Marrowbog | built to sheet: Mudcarver Village, the Grasping Reeds, Fenwatch Outpost, Veilfen Hollows (the Thin Place choice), Rotmire Deep and the Sinking Spire | marrowbog.png |
-| 25–30 | Old Watchtower | built, expand to sheet | old-watchtower.png |
+| 25–30 | Old Watchtower | built to sheet: Ravengate Crossing and Stonewatch Citadel, Bastion Fields and the Memorial Plains, Graystone Holds, Sentinel Pass, Talonreach Outpost and the Shattered Vale | old-watchtower.png |
 | 30–35 | The Sundering Scar (launch endgame) | built, expand to sheet | hollow-scar.png |
 | 35–40 | The Golden Plains | future, overview on proposed-regions.png | proposed-regions.png |
 | 40–45 | Silverwood Wilds | future, overview on proposed-regions.png | proposed-regions.png |
@@ -36,6 +36,6 @@ Epilogue hook for future regions: Ossery Vale, the Concordance Chair.
 - Starting kits: Ronin, Shade, Hunter, Mossweaver, Gravecaller, Traveler, Scout, Guard, Aspirant, Gatherer.
 
 ## Next
-1. Expand each built region to match its sheet. CrestHollow, Whisper Woods, Stonebridge, Misty Fen Lake and Marrowbog done; next Old Watchtower, then the Sundering Scar.
+1. Expand each built region to match its sheet. CrestHollow, Whisper Woods, Stonebridge, Misty Fen Lake, Marrowbog and Old Watchtower done; next the Sundering Scar.
 2. Future regions as their sheets are made.
 3. Guilds and factions once online play (Firebase) is switched on.
