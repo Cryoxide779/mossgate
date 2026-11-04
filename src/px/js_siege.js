@@ -95,4 +95,4 @@ function drawSiege(cx,cy){if(Z.id!=='siege')return;const D=S.siege,G=Z.gateX;
   if(S.carry){const x=ri(pl.x-cx),y=ri(pl.y-cy)-34;g.fillStyle='#000';g.fillRect(x-6,y-1,13,10);g.fillStyle='#8a5634';g.fillRect(x-5,y,11,8);g.fillStyle='#56331e';g.fillRect(x-5,y+3,11,1);g.fillRect(x,y,1,8)}
   if(pl.flags.siegeheld){const x=ri(Z.x0+420-cx),y=ri(topAt(Z.x0+420)-cy);for(let i=0;i<3;i++){g.fillStyle=i%2?'#ffd27a':'#ff8a3a';g.fillRect(x-1+i,y-92-ri(Math.abs(Math.sin(S.t*8+i))*5),2,4)}}}
 /* Gorrak only appears once the waves are broken */
-const _pzs=crPopulate;crPopulate=function(...a){const r=_pzs(...a);if(Z.id==='siege'&&pl.flags.siegeheld&&!S.mobs.some(m=>m.t==='gorrak')){for(const[t,x]of[['gorrak',1460],['breaker',1340],['warhound',1580]]){const m=spawnMob([t,0,x+EDGE],t==='gorrak'?8:7);m.x=x+EDGE;m.y=topAt(m.x);S.mobs.push(m)}}return r};
+const _pzs=crPopulate;crPopulate=function(...a){const r=_pzs(...a);if(Z.id==='siege'&&pl.flags.siegeheld&&!S.mobs.some(m=>m.t==='gorrak')){for(const[t,x]of[['gorrak',1460],['breaker',1340],['warhound',1580]]){const m=spawnMob([t,0,x+EDGE],t==='gorrak'?Z.lv[1]+1:Z.lv[1]);m.x=x+EDGE;m.y=topAt(m.x);S.mobs.push(m)}}return r};

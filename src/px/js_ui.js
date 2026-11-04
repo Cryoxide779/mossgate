@@ -80,7 +80,7 @@ $('rise').onclick=()=>{if(deepRise()){$('dead').hidden=true;pl.hp=pl.mhp;pl.mp=p
 /* ---------- inventory ---------- */
 const DC=$('dc'),DX=DC.getContext('2d');
 function pauseFor(id){S.paused=true;$(id).hidden=false;for(const k in inp)inp[k]=0}
-function unpause(id){if($(id))$(id).hidden=true;S.paused=['inv','tree','quests','prolog','craft','board','market','crisis','deepm','gmenu','mapov','arrange','stash','visit'].some(k=>!$(k).hidden)||!!DLG}
+function unpause(id){if($(id))$(id).hidden=true;S.paused=['inv','tree','quests','prolog','craft','board','market','crisis','deepm','gmenu','mapov','arrange','stash','visit','mastery'].some(k=>!$(k).hidden)||!!DLG}
 function openInv(){if(!S.started||pl.dead)return;pauseFor('inv');renderInv()}
 function slotHTML(it,label,data,sel){return `<button class="slot${sel?' sel':''}" ${data} style="--rc:${it?RAR[it.r].c:'rgba(242,230,200,.2)'}" aria-label="${it?itemName(it):label+' (empty)'}">${it?`<img src="${iconURL(it)}" alt="">`:`<span class="lb">${label}</span>`}</button>`}
 function statLines(it,cmp){return Object.keys(STAT_N).filter(k=>it.st[k]||(cmp&&cmp.st[k])).map(k=>{const v=it.st[k]||0,d=cmp?v-(cmp.st[k]||0):0;return `<li>${STAT_N[k]} <b>+${v}</b>${cmp&&d?` <span class="${d>0?'up':'down'}">${d>0?'▲':'▼'}${Math.abs(d)}</span>`:''}</li>`}).join('')}

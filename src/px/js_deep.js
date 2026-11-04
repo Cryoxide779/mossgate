@@ -18,7 +18,7 @@ const DI=ZONES.length;
 const DP=()=>pl.deep||(pl.deep={best:0,anchor:0,runs:0});
 function mulberry(a){return()=>{a|=0;a=a+0x6D2B79F5|0;let t=Math.imul(a^a>>>15,1|a);t=t+Math.imul(t^t>>>7,61|t)^t;return((t^t>>>14)>>>0)/4294967296}}
 function floorAffixes(n){if(n<11)return[];const r=mulberry(n*7919+3),k=Object.keys(AFFIX),o=[];const cnt=n>=51?2:1;while(o.length<cnt){const a=k[r()*k.length|0];if(!o.includes(a))o.push(a)}return o}
-function genFloor(n){const r=mulberry(n*9973+17),bi=Math.min(9,Math.floor((n-1)/10)),B=DEEP_BANDS[bi],boss=n%10===0,lv=4+n;
+function genFloor(n){const r=mulberry(n*9973+17),bi=Math.min(9,Math.floor((n-1)/10)),B=DEEP_BANDS[bi],boss=n%10===0,lv=deepLv(n);
   const ww=boss?960:Math.min(1700,1100+bi*40+Math.round(r()*260)),seg=[],mobs=[],props=[];
   if(boss){seg.push([0,ww,250]);seg.push([260,90,206,'f']);seg.push([ww-350,90,206,'f'])}
   else{let x=0,y=250;while(x<ww){let w=Math.round(170+r()*190);if(ww-x-w<140)w=ww-x;seg.push([x,w,y]);x+=w;const ny=y+(r()<.5?-1:1)*Math.round(8+r()*10);y=clamp(ny,214,252)}
@@ -27,14 +27,14 @@ function genFloor(n){const r=mulberry(n*9973+17),bi=Math.min(9,Math.floor((n-1)/
       let si=1+Math.floor(r()*(seg.length-1));if(seg[si][0]<220)si=Math.min(seg.length-1,si+1);mobs.push([t,si,seg[si][0]+seg[si][1]/2])}
     for(let i=0;i<5;i++)props.push([B.props[r()*B.props.length|0],Math.round(120+i*(ww-200)/5+r()*60)])}
   if(boss)mobs.push([B.boss,0,ww-240]);
-  const z={id:'deep',name:'Veinway Deep · Floor '+n,ch:B.n,theme:B.t,lv:[lv,lv+(boss?0:1)],req:5,ww,start:70,seg,mobs,portals:[{x:22,to:5,tx:DEEP_STAIR}],props,trees:[],floor:n,band:bi};
+  const z={id:'deep',name:'Veinway Deep · Floor '+n,ch:B.n,theme:B.t,lv:[lv,Math.min(CAP,lv+(boss?0:1))],req:5,ww,start:70,seg,mobs,portals:[{x:22,to:5,tx:DEEP_STAIR}],props,trees:[],floor:n,band:bi};
   prepZone(z);z.nodes=[];z.stations=[];return z}
 /* run state */
 function deepEnter(n,solo){const D=DP();S.deep={n,solo:!!solo,clear:false,aff:floorAffixes(n),t0:S.t,stair:null};ZONES[DI]=genFloor(n);delete ZCACHE[DI];
   const f=$('fade');f.style.opacity=1;S.paused=true;sfx.portal();
   setTimeout(()=>{enterZone(DI,ZONES[DI].start);S.paused=false;f.style.opacity=0;deepSetup()},320)}
 function deepSetup(){const n=S.deep.n,aff=S.deep.aff,boss=n%10===0;let i=0;
-  for(const m of S.mobs){if(m.cr)continue;Object.assign(m,spawnMob(m.def,Z.lv[0]+(hash(n,i,77)>.5?Z.lv[1]-Z.lv[0]:0)));m.dir=1;m.di=i++;m.temp=1;if(aff.includes('ironhide')){m.mhp=m.hp=Math.round(m.mhp*1.4)}if(aff.includes('frenzied'))m.atk=Math.round(m.atk*1.25);
+  for(const m of S.mobs){if(m.cr)continue;Object.assign(m,spawnMob(m.def,Z.lv[0]+(hash(n,i,77)>.5?Z.lv[1]-Z.lv[0]:0)));m.dir=1;m.di=i++;m.temp=1;deepOverMob(m,n);if(aff.includes('ironhide')){m.mhp=m.hp=Math.round(m.mhp*1.4)}if(aff.includes('frenzied'))m.atk=Math.round(m.atk*1.25);
     if(aff.includes('swift')||aff.includes('stalwart')){m.d={...m.d};if(aff.includes('swift'))m.d.spd*=1.3}if(aff.includes('stalwart'))m.mpoise=m.poise=m.mpoise*2;
     if(aff.includes('bountiful'))m.exp=Math.round(m.exp*1.5);if(m.d.boss||m.d.bb){m.d={...m.d,name:(n>50?'Veinbound ':'')+m.d.name,bb:1}}m.bmhp=m.mhp}
   netScale();banner((boss?'Guardian floor · ':'')+ZONES[DI].ch+(aff.length?' · '+aff.map(a=>AFFIX[a].n).join(', '):''),'Floor '+n+' of 100')}

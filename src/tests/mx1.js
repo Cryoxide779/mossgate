@@ -1,0 +1,11 @@
+const {chromium}=require('playwright');(async()=>{const b=await chromium.launch();const ctx=await b.newContext({viewport:{width:844,height:390},deviceScaleFactor:2,isMobile:true,hasTouch:true});const p=await ctx.newPage();const errs=[];p.on('pageerror',e=>errs.push(e.stack.split('\n').slice(0,2).join(' ')));await p.goto('file://'+process.cwd()+'/dbgp.html');await p.waitForTimeout(700);const ev=(f,a)=>p.evaluate(f,a);
+await ev(()=>{const T=window.__T;T.beginWith({name:'Aya',cls:'ronin',look:{...T.DEF_LOOK,sex:1}},{lv:34,exp:0,sh:0,pt:3,inv:[],eq:null,sk:{},zone:5,q:{m1:{s:'d'},m2:{s:'d'},m3:{s:'d'}},fl:{crIntro:1,hints:9}});T.pl.cr={id:null,wait:9999}});
+console.log(await ev(()=>{const T=window.__T;T.gainExp(999999);return 'lv '+T.pl.lv+' mx '+JSON.stringify(T.pl.mx)+' atk '+T.atkPow()+' hp '+T.pl.mhp}));
+await p.tap('#morebtn');await p.waitForTimeout(250);await p.screenshot({path:'mx_more.png'});await p.tap('#mxbtn');await p.waitForTimeout(300);await p.screenshot({path:'mx_panel.png'});
+await ev(()=>{for(let i=0;i<3;i++)document.querySelector('[data-mx="might"]').click();document.querySelector('[data-mx="vigor"]').click()});console.log(await ev(()=>{const T=window.__T;return 'after '+JSON.stringify(T.pl.mx)+' atk '+T.atkPow()+' hp '+T.pl.mhp}));
+await ev(()=>document.getElementById('mxclose').click());
+await ev(()=>{const T=window.__T;const i=T.ZONES.findIndex(z=>z.id==='hollow');T.enterZone(i);T.pl.x=T.GZ.x1-80;T.pl.y=T.topAt(T.pl.x)});await p.waitForTimeout(1500);console.log(await ev(()=>document.getElementById('talkbtn').textContent));await p.screenshot({path:'mx_sealed.png'});
+await ev(()=>{const T=window.__T;T.crUse(T.S.nearCr)});await p.waitForTimeout(300);await p.screenshot({path:'mx_sealed2.png'});
+await ev(()=>{const T=window.__T;T.enterZone(5);T.openMap()});await p.waitForTimeout(300);await p.screenshot({path:'mx_map.png'});
+await ev(()=>{const T=window.__T;T.unpause('mapov');T.openQuests()});await p.waitForTimeout(300);await p.screenshot({path:'mx_quests.png'});
+console.log('ERR',errs.join('\n'));await b.close()})();

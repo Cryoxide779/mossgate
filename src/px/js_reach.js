@@ -119,7 +119,7 @@ function markSeen(){pl.flags=pl.flags||{};pl.flags.seen=pl.flags.seen||{};if(Z.i
 function wayX(){const x=WAYS[Z.id];return x==null?null:x+EDGE}
 function wayNear(){const x=wayX();if(x==null)return null;return Math.abs(pl.x-x)<18&&Math.abs(pl.y-topAt(x))<26?{k:'way'}:null}
 function useWay(){pl.flags.ways=pl.flags.ways||{};const net=!!pl.flags.waynet,was=WAYS_ST(Z.id);
-  if(Z.id==='shrine'&&!net){const k=qActive().find(q=>q==='ws3');if(k){startShrineDef();return}banner('A silent waystone','Sister Ivo is trying to wake it');return}
+  if(Z.id==='shrine'&&!net){const k=qActive().find(q=>q==='ws3'||q==='c4b');if(k){startShrineDef();return}banner('A silent waystone','Sister Ivo is trying to wake it');return}
   pl.flags.ways[Z.id]=net?2:1;if(!was){S.nums.push({x:pl.x,y:pl.y-44,txt:net?'WAYSTONE ATTUNED':'WAYSTONE FOUND',t:0,c:'#6ee6ee'});tone(880,.2,'triangle',.04);setTimeout(()=>tone(1320,.25,'triangle',.04),120)}
   save();if(!net&&!was){banner('A dormant waystone','Its network is anchored at the Overgrown Shrine, past Misty Fen Lake');return}openMap(true)}
 function drawWays(cx,cy){const x0=wayX();if(x0==null)return;const x=ri(x0-cx);if(x<-30||x>W+30)return;const y=ri(topAt(x0)-cy),st=WAYS_ST(Z.id),on=st===2||(!!pl.flags.waynet&&st);
