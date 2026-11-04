@@ -19,7 +19,7 @@ const CAP=Math.max(...REGIONS.filter(r=>r.built).map(r=>r.lv[1])),CAP_MAX=70;
 /* zone → region and level band */
 const ZBAND={town:['cresthollow',1,1],hearth:['cresthollow',1,1],home:['cresthollow',1,1],hunt:['cresthollow',2,2],road:['cresthollow',1,2],ruins:['cresthollow',2,4],under:['cresthollow',3,4],cellar:['cresthollow',4,4],cistern:['cresthollow',5,5],riversmeet:['cresthollow',2,3],stonefield:['cresthollow',3,4],mirefen:['cresthollow',4,5],highsteps:['cresthollow',1,1],
   outskirts:['whisper',5,6],briarwood:['whisper',6,7],oak:['whisper',6,8],briarlair:['whisper',7,7],whisperwood:['whisper',5,5],whispergrove:['whisper',6,7],moonpetal:['whisper',7,8],thornveil:['whisper',8,9],elderwood:['whisper',9,10],hermit:['whisper',7,8],sawmill:['whisper',8,10],mossroot:['whisper',9,10],
-  stonebridge:['stonebridge',10,10],quarry:['stonebridge',11,13],qfort:['stonebridge',14,14],
+  stonebridge:['stonebridge',10,10],quarry:['stonebridge',11,13],qfort:['stonebridge',14,14],rivermere:['stonebridge',10,10],ironvale:['stonebridge',11,11],granite:['stonebridge',12,13],blackgate:['stonebridge',13,14],stonewatch:['stonebridge',14,15],
   falls:['mistyfen',15,17],shrine:['mistyfen',17,19],
   bog:['marrowbog',20,22],lab:['marrowbog',21,23],reach:['marrowbog',23,25],vats:['marrowbog',24,24],
   tower:['watchtower',25,27],siege:['watchtower',26,28],gate:['watchtower',27,29],outcrop:['watchtower',28,30],
@@ -150,7 +150,7 @@ $('mastery').addEventListener('click',e=>{const b=e.target.closest('[data-mx],#m
   const M=MX(),k=b.dataset.mx;if(!M.pts||mxRank(k)>=MX_MAX)return;M.pts--;M.r[k]=mxRank(k)+1;recalc();sfx.pick();save();renderMastery()});
 /* ---------- the edges of the map: roads to regions not yet charted ---------- */
 const SEALED={road:[{x:-90,r:'frostveil',t:'The Ash Road north'}],town:[{x:-150,r:'golden',t:'The south road'}],tower:[{x:-90,r:'crown',t:'Northwatch pass'}],
-  falls:[{x:-120,r:'emerald',t:'Fenwater ferry'}],reach:[{x:160,r:'saltsong',t:'The dry road'}],hollow:[{x:-80,r:'verdant',t:'The cliff road west'}],elderwood:[{x:-60,r:'silverwood',t:'A silver-barked trail'}]};
+  falls:[{x:-120,r:'emerald',t:'Fenwater ferry'}],reach:[{x:160,r:'saltsong',t:'The dry road'}],hollow:[{x:-80,r:'verdant',t:'The cliff road west'}],elderwood:[{x:-60,r:'silverwood',t:'A silver-barked trail'}],stonewatch:[{x:-40,r:'golden',t:'The plains road east'}]};
 const sX=s=>s.x<0?Z.x1+s.x:s.x+EDGE;
 function sealedNear(){const L=SEALED[Z.id];if(!L)return null;for(const s of L)if(Math.abs(pl.x-sX(s))<18)return{k:'sealed',s};return null}
 const _cnx=crNear;crNear=function(){return sealedNear()||_cnx()};

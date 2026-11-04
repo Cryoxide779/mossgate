@@ -7,7 +7,7 @@ Ashveil Reach has 14 regions. Seven ship now (level cap 35). Each future region 
 |---|---|---|---|
 | 1–5 | CrestHollow and the Ash Road | built to sheet: Riversmeet Crossing, Stonefield Plains, Mirefen Wetlands, The High Steps | cresthollow-ash-road.png |
 | 5–10 | Whisper Woods | built to sheet: Whisperwood Village, Grove of Whispers, Moonpetal Lake, Thornveil Hollows, Elderwood Sanctuary | whisper-woods.png |
-| 10–15 | Stonebridge | built, expand to sheet | stonebridge.png |
+| 10–15 | Stonebridge | built to sheet: Ironvale and the Blackwheel Forges, Granite Peaks, Blackgate Pass, Rivermere Docks, Stonewatch Fort and Eastgate Pass, the Deepcut Quarry | stonebridge.png |
 | 15–20 | Misty Fen Lake | built, expand to sheet | misty-fen-lake.png |
 | 20–25 | Marrowbog | built, expand to sheet | marrowbog.png |
 | 25–30 | Old Watchtower | built, expand to sheet | old-watchtower.png |
@@ -35,6 +35,6 @@ Epilogue hook for future regions: Ossery Vale, the Concordance Chair.
 - Starting kits: Ronin, Shade, Hunter, Mossweaver, Gravecaller, Traveler, Scout, Guard, Aspirant, Gatherer.
 
 ## Next
-1. Expand each built region to match its sheet. CrestHollow and Whisper Woods done; next Stonebridge, then Misty Fen Lake, Marrowbog, Old Watchtower, the Sundering Scar.
+1. Expand each built region to match its sheet. CrestHollow, Whisper Woods and Stonebridge done; next Misty Fen Lake, then, Marrowbog, Old Watchtower, the Sundering Scar.
 2. Future regions as their sheets are made.
 3. Guilds and factions once online play (Firebase) is switched on.
