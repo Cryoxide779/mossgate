@@ -16,7 +16,7 @@ function nextHop(from,to){if(from===to)return null;const key=from+'>'+to;if(GPAT
   GPATH={k:key,hop};return hop}
 function drawGuide(cx,cy){if(!pl.ch||S.paused&&!DLG||pl.dead)return;if(pl.flags&&pl.flags.noGuide)return;const t=guideTarget();if(!t)return;const zi=npcZone(t.npc);if(zi<0)return;
   let tx,label;if(zi===S.zone){const n=NPCS[t.npc];tx=n.x;label=n.name.split(' ').slice(-1)[0];if(Math.abs(n.x-pl.x)<26)return;const sx=n.x-cx;if(sx>8&&sx<W-8){
-      const y=ri((n.y||topAt(n.x))-cy)-58+Math.sin(S.t*4)*2;g.fillStyle='#000';g.fillRect(ri(sx)-4,y-1,9,6);g.fillStyle=t.why==='done'?'#9bd04c':'#ffd27a';g.fillRect(ri(sx)-3,y,7,1);g.fillRect(ri(sx)-2,y+1,5,1);g.fillRect(ri(sx)-1,y+2,3,1);g.fillRect(ri(sx),y+3,1,1);return}}
+      const y=ri((n.y||standAt(n.x))-cy)-58+Math.sin(S.t*4)*2;g.fillStyle='#000';g.fillRect(ri(sx)-4,y-1,9,6);g.fillStyle=t.why==='done'?'#9bd04c':'#ffd27a';g.fillRect(ri(sx)-3,y,7,1);g.fillRect(ri(sx)-2,y+1,5,1);g.fillRect(ri(sx)-1,y+2,3,1);g.fillRect(ri(sx),y+3,1,1);return}}
   else{const po=nextHop(S.zone,zi);if(!po)return;tx=po.x;label=ZONES[po.to].name;if(Math.abs(po.x-pl.x)<20)return}
   const dir=Math.sign(tx-pl.x)||1,onScr=tx-cx>14&&tx-cx<W-14;if(onScr&&zi!==S.zone){const x=ri(tx-cx),y=ri(topAt(tx)-cy)-52+Math.sin(S.t*4)*2;ptext('▼ '+label.toUpperCase(),x,y,'#ffd27a');return}
   const ex=dir>0?W-10:10,ey=ri(H*.38),bob=ri(Math.sin(S.t*5)*1.5),ax=ex+dir*bob;g.save();g.globalAlpha=.92;

@@ -644,6 +644,9 @@ function prepZone(z){const E=EDGE,ww=z.ww;z.seg=z.seg.map(([x,w,y,t])=>[x+E,w,y,
 function prepZone2(z){z.npcs=z.npcs||[];z.mobs.forEach((d,i)=>{d[3]=z.lv[0]+Math.floor(hash(i,z.lv[0]*31+z.ww,7)*(z.lv[1]-z.lv[0]+1))});z.pools=z.pools||(z.pool?[z.pool]:[]);z.SEG=z.seg.map(([x,w,y,t])=>({x,w,y,t:t==='f'||t==='stone'||t==='plank'||t==='bridge'?'float':'solid',stone:t==='stone',bed:t==='bed',plank:t==='plank',bridge:t==='bridge'}))}
 ZONES.forEach(prepZone);
 let Z=ZONES[0],TH={...RAMP},SEG=Z.SEG;
+/* where a person can stand: the ground, or a bridge/dock/plank deck above water */
+function standAt(x){const g=topAt(x),pool=(Z.pools||[]).find(p=>x>=p.x0&&x<=p.x1);if(!pool||g<=pool.y)return g;let best=null;for(const s of SEG)if(s.t==='float'&&x>=s.x+4&&x<=s.x+s.w-4&&s.y<=pool.y+2&&s.y>pool.y-60&&(best===null||s.y>best))best=s.y;return best??g}
+const dryAt=x=>{const pool=(Z.pools||[]).find(p=>x>=p.x0&&x<=p.x1);return !pool||standAt(x)<=pool.y+2};
 function topAt(x){let best=null;for(const s of SEG)if(s.t==='solid'&&x>=s.x&&x<=s.x+s.w&&(best===null||s.y<best))best=s.y;return best??(250+((Z&&Z.tall)||0))}
 
 /* ---------- terrain ---------- */
@@ -689,7 +692,7 @@ function buildTerrain(){
     const bx=Math.floor((x+(hash(Math.floor(x/7),1,4)*3|0))/7);for(let y=sg.y-1;y<sg.y+4;y++){const row=Math.floor((y-sg.y+1)/3),edge=(x+row*3)%7===0||(y-sg.y+1)%3===2;sp(L,x,y,edge?TH.rock[1]:pick(TH.rock,.45+hash(bx,row,5)*.35,x,y))}}});
   commit(L);Z.glows=[];for(const[k,x,v]of Z.props)PROPS[k](L.x,x,topAt(x),v);
   for(const po of Z.portals){po.y=po.yy??topAt(po.x);if(po.cave)caveMouth(L.x,po.x,po.y);else portalArch(L.x,po.x,po.y)}
-  for(const id of Z.npcs){const n=NPCS[id];n.y=topAt(n.x);if(n.sprite==='elder')elder(L.x,n.x,n.y)}
+  for(const id of Z.npcs){const n=NPCS[id];n.y=standAt(n.x);if(n.sprite==='elder')elder(L.x,n.x,n.y)}
   return L.c}
 
 /* ---------- props (pixel rects) ---------- */
@@ -2542,7 +2545,7 @@ function drawNodes(cx,cy){for(const nd of Z.nodes||[]){const x=ri(nd.x-cx);if(x<
     if(!dep&&nd.r==='shard'){g.save();g.globalCompositeOperation='lighter';glow(x,y-12,14,'201,168,255',.18);g.restore()}
     if(!dep&&nd.r==='mush'){g.save();g.globalCompositeOperation='lighter';glow(x,y-8,9,'150,92,186',.15);g.restore()}
     g.globalAlpha=1;if(!dep&&S.nearNode===nd){ptext('▲ '+R0.n.toUpperCase(),x,y-20+Math.sin(S.t*4),'#f2e6c8')}}
-  for(const st of Z.stations||[]){if(S.nearSt===st){const x=ri(st.x-cx),y=ri(topAt(st.x)-cy);ptext('▲ '+st.n.toUpperCase(),x,y-34+Math.sin(S.t*4),'#ffd27a')}}
+  for(const st of Z.stations||[]){if(S.nearSt===st){const x=ri(st.x-cx),y=ri(standAt(st.x)-cy);ptext('▲ '+st.n.toUpperCase(),x,y-34+Math.sin(S.t*4),'#ffd27a')}}
   const bk=Object.keys(pl.buffs||{});if(bk.length){bk.forEach((k,i)=>{const t=Math.ceil(pl.buffs[k]);ptext(BUFF_N[k].toUpperCase()+' '+Math.floor(t/60)+':'+String(t%60).padStart(2,'0'),W-70,H-120-i*10,'#c8d468')})}}
 
 /* ---------- contracts, freight and the market (Bible ch.2.7, 3.4–3.5: escrow, scarcity, transport, player vending) ---------- */
@@ -2714,11 +2717,12 @@ const FOLK_LOOKS=[['wanderer',0],['r_start',1],['moss',0],['a_start',1],['w_star
 function makeFolk(z){const n=z.id==='town'?6:4,F=[];for(let i=0;i<n;i++){const sx=Math.random()<.5?1:0,set=FOLK_LOOKS[(i*3+z.id.length)%FOLK_LOOKS.length][0];
     const ch={cls:'ronin',look:{sex:sx,build:Math.floor(Math.random()*3),face:Math.floor(Math.random()*5),hair:[0,1,2,3,5,6][Math.floor(Math.random()*6)],hairC:Math.floor(Math.random()*8),beard:sx?0:Math.floor(Math.random()*6),skin:Math.floor(Math.random()*6),eye:Math.floor(Math.random()*5),outfit:Math.floor(Math.random()*6)}};
     const eq={chest:{src:set,slot:'chest'}};if(Math.random()<.5)eq.head={src:set,slot:'head'};
-    F.push({C:null,ch,eq,x:z.x0+80+Math.random()*(z.x1-z.x0-160),tx:0,face:1,wait:Math.random()*4,spd:18+Math.random()*12,crate:Math.random()<.3,night:i<2,walk:0})}return F}
+    let fx=z.x0+80+Math.random()*(z.x1-z.x0-160);for(let k=0;k<20&&(z.pools||[]).some(p=>fx>=p.x0-10&&fx<=p.x1+10&&!z.SEG.some(q=>q.t==='float'&&fx>=q.x&&fx<=q.x+q.w&&q.y<=p.y+2&&q.y>p.y-60));k++)fx=z.x0+80+Math.random()*(z.x1-z.x0-160);
+    F.push({C:null,ch,eq,x:fx,tx:0,face:1,wait:Math.random()*4,spd:18+Math.random()*12,crate:Math.random()<.3,night:i<2,walk:0})}return F}
 function tickFolk(dt){if(!Z.safe)return;Z.folk=Z.folk||makeFolk(Z);{const f=Z.folk.find(q=>!q.C);if(f){const keep=WT;f.C=buildChar(f.ch,f.eq);WT=keep}}const n=nightAmt();for(const f of Z.folk){if(n>.5&&!f.night){f.hide=true;continue}f.hide=false;
-  if(f.wait>0){f.wait-=dt;if(f.wait<=0)f.tx=clamp(f.x+(Math.random()-.5)*400,Z.x0+60,Z.x1-60);continue}const d=f.tx-f.x;if(Math.abs(d)<3){f.wait=2+Math.random()*6;continue}
-  f.face=Math.sign(d);f.x+=f.face*f.spd*dt;f.walk+=dt*f.spd*.12;barkTick(f,f.x,topAt(f.x),crBark(FOLK_B))}}
-function drawFolk(cx,cy){if(!Z.safe||!Z.folk)return;for(const f of Z.folk){if(f.hide||!f.C)continue;const x=ri(f.x-cx),y=ri(topAt(f.x)-cy);if(x<-30||x>W+30)continue;
+  if(f.wait>0){f.wait-=dt;if(f.wait<=0){let t=clamp(f.x+(Math.random()-.5)*400,Z.x0+60,Z.x1-60);const st=Math.sign(t-f.x)||1;for(let x=f.x;st>0?x<t:x>t;x+=st*8)if(!dryAt(x)){t=x-st*12;break}f.tx=t}continue}const d=f.tx-f.x;if(Math.abs(d)<3){f.wait=2+Math.random()*6;continue}
+  f.face=Math.sign(d);f.x+=f.face*f.spd*dt;f.walk+=dt*f.spd*.12;barkTick(f,f.x,standAt(f.x),crBark(FOLK_B))}}
+function drawFolk(cx,cy){if(!Z.safe||!Z.folk)return;for(const f of Z.folk){if(f.hide||!f.C)continue;const x=ri(f.x-cx),y=ri(standAt(f.x)-cy);if(x<-30||x>W+30)continue;
   const img=f.wait>0?f.C.idleS[Math.floor(S.t*1.6+f.x)%2]:f.C.runS[Math.floor(f.walk)%6];g.fillStyle='rgba(0,0,0,.3)';g.fillRect(x-6,y,12,1);g.save();g.translate(x,0);if(f.face<0)g.scale(-1,1);g.drawImage(img,-24,y-39);g.restore();
   if(f.crate){const bx=x-f.face*12-4,by=y-24;g.fillStyle='#000';g.fillRect(bx-1,by-1,10,9);g.fillStyle='#8f5a31';g.fillRect(bx,by,8,7);g.fillStyle='#b8773d';g.fillRect(bx,by,8,1);g.fillStyle='#55331d';g.fillRect(bx+3,by,1,7)}
   if(f.bub)bubble(x,y-38,f.bub.txt)}}
@@ -6159,6 +6163,7 @@ SEG_PRE.canopy=w=>{const o=[[0,240,250],[w-240,240,250],[240,w-480,282,'bed']];
   for(let x=400;x<w-420;x+=340)o.push([x,118,176,'plank']);
   for(let x=560;x<w-560;x+=680)o.push([x,110,140,'plank']);
   return{seg:o,pools:[{x0:240,x1:w-240,y:262}]}};
+SEG_PRE.enclave=w=>{const o=[[0,w,250]];for(let x=420,i=0;x<w-300;x+=360,i++){o.push([x,150,212,'plank']);if(i%2===0)o.push([x+90,130,176,'plank'])}return o};
 SEG_PRE.cliffs=w=>{const n=Math.max(5,Math.round(w/320)),s=w/n,o=[];for(let i=0;i<n;i++)o.push([Math.round(i*s),(i<n-1?Math.round((i+1)*s):w)-Math.round(i*s),250-Math.min(4,i)*26]);
   for(let i=1;i<Math.min(5,n);i++)o.push([Math.round(i*s-70),60,250-i*26+12,'plank']);return o};
 /* materials */
@@ -6243,7 +6248,7 @@ Object.assign(PROPS,{
   crater(x,X,Y){const P=px3(x);for(let k=-60;k<=60;k++){const d=Math.round((1-(k*k)/3600)*10);for(let y=0;y<d;y++)P(X+k,Y-y,[40,30,60])}for(const[dx,h]of[[-30,30],[-8,48],[16,36],[40,22]])for(let y=0;y<h;y++){const w=Math.max(0,4-Math.floor(y/(h/4)));for(let k=-w;k<=w;k++)P(X+dx+k,Y-y,y>h-4?[255,255,255]:[180,150,255])}Z.glows.push([X,Y-30,50,'180,150,255'])}});
 /* places: entered from the far east of the Golden Plains */
 const BASE_SV={reg:'silverwood',wx:['clear','clear','rain','rain']};
-addPlace({...BASE_SV,id:'greenwood',name:'Greenwood Enclave',lv:[40,40],from:'stonecircle',at:.25,theme:'silverwood',terrain:'canopy',ww:2000,safe:1,
+addPlace({...BASE_SV,id:'greenwood',name:'Greenwood Enclave',lv:[40,40],from:'stonecircle',at:.25,theme:'silverwood',terrain:'enclave',ww:2000,safe:1,
   props:['silvertree','rootbridge','silvertree','rootbridge','silvertree'],nodes:['pearlstone'],stations:[['forge','Expedition Workshop'],['alchemy','Field Clinic'],['cook','Root-terrace Kitchen']],
   labels:[[400,'The Expedition Hall',150],[1500,'The Seed Vault',150]],
   npc:{id:'thessa',name:'Expedition-master Thessa',cls:'scout',head:'sc_start',chest:'sc_start',lines:['Untamed beauty. Hidden wonders. Bad maps.','Half the Wilds are charted. The other half is charted wrong. Find the trail markers; they are the only maps that never lie.','We build light here. Root terraces, rope, nothing that does not grow back.']},
@@ -6684,7 +6689,7 @@ function nextHop(from,to){if(from===to)return null;const key=from+'>'+to;if(GPAT
   GPATH={k:key,hop};return hop}
 function drawGuide(cx,cy){if(!pl.ch||S.paused&&!DLG||pl.dead)return;if(pl.flags&&pl.flags.noGuide)return;const t=guideTarget();if(!t)return;const zi=npcZone(t.npc);if(zi<0)return;
   let tx,label;if(zi===S.zone){const n=NPCS[t.npc];tx=n.x;label=n.name.split(' ').slice(-1)[0];if(Math.abs(n.x-pl.x)<26)return;const sx=n.x-cx;if(sx>8&&sx<W-8){
-      const y=ri((n.y||topAt(n.x))-cy)-58+Math.sin(S.t*4)*2;g.fillStyle='#000';g.fillRect(ri(sx)-4,y-1,9,6);g.fillStyle=t.why==='done'?'#9bd04c':'#ffd27a';g.fillRect(ri(sx)-3,y,7,1);g.fillRect(ri(sx)-2,y+1,5,1);g.fillRect(ri(sx)-1,y+2,3,1);g.fillRect(ri(sx),y+3,1,1);return}}
+      const y=ri((n.y||standAt(n.x))-cy)-58+Math.sin(S.t*4)*2;g.fillStyle='#000';g.fillRect(ri(sx)-4,y-1,9,6);g.fillStyle=t.why==='done'?'#9bd04c':'#ffd27a';g.fillRect(ri(sx)-3,y,7,1);g.fillRect(ri(sx)-2,y+1,5,1);g.fillRect(ri(sx)-1,y+2,3,1);g.fillRect(ri(sx),y+3,1,1);return}}
   else{const po=nextHop(S.zone,zi);if(!po)return;tx=po.x;label=ZONES[po.to].name;if(Math.abs(po.x-pl.x)<20)return}
   const dir=Math.sign(tx-pl.x)||1,onScr=tx-cx>14&&tx-cx<W-14;if(onScr&&zi!==S.zone){const x=ri(tx-cx),y=ri(topAt(tx)-cy)-52+Math.sin(S.t*4)*2;ptext('▼ '+label.toUpperCase(),x,y,'#ffd27a');return}
   const ex=dir>0?W-10:10,ey=ri(H*.38),bob=ri(Math.sin(S.t*5)*1.5),ax=ex+dir*bob;g.save();g.globalAlpha=.92;
@@ -7141,6 +7146,6 @@ let UIZ=1;addEventListener('resize',()=>setTimeout(uiScale,30));uiScale();setInt
 
 })();
 </script>
-<script>window.MG_BUILD='2026.11.04-1701';if('serviceWorker' in navigator&&location.protocol==='https:'){addEventListener('load',()=>navigator.serviceWorker.register('sw.js').catch(()=>{}))}</script>
+<script>window.MG_BUILD='2026.11.04-1706';if('serviceWorker' in navigator&&location.protocol==='https:'){addEventListener('load',()=>navigator.serviceWorker.register('sw.js').catch(()=>{}))}</script>
 
 </html>

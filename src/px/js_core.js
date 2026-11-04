@@ -232,6 +232,9 @@ function prepZone(z){const E=EDGE,ww=z.ww;z.seg=z.seg.map(([x,w,y,t])=>[x+E,w,y,
 function prepZone2(z){z.npcs=z.npcs||[];z.mobs.forEach((d,i)=>{d[3]=z.lv[0]+Math.floor(hash(i,z.lv[0]*31+z.ww,7)*(z.lv[1]-z.lv[0]+1))});z.pools=z.pools||(z.pool?[z.pool]:[]);z.SEG=z.seg.map(([x,w,y,t])=>({x,w,y,t:t==='f'||t==='stone'||t==='plank'||t==='bridge'?'float':'solid',stone:t==='stone',bed:t==='bed',plank:t==='plank',bridge:t==='bridge'}))}
 ZONES.forEach(prepZone);
 let Z=ZONES[0],TH={...RAMP},SEG=Z.SEG;
+/* where a person can stand: the ground, or a bridge/dock/plank deck above water */
+function standAt(x){const g=topAt(x),pool=(Z.pools||[]).find(p=>x>=p.x0&&x<=p.x1);if(!pool||g<=pool.y)return g;let best=null;for(const s of SEG)if(s.t==='float'&&x>=s.x+4&&x<=s.x+s.w-4&&s.y<=pool.y+2&&s.y>pool.y-60&&(best===null||s.y>best))best=s.y;return best??g}
+const dryAt=x=>{const pool=(Z.pools||[]).find(p=>x>=p.x0&&x<=p.x1);return !pool||standAt(x)<=pool.y+2};
 function topAt(x){let best=null;for(const s of SEG)if(s.t==='solid'&&x>=s.x&&x<=s.x+s.w&&(best===null||s.y<best))best=s.y;return best??(250+((Z&&Z.tall)||0))}
 
 /* ---------- terrain ---------- */
@@ -277,7 +280,7 @@ function buildTerrain(){
     const bx=Math.floor((x+(hash(Math.floor(x/7),1,4)*3|0))/7);for(let y=sg.y-1;y<sg.y+4;y++){const row=Math.floor((y-sg.y+1)/3),edge=(x+row*3)%7===0||(y-sg.y+1)%3===2;sp(L,x,y,edge?TH.rock[1]:pick(TH.rock,.45+hash(bx,row,5)*.35,x,y))}}});
   commit(L);Z.glows=[];for(const[k,x,v]of Z.props)PROPS[k](L.x,x,topAt(x),v);
   for(const po of Z.portals){po.y=po.yy??topAt(po.x);if(po.cave)caveMouth(L.x,po.x,po.y);else portalArch(L.x,po.x,po.y)}
-  for(const id of Z.npcs){const n=NPCS[id];n.y=topAt(n.x);if(n.sprite==='elder')elder(L.x,n.x,n.y)}
+  for(const id of Z.npcs){const n=NPCS[id];n.y=standAt(n.x);if(n.sprite==='elder')elder(L.x,n.x,n.y)}
   return L.c}
 
 /* ---------- props (pixel rects) ---------- */

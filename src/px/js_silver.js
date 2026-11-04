@@ -24,6 +24,7 @@ SEG_PRE.canopy=w=>{const o=[[0,240,250],[w-240,240,250],[240,w-480,282,'bed']];
   for(let x=400;x<w-420;x+=340)o.push([x,118,176,'plank']);
   for(let x=560;x<w-560;x+=680)o.push([x,110,140,'plank']);
   return{seg:o,pools:[{x0:240,x1:w-240,y:262}]}};
+SEG_PRE.enclave=w=>{const o=[[0,w,250]];for(let x=420,i=0;x<w-300;x+=360,i++){o.push([x,150,212,'plank']);if(i%2===0)o.push([x+90,130,176,'plank'])}return o};
 SEG_PRE.cliffs=w=>{const n=Math.max(5,Math.round(w/320)),s=w/n,o=[];for(let i=0;i<n;i++)o.push([Math.round(i*s),(i<n-1?Math.round((i+1)*s):w)-Math.round(i*s),250-Math.min(4,i)*26]);
   for(let i=1;i<Math.min(5,n);i++)o.push([Math.round(i*s-70),60,250-i*26+12,'plank']);return o};
 /* materials */
@@ -108,7 +109,7 @@ Object.assign(PROPS,{
   crater(x,X,Y){const P=px3(x);for(let k=-60;k<=60;k++){const d=Math.round((1-(k*k)/3600)*10);for(let y=0;y<d;y++)P(X+k,Y-y,[40,30,60])}for(const[dx,h]of[[-30,30],[-8,48],[16,36],[40,22]])for(let y=0;y<h;y++){const w=Math.max(0,4-Math.floor(y/(h/4)));for(let k=-w;k<=w;k++)P(X+dx+k,Y-y,y>h-4?[255,255,255]:[180,150,255])}Z.glows.push([X,Y-30,50,'180,150,255'])}});
 /* places: entered from the far east of the Golden Plains */
 const BASE_SV={reg:'silverwood',wx:['clear','clear','rain','rain']};
-addPlace({...BASE_SV,id:'greenwood',name:'Greenwood Enclave',lv:[40,40],from:'stonecircle',at:.25,theme:'silverwood',terrain:'canopy',ww:2000,safe:1,
+addPlace({...BASE_SV,id:'greenwood',name:'Greenwood Enclave',lv:[40,40],from:'stonecircle',at:.25,theme:'silverwood',terrain:'enclave',ww:2000,safe:1,
   props:['silvertree','rootbridge','silvertree','rootbridge','silvertree'],nodes:['pearlstone'],stations:[['forge','Expedition Workshop'],['alchemy','Field Clinic'],['cook','Root-terrace Kitchen']],
   labels:[[400,'The Expedition Hall',150],[1500,'The Seed Vault',150]],
   npc:{id:'thessa',name:'Expedition-master Thessa',cls:'scout',head:'sc_start',chest:'sc_start',lines:['Untamed beauty. Hidden wonders. Bad maps.','Half the Wilds are charted. The other half is charted wrong. Find the trail markers; they are the only maps that never lie.','We build light here. Root terraces, rope, nothing that does not grow back.']},

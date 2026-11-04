@@ -72,11 +72,12 @@ const FOLK_LOOKS=[['wanderer',0],['r_start',1],['moss',0],['a_start',1],['w_star
 function makeFolk(z){const n=z.id==='town'?6:4,F=[];for(let i=0;i<n;i++){const sx=Math.random()<.5?1:0,set=FOLK_LOOKS[(i*3+z.id.length)%FOLK_LOOKS.length][0];
     const ch={cls:'ronin',look:{sex:sx,build:Math.floor(Math.random()*3),face:Math.floor(Math.random()*5),hair:[0,1,2,3,5,6][Math.floor(Math.random()*6)],hairC:Math.floor(Math.random()*8),beard:sx?0:Math.floor(Math.random()*6),skin:Math.floor(Math.random()*6),eye:Math.floor(Math.random()*5),outfit:Math.floor(Math.random()*6)}};
     const eq={chest:{src:set,slot:'chest'}};if(Math.random()<.5)eq.head={src:set,slot:'head'};
-    F.push({C:null,ch,eq,x:z.x0+80+Math.random()*(z.x1-z.x0-160),tx:0,face:1,wait:Math.random()*4,spd:18+Math.random()*12,crate:Math.random()<.3,night:i<2,walk:0})}return F}
+    let fx=z.x0+80+Math.random()*(z.x1-z.x0-160);for(let k=0;k<20&&(z.pools||[]).some(p=>fx>=p.x0-10&&fx<=p.x1+10&&!z.SEG.some(q=>q.t==='float'&&fx>=q.x&&fx<=q.x+q.w&&q.y<=p.y+2&&q.y>p.y-60));k++)fx=z.x0+80+Math.random()*(z.x1-z.x0-160);
+    F.push({C:null,ch,eq,x:fx,tx:0,face:1,wait:Math.random()*4,spd:18+Math.random()*12,crate:Math.random()<.3,night:i<2,walk:0})}return F}
 function tickFolk(dt){if(!Z.safe)return;Z.folk=Z.folk||makeFolk(Z);{const f=Z.folk.find(q=>!q.C);if(f){const keep=WT;f.C=buildChar(f.ch,f.eq);WT=keep}}const n=nightAmt();for(const f of Z.folk){if(n>.5&&!f.night){f.hide=true;continue}f.hide=false;
-  if(f.wait>0){f.wait-=dt;if(f.wait<=0)f.tx=clamp(f.x+(Math.random()-.5)*400,Z.x0+60,Z.x1-60);continue}const d=f.tx-f.x;if(Math.abs(d)<3){f.wait=2+Math.random()*6;continue}
-  f.face=Math.sign(d);f.x+=f.face*f.spd*dt;f.walk+=dt*f.spd*.12;barkTick(f,f.x,topAt(f.x),crBark(FOLK_B))}}
-function drawFolk(cx,cy){if(!Z.safe||!Z.folk)return;for(const f of Z.folk){if(f.hide||!f.C)continue;const x=ri(f.x-cx),y=ri(topAt(f.x)-cy);if(x<-30||x>W+30)continue;
+  if(f.wait>0){f.wait-=dt;if(f.wait<=0){let t=clamp(f.x+(Math.random()-.5)*400,Z.x0+60,Z.x1-60);const st=Math.sign(t-f.x)||1;for(let x=f.x;st>0?x<t:x>t;x+=st*8)if(!dryAt(x)){t=x-st*12;break}f.tx=t}continue}const d=f.tx-f.x;if(Math.abs(d)<3){f.wait=2+Math.random()*6;continue}
+  f.face=Math.sign(d);f.x+=f.face*f.spd*dt;f.walk+=dt*f.spd*.12;barkTick(f,f.x,standAt(f.x),crBark(FOLK_B))}}
+function drawFolk(cx,cy){if(!Z.safe||!Z.folk)return;for(const f of Z.folk){if(f.hide||!f.C)continue;const x=ri(f.x-cx),y=ri(standAt(f.x)-cy);if(x<-30||x>W+30)continue;
   const img=f.wait>0?f.C.idleS[Math.floor(S.t*1.6+f.x)%2]:f.C.runS[Math.floor(f.walk)%6];g.fillStyle='rgba(0,0,0,.3)';g.fillRect(x-6,y,12,1);g.save();g.translate(x,0);if(f.face<0)g.scale(-1,1);g.drawImage(img,-24,y-39);g.restore();
   if(f.crate){const bx=x-f.face*12-4,by=y-24;g.fillStyle='#000';g.fillRect(bx-1,by-1,10,9);g.fillStyle='#8f5a31';g.fillRect(bx,by,8,7);g.fillStyle='#b8773d';g.fillRect(bx,by,8,1);g.fillStyle='#55331d';g.fillRect(bx+3,by,1,7)}
   if(f.bub)bubble(x,y-38,f.bub.txt)}}

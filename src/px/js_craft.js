@@ -140,5 +140,5 @@ function drawNodes(cx,cy){for(const nd of Z.nodes||[]){const x=ri(nd.x-cx);if(x<
     if(!dep&&nd.r==='shard'){g.save();g.globalCompositeOperation='lighter';glow(x,y-12,14,'201,168,255',.18);g.restore()}
     if(!dep&&nd.r==='mush'){g.save();g.globalCompositeOperation='lighter';glow(x,y-8,9,'150,92,186',.15);g.restore()}
     g.globalAlpha=1;if(!dep&&S.nearNode===nd){ptext('▲ '+R0.n.toUpperCase(),x,y-20+Math.sin(S.t*4),'#f2e6c8')}}
-  for(const st of Z.stations||[]){if(S.nearSt===st){const x=ri(st.x-cx),y=ri(topAt(st.x)-cy);ptext('▲ '+st.n.toUpperCase(),x,y-34+Math.sin(S.t*4),'#ffd27a')}}
+  for(const st of Z.stations||[]){if(S.nearSt===st){const x=ri(st.x-cx),y=ri(standAt(st.x)-cy);ptext('▲ '+st.n.toUpperCase(),x,y-34+Math.sin(S.t*4),'#ffd27a')}}
   const bk=Object.keys(pl.buffs||{});if(bk.length){bk.forEach((k,i)=>{const t=Math.ceil(pl.buffs[k]);ptext(BUFF_N[k].toUpperCase()+' '+Math.floor(t/60)+':'+String(t%60).padStart(2,'0'),W-70,H-120-i*10,'#c8d468')})}}
