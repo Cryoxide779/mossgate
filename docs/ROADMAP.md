@@ -35,6 +35,6 @@ Epilogue hook for future regions: Ossery Vale, the Concordance Chair.
 - Starting kits: Ronin, Shade, Hunter, Mossweaver, Gravecaller, Traveler, Scout, Guard, Aspirant, Gatherer.
 
 ## Next
-1. Expand each built region to match its sheet. CrestHollow, Whisper Woods and Stonebridge done; next Misty Fen Lake, then, Marrowbog, Old Watchtower, the Sundering Scar.
+1. Expand each built region to match its sheet. CrestHollow, Whisper Woods and Stonebridge done; next Misty Fen Lake, then Marrowbog, Old Watchtower, the Sundering Scar.
 2. Future regions as their sheets are made.
 3. Guilds and factions once online play (Firebase) is switched on.
