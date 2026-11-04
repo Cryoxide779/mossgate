@@ -69,7 +69,7 @@ const ov=(a,b)=>a.l<b.r&&a.r>b.l&&a.t<b.b&&a.b>b.t;
 
 /* ---------- creatures ---------- */
 function spawnMob(def,lvl){const[t,si,x]=def,d=MOBS[t],lv=lvl??def[3]??(Z.lv[0]+Math.floor(Math.random()*(Z.lv[1]-Z.lv[0]+1)));let minX,maxX,y,baseY=0;
-  if(si===-2){minX=Math.max(30,x-150);maxX=Math.min(WW-30,x+150);baseY=150+Math.random()*50;y=baseY}else{const s=SEG[si];minX=s.x+d.w/2+2;maxX=s.x+s.w-d.w/2-2;y=s.y}
+  if(si===-2){minX=Math.max(30,x-150);maxX=Math.min(WW-30,x+150);baseY=def[4]??150+Math.random()*50+(Z.tall||0);y=baseY}else{const s=SEG[si];minX=s.x+d.w/2+2;maxX=s.x+s.w-d.w/2-2;y=s.y}
   const mhp=Math.round(d.hp*(1+(d.boss?.14:.25)*(lv-1))),atk=Math.round(d.atk*(1+(d.boss?.12:.2)*(lv-1))),exp=Math.round(d.exp*(1+.3*(lv-1))*(1+.04*(lv-1)));
   const mpoise=Math.round((d.w*1.5+d.hp/12)*(d.elite?2:1)*(d.boss?3:1));return{mpoise,poise:mpoise,pT:0,t,d,def,lv,mhp,hp:mhp,atk,exp,x,y,baseY,minX,maxX,dir:Math.random()<.5?-1:1,face:1,flash:0,kb:0,ph:Math.random()*6,dead:0,resp:0,aggro:0,turn:rnd(1,3),st:'walk',stT:3,cd:rnd(1,3),sum:[],enr:0,stun:0,psn:null,lx0:0,lx1:0}}
 function hitMob(m,mult,dir){if(m.dead)return;const crit=Math.random()<.12+(pl.gs.crit+pl.sm.crit)/100,d=Math.max(1,Math.round(atkPow()*mult*lvDmg(m)*rnd(.85,1.15)*(crit?1.8:1)*(m.stun>0?1.3:1)));

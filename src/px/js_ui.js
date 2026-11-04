@@ -167,7 +167,7 @@ if(GEAR_MISSING.length){const w=$('devwarn');w.hidden=false;w.textContent='Gear 
 
 /* ---------- boot ---------- */
 function resize(){const dpr=Math.min(devicePixelRatio||1,3),dw=innerWidth*dpr,dh=innerHeight*dpr;C.width=dw|0;C.height=dh|0;
-  SCL=Math.max(1,Math.round(dh/228));H=Math.min(WH,Math.ceil(dh/SCL));W=Math.ceil(dw/SCL);G.width=W;G.height=H;
+  SCL=Math.max(1,Math.round(dh/228));H=Math.min(300,Math.ceil(dh/SCL));W=Math.ceil(dw/SCL);G.width=W;G.height=H;
   $('rot').hidden=!(isTouch&&innerHeight>innerWidth);stickRest();if(!$('tree').hidden)renderTree()}
 addEventListener('resize',resize);
 $('sndbtn').onclick=()=>{initAudio();setSnd(!SND.on)};setSnd(SND.on);

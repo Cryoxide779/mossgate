@@ -1,6 +1,6 @@
 const C=document.getElementById('c'),CX=C.getContext('2d');
 const G=document.createElement('canvas'),g=G.getContext('2d');
-let W=420,H=230,SCL=1,WW=1400;const WH=300;
+let W=420,H=230,SCL=1,WW=1400,WH=300;const BGH=300;
 const $=id=>document.getElementById(id);
 
 /* ---------- colour + noise helpers ---------- */
@@ -232,7 +232,7 @@ function prepZone(z){const E=EDGE,ww=z.ww;z.seg=z.seg.map(([x,w,y,t])=>[x+E,w,y,
 function prepZone2(z){z.npcs=z.npcs||[];z.mobs.forEach((d,i)=>{d[3]=z.lv[0]+Math.floor(hash(i,z.lv[0]*31+z.ww,7)*(z.lv[1]-z.lv[0]+1))});z.pools=z.pools||(z.pool?[z.pool]:[]);z.SEG=z.seg.map(([x,w,y,t])=>({x,w,y,t:t==='f'||t==='stone'||t==='plank'||t==='bridge'?'float':'solid',stone:t==='stone',bed:t==='bed',plank:t==='plank',bridge:t==='bridge'}))}
 ZONES.forEach(prepZone);
 let Z=ZONES[0],TH={...RAMP},SEG=Z.SEG;
-function topAt(x){let best=null;for(const s of SEG)if(s.t==='solid'&&x>=s.x&&x<=s.x+s.w&&(best===null||s.y<best))best=s.y;return best??250}
+function topAt(x){let best=null;for(const s of SEG)if(s.t==='solid'&&x>=s.x&&x<=s.x+s.w&&(best===null||s.y<best))best=s.y;return best??(250+((Z&&Z.tall)||0))}
 
 /* ---------- terrain ---------- */
 function boulder(L,cx,cy,rx,ry,ramp,seed,moss,clip){
@@ -396,23 +396,23 @@ function elder(x,X,Y){const Rr=rr(x);Rr(X-5,Y-16,10,16,'#3b3466');Rr(X-5,Y-16,3,
   Rr(X-4,Y-29,8,4,'#2a2547');Rr(X-2,Y-31,4,2,'#2a2547');Rr(X-3,Y-21,6,3,'#e6dcc6');Rr(X+6,Y-30,1,30,'#5e3a1c');Rr(X+5,Y-33,3,3,'#ffb24a');Z.glows.push([X+6,Y-32,14,'255,190,110'])}
 
 /* ---------- background layers ---------- */
-function buildFar(){const th=THEMES[Z.theme],w=Math.ceil(WW*.25+700),L=layer(w,WH),gx=w*th.glow;
+function buildFar(){const th=THEMES[Z.theme],w=Math.ceil(WW*.25+700),L=layer(w,BGH),gx=w*th.glow;
   if(Z.theme==='dusk'){
-    for(let y=0;y<WH;y++)for(let x=0;x<w;x++){const t=.12+(y/WH)*.55+Math.max(0,1-Math.hypot((x-gx)/260,(y-120)/110))*.3+(fbm(x*.015,y*.02,4)-.5)*.14;sp(L,x,y,pick(TH.far,t,x,y))}
+    for(let y=0;y<BGH;y++)for(let x=0;x<w;x++){const t=.12+(y/BGH)*.55+Math.max(0,1-Math.hypot((x-gx)/260,(y-120)/110))*.3+(fbm(x*.015,y*.02,4)-.5)*.14;sp(L,x,y,pick(TH.far,t,x,y))}
     for(let y=-32;y<=32;y++)for(let x=-32;x<=32;x++){const r=Math.hypot(x,y);if(r<=32){const t=.55+(-x-y)/64*.4+(fbm((x+gx)*.2,(y+80)*.2,9)-.5)*.2;sp(L,gx+x,80+y,pick(R(['#8a5a78','#b07a8a','#d4a0a0','#f0cab4','#fbe6d0']),t,x,y))}}
-    const gc=TH.far[1];[[gx-90,160,26,110],[gx+64,170,24,100]].forEach(([x0,y0,ww,hh])=>{for(let y=y0-hh+20;y<WH;y++)for(let x=x0;x<x0+ww;x++)if(y>y0-hh+ (hash(x,1,3)*10|0))sp(L,x,y,gc)});
+    const gc=TH.far[1];[[gx-90,160,26,110],[gx+64,170,24,100]].forEach(([x0,y0,ww,hh])=>{for(let y=y0-hh+20;y<BGH;y++)for(let x=x0;x<x0+ww;x++)if(y>y0-hh+ (hash(x,1,3)*10|0))sp(L,x,y,gc)});
     for(let x=gx-66;x<gx-8;x++){const a=(x-gx+66)/58,yy=130-Math.sin(a*Math.PI*.6)*20;for(let y=yy;y<yy+12;y++)sp(L,x,y,gc)}
-    for(let i=0;i<12;i++){const cx=i*80+hash(i,1,5)*40,hh=60+hash(i,2,5)*60;for(let y=WH-hh;y<WH;y++)for(let x=cx-3;x<cx+3;x++)sp(L,x,y,TH.far[1]);for(let k=0;k<4;k++){const by=WH-hh+k*12,len=10+hash(i,k,6)*14,d=k%2?1:-1;for(let j=0;j<len;j++)sp(L,cx+d*j,by-j*.5,TH.far[1])}}
+    for(let i=0;i<12;i++){const cx=i*80+hash(i,1,5)*40,hh=60+hash(i,2,5)*60;for(let y=BGH-hh;y<BGH;y++)for(let x=cx-3;x<cx+3;x++)sp(L,x,y,TH.far[1]);for(let k=0;k<4;k++){const by=BGH-hh+k*12,len=10+hash(i,k,6)*14,d=k%2?1:-1;for(let j=0;j<len;j++)sp(L,cx+d*j,by-j*.5,TH.far[1])}}
   }else{
-    for(let y=0;y<WH;y++)for(let x=0;x<w;x++){const glow=Math.max(0,1-Math.hypot((x-gx)/300,(y-(Z.theme==='blood'?250:60))/150));const t=.18+glow*.62+(fbm(x*.015,y*.02,4)-.5)*.18;sp(L,x,y,pick(TH.far,t,x,y))}
+    for(let y=0;y<BGH;y++)for(let x=0;x<w;x++){const glow=Math.max(0,1-Math.hypot((x-gx)/300,(y-(Z.theme==='blood'?250:60))/150));const t=.18+glow*.62+(fbm(x*.015,y*.02,4)-.5)*.18;sp(L,x,y,pick(TH.far,t,x,y))}
     const n=Z.theme==='blood'?10:16;for(let i=0;i<n;i++){const cx=i*(w/n)+hash(i,1,5)*40,tw=10+hash(i,2,5)*18,dark=hash(i,3,5)*.12,spire=Z.theme==='blood';
-      for(let y=0;y<WH;y++){if(spire&&y<120+hash(i,4,5)*80)continue;const ww=(spire?tw*(y/WH):tw)+(y>240?(y-240)*.5:0);for(let x=cx-ww/2;x<cx+ww/2;x++){const u=(x-cx+ww/2)/ww,t=.04+dark+Math.sin(u*Math.PI)*.16*(1-u*.5)+(fbm(x*.2,y*.03,i)-.5)*.1;sp(L,x,y,pick(TH.far,t,x,y))}}}
+      for(let y=0;y<BGH;y++){if(spire&&y<120+hash(i,4,5)*80)continue;const ww=(spire?tw*(y/BGH):tw)+(y>240?(y-240)*.5:0);for(let x=cx-ww/2;x<cx+ww/2;x++){const u=(x-cx+ww/2)/ww,t=.04+dark+Math.sin(u*Math.PI)*.16*(1-u*.5)+(fbm(x*.2,y*.03,i)-.5)*.1;sp(L,x,y,pick(TH.far,t,x,y))}}}
     if(Z.theme!=='blood')for(let i=0;i<24;i++){const cx=i*40+hash(i,4,6)*30,cy=hash(i,5,6)*50,rw=30+hash(i,6,6)*30;for(let y=cy-24;y<cy+24;y++)for(let x=cx-rw;x<cx+rw;x++){if(Math.hypot((x-cx)/rw,(y-cy)/22)<1&&fbm(x*.15,y*.15,i)>.42)sp(L,x,y,pick(TH.far,.06+(fbm(x*.3,y*.3,i+1)-.5)*.2,x,y))}}
   }
   commit(L);return L.c}
-function buildMid(){const th=THEMES[Z.theme],w=Math.ceil(WW*.55+700),L=layer(w,WH),wf=Z.wf;
+function buildMid(){const th=THEMES[Z.theme],w=Math.ceil(WW*.55+700),L=layer(w,BGH),wf=Z.wf;
   if(th.mid==='town'){const top=x=>150+fbm(x*.006,1,3)*40;
-    for(let row=0;row<16;row++){const yy=WH-6-row*11;let x=-10+(row%2)*9;while(x<w+10){const rx=8+hash(x,row,11)*9,ry=6+hash(row,x,11)*5;if(yy-ry>top(x)+6)boulder(L,x,yy,rx,ry,TH.cliff,x*7+row*31,true,null);x+=rx*1.55+hash(x,row,12)*3}}
+    for(let row=0;row<16;row++){const yy=BGH-6-row*11;let x=-10+(row%2)*9;while(x<w+10){const rx=8+hash(x,row,11)*9,ry=6+hash(row,x,11)*5;if(yy-ry>top(x)+6)boulder(L,x,yy,rx,ry,TH.cliff,x*7+row*31,true,null);x+=rx*1.55+hash(x,row,12)*3}}
     for(let i=0;i<w/62;i++){const hx=Math.floor(i*62+hash(i,1,41)*24),hw=Math.floor(30+hash(i,2,41)*30),hh=Math.floor(16+hash(i,3,41)*18),base=Math.floor(top(hx+hw/2))+10,rh=Math.floor(hw*.45),tower=hash(i,6,41)>.86;
       const H2=tower?hh+30:hh,W2=tower?Math.floor(hw*.5):hw;
       for(let y=base-H2;y<base+30;y++)for(let x=hx;x<hx+W2;x++){const t=.3+(x<hx+3?.2:0)-(x>hx+W2-3?.15:0)+(fbm(x*.2,y*.2,i)-.5)*.2;sp(L,x,y,pick(TH.wall,t,x,y))}
@@ -421,8 +421,8 @@ function buildMid(){const th=THEMES[Z.theme],w=Math.ceil(WW*.55+700),L=layer(w,W
       if(hash(i,7,41)>.6){const cx=hx+W2-8;for(let y=base-H2-rh+2;y<base-H2;y++)for(let x=cx;x<cx+4;x++)sp(L,x,y-4,TH.wall[2])}}
   }else if(th.mid==='ruins'){
     const top=x=>70+fbm(x*.01,1,3)*80+(hash(Math.floor(x/26),2,4)>.75?30:0);
-    let y=0;while(y<WH){const bh=12+Math.floor(hash(y,1,11)*12);let x=-Math.floor(hash(y,2,11)*20);
-      while(x<w){const bw=16+Math.floor(hash(x,y,12)*22),base=.25+hash(x,y,13)*.35+(1-y/WH)*.1,arch=(x%260)>90&&(x%260)<150&&y>110&&y<210;
+    let y=0;while(y<BGH){const bh=12+Math.floor(hash(y,1,11)*12);let x=-Math.floor(hash(y,2,11)*20);
+      while(x<w){const bw=16+Math.floor(hash(x,y,12)*22),base=.25+hash(x,y,13)*.35+(1-y/BGH)*.1,arch=(x%260)>90&&(x%260)<150&&y>110&&y<210;
         if(y+bh>top(x)&&!arch)for(let yy=y;yy<y+bh;yy++)for(let xx=x;xx<x+bw;xx++){const ex=xx-x,ey=yy-y;if(ex===0||ey===0||yy<top(xx))continue;
           let t=base+(ex<3||ey<3?.2:0)-(ex>bw-3||ey>bh-3?.22:0)+(fbm(xx*.18,yy*.18,7)-.5)*.3;let col=pick(TH.wall,t,xx,yy);
           if(fbm(xx*.05,yy*.06,21)>.64&&fbm(xx*.3,yy*.3,22)>.45)col=pick(TH.moss,t*.6+.1,xx,yy);sp(L,xx,yy,col)}
@@ -430,7 +430,7 @@ function buildMid(){const th=THEMES[Z.theme],w=Math.ceil(WW*.55+700),L=layer(w,W
       y+=bh}
   }else{
     const cave=th.mid==='cave',[tb,tv]=cave?[-20,0]:th.top,top=x=>tb+fbm(x*.008,1,3)*tv+(wf&&Math.abs(x-wf.x-wf.w/2)<70?-60:0);
-    for(let row=0;row<28;row++){const yy=WH-6-row*11;let x=-10+(row%2)*9;
+    for(let row=0;row<28;row++){const yy=BGH-6-row*11;let x=-10+(row%2)*9;
       while(x<w+10){const rx=8+hash(x,row,11)*9,ry=6+hash(row,x,11)*5;if(yy-ry>top(x)){const wet=wf&&Math.abs(x-wf.x-wf.w/2)<wf.w/2+20;
         boulder(L,x,yy,rx,ry,TH.cliff,x*7+row*31,!wet&&!cave,null)}x+=rx*1.55+hash(x,row,12)*3}}
     if(cave)for(let i=0;i<w/24;i++){const cx=i*24+hash(i,1,7)*16,len=14+hash(i,2,7)*40,wd=3+hash(i,3,7)*5;for(let y=0;y<len;y++){const hw=wd*(1-y/len);for(let x=cx-hw;x<=cx+hw;x++)sp(L,x,y,pick(TH.cliff,.2+(cx-x)/wd*.2,x,y))}}
@@ -438,17 +438,17 @@ function buildMid(){const th=THEMES[Z.theme],w=Math.ceil(WW*.55+700),L=layer(w,W
       for(let k=0;k<len;k++){const px=vx+Math.round(Math.sin(k*.15+i)*1.5);if(!has(L,px,st+k))continue;sp(L,px,st+k,TH.leaf[k%5===0?4:2]);if(k%4===0)sp(L,px+1,st+k,TH.leaf[3])}}
   }
   commit(L);
-  const gr=L.x.createLinearGradient(0,0,0,WH);gr.addColorStop(0,'rgba(0,0,0,0)');gr.addColorStop(.75,'rgba(0,0,0,0)');gr.addColorStop(1,'rgba(4,8,10,.45)');L.x.globalCompositeOperation='source-atop';L.x.fillStyle=gr;L.x.fillRect(0,0,w,WH);
+  const gr=L.x.createLinearGradient(0,0,0,BGH);gr.addColorStop(0,'rgba(0,0,0,0)');gr.addColorStop(.75,'rgba(0,0,0,0)');gr.addColorStop(1,'rgba(4,8,10,.45)');L.x.globalCompositeOperation='source-atop';L.x.fillStyle=gr;L.x.fillRect(0,0,w,BGH);
   if(wf){L.x.fillStyle='#050b0c';L.x.fillRect(wf.x-6,0,wf.w+12,wf.b)}L.x.globalCompositeOperation='source-over';
   return L.c}
 function trunk(L,x0,x1,seed,branch,dead){
-  for(let y=0;y<WH;y++){const fl=y>215?Math.pow(y-215,1.35)*.9:0,l=x0+(vn(y*.05,1,seed)-.5)*8-fl,r=x1+(vn(y*.05,2,seed)-.5)*8+fl;
+  for(let y=0;y<BGH;y++){const fl=y>215?Math.pow(y-215,1.35)*.9:0,l=x0+(vn(y*.05,1,seed)-.5)*8-fl,r=x1+(vn(y*.05,2,seed)-.5)*8+fl;
     for(let x=Math.floor(l);x<r;x++){const u=(x-l)/(r-l);let t=.18+Math.sin(u*Math.PI)*.55*(1.15-u*.7);const gr=fbm(x*.16,y*.03,seed);
       if(gr>.6)t-=.32;else if(gr>.54)t+=.14;if(u<.06||u>.95)t=.02;if(dead)t*=.8;
       let col=pick(TH.bark,t,x,y);if(!dead&&fbm(x*.11,y*.05,seed+5)>.68&&fbm(x*.4,y*.4,seed+6)>.4)col=pick(TH.leaf,t*.7+.12,x,y);sp(L,x,y,col)}}
   if(branch){const[bx,by,ex,ey]=branch;for(let i=0;i<=60;i++){const k=i/60,cx=bx+(ex-bx)*k,cy=by+(ey-by)*k-Math.sin(k*Math.PI)*10,rr2=9-k*5;
     for(let yy=-rr2;yy<=rr2;yy++)for(let xx=-2;xx<=2;xx++){const t=.5-yy/rr2*.35+(fbm(cx*.2,cy*.2+yy,seed)-.5)*.3;sp(L,cx+xx,cy+yy,yy>rr2-1.5||yy<-rr2+1?TH.bark[0]:pick(TH.bark,t,cx+xx,cy+yy))}}}}
-function buildTrees(){const w=Math.ceil(WW*.85+700),L=layer(w,WH);for(const[a,b,s,br,dead]of Z.trees)trunk(L,a,b,s,br,dead);commit(L);return L.c}
+function buildTrees(){const w=Math.ceil(WW*.85+700),L=layer(w,BGH);for(const[a,b,s,br,dead]of Z.trees)trunk(L,a,b,s,br,dead);commit(L);return L.c}
 function cluster(L,cx,cy,rw,rh,n,seed,ramp=TH.leaf){
   const blobs=[];for(let i=0;i<n;i++){const a=hash(i,1,seed)*6.28,d=Math.sqrt(hash(i,2,seed));blobs.push([cx+Math.cos(a)*rw*d,cy+Math.sin(a)*rh*d,3+hash(i,3,seed)*4])}
   blobs.sort((a,b)=>a[1]-b[1]).reverse();
@@ -482,6 +482,7 @@ function buildFG(){const w=Math.ceil(WW*1.25+700),h=80,L=layer(w,h),blood=Z.them
   for(let i=0;i<w*h;i++){if(L.d[i*4+3]){L.d[i*4]=Math.round(L.d[i*4]*.22);L.d[i*4+1]=Math.round(L.d[i*4+1]*.3);L.d[i*4+2]=Math.round(L.d[i*4+2]*.26)}}
   commit(L);return L.c}
 const ZCACHE={};
-function useZone(i){Z=ZONES[i];TH={...RAMP,...THEMES[Z.theme].ramps};SEG=Z.SEG;WW=Z.ww;
+function useZone(i){Z=ZONES[i];TH={...RAMP,...THEMES[Z.theme].ramps};SEG=Z.SEG;WW=Z.ww;WH=300+(Z.tall||0);
   if(!ZCACHE[i])ZCACHE[i]={far:buildFar(),mid:buildMid(),tree:buildTrees(),ter:buildTerrain(),can:buildCanopy(),fg:buildFG(),glows:Z.glows};
+  if(Z.tall&&!ZCACHE[i].sky){try{const d=ZCACHE[i].far.getContext('2d').getImageData(4,1,1,1).data;ZCACHE[i].sky=`rgb(${d[0]},${d[1]},${d[2]})`}catch(e){ZCACHE[i].sky='#203040'}}
   return ZCACHE[i]}
