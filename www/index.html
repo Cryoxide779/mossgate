@@ -36,13 +36,13 @@ button:focus-visible{outline:2px solid var(--moss);outline-offset:2px}
 .ib{position:relative;width:34px;height:34px;display:grid;place-items:center;cursor:pointer;padding:0}
 .ib svg{width:18px;height:18px}
 .ib.dot::after{content:"";position:absolute;top:3px;right:3px;width:7px;height:7px;background:var(--red);border:1px solid #000}
-#zone{position:fixed;z-index:4;left:0;right:0;top:20%;text-align:center;pointer-events:none;opacity:0}
+#zone{position:fixed;z-index:4;left:0;right:0;top:max(25%,94px);text-align:center;pointer-events:none;opacity:0}
 #zone b{display:block;font-weight:400;font-size:clamp(18px,4.6vw,36px);letter-spacing:.08em;text-shadow:3px 3px 0 #000,0 0 18px rgba(155,208,76,.35)}
 #zone small{font-size:11px;letter-spacing:.24em;color:var(--moss);text-shadow:2px 2px 0 #000}
 #talk{position:fixed;z-index:5;left:50%;transform:translateX(-50%);bottom:calc(150px + env(safe-area-inset-bottom,0px));width:min(440px,calc(100% - 32px));padding:8px 12px;font-size:11px;line-height:1.5}
 #talk b{display:block;color:var(--ember);font-weight:400;margin-bottom:2px}
 #enterbtn{position:fixed;z-index:7;left:50%;transform:translateX(-50%);bottom:calc(14px + env(safe-area-inset-bottom,0px));white-space:nowrap;max-width:calc(100% - 32px)}
-#fade{position:fixed;inset:0;z-index:15;background:#000;opacity:0;pointer-events:none;transition:opacity .3s}
+#fade{position:fixed;inset:0;z-index:15;background:#000;opacity:0;pointer-events:none;transition:opacity .3s}#fade span{position:absolute;right:calc(18px + env(safe-area-inset-right,0px));bottom:calc(14px + env(safe-area-inset-bottom,0px));font-size:10px;letter-spacing:.2em;color:var(--moss);opacity:.75}
 #devwarn{position:fixed;z-index:30;left:50%;transform:translateX(-50%);top:calc(48px + env(safe-area-inset-top,0px));background:#b8233f;color:#fff;padding:6px 12px;font-size:11px;max-width:calc(100% - 32px)}
 /* touch */
 #lz{position:fixed;z-index:6;left:0;bottom:0;width:42%;height:70%}
@@ -196,12 +196,13 @@ button:focus-visible{outline:2px solid var(--moss);outline-offset:2px}
 .crbtns{display:flex;flex-wrap:wrap;gap:4px;margin-top:2px}.crbtns .btn{font-size:9px;padding:5px 7px}.crbtns small{opacity:.7}
 #crright{display:grid;gap:6px}
 #mapov .panel{grid-template-columns:minmax(0,2fr) minmax(0,1fr)}#arrange .panel{grid-template-columns:minmax(0,1fr) minmax(0,2fr)}#stash .panel{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}#arrslots{grid-template-columns:1fr 1fr}#arrslots .qi{padding:4px 6px}@media (max-width:560px){#arrange .panel,#stash .panel{grid-template-columns:1fr}}@media (max-width:560px){#mapov .panel{grid-template-columns:1fr}}
-#mapgrid{position:relative;width:100%;aspect-ratio:16/9;min-height:200px;background:radial-gradient(ellipse at 40% 50%,rgba(70,100,60,.35),rgba(8,18,20,.2) 70%),repeating-linear-gradient(0deg,rgba(242,230,200,.03) 0 1px,transparent 1px 12px),repeating-linear-gradient(90deg,rgba(242,230,200,.03) 0 1px,transparent 1px 12px);border:2px solid #000;box-shadow:inset 0 0 0 2px rgba(242,230,200,.12)}
+#mapgrid{position:relative;box-sizing:border-box;width:100%;aspect-ratio:16/9;min-height:200px;background:radial-gradient(ellipse at 40% 50%,rgba(70,100,60,.35),rgba(8,18,20,.2) 70%),repeating-linear-gradient(0deg,rgba(242,230,200,.03) 0 1px,transparent 1px 12px),repeating-linear-gradient(90deg,rgba(242,230,200,.03) 0 1px,transparent 1px 12px);border:2px solid #000;box-shadow:inset 0 0 0 2px rgba(242,230,200,.12)}
 #mapgrid svg{position:absolute;inset:4%;width:92%;height:92%;overflow:visible}#mapgrid line{stroke:#c8a050;stroke-width:.6;stroke-dasharray:1.6 1;vector-effect:non-scaling-stroke}#mapgrid line{stroke-width:2px}#mapgrid line.unk{stroke:rgba(242,230,200,.25)}
 .mpn{position:absolute;transform:translate(-50%,-50%);margin:0;padding:2px 4px 2px 12px;border:2px solid #000;background:#1a2a24;color:var(--cream);font:inherit;font-size:8px;white-space:nowrap;cursor:pointer;box-shadow:inset 0 0 0 1px rgba(242,230,200,.25)}
 #mapgrid .mpn{left:calc(4% + var(--x));}
 .mpn::before{content:"";position:absolute;left:3px;top:50%;width:5px;height:5px;margin-top:-2.5px;background:#9bd04c;box-shadow:0 0 0 1px #000}.mpn.safe::before{background:#ffd27a}.mpn.unk{opacity:.55;color:#8d8aa3}.mpn.unk::before{background:#555}
-.mpn.cris{box-shadow:inset 0 0 0 1px var(--ember)}.mpn.cris::before{background:var(--ember)}.mpn.here{box-shadow:inset 0 0 0 2px #fff4c2}.mpn.sel{background:#2f4a3a}
+.mpn.cris{box-shadow:inset 0 0 0 1px var(--ember)}.mpn.cris::before{background:var(--ember)}.mpn.here{box-shadow:inset 0 0 0 2px #fff4c2}
+.mpn::after{content:"";position:absolute;inset:-7px -3px}@media (pointer:coarse){.dtabs button,#crtabs button{min-height:30px;flex:none}.dtabs{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;padding-bottom:2px;-webkit-mask:linear-gradient(90deg,#000 88%,transparent)}}.mpn.sel{background:#2f4a3a}
 .mpn .ws{position:absolute;right:-5px;top:-5px;width:7px;height:7px;background:#4a5a5e;transform:rotate(45deg);box-shadow:0 0 0 1px #000}.mpn .ws.on{background:#6ee6ee;box-shadow:0 0 0 1px #000,0 0 6px #6ee6ee}
 #ctlbar{position:fixed;z-index:60;top:calc(8px + env(safe-area-inset-top,0px));left:50%;transform:translateX(-50%);width:min(560px,calc(100% - 24px));display:grid;gap:6px;padding:8px 10px;background:rgba(8,18,20,.92);border:2px solid #000;box-shadow:inset 0 0 0 2px var(--ember);font-size:9px}
 .cth{display:flex;gap:8px;align-items:baseline;flex-wrap:wrap}.cth b{font-weight:400;color:var(--ember);font-size:11px}.cth span{opacity:.8}
@@ -267,7 +268,7 @@ body.ctled #hud,body.ctled #tr,body.ctled #qtrack,body.ctled #talkbtn,body.ctled
 </div>
 <div id="keys" class="px" hidden></div>
 <div id="ctlbar" class="px" hidden></div>
-<div id="fade"></div>
+<div id="fade"><span>Travelling…</span></div>
 <div id="devwarn" hidden></div>
 
 <div class="ov" id="title"><div><h1>MOSSGATE</h1><p>A side-scrolling RPG</p>
@@ -636,11 +637,11 @@ function topAt(x){let best=null;for(const s of SEG)if(s.t==='solid'&&x>=s.x&&x<=
 function boulder(L,cx,cy,rx,ry,ramp,seed,moss,clip){
   for(let y=Math.floor(cy-ry-2);y<=cy+ry+2;y++)for(let x=Math.floor(cx-rx-2);x<=cx+rx+2;x++){
     if(clip&&(x<clip[0]||x>clip[1]||y<clip[2]))continue;
-    const nx=(x-cx)/rx,ny=(y-cy)/ry,ang=Math.atan2(ny,nx),edge=1+(vn(ang*2+seed*.13,seed*.7,seed)-.5)*.38,r=Math.hypot(nx,ny)/edge;if(r>1)continue;
+    const nx=(x-cx)/rx,ny=(y-cy)/ry,h0=nx*nx+ny*ny;if(h0>1.4161)continue;const ang=Math.atan2(ny,nx),edge=1+(vn(ang*2+seed*.13,seed*.7,seed)-.5)*.38,r=Math.hypot(nx,ny)/edge;if(r>1)continue;
     const nz=Math.sqrt(Math.max(0,1-r*r)),light=-.55*nx/edge-.7*ny/edge+.5*nz;let t=.22+light*.62+(fbm(x*.16,y*.16,seed)-.5)*.42;
     let col;if(r>1-1.5/Math.min(rx,ry))col=ramp[0];
     else if(moss&&ny<-.15&&fbm(x*.22,y*.22,seed+3)>.36+(ny+1)*.42)col=pick(TH.moss,t+.1,x,y);
-    else{col=pick(ramp,t,x,y);if(fbm(x*.5,y*.08,seed+9)>.74&&r<.8)col=ramp[1]}
+    else{col=pick(ramp,t,x,y);if(r<.8&&fbm(x*.5,y*.08,seed+9)>.74)col=ramp[1]}
     sp(L,x,y,col)}}
 function grassTop(L,x0,x1,y,seed){
   for(let x=Math.floor(x0);x<x1;x++){const hh=1+Math.floor(hash(x,y,seed)*3)+(hash(x,1,seed)>.86?3:0);
@@ -1821,7 +1822,7 @@ function travel(po){if(deepTravel(po))return;S.paused=true;const f=$('fade');f.s
 /* ---------- update ---------- */
 function update(dt){
   if(S.hs>0){S.hs-=dt;dt*=.15}
-  tickNodes(dt);tickBuffs(dt);armsTick(dt);tickMarket(dt);crTick(dt);compTick(dt);deepTick(dt);netTick(dt);reachTick(dt);tickFolk(dt);ambUpdate(dt);S.t+=dt;const dir=(inp.right?1:0)-(inp.left?1:0),sm=pl.sm;S.nearPortal=null;S.portalCd=Math.max(0,S.portalCd-dt);
+  tickNodes(dt);tickBuffs(dt);armsTick(dt);hintTick(dt);tickMarket(dt);crTick(dt);compTick(dt);deepTick(dt);netTick(dt);reachTick(dt);tickFolk(dt);ambUpdate(dt);S.t+=dt;const dir=(inp.right?1:0)-(inp.left?1:0),sm=pl.sm;S.nearPortal=null;S.portalCd=Math.max(0,S.portalCd-dt);
   if(!pl.dead){
     for(const k of['inv','cd','potCd','drop'])pl[k]=Math.max(0,pl[k]-dt);for(let si=0;si<3;si++)pl.slotCd[si]=Math.max(0,pl.slotCd[si]-dt);
     pl.regen+=dt;if(pl.regen>=1){pl.regen=0;pl.mp=Math.min(pl.mmp,pl.mp+Math.round((2+pl.lv*.3)*(pl.sm.mpR||1)));if(S.t-pl.lastHurt>5)pl.hp=Math.min(pl.mhp,pl.hp+1+pl.lv*.2|0);
@@ -3810,6 +3811,50 @@ const _dl=drawLighting;drawLighting=function(cx,cy,L){if(!Z.interior)return _dl(
   g.save();g.globalCompositeOperation='lighter';const T=HOME_TIERS[(Z.host?Z.host.tier:(HM()||{tier:0}).tier)|0];for(let i=0;i<T.win;i++){const wx=Math.round((i+1)*WW/(T.win+1))-cx,wy=158-cy;glow(wx,wy,40,n>.5?'120,150,220':'255,236,190',.18*(1-n)+.05)}
   glow(ri(pl.x-cx),ri(pl.y-cy)-16,40,'255,200,140',.08+.1*n);g.restore()};
 
+/* ---------- polish: objective guide, first-run touch hints ---------- */
+/* Points the way to the next person the player needs: the turn-in for a finished tracked quest,
+   the person a "talk" quest names, or the giver of the next main-story quest. Off-screen targets in
+   this zone get an edge arrow; targets in another zone get an arrow toward the right exit. */
+const NPC_ZONE={};
+function npcZone(id){if(NPC_ZONE[id]!=null)return NPC_ZONE[id];const i=ZONES.findIndex(z=>!z.interior&&z.id!=='deep'&&(z.npcs||[]).includes(id));return NPC_ZONE[id]=i}
+function guideTarget(){if(Z.id==='deep'||Z.interior)return null;
+  const tr=tracked();for(const k of tr){if(qReady(k)){const n=qTurnIn(k);if(NPCS[n])return{npc:n,why:'done'}}}
+  const m=tr.find(k=>QUESTS[k].goal.t==='talk');if(m)return{npc:QUESTS[m].goal.npc,why:'talk'};
+  if(!qActive().some(k=>QUESTS[k].main)){const k=Object.keys(QUESTS).find(k=>QUESTS[k].main&&qAvail(k)&&pl.lv>=(QUESTS[k].lv||1)-1);if(k&&NPCS[QUESTS[k].giver])return{npc:QUESTS[k].giver,why:'new'}}
+  return null}
+let GPATH={k:'',hop:null};
+function nextHop(from,to){if(from===to)return null;const key=from+'>'+to;if(GPATH.k===key)return GPATH.hop;
+  const prev=new Map([[from,null]]),q=[from];while(q.length){const z=q.shift();if(z===to)break;for(const po of ZONES[z].portals||[]){const t=po.to;if(t==null||prev.has(t)||!ZONES[t]||ZONES[t].interior||ZONES[t].id==='deep')continue;prev.set(t,{z,po});q.push(t)}}
+  let hop=null;if(prev.has(to)){let c=to;while(prev.get(c)&&prev.get(c).z!==from)c=prev.get(c).z;hop=prev.get(c)?prev.get(c).po:null}
+  GPATH={k:key,hop};return hop}
+function drawGuide(cx,cy){if(!pl.ch||S.paused&&!DLG||pl.dead)return;if(pl.flags&&pl.flags.noGuide)return;const t=guideTarget();if(!t)return;const zi=npcZone(t.npc);if(zi<0)return;
+  let tx,label;if(zi===S.zone){const n=NPCS[t.npc];tx=n.x;label=n.name.split(' ').slice(-1)[0];if(Math.abs(n.x-pl.x)<26)return;const sx=n.x-cx;if(sx>8&&sx<W-8){
+      const y=ri((n.y||topAt(n.x))-cy)-58+Math.sin(S.t*4)*2;g.fillStyle='#000';g.fillRect(ri(sx)-4,y-1,9,6);g.fillStyle=t.why==='done'?'#9bd04c':'#ffd27a';g.fillRect(ri(sx)-3,y,7,1);g.fillRect(ri(sx)-2,y+1,5,1);g.fillRect(ri(sx)-1,y+2,3,1);g.fillRect(ri(sx),y+3,1,1);return}}
+  else{const po=nextHop(S.zone,zi);if(!po)return;tx=po.x;label=ZONES[po.to].name;if(Math.abs(po.x-pl.x)<20)return}
+  const dir=Math.sign(tx-pl.x)||1,onScr=tx-cx>14&&tx-cx<W-14;if(onScr&&zi!==S.zone){const x=ri(tx-cx),y=ri(topAt(tx)-cy)-52+Math.sin(S.t*4)*2;ptext('▼ '+label.toUpperCase(),x,y,'#ffd27a');return}
+  const ex=dir>0?W-10:10,ey=ri(H*.38),bob=ri(Math.sin(S.t*5)*1.5),ax=ex+dir*bob;g.save();g.globalAlpha=.92;
+  const tri=(r,col)=>{g.fillStyle=col;for(let i=-r;i<=r;i++){const w=r+1-Math.abs(i);g.fillRect(dir>0?ax-r:ax+r+1-w,ey+i,w,1)}};tri(5,'#000');tri(4,t.why==='done'?'#9bd04c':'#ffd27a');
+  g.restore();g.font='8px Silkscreen, monospace';const tw=g.measureText(label.toUpperCase()).width;ptext(label.toUpperCase(),dir>0?ri(ex-8-tw/2):ri(ex+8+tw/2),ey,'#f2e6c8')}
+/* first-run touch hints: one short line at a time, each cleared by doing it */
+const HINTS=[{k:'move',t:'Drag the left side of the screen to move',ok:()=>Math.abs(pl.x-(HINT0.x||pl.x))>60},
+  {k:'talk',t:'Walk up to someone and tap the orange button to talk',ok:()=>!!DLG||qActive().length>0},
+  {k:'atk',t:'Tap Slash to attack. Jump and Roll are beside it',ok:()=>!!pl.atk},
+  {k:'menu',t:'Bag, skills, quests and the menu are along the top',ok:()=>HINT0.t>14}];
+const HINT0={i:0,x:null,t:0};
+function hintTick(dt){if(!pl.ch||!document.body.classList.contains('touch')&&!matchMedia('(pointer:coarse)').matches)return;pl.flags=pl.flags||{};if(pl.flags.hints==null&&(pl.lv>2||Object.keys(pl.q||{}).length>1))pl.flags.hints=HINTS.length;if(pl.flags.hints>=HINTS.length)return;
+  if(S.paused){return}const i=pl.flags.hints|0,h=HINTS[i];if(HINT0.i!==i||HINT0.x==null){HINT0.i=i;HINT0.x=pl.x;HINT0.t=0}HINT0.t+=dt;
+  if(HINT0.t>1.2&&h.ok()&&!($('zone').style.opacity>0.05)){pl.flags.hints=i+1;HINT0.x=null;save()}}
+function drawHint(){if(!pl.ch||S.paused||!pl.flags||(pl.flags.hints|0)>=HINTS.length)return;if(!document.body.classList.contains('touch')&&!matchMedia('(pointer:coarse)').matches)return;
+  if(HINT0.t<.6||+$('zone').style.opacity>.05)return;const h=HINTS[pl.flags.hints|0],a=Math.min(1,(HINT0.t-.6)*2);g.save();g.globalAlpha=a;g.font='8px Silkscreen, monospace';const tw=g.measureText(h.t).width+12,y=ri(H*.44);
+  g.fillStyle='rgba(8,18,20,.82)';g.fillRect(ri(W/2-tw/2),y-6,ri(tw),12);g.fillStyle='rgba(155,208,76,.6)';g.fillRect(ri(W/2-tw/2),y-6,ri(tw),1);g.restore();g.save();g.globalAlpha=a;ptext(h.t,ri(W/2),y,'#f2e6c8');g.restore()}
+/* keep the selected discipline tab in view when the tab strip scrolls sideways */
+const _ot=openTree;openTree=function(...a){const r=_ot(...a);const s=document.querySelector('#dtabs .sel');if(s)s.scrollIntoView({inline:'nearest',block:'nearest'});return r};
+/* leaving the app: save, pause behind the menu, quiet the audio; coming back: audio resumes */
+document.addEventListener('visibilitychange',()=>{if(document.hidden){if(pl.ch&&$('title').hidden&&$('creator').hidden){try{save()}catch(_){}
+    if(!S.paused&&!pl.dead&&$('gmenu').hidden)try{openMenu()}catch(_){}}try{AC&&AC.state==='running'&&AC.suspend()}catch(_){}}
+  else{try{AC&&AC.state==='suspended'&&AC.resume()}catch(_){}}});
+addEventListener('pagehide',()=>{if(pl.ch&&$('title').hidden&&$('creator').hidden)try{save()}catch(_){}});
+
 /* ---------- save transfer: move a character between devices (claude.ai, browser, Android app) ---------- */
 const SAVE_K='mossgate-px2';
 function svHash(s){let h=2166136261>>>0;for(let i=0;i<s.length;i++){h^=s.charCodeAt(i);h=Math.imul(h,16777619)>>>0}return h.toString(16).padStart(8,'0')}
@@ -4013,7 +4058,7 @@ function render(){
   if(S.atShrine&&!pl.dead)ptext('▲ REST',pl.x-cx,pl.y-cy-46+Math.sin(S.t*4),'#ffd27a');
   g.drawImage(L.can,-cx,ri(-cy*.25)-14);
   g.drawImage(L.fg,ri(-cx*1.25),H-80+ri((WH-H-cy)*.3));
-  drawAmb(cx,cy);{const dtR=Math.min(.05,S.t-(S.lastR??S.t));S.lastR=S.t;drawLighting(cx,cy,L);drawWeather(cx,cy,dtR);drawCrisisFx()}
+  drawAmb(cx,cy);{const dtR=Math.min(.05,S.t-(S.lastR??S.t));S.lastR=S.t;drawLighting(cx,cy,L);drawWeather(cx,cy,dtR);drawCrisisFx();drawGuide(cx,cy);drawHint()}
   const vg=g.createRadialGradient(W/2,H/2,H*.3,W/2,H/2,W*.75);vg.addColorStop(0,`rgba(${th.vig},0)`);vg.addColorStop(1,`rgba(${th.vig},.55)`);g.fillStyle=vg;g.fillRect(0,0,W,H);
   CX.imageSmoothingEnabled=false;CX.drawImage(G,0,0,W*SCL,H*SCL);
 }
@@ -4203,9 +4248,15 @@ function loop(ts){const dt=Math.min(.033,(ts-last)/1000||0);last=ts;
   if(S.started&&!S.paused&&$('rot').hidden&&!document.hidden)update(dt);else S.t+=dt;
   render();if(!$('creator').hidden)drawPreview(dt);if(!$('inv').hidden)drawDoll();hud();requestAnimationFrame(loop)}
 requestAnimationFrame(loop);
+/* scale menus and HUD up on tablets and large screens so text stays readable; keep the quest tracker clear of the HUD */
+function uiScale(){const z=clamp(Math.min(innerWidth/780,innerHeight/380),1,2);UIZ=z;
+  for(const el of document.querySelectorAll('.ov')){el.style.zoom=z;el.style.boxSizing='border-box';el.style.right='auto';el.style.bottom='auto';el.style.width=(innerWidth/z)+'px';el.style.height=(innerHeight/z)+'px'}
+  for(const id of['hud','tr','qtrack','talk','dlg','crchip','cmdbtn','menubtn'])if($(id))$(id).style.zoom=z;
+  const h=$('hud').getBoundingClientRect();if(h.height)$('qtrack').style.top=((h.bottom+4)/z)+'px'}
+let UIZ=1;addEventListener('resize',()=>setTimeout(uiScale,30));uiScale();setInterval(()=>{const q=$('qtrack'),h=$('hud').getBoundingClientRect();if(h.height&&Math.abs(q.getBoundingClientRect().top-(h.bottom+4))>2)uiScale()},1000);
 
 })();
 </script>
-<script>window.MG_BUILD='2026.11.03-2115';if('serviceWorker' in navigator&&location.protocol==='https:'){addEventListener('load',()=>navigator.serviceWorker.register('sw.js').catch(()=>{}))}</script>
+<script>window.MG_BUILD='2026.11.03-2138';if('serviceWorker' in navigator&&location.protocol==='https:'){addEventListener('load',()=>navigator.serviceWorker.register('sw.js').catch(()=>{}))}</script>
 
 </html>
