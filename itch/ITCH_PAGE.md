@@ -62,6 +62,6 @@ Plays in your browser on desktop or phone. No ads, no accounts, no data collecti
 Free updates add new regions, story and features over time.
 
 ## Controls (shown in game too)
-Arrows or A/D move · Z or Space jump · X attack · C V B techniques · Shift roll · F guard and parry · P tonic · I bag · T disciplines · Q quests · M map · R call or send home your companion · G companion command · ↑ talk or use a portal
+A/D move · Space jump · Left-click attack · Q, E, R first, second and third (ultimate) technique · Shift dash · Right-click guard and parry · W talk or use a portal · P tonic · I bag · T disciplines · L quests · M map · C call or send home your companion · G companion command
 
 On a phone: drag the left side to move; buttons on the right.

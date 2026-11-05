@@ -43,8 +43,13 @@ function loadSave(){try{return JSON.parse(localStorage.getItem('mossgate-px2')||
 /* ---------- input ---------- */
 const inp={left:0,right:0,up:0,down:0,jump:0,attack:0,s1:0,s2:0,s3:0,pot:0,roll:0,guard:0},prev={};
 const KM={ArrowLeft:'left',KeyA:'left',ArrowRight:'right',KeyD:'right',ArrowUp:'up',KeyW:'up',ArrowDown:'down',KeyS:'down',KeyZ:'jump',Space:'jump',KeyK:'jump',
-  KeyX:'attack',KeyJ:'attack',KeyC:'s1',KeyL:'s1',KeyV:'s2',Semicolon:'s2',KeyB:'s3',KeyN:'s3',KeyP:'pot',KeyH:'pot',ShiftLeft:'roll',ShiftRight:'roll',KeyO:'roll',KeyF:'guard',KeyU:'guard'};
-addEventListener('keydown',e=>{if(e.target.tagName==='INPUT')return;const k=KM[e.code];if(k){inp[k]=1;e.preventDefault();initAudio()}});
+  KeyX:'attack',KeyJ:'attack',KeyQ:'s1',KeyE:'s2',KeyR:'s3',KeyV:'s2',KeyB:'s3',KeyP:'pot',KeyH:'pot',ShiftLeft:'roll',ShiftRight:'roll',KeyO:'roll',KeyF:'guard',KeyU:'guard'};
+addEventListener('keydown',e=>{if(e.target.tagName==='INPUT'||e.target.tagName==='TEXTAREA')return;const k=KM[e.code];if(k){e.preventDefault();initAudio();if((typeof DLG!=='undefined'&&DLG)||(S.paused&&!['left','right','up','down'].includes(k)))return;inp[k]=1}});
+/* mouse: left button attacks, right button guards (hold to keep guarding) */
+const MB={0:'attack',2:'guard'};
+addEventListener('mousedown',e=>{const k=MB[e.button];if(!k||!(e.target.id==='c'||e.target.id==='lz'||e.target.id==='game'||e.target.closest&&e.target.closest('#stage')&&!e.target.closest('button,input,textarea,select,a,[hidden]')))return;
+  if(S.paused||!S.started||(typeof DLG!=='undefined'&&DLG))return;inp[k]=1;e.preventDefault();initAudio()});
+addEventListener('mouseup',e=>{const k=MB[e.button];if(k)inp[k]=0});addEventListener('blur',()=>{inp.attack=0;inp.guard=0});
 addEventListener('keyup',e=>{if(e.target.tagName==='INPUT')return;const k=KM[e.code];if(k){inp[k]=0;e.preventDefault()}});
 const isTouch=('ontouchstart' in window)||matchMedia('(pointer:coarse)').matches;
 const pressed=k=>inp[k]&&!prev[k];

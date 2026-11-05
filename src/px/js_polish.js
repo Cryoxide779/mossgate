@@ -47,7 +47,7 @@ function compOut(){const c=pl.comp;return!!(c&&c.act&&c.b&&c.b[c.act])}
 function toggleComp(){const c=CB();if(!c.own.length){banner('No companions yet','Befriend a creature first');return}
   if(c.act){const b=c.b[c.act];c.last=c.act;setComp(c.act);banner('Sent home',b.n.split(',')[0]+' waits for you at home')}
   else{const id=c.last&&c.b[c.last]?c.last:c.own[0];setComp(id);banner('Called',c.b[id].n.split(',')[0]+' is at your side')}}
-addEventListener('keydown',e=>{if(e.code==='KeyR'&&!e.repeat&&e.target.tagName!=='INPUT'&&e.target.tagName!=='TEXTAREA'&&pl.ch&&S.started&&!S.paused)toggleComp()});
+addEventListener('keydown',e=>{if(e.code==='KeyC'&&!e.repeat&&e.target.tagName!=='INPUT'&&e.target.tagName!=='TEXTAREA'&&pl.ch&&S.started&&!S.paused)toggleComp()});
 const MORE_ROWS=[['comptog',()=>compOut()?'Companion · out (tap to send home)':'Companion · home (tap to call)',1],['cmdbtn',()=>{const b=actBond();return b?'Command · '+CMD_N[compCmd()]:'Command'},1],['qbtn','Quests'],['mxbtn',()=>pl.mx&&pl.mx.pts?'Mastery · '+pl.mx.pts+' to spend':'Mastery'],['treebtn','Disciplines'],['mapbtn','Map'],['saybtn',()=>{const n=NET.cap?netPeers().length:0;return n?'Say · '+(n+1)+' here':'Say'},1],['sndbtn',()=>SND.on?'Sound · on':'Sound · off',1],['menubtn','Menu & saves'],['fs','Fullscreen']];
 (()=>{const tr=$('tr'),more=document.createElement('button');more.className='ib px';more.id='morebtn';more.setAttribute('aria-label','More');more.setAttribute('aria-expanded','false');
   more.innerHTML='<svg viewBox="0 0 18 18" fill="#f2e6c8"><rect x="2" y="2" width="5" height="5"/><rect x="11" y="2" width="5" height="5"/><rect x="2" y="11" width="5" height="5"/><rect x="11" y="11" width="5" height="5"/></svg>';

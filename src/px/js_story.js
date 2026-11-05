@@ -418,5 +418,5 @@ $('talkbtn').addEventListener('pointerdown',e=>{e.preventDefault();if(S.nearNpc)
 $('prgo').onclick=()=>{unpause('prolog');banner('Chapter I · The Ash Road','Speak to Ysel')};
 addEventListener('keydown',e=>{if(e.target.tagName==='INPUT')return;
   if(DLG){if(e.code==='Escape')closeDlg();else if(e.code==='Enter'||e.code==='KeyE'){const b=$('dlga').querySelector('button:not([disabled])');if(b)b.click()}e.preventDefault();return}
-  if(e.code==='KeyQ')$('quests').hidden?(S.started&&openQuests()):unpause('quests');
+  if(e.code==='KeyL')$('quests').hidden?(S.started&&openQuests()):unpause('quests');
   if(e.code==='Escape'&&!$('quests').hidden)unpause('quests')});

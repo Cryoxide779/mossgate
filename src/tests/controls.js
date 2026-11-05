@@ -1,0 +1,21 @@
+const {chromium}=require('playwright');
+(async()=>{const b=await chromium.launch();const ctx=await b.newContext({viewport:{width:1280,height:720}});const p=await ctx.newPage();const errs=[];p.on('pageerror',e=>errs.push(e.message));
+await p.goto('file://'+process.cwd()+'/dbgp.html');await p.waitForTimeout(700);const ev=(f,a)=>p.evaluate(f,a);
+await ev(()=>{const T=window.__T;T.beginWith({name:'Aya',cls:'ronin',look:{...T.DEF_LOOK,sex:1}},{lv:20,exp:0,sh:100,pt:3,inv:[],eq:null,sk:{},zone:0,q:{m1:{s:'d'},m2:{s:'d'}},fl:{crIntro:1,hints:9},tmin:false,mat:{meat:20}});T.pl.cr={id:null,wait:9999};T.pl.mp=T.pl.mmp=999});
+await ev(()=>{const T=window.__T;T.enterZone(T.ZONES.findIndex(z=>z.id==='outskirts'))});await p.waitForTimeout(600);
+const at=await ev(()=>{const r=document.getElementById('c').getBoundingClientRect();const x=r.left+r.width*.5,y=r.top+r.height*.55;return{x,y,el:document.elementFromPoint(x,y).id||document.elementFromPoint(x,y).tagName}});console.log('center element',at.el,'paused',await ev(()=>window.__T.S.paused),'started',await ev(()=>window.__T.S.started));
+const watch=async(label,fn)=>{await ev(()=>{window.__seen={};const T=window.__T;window.__iv=setInterval(()=>{for(const k in T.inp)if(T.inp[k])window.__seen[k]=1},5)});await fn();await p.waitForTimeout(150);console.log(label.padEnd(16),await ev(()=>{clearInterval(window.__iv);return Object.keys(window.__seen).join(',')||'-'}))};
+await watch('left click',async()=>{await p.mouse.move(at.x,at.y);await p.mouse.down();await p.waitForTimeout(80);await p.mouse.up()});
+await watch('right click',async()=>{await p.mouse.move(at.x,at.y);await p.mouse.down({button:'right'});await p.waitForTimeout(80);await p.mouse.up({button:'right'})});
+await watch('Q',async()=>{await p.keyboard.down('q');await p.waitForTimeout(80);await p.keyboard.up('q')});
+await watch('E',async()=>{await p.keyboard.down('e');await p.waitForTimeout(80);await p.keyboard.up('e')});
+await watch('R',async()=>{await p.keyboard.down('r');await p.waitForTimeout(80);await p.keyboard.up('r')});
+await watch('Shift',async()=>{await p.keyboard.down('Shift');await p.waitForTimeout(80);await p.keyboard.up('Shift')});
+await watch('Space',async()=>{await p.keyboard.down(' ');await p.waitForTimeout(80);await p.keyboard.up(' ')});
+const bag=await ev(()=>{const e=[...document.querySelectorAll('button')].find(b=>b.offsetParent&&/bag|inv/i.test(b.id+b.className+b.title+(b.getAttribute('aria-label')||'')));if(!e)return null;const r=e.getBoundingClientRect();return{x:r.left+r.width/2,y:r.top+r.height/2,id:e.id}});
+console.log('hud button',bag&&bag.id);if(bag){await watch('click HUD btn',async()=>{await p.mouse.move(bag.x,bag.y);await p.mouse.down();await p.waitForTimeout(80);await p.mouse.up()});await ev(()=>{const T=window.__T;for(const id of ['inv'])document.getElementById(id).hidden||T.unpause&&0});await p.keyboard.press('Escape');await p.waitForTimeout(200)}
+await p.keyboard.press('l');await p.waitForTimeout(200);console.log('L opens quests',await ev(()=>!document.getElementById('quests').hidden));await p.keyboard.press('l');await p.waitForTimeout(200);
+await p.keyboard.press('q');await p.waitForTimeout(200);console.log('Q opens quests (should be false)',await ev(()=>!document.getElementById('quests').hidden));
+const c0=await ev(()=>!!window.__T.CB().act);await p.keyboard.press('c');await p.waitForTimeout(300);console.log('C companion toggle ran',c0,'->',await ev(()=>!!window.__T.CB().act));
+console.log('hint bar:',await ev(()=>document.getElementById('keys').textContent.slice(0,200)));
+console.log('errs',errs);await b.close()})();
